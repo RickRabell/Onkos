@@ -1,39 +1,9 @@
 #include "Device.h"
 
-/*
-HRESULT
-CreateRenderTargetView(ID3D11Resource* pResource,
-	const D3D11_RENDER_TARGET_VIEW_DESC* pDesc,
-	ID3D11RenderTargetView** ppRTView) {
-	// Validar parametros de entrada
-	if (!pResource) {
-		ERROR("Device", "CreateRenderTargetView", "pResource is nullptr");
-		return E_INVALIDARG;
-	}
-	if (!ppRTView) {
-		ERROR("Device", "CreateRenderTargetView", "ppRTView is nullptr");
-		return E_POINTER;
-	}
-
-	// Crear el Render Target View
-	HRESULT hr = m_device->CreateRenderTargetView(pResource, pDesc, ppRTView);
-
-	if (SUCCEDED(hr)) {
-		MESSAGE("Device", "CreatedRenderTargetView", "Render Target View created successfully!");
-	}
-	else {
-		ERROR("Device", "CreateRenderTargetView", "Failed to create Render Target View. HRESULT: " + std::to_string(hr)).c_str())
-	}
-
-	return hr;
+void
+Device::destroy() {
+  SAFE_RELEASE(m_device);
 }
-
-//hr = g_pd3dDevice->CreateTexture2D(&descDepth, NULL, &g_pDepthStencil);
-
-//hr = g_pd3dDevice->CreateDepthStencilView(g_pDepthStencil, &descDSV, &g_pDepthStencilView);
-
-// Vertex shader, input layout y pixel shader, buffer y sampler state
-*/
 
 //CreateRenderTargetView
 HRESULT Device::CreateRenderTargetView(ID3D11Resource* pResource,
@@ -135,4 +105,64 @@ HRESULT Device::CreateDepthStencilView(
   }
 
   return hr;
+}
+
+HRESULT 
+Device::CreateVertexShader( const void* pShaderBytecode, 
+                            SIZE_T BytecodeLength, 
+                            ID3D11ClassLinkage* pClassLinkage, 
+                            ID3D11VertexShader** ppVertexShader)
+{
+  if (!m_device) {
+    ERROR("Device", "CreateVertexShader", "m_device is nullptr");
+    return E_FAIL;
+  }
+
+  if (!pShaderBytecode) {
+    ERROR("Device", "CreateVertexShader", "pShaderBytecode is nullptr");
+    return E_INVALIDARG;
+  }
+
+  if (!pClassLinkage) {
+    ERROR("Device", "CreateVertexShader", "pClassLinkage is nullptr");
+    return E_POINTER;
+  }
+
+  if (!ppVertexShader) {
+    ERROR("Device", "CreateVertexShader", "ppVertexShader is nullptr");
+    return E_POINTER;
+  }
+
+  HRESULT hr = m_device->CreateVertexShader(pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
+
+  if (SUCCEEDED(hr)) {
+    MESSAGE("Device", "CreateVertexShader",
+      "VertexShader created successfully!");
+  }
+  else {
+    ERROR("Device", "CreateVertexShader",
+      ("Failed to create VertexShader. HRESULT: " + std::to_string(hr)).c_str());
+  }
+
+  return hr;
+}
+
+HRESULT Device::CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, UINT NumElements, const void* pShaderBytecodeWithInputSignature, SIZE_T BytecodeLength, ID3D11InputLayout** ppInputLayout)
+{
+  return E_NOTIMPL;
+}
+
+HRESULT Device::CreatePixelShader(const void* pShaderBytecode, SIZE_T BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
+{
+  return E_NOTIMPL;
+}
+
+HRESULT Device::CreateBuffer(const D3D11_BUFFER_DESC* pDesc, const D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer)
+{
+  return E_NOTIMPL;
+}
+
+HRESULT Device::CreateSamplerState(const D3D11_SAMPLER_DESC* pSamplerDesc, ID3D11SamplerState** ppSamplerState)
+{
+  return E_NOTIMPL;
 }

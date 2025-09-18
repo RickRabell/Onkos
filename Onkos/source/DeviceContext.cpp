@@ -49,6 +49,7 @@ DeviceContext::IASetInputLayout(ID3D11InputLayout* pInputLayout) {
 		ERROR("DeviceContext", "IASetInputLayout", "pInputLayout is nullptr");
 		return;
 	}
+
 	m_deviceContext->IASetInputLayout(pInputLayout);
 }
 
@@ -62,6 +63,7 @@ DeviceContext::IASetVertexBuffers(	unsigned int StartSlot,
 		ERROR("DeviceContext", "IASetVertexBuffers", "Invalid Arguments: ppVertexBuffers, pStrides or pOffsets is nullptr");
 		return;
 	}
+
 	m_deviceContext->IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
 }
 
@@ -73,6 +75,7 @@ DeviceContext::IASetIndexBuffer(  ID3D11Buffer* pIndexBuffer,
 		ERROR("DeviceContext", "IASetIndexBuffer", "pIndexBuffer is nullptr");
 		return;
 	}
+
 	m_deviceContext->IASetIndexBuffer(pIndexBuffer, Format, Offset);
 }
 
@@ -87,6 +90,7 @@ DeviceContext::UpdateSubresource( ID3D11Resource* pDstResource,
 		ERROR("DeviceContext", "UpdateSubresource", "Invalid Arguments: pDstResource or pSrcData is nullptr");
 		return;
 	}
+
 	// Asignar los render targets y el depth stencil
 	m_deviceContext->UpdateSubresource(pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
 }
@@ -103,6 +107,7 @@ DeviceContext::ClearRenderTargetView(	ID3D11RenderTargetView* pRenderTargetView,
 		ERROR("DeviceContext", "ClearRenderTargetView", "ColorRGBA is nullptr");
 		return;
 	}
+
 	// Limpiar el render target
 	m_deviceContext->ClearRenderTargetView(pRenderTargetView, ColorRGBA);
 }
@@ -114,6 +119,7 @@ DeviceContext::IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY Topology) {
 		ERROR("DeviceContext", "IASetPrimitiveTopology", "Topology is D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED");
 		return;
 	}
+
 	// Asignar la topología al Input Assembler
 	m_deviceContext->IASetPrimitiveTopology(Topology);
 }

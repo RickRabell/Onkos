@@ -123,3 +123,16 @@ DeviceContext::IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY Topology) {
 	// Asignar la topología al Input Assembler
 	m_deviceContext->IASetPrimitiveTopology(Topology);
 }
+
+void
+DeviceContext::PSSetShaderResources(unsigned int StartSlot,
+																		unsigned int NumViews,
+																		ID3D11ShaderResourceView* const* ppShaderResourceViews) {
+	// Validar parámetros de entrada
+	if (!ppShaderResourceViews) {
+		ERROR("DeviceContext", "PSSetShaderResources", "ppShaderResourceViews is nullptr");
+		return;
+	}
+
+	m_deviceContext->PSSetShaderResources(StartSlot, NumViews, ppShaderResourceViews);
+}

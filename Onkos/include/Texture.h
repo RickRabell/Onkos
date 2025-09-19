@@ -11,7 +11,7 @@ public:
 	~Texture() = default;
 
 	HRESULT
-		init(	Device& deivce, const std::string& textureName, ExtensionType extensionType	);
+	init(	Device& deivce, const std::string& textureName, ExtensionType extensionType	);
 
 	HRESULT
 	init(	Device& device, 

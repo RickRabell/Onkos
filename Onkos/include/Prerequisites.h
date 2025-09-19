@@ -82,8 +82,8 @@
  * Contains position and texture coordinates, which is a common layout
  * for textured models.
  */
-struct SimpleVertex
-{
+struct 
+SimpleVertex {
   XMFLOAT3 Pos;
   XMFLOAT2 Tex;
 };
@@ -95,8 +95,8 @@ struct SimpleVertex
  * Typically holds the view matrix. This buffer is set once and remains
  * constant for all objects drawn from that camera's perspective.
  */
-struct CBNeverChanges
-{
+struct 
+CBNeverChanges {
   XMMATRIX mView;
 };
 
@@ -106,8 +106,8 @@ struct CBNeverChanges
  *
  * Typically holds the projection matrix, which depends on the window's aspect ratio.
  */
-struct CBChangeOnResize
-{
+struct 
+CBChangeOnResize {
   XMMATRIX mProjection;
 };
 
@@ -117,10 +117,15 @@ struct CBChangeOnResize
  *
  * Holds per-object data like the world matrix and material color.
  */
-struct CBChangesEveryFrame
-{
+struct 
+CBChangesEveryFrame {
   XMMATRIX mWorld;
   XMFLOAT4 vMeshColor;
 };
 
-enum ExtensionType {};
+enum 
+ExtensionType {
+  DDS = 0,
+  PNG = 1,
+  JPG = 2
+};

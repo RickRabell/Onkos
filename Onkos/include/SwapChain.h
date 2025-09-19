@@ -27,6 +27,9 @@ public:
 	void
 	destroy();
 
+	void
+	present();
+
 private:
 	IDXGISwapChain* m_swapChain = nullptr;
 

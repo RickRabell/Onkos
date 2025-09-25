@@ -10,6 +10,10 @@
 #include "Window.h"
 #include "Device.h"
 #include "DeviceContext.h"
+#include "SwapChain.h"
+#include "Texture.h";
+#include "RenderTargetView.h"
+#include "DepthStencilView.h"
 
 //--------------------------------------------------------------------------------------
 // Global Variables
@@ -19,12 +23,17 @@
 Window                              g_window;
 Device    											    g_device;
 DeviceContext                       g_deviceContext;
+SwapChain                           g_swapChain;
+Texture                             g_backBuffer;
+RenderTargetView                    g_renderTargetView;
+Texture														  g_depthStencil;
+DepthStencilView                    g_depthStencilView;
 
-D3D_DRIVER_TYPE                     g_driverType = D3D_DRIVER_TYPE_NULL;
-D3D_FEATURE_LEVEL                   g_featureLevel = D3D_FEATURE_LEVEL_11_0;
+//D3D_DRIVER_TYPE                     g_driverType = D3D_DRIVER_TYPE_NULL;
+//D3D_FEATURE_LEVEL                   g_featureLevel = D3D_FEATURE_LEVEL_11_0;
 //ID3D11Device*                       g_device.m_device = NULL;
 //ID3D11DeviceContext*                g_deviceContext.m_deviceContext = NULL;
-IDXGISwapChain*                     g_pSwapChain = NULL;
+//IDXGISwapChain*                     g_pSwapChain = NULL;
 ID3D11RenderTargetView*             g_pRenderTargetView = NULL;
 ID3D11Texture2D*                    g_pDepthStencil = NULL;
 ID3D11DepthStencilView*             g_pDepthStencilView = NULL;
@@ -171,6 +180,7 @@ HRESULT InitDevice()
 {
     HRESULT hr = S_OK;
 
+    /*
     //RECT rc;
     //GetClientRect( g_hWnd, &rc );
     //UINT width = rc.right - rc.left;
@@ -232,6 +242,20 @@ HRESULT InitDevice()
     pBackBuffer->Release();
     if( FAILED( hr ) )
         return hr;
+    */
+
+    hr = g_swapChain.init(g_device, g_deviceContext, g_backBuffer, g_window);
+
+    if (FAILED(hr)) {
+      ERROR("Main", "InitDevice",
+           ("Failed to initialize SwapChain. HRESULT: " + std::to_string(hr)).c_str());
+      return hr;
+    }
+
+    // Create a render target view
+    hr = g_device.m_device->CreateRenderTargetView(pBackBuffer, NULL, &g_pRenderTargetView);
+    if (FAILED(hr))
+      return hr;
 
     // Create depth stencil texture
     D3D11_TEXTURE2D_DESC descDepth;
@@ -497,7 +521,9 @@ void CleanupDevice()
     if( g_pDepthStencil ) g_pDepthStencil->Release();
     if( g_pDepthStencilView ) g_pDepthStencilView->Release();
     if( g_pRenderTargetView ) g_pRenderTargetView->Release();
-    if( g_pSwapChain ) g_pSwapChain->Release();
+    //if( g_pSwapChain ) g_pSwapChain->Release();
+    g_swapChain.destroy();
+    g_backBuffer.destroy();
     if( g_deviceContext.m_deviceContext ) g_deviceContext.m_deviceContext->Release();
 		g_device.destroy();
     //if( g_device.m_device ) g_device.m_device->Release();
@@ -594,5 +620,5 @@ void Render()
     //
     // Present our back buffer to our front buffer
     //
-    g_pSwapChain->Present( 0, 0 );
+    g_swapChain->Present( 0, 0 );
 }

@@ -123,9 +123,16 @@ CBChangesEveryFrame {
   XMFLOAT4 vMeshColor;
 };
 
+/**
+ * @enum ExtensionType
+ * @brief Represents supported image file extensions.
+ *
+ * This enumeration defines the types of image file extensions that can be handled by the engine.
+ * It is used to identify and process different image formats for textures and resources.
+ */
 enum 
 ExtensionType {
-  DDS = 0,
-  PNG = 1,
-  JPG = 2
+  DDS = 0, ///< DirectDraw Surface (DDS) image format.
+  PNG = 1, ///< Portable Network Graphics (PNG) image format.
+  JPG = 2  ///< JPEG (JPG) image format.
 };

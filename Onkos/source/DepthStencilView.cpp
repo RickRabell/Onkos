@@ -22,8 +22,8 @@ DepthStencilView::init(Device& device, Texture& depthStencil, DXGI_FORMAT format
 
 	// Create depth stencil view
 	HRESULT hr = device.m_device->CreateDepthStencilView(depthStencil.m_texture,
-		&descDSV,
-		&m_depthStencilView);
+																											 &descDSV,
+																											 &m_depthStencilView);
 
 	if (FAILED(hr)) {
 		ERROR("DepthStencilView", "init",
@@ -32,11 +32,6 @@ DepthStencilView::init(Device& device, Texture& depthStencil, DXGI_FORMAT format
 	}
 
 	return S_OK;
-}
-
-void
-DepthStencilView::update() {
-
 }
 
 void

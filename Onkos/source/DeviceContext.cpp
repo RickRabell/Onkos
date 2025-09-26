@@ -67,18 +67,23 @@ DeviceContext::IASetVertexBuffers(	unsigned int StartSlot,
 																		const unsigned int* pOffsets) {
 	// Validar los parámetros de entrada
 	if(!ppVertexBuffers || !pStrides || !pOffsets) {
-		ERROR("DeviceContext", "IASetVertexBuffers", "Invalid Arguments: ppVertexBuffers, pStrides or pOffsets is nullptr");
+		ERROR("DeviceContext", "IASetVertexBuffers", 
+					"Invalid Arguments: ppVertexBuffers, pStrides or pOffsets is nullptr");
 		return;
 	}
 
 	// Asignar los vertex buffers al Input Assembler
-	m_deviceContext->IASetVertexBuffers(StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
+	m_deviceContext->IASetVertexBuffers(StartSlot, 
+																		  NumBuffers, 
+																			ppVertexBuffers, 
+																			pStrides, 
+																			pOffsets);
 }
 
 void 
-DeviceContext::IASetIndexBuffer(  ID3D11Buffer* pIndexBuffer,
-																	DXGI_FORMAT Format,
-																	unsigned int Offset) {
+DeviceContext::IASetIndexBuffer(ID3D11Buffer* pIndexBuffer,
+																DXGI_FORMAT Format,
+																unsigned int Offset) {
 	// Validar los parámetros de entrada
 	if(!pIndexBuffer) {
 		ERROR("DeviceContext", "IASetIndexBuffer", "pIndexBuffer is nullptr");
@@ -89,21 +94,24 @@ DeviceContext::IASetIndexBuffer(  ID3D11Buffer* pIndexBuffer,
 	m_deviceContext->IASetIndexBuffer(pIndexBuffer, Format, Offset);
 }
 
-void 
-DeviceContext::UpdateSubresource( ID3D11Resource* pDstResource,
-																	unsigned int DstSubresource,
-																	const D3D11_BOX* pDstBox,
-																	const void* pSrcData,
-																	unsigned int SrcRowPitch,
-																	unsigned int SrcDepthPitch) {
-	// Validar los parámetros de entrada
+void
+DeviceContext::UpdateSubresource(ID3D11Resource* pDstResource,
+																 unsigned int DstSubresource,
+																 const D3D11_BOX* pDstBox,
+																 const void* pSrcData,
+																 unsigned int SrcRowPitch,
+																 unsigned int SrcDepthPitch) {
 	if (!pDstResource || !pSrcData) {
-		ERROR("DeviceContext", "UpdateSubresource", "Invalid Arguments: pDstResource or pSrcData is nullptr");
+		ERROR("DeviceContext", "UpdateSubresource",
+					"Invalid arguments: pDstResource or pSrcData is nullptr");
 		return;
 	}
-
-	// Asignar los render targets y el depth stencil
-	m_deviceContext->UpdateSubresource(pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
+	m_deviceContext->UpdateSubresource(pDstResource,
+																		 DstSubresource,
+																		 pDstBox,
+																		 pSrcData,
+																		 SrcRowPitch,
+																		 SrcDepthPitch);
 }
 
 void
@@ -129,7 +137,8 @@ void
 DeviceContext::IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY Topology) {
 	// Validar al parámetro topology
 	if(Topology == D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED) {
-		ERROR("DeviceContext", "IASetPrimitiveTopology", "Topology is D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED");
+		ERROR("DeviceContext", "IASetPrimitiveTopology", 
+					"Topology is D3D11_PRIMITIVE_TOPOLOGY_UNDEFINED");
 		return;
 	}
 
@@ -140,7 +149,8 @@ DeviceContext::IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY Topology) {
 void
 DeviceContext::PSSetShaderResources(unsigned int StartSlot,
 																		unsigned int NumViews,
-																		ID3D11ShaderResourceView* const* ppShaderResourceViews) {
+																		ID3D11ShaderResourceView* 
+																		const* ppShaderResourceViews) {
 	// Validar parámetros de entrada
 	if (!ppShaderResourceViews) {
 		ERROR("DeviceContext", "PSSetShaderResources", "ppShaderResourceViews is nullptr");

@@ -129,7 +129,10 @@ Device::CreateVertexShader( const void* pShaderBytecode,
   }
 
 	// Crear el Vertex Shader
-  HRESULT hr = m_device->CreateVertexShader(pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
+  HRESULT hr = m_device->CreateVertexShader(pShaderBytecode, 
+                                            BytecodeLength, 
+                                            pClassLinkage, 
+                                            ppVertexShader);
 
   if (SUCCEEDED(hr)) {
     MESSAGE("Device", "CreateVertexShader",
@@ -143,7 +146,11 @@ Device::CreateVertexShader( const void* pShaderBytecode,
   return hr;
 }
 
-HRESULT Device::CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, UINT NumElements, const void* pShaderBytecodeWithInputSignature, SIZE_T BytecodeLength, ID3D11InputLayout** ppInputLayout)
+HRESULT Device::CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs, 
+                                  UINT NumElements, 
+                                  const void* pShaderBytecodeWithInputSignature, 
+                                  SIZE_T BytecodeLength, 
+                                  ID3D11InputLayout** ppInputLayout)
 {
   // Validar parametros de entrada
   if (!pInputElementDescs) {
@@ -174,7 +181,10 @@ HRESULT Device::CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementD
   return hr;
 }
 
-HRESULT Device::CreatePixelShader(const void* pShaderBytecode, SIZE_T BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
+HRESULT Device::CreatePixelShader(const void* pShaderBytecode, 
+                                  SIZE_T BytecodeLength, 
+                                  ID3D11ClassLinkage* pClassLinkage, 
+                                  ID3D11PixelShader** ppPixelShader)
 {
   // Validar parametros de entrada
   if (!pShaderBytecode) {
@@ -204,7 +214,9 @@ HRESULT Device::CreatePixelShader(const void* pShaderBytecode, SIZE_T BytecodeLe
   return hr;
 }
 
-HRESULT Device::CreateBuffer(const D3D11_BUFFER_DESC* pDesc, const D3D11_SUBRESOURCE_DATA* pInitialData, ID3D11Buffer** ppBuffer)
+HRESULT Device::CreateBuffer(const D3D11_BUFFER_DESC* pDesc, 
+                             const D3D11_SUBRESOURCE_DATA* pInitialData, 
+                             ID3D11Buffer** ppBuffer)
 {
   // Validar parametros de entrada
   if (!pDesc) {
@@ -232,7 +244,8 @@ HRESULT Device::CreateBuffer(const D3D11_BUFFER_DESC* pDesc, const D3D11_SUBRESO
   return hr;
 }
 
-HRESULT Device::CreateSamplerState(const D3D11_SAMPLER_DESC* pSamplerDesc, ID3D11SamplerState** ppSamplerState)
+HRESULT Device::CreateSamplerState(const D3D11_SAMPLER_DESC* pSamplerDesc, 
+                                   ID3D11SamplerState** ppSamplerState)
 {
   // Validar parametros de entrada
   if (!pSamplerDesc) {

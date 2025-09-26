@@ -38,18 +38,21 @@ SwapChain::init(Device& device,
 	unsigned int numFeatureLevels = ARRAYSIZE(featureLevels);
 
 	//Create the Device
-	for (unsigned int driverTypeIndex = 0; driverTypeIndex < numDriverTypes; driverTypeIndex++) {
+	for (unsigned int driverTypeIndex = 0; 
+			 driverTypeIndex < numDriverTypes; 
+			 driverTypeIndex++) {
+
 		D3D_DRIVER_TYPE driverType = driverTypes[driverTypeIndex];
 		hr = D3D11CreateDevice(nullptr,
-			driverType,
-			nullptr,
-			createDeviceFlags,
-			featureLevels,
-			numFeatureLevels,
-			D3D11_SDK_VERSION,
-			&device.m_device,
-			&m_featureLevel,
-			&deviceContext.m_deviceContext);
+													 driverType,
+													 nullptr,
+													 createDeviceFlags,
+													 featureLevels,
+													 numFeatureLevels,
+													 D3D11_SDK_VERSION,
+													 &device.m_device,
+													 &m_featureLevel,
+													 &deviceContext.m_deviceContext);
 
 		if (SUCCEEDED(hr)) {
 			MESSAGE("SwapChain", "init", "Device created successfully.");
@@ -72,7 +75,8 @@ SwapChain::init(Device& device,
 
 	if (FAILED(hr) || m_qualityLevels == 0) {
 		ERROR("SwapChain", "init",
-			("MSAA not supported or invalid quality level. HRESULT: " + std::to_string(hr)).c_str());
+				 ("MSAA not supported or invalid quality level. HRESULT: " 
+				  + std::to_string(hr)).c_str());
 		return hr;
 	}
 

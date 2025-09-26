@@ -75,7 +75,7 @@ public:
 	void
 	present();
 
-private:
+public:
 	/** 
 		* @brief The core DirectX Graphics Infrastructure (DXGI) swap chain object. 
 		*/
@@ -85,6 +85,8 @@ private:
 		* @brief The driver type used for the device (e.g., Hardware, Reference). 
 		*/
 	D3D_DRIVER_TYPE m_driverType = D3D_DRIVER_TYPE_NULL;
+
+private:
 
 	/** 
 		* @brief The DirectX feature level supported by the hardware (e.g., 11_0). 

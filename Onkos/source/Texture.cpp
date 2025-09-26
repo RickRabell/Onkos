@@ -15,14 +15,14 @@ Texture::init(Device& device,
 							unsigned int height,
 							DXGI_FORMAT format,
 							unsigned int bindFlags,
-							unsigned int sampleCount = 1,
-							unsigned int qualityLevels = 0) {
+							unsigned int sampleCount,
+							unsigned int qualityLevels) {
 	if (!device.m_device) {
 		ERROR("Texture", "init", "Device is null.");
 		return E_POINTER;
 	}
 	if(width == 0 || height == 0) {
-		ERROR("tEXTURE", "INIT", "Width and height must be greater than 0.");
+		ERROR("Texture", "init", "Width and height must be greater than 0.");
 		E_INVALIDARG;
 	}
 
@@ -50,7 +50,7 @@ Texture::init(Device& device,
 		return hr;
 	}
 
-	return E_NOTIMPL;
+	return S_OK;
 }
 
 HRESULT
@@ -71,8 +71,9 @@ Texture::init(Device& device, Texture& textureRef, DXGI_FORMAT format) {
 	srvDesc.Texture2D.MostDetailedMip = 0;
 	srvDesc.Texture2D.MipLevels = 1;
 
-	HRESULT hr = device.m_device->CreateShaderResourceView(
-							 textureRef.m_texture, &srvDesc, &m_textureFromImg);
+	HRESULT hr = device.m_device->CreateShaderResourceView(textureRef.m_texture, 
+																												 &srvDesc, 
+																												 &m_textureFromImg);
 
 	if (FAILED(hr)) {
 		ERROR("Texture", "init", 

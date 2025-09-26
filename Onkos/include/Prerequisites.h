@@ -4,7 +4,6 @@
  * @file Prerequisites.h
  * @brief A precompiled header file for the engine.
  * @author Ricardo Rabell
- * @version 1.0
  * @date 2025-09-05
  *
  * This file includes commonly used headers from the Standard Library, Windows API,

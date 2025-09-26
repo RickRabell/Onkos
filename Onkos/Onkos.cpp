@@ -34,9 +34,9 @@ DepthStencilView                    g_depthStencilView;
 //ID3D11Device*                       g_device.m_device = NULL;
 //ID3D11DeviceContext*                g_deviceContext.m_deviceContext = NULL;
 //IDXGISwapChain*                     g_pSwapChain = NULL;
-ID3D11RenderTargetView*             g_pRenderTargetView = NULL;
-ID3D11Texture2D*                    g_pDepthStencil = NULL;
-ID3D11DepthStencilView*             g_pDepthStencilView = NULL;
+//ID3D11RenderTargetView*             g_pRenderTargetView = NULL;
+//ID3D11Texture2D*                    g_pDepthStencil = NULL;
+//ID3D11DepthStencilView*             g_pDepthStencilView = NULL;
 ID3D11VertexShader*                 g_pVertexShader = NULL;
 ID3D11PixelShader*                  g_pPixelShader = NULL;
 ID3D11InputLayout*                  g_pVertexLayout = NULL;
@@ -67,7 +67,10 @@ void Render();
 // Entry point to the program. Initializes everything and goes into a message processing 
 // loop. Idle time is used to render the scene.
 //--------------------------------------------------------------------------------------
-int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow )
+int WINAPI wWinMain(HINSTANCE hInstance, 
+                    HINSTANCE hPrevInstance, 
+                    LPWSTR lpCmdLine, 
+                    int nCmdShow )
 {
     UNREFERENCED_PARAMETER( hPrevInstance );
     UNREFERENCED_PARAMETER( lpCmdLine );
@@ -144,7 +147,10 @@ HRESULT InitWindow(HINSTANCE hInstance, int nCmdShow)
 //--------------------------------------------------------------------------------------
 // Helper for compiling shaders with D3DX11
 //--------------------------------------------------------------------------------------
-HRESULT CompileShaderFromFile( char* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel, ID3DBlob** ppBlobOut )
+HRESULT CompileShaderFromFile(char* szFileName, 
+                              LPCSTR szEntryPoint, 
+                              LPCSTR szShaderModel, 
+                              ID3DBlob** ppBlobOut )
 {
     HRESULT hr = S_OK;
 
@@ -253,10 +259,17 @@ HRESULT InitDevice()
     }
 
     // Create a render target view
-    hr = g_device.m_device->CreateRenderTargetView(pBackBuffer, NULL, &g_pRenderTargetView);
-    if (FAILED(hr))
-      return hr;
+    hr = g_renderTargetView.init(g_device, g_backBuffer, DXGI_FORMAT_R8G8B8A8_UNORM);
 
+    if (FAILED(hr))
+    {
+      ERROR("Main", "InitDevice",
+				   ("Failed to initialize RenderTargetView. HRESULT: " 
+            + std::to_string(hr)).c_str());
+      return hr;
+    }
+
+    /*
     // Create depth stencil texture
     D3D11_TEXTURE2D_DESC descDepth;
     ZeroMemory( &descDepth, sizeof(descDepth) );
@@ -286,6 +299,34 @@ HRESULT InitDevice()
         return hr;
 
     g_deviceContext.m_deviceContext->OMSetRenderTargets( 1, &g_pRenderTargetView, g_pDepthStencilView );
+    */
+
+    // Create depth stencil texture
+    hr = g_depthStencil.init(g_device,
+                             g_window.m_width,
+                             g_window.m_height,
+                             DXGI_FORMAT_D24_UNORM_S8_UINT,
+                             D3D11_BIND_DEPTH_STENCIL,
+                             4,
+                             0);
+
+    if (FAILED(hr)) {
+      ERROR("Main", "InitDevice",
+           ("Failed to initialize DepthStencil. HRESULT: " + std::to_string(hr)).c_str());
+			return hr;
+    }
+
+    // Crete the depth stencil view
+    hr = g_depthStencilView.init(g_device,
+                                 g_depthStencil,
+                                 DXGI_FORMAT_D24_UNORM_S8_UINT);
+
+    if (FAILED(hr)) {
+      ERROR("Main", "InitDevice",
+				   ("Failed to initialize DepthStencilView. HRESULT: " 
+            + std::to_string(hr)).c_str());
+      return hr;
+    }
 
     // Setup the viewport
     D3D11_VIEWPORT vp;
@@ -303,12 +344,17 @@ HRESULT InitDevice()
     if( FAILED( hr ) )
     {
         MessageBox( NULL,
-                    "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", "Error", MB_OK );
+                    "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", 
+                    "Error", 
+                    MB_OK );
         return hr;
     }
 
     // Create the vertex shader
-    hr = g_device.m_device->CreateVertexShader( pVSBlob->GetBufferPointer(), pVSBlob->GetBufferSize(), NULL, &g_pVertexShader );
+    hr = g_device.m_device->CreateVertexShader(pVSBlob->GetBufferPointer(), 
+                                               pVSBlob->GetBufferSize(), 
+                                               NULL, 
+                                               &g_pVertexShader );
     if( FAILED( hr ) )
     {    
         pVSBlob->Release();
@@ -318,14 +364,17 @@ HRESULT InitDevice()
     // Define the input layout
     D3D11_INPUT_ELEMENT_DESC layout[] =
     {
-        { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
-        { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+      { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
+      { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
     };
     UINT numElements = ARRAYSIZE( layout );
 
     // Create the input layout
-    hr = g_device.m_device->CreateInputLayout( layout, numElements, pVSBlob->GetBufferPointer(),
-                                          pVSBlob->GetBufferSize(), &g_pVertexLayout );
+    hr = g_device.m_device->CreateInputLayout(layout, 
+                                              numElements, 
+                                              pVSBlob->GetBufferPointer(),
+                                              pVSBlob->GetBufferSize(), 
+                                              &g_pVertexLayout );
     pVSBlob->Release();
     if( FAILED( hr ) )
         return hr;
@@ -338,13 +387,18 @@ HRESULT InitDevice()
     hr = CompileShaderFromFile( "Onkos.fx", "PS", "ps_4_0", &pPSBlob );
     if( FAILED( hr ) )
     {
-        MessageBox( NULL,
-                    "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", "Error", MB_OK );
+        MessageBox(NULL,
+                   "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", 
+                   "Error", 
+                   MB_OK );
         return hr;
     }
 
     // Create the pixel shader
-    hr = g_device.m_device->CreatePixelShader( pPSBlob->GetBufferPointer(), pPSBlob->GetBufferSize(), NULL, &g_pPixelShader );
+    hr = g_device.m_device->CreatePixelShader(pPSBlob->GetBufferPointer(), 
+                                              pPSBlob->GetBufferSize(), 
+                                              NULL, 
+                                              &g_pPixelShader );
     pPSBlob->Release();
     if( FAILED( hr ) )
         return hr;
@@ -399,7 +453,11 @@ HRESULT InitDevice()
     // Set vertex buffer
     UINT stride = sizeof( SimpleVertex );
     UINT offset = 0;
-    g_deviceContext.m_deviceContext->IASetVertexBuffers( 0, 1, &g_pVertexBuffer, &stride, &offset );
+    g_deviceContext.m_deviceContext->IASetVertexBuffers(0, 
+                                                        1, 
+                                                        &g_pVertexBuffer, 
+                                                        &stride, 
+                                                        &offset );
 
     // Create index buffer
     // Create vertex buffer
@@ -434,10 +492,12 @@ HRESULT InitDevice()
         return hr;
 
     // Set index buffer
-    g_deviceContext.m_deviceContext->IASetIndexBuffer( g_pIndexBuffer, DXGI_FORMAT_R16_UINT, 0 );
+    g_deviceContext.m_deviceContext->IASetIndexBuffer(g_pIndexBuffer, 
+                                                      DXGI_FORMAT_R16_UINT, 
+                                                      0 );
 
     // Set primitive topology
-    g_deviceContext.m_deviceContext->IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST );
+    g_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
     // Create the constant buffers
     bd.Usage = D3D11_USAGE_DEFAULT;
@@ -459,7 +519,12 @@ HRESULT InitDevice()
         return hr;
 
     // Load the Texture
-    hr = D3DX11CreateShaderResourceViewFromFile( g_device.m_device, "seafloor.dds", NULL, NULL, &g_pTextureRV, NULL );
+    hr = D3DX11CreateShaderResourceViewFromFile( g_device.m_device, 
+                                                 "seafloor.dds", 
+                                                 NULL, 
+                                                 NULL, 
+                                                 &g_pTextureRV, 
+                                                 NULL );
     if( FAILED( hr ) )
         return hr;
 
@@ -488,14 +553,27 @@ HRESULT InitDevice()
 
     CBNeverChanges cbNeverChanges;
     cbNeverChanges.mView = XMMatrixTranspose( g_View );
-    g_deviceContext.m_deviceContext->UpdateSubresource( g_pCBNeverChanges, 0, NULL, &cbNeverChanges, 0, 0 );
+    g_deviceContext.m_deviceContext->UpdateSubresource(g_pCBNeverChanges, 
+                                                       0, 
+                                                       NULL, 
+                                                       &cbNeverChanges, 
+                                                       0, 
+                                                       0);
 
     // Initialize the projection matrix
-    g_Projection = XMMatrixPerspectiveFovLH( XM_PIDIV4, g_window.m_width / (FLOAT)g_window.m_height, 0.01f, 100.0f );
+    g_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, 
+                                            g_window.m_width / (FLOAT)g_window.m_height, 
+                                            0.01f, 
+                                            100.0f);
     
     CBChangeOnResize cbChangesOnResize;
     cbChangesOnResize.mProjection = XMMatrixTranspose( g_Projection );
-    g_deviceContext.m_deviceContext->UpdateSubresource( g_pCBChangeOnResize, 0, NULL, &cbChangesOnResize, 0, 0 );
+    g_deviceContext.m_deviceContext->UpdateSubresource(g_pCBChangeOnResize, 
+                                                       0, 
+                                                       NULL, 
+                                                       &cbChangesOnResize, 
+                                                       0, 
+                                                       0 );
 
     return S_OK;
 }
@@ -518,14 +596,15 @@ void CleanupDevice()
     if( g_pVertexLayout ) g_pVertexLayout->Release();
     if( g_pVertexShader ) g_pVertexShader->Release();
     if( g_pPixelShader ) g_pPixelShader->Release();
-    if( g_pDepthStencil ) g_pDepthStencil->Release();
-    if( g_pDepthStencilView ) g_pDepthStencilView->Release();
-    if( g_pRenderTargetView ) g_pRenderTargetView->Release();
-    //if( g_pSwapChain ) g_pSwapChain->Release();
+    
+    g_depthStencil.destroy();
+    g_depthStencilView.destroy();
+		g_renderTargetView.destroy();
     g_swapChain.destroy();
     g_backBuffer.destroy();
-    if( g_deviceContext.m_deviceContext ) g_deviceContext.m_deviceContext->Release();
+    g_deviceContext.destroy();
 		g_device.destroy();
+    //if( g_deviceContext.m_deviceContext ) g_deviceContext.m_deviceContext->Release();
     //if( g_device.m_device ) g_device.m_device->Release();
 }
 
@@ -564,7 +643,7 @@ void Render()
 {
     // Update our time
     static float t = 0.0f;
-    if( g_driverType == D3D_DRIVER_TYPE_REFERENCE )
+    if( g_swapChain.m_driverType == D3D_DRIVER_TYPE_REFERENCE )
     {
         t += ( float )XM_PI * 0.0125f;
     }
@@ -580,6 +659,47 @@ void Render()
     // Rotate cube around the origin
     g_World = XMMatrixRotationY( t );
 
+    // Modify the color
+    g_vMeshColor.x = (sinf(t * 1.0f) + 1.0f) * 0.5f;
+    g_vMeshColor.y = (cosf(t * 3.0f) + 1.0f) * 0.5f;
+    g_vMeshColor.z = (sinf(t * 5.0f) + 1.0f) * 0.5f;
+
+    // Set Render Target View
+    float ClearColor[4] = { 0.1f, 0.1f, 0.1f, 1.0f };
+    g_renderTargetView.render(g_deviceContext, g_depthStencilView, 1, ClearColor);
+
+    // Set Viewport
+
+    // Set depth stencil view
+    g_depthStencilView.render(g_deviceContext);
+
+    //
+    // Update variables that change once per frame
+    //
+    CBChangesEveryFrame cb;
+    cb.mWorld = XMMatrixTranspose(g_World);
+    cb.vMeshColor = g_vMeshColor;
+    g_deviceContext.UpdateSubresource(g_pCBChangesEveryFrame, 0, NULL, &cb, 0, 0);
+
+    //
+    // Render the cube
+    //
+    g_deviceContext.VSSetShader(g_pVertexShader, NULL, 0);
+    g_deviceContext.VSSetConstantBuffers(0, 1, &g_pCBNeverChanges);
+    g_deviceContext.VSSetConstantBuffers(1, 1, &g_pCBChangeOnResize);
+    g_deviceContext.VSSetConstantBuffers(2, 1, &g_pCBChangesEveryFrame);
+    g_deviceContext.PSSetShader(g_pPixelShader, NULL, 0);
+    g_deviceContext.PSSetConstantBuffers(2, 1, &g_pCBChangesEveryFrame);
+    g_deviceContext.PSSetShaderResources(0, 1, &g_pTextureRV);
+    g_deviceContext.PSSetSamplers(0, 1, &g_pSamplerLinear);
+    g_deviceContext.DrawIndexed(36, 0, 0);
+
+    //
+    // Present our back buffer to our front buffer
+    //
+    g_swapChain.present();
+
+    /*
     // Modify the color
     g_vMeshColor.x = ( sinf( t * 1.0f ) + 1.0f ) * 0.5f;
     g_vMeshColor.y = ( cosf( t * 3.0f ) + 1.0f ) * 0.5f;
@@ -620,5 +740,5 @@ void Render()
     //
     // Present our back buffer to our front buffer
     //
-    g_swapChain->Present( 0, 0 );
+    g_swapChain->Present( 0, 0 );*/
 }

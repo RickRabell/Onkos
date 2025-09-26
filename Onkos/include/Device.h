@@ -11,7 +11,8 @@
  * creating resources such as textures, buffers, and shaders. It acts as a factory
  * for all GPU resources within the engine.
  */
-class Device {
+class 
+Device {
 public:
 	/**
 	 * @brief Default constructor.
@@ -23,24 +24,19 @@ public:
 	~Device() = default;
 
 	/**
-	 * @brief Initializes the underlying D3D11 device.
-	 * @todo Implementation details should be added.
+	 * @brief Initializes the underlying D3D11 device
 	 */
 	void
 	init();
 
 	/**
 	 * @brief Handles device-specific updates per frame.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	update();
 
 	/**
 	 * @brief Handles device-specific rendering tasks.
-	 * @note This is likely a placeholder, as most rendering commands are issued
-	 * via the DeviceContext.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	render();
@@ -60,9 +56,9 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createrendertargetview
 	 */
 	HRESULT
-	CreateRenderTargetView(	ID3D11Resource* pResource,
-													const D3D11_RENDER_TARGET_VIEW_DESC* pDesc,
-													ID3D11RenderTargetView** ppRTView);
+	CreateRenderTargetView(ID3D11Resource* pResource,
+												 const D3D11_RENDER_TARGET_VIEW_DESC* pDesc,
+												 ID3D11RenderTargetView** ppRTView);
 
 	/**
 	 * @brief Creates a 2D texture.
@@ -73,9 +69,9 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createtexture2d
 	 */
 	HRESULT
-	CreateTexture2D(	const D3D11_TEXTURE2D_DESC* pDesc,
-										const D3D11_SUBRESOURCE_DATA* pInitialData,
-										ID3D11Texture2D** ppTexture2D);
+	CreateTexture2D(const D3D11_TEXTURE2D_DESC* pDesc,
+									const D3D11_SUBRESOURCE_DATA* pInitialData,
+									ID3D11Texture2D** ppTexture2D);
 
 	/**
 	 * @brief Creates a depth-stencil view for accessing resource data.
@@ -86,9 +82,9 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createdepthstencilview
 	 */
 	HRESULT
-	CreateDepthStencilView(	ID3D11Resource* pResource,
-													const D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc,
-													ID3D11DepthStencilView** ppDepthStencilView);
+	CreateDepthStencilView(ID3D11Resource* pResource,
+												 const D3D11_DEPTH_STENCIL_VIEW_DESC* pDesc,
+												 ID3D11DepthStencilView** ppDepthStencilView);
 
 	/**
 	 * @brief Creates a vertex shader from a compiled shader.
@@ -100,10 +96,10 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createvertexshader
 	 */
 	HRESULT
-	CreateVertexShader(	const void* pShaderBytecode,
-											SIZE_T BytecodeLength,
-											ID3D11ClassLinkage* pClassLinkage,
-											ID3D11VertexShader** ppVertexShader);
+	CreateVertexShader(const void* pShaderBytecode,
+										 SIZE_T BytecodeLength,
+										 ID3D11ClassLinkage* pClassLinkage,
+										 ID3D11VertexShader** ppVertexShader);
 
 	/**
 	 * @brief Creates an input-layout object to describe the input-buffer data for the input-assembler stage.
@@ -116,11 +112,11 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createinputlayout
 	 */
 	HRESULT
-	CreateInputLayout(	const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs,
-											UINT NumElements,
-											const void* pShaderBytecodeWithInputSignature,
-											SIZE_T BytecodeLength,
-											ID3D11InputLayout** ppInputLayout);
+	CreateInputLayout(const D3D11_INPUT_ELEMENT_DESC* pInputElementDescs,
+										UINT NumElements,
+										const void* pShaderBytecodeWithInputSignature,
+										SIZE_T BytecodeLength,
+										ID3D11InputLayout** ppInputLayout);
 
 	/**
 	 * @brief Creates a pixel shader from a compiled shader.
@@ -132,10 +128,10 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createpixelshader
 	 */
 	HRESULT
-	CreatePixelShader(	const void* pShaderBytecode,
-											SIZE_T BytecodeLength,
-											ID3D11ClassLinkage* pClassLinkage,
-											ID3D11PixelShader** ppPixelShader);
+	CreatePixelShader(const void* pShaderBytecode,
+										SIZE_T BytecodeLength,
+										ID3D11ClassLinkage* pClassLinkage,
+										ID3D11PixelShader** ppPixelShader);
 
 	/**
 	 * @brief Creates a buffer (vertex, index, or constant).
@@ -146,9 +142,9 @@ public:
 	 * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11device-createbuffer
 	 */
 	HRESULT
-	CreateBuffer( const D3D11_BUFFER_DESC* pDesc,
-								const D3D11_SUBRESOURCE_DATA* pInitialData,
-								ID3D11Buffer** ppBuffer);
+	CreateBuffer(const D3D11_BUFFER_DESC* pDesc,
+							 const D3D11_SUBRESOURCE_DATA* pInitialData,
+						 	 ID3D11Buffer** ppBuffer);
 
 	/**
 	* @brief Creates a sampler-state object that encapsulates sampling information for a texture.
@@ -158,8 +154,8 @@ public:
 	* @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3D11-id3d11device-createsamplerstate
 	*/
 	HRESULT 
-	CreateSamplerState( const D3D11_SAMPLER_DESC* pSamplerDesc,
-											ID3D11SamplerState** ppSamplerState);
+	CreateSamplerState(const D3D11_SAMPLER_DESC* pSamplerDesc,
+										 ID3D11SamplerState** ppSamplerState);
 
 public:
 	/**

@@ -44,9 +44,6 @@ public:
 
 	/**
 	 * @brief Handles window-specific rendering tasks.
-	 * * @note This is likely a placeholder, as rendering is typically managed by
-	 * a dedicated Graphics or Renderer class.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	render();

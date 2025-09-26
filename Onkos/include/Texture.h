@@ -49,13 +49,13 @@ public:
 	 * @return HRESULT Returns S_OK if successful, otherwise an error code.
 	 */
 	HRESULT
-	init(	Device& device, 
-				unsigned int width, 
-				unsigned int height, 
-				DXGI_FORMAT format, 
-				unsigned int bindFlags, 
-				unsigned int sampleCount = 1, 
-				unsigned int qualityLevels = 0	);
+	init(Device& device, 
+			 unsigned int width, 
+			 unsigned int height, 
+			 DXGI_FORMAT format, 
+			 unsigned int bindFlags, 
+			 unsigned int sampleCount = 1, 
+			 unsigned int qualityLevels = 0	);
 
 	/**
 	 * @brief Initializes a texture based on an existing texture resource.
@@ -72,7 +72,6 @@ public:
 	/**
 	 * @brief Per-frame update logic for the texture.
 	 * @note Can be used for animated textures or other dynamic effects.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	update();

@@ -11,7 +11,8 @@
  * for generating rendering commands. It sets pipeline state and issues drawing
  * calls to the GPU.
  */
-class DeviceContext {
+class 
+DeviceContext {
 public:
   /**
    * @brief Default constructor.
@@ -24,21 +25,18 @@ public:
 	
   /**
    * @brief Initializes the underlying D3D11 device context.
-   * @todo Implementation details should be added.
    */
 	void
 	init();
 
   /**
    * @brief Handles per-frame updates that require the device context, like updating buffers.
-   * @todo Implementation details should be added.
    */
   void
   update();
 
   /**
    * @brief Main render loop entry point. Executes rendering commands for a frame.
-   * @todo Implementation details should be added.
    */
 	void
 	render();
@@ -57,9 +55,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets
    */
 	void
-	OMSetRenderTargets( unsigned int NumViews, 
-											ID3D11RenderTargetView* const* ppRenderTargetViews,
-											ID3D11DepthStencilView* pDepthStencilView);
+	OMSetRenderTargets(unsigned int NumViews, 
+										 ID3D11RenderTargetView* const* ppRenderTargetViews,
+										 ID3D11DepthStencilView* pDepthStencilView);
 	
   /**
    * @brief Bind an array of viewports to the rasterizer stage of the pipeline.
@@ -68,8 +66,8 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports
    */
 	void
-	RSSetViewports( unsigned int NumViewports,
-									const D3D11_VIEWPORT* pViewports);
+	RSSetViewports(unsigned int NumViewports,
+								 const D3D11_VIEWPORT* pViewports);
 
   /**
    * @brief Binds an input-layout object to the input-assembler stage.
@@ -77,7 +75,7 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout
    */
 	void
-	IASetInputLayout( ID3D11InputLayout* pInputLayout);
+	IASetInputLayout(ID3D11InputLayout* pInputLayout);
 
   /**
    * @brief Binds an array of vertex buffers to the input-assembler stage.
@@ -90,10 +88,10 @@ public:
    */
 	void
 	IASetVertexBuffers(unsigned int StartSlot,
-											unsigned int NumBuffers,
-											ID3D11Buffer* const* ppVertexBuffers,
-											const unsigned int* pStrides,
-											const unsigned int* pOffsets);
+										 unsigned int NumBuffers,
+										 ID3D11Buffer* const* ppVertexBuffers,
+										 const unsigned int* pStrides,
+										 const unsigned int* pOffsets);
 
   /**
    * @brief Binds an index buffer to the input-assembler stage.
@@ -103,35 +101,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer
    */
 	void 
-	IASetIndexBuffer(	ID3D11Buffer* pIndexBuffer,
-										DXGI_FORMAT Format,
-										unsigned int Offset);
-
-  /**
-   * @brief The CPU copies data from memory to a subresource created in non-mappable memory.
-   * @param pDstResource A pointer to the destination resource.
-   * @param DstSubresource A zero-based index, that identifies the destination subresource.
-   * @param pDstBox A pointer to a box that defines the portion of the destination subresource to copy the resource data into.
-   * @param pSrcData A pointer to the source data in memory.
-   * @param SrcRowPitch The size of one row of the source data.
-   * @param SrcDepthPitch The size of one depth slice of the source data.
-   * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource
-   */
-  void 
-	UpdateSubresource(  ID3D11Resource* pDstResource,
-											unsigned int DstSubresource,
-											const D3D11_BOX* pDstBox,
-											const void* pSrcData,
-											unsigned int SrcRowPitch,
-											unsigned int SrcDepthPitch);
-
-  /**
-   * @brief Binds information about the primitive type, and data order that describes input data for the input assembler stage.
-   * @param Topology The type of primitive to be rendered.
-   * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology
-   */
-	void
-	IASetPrimitiveTopology( D3D11_PRIMITIVE_TOPOLOGY Topology );
+	IASetIndexBuffer(ID3D11Buffer* pIndexBuffer,
+									 DXGI_FORMAT Format,
+									 unsigned int Offset);
 
   /**
    * @brief The CPU copies data from memory to a subresource created in non-mappable memory.
@@ -144,12 +116,20 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource
    */
   void
-  UpdateSubresource(  ID3D11Resource* pDstResource,
-                      unsigned int DstSubresource,
-                      const D3D11_BOX* pDstBox,
-                      const void* pSrcData,
-                      unsigned int SrcRowPitch,
-                      unsigned int SrcDepthPitch);
+  UpdateSubresource(ID3D11Resource* pDstResource,
+                    unsigned int DstSubresource,
+                    const D3D11_BOX* pDstBox,
+                    const void* pSrcData,
+                    unsigned int SrcRowPitch,
+                    unsigned int SrcDepthPitch);
+
+  /**
+   * @brief Binds information about the primitive type, and data order that describes input data for the input assembler stage.
+   * @param Topology The type of primitive to be rendered.
+   * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology
+   */
+	void
+	IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY Topology );
 
   /**
    * @brief Sets all the elements in a render target to one value.
@@ -158,8 +138,8 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview
    */
   void
-  ClearRenderTargetView(  ID3D11RenderTargetView* pRenderTargetView,
-                          const FLOAT ColorRGBA[4]);
+  ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView,
+                        const FLOAT ColorRGBA[4]);
 
   /**
    * @brief Clears the depth-stencil resource.
@@ -170,10 +150,10 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview
    */
   void
-  ClearDepthStencilView(  ID3D11DepthStencilView* pDepthStencilView,
-                          unsigned int ClearFlags,
-                          FLOAT Depth,
-                          UINT8 Stencil);
+  ClearDepthStencilView(ID3D11DepthStencilView* pDepthStencilView,
+                        unsigned int ClearFlags,
+                        FLOAT Depth,
+                        UINT8 Stencil);
 
   /**
    * @brief Sets a vertex shader to the device.
@@ -183,9 +163,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader
    */
   void
-  VSSetShader(  ID3D11VertexShader* pVertexShader,
-                ID3D11ClassInstance* const* ppClassInstances,
-                unsigned int NumClassInstances);
+  VSSetShader(ID3D11VertexShader* pVertexShader,
+              ID3D11ClassInstance* const* ppClassInstances,
+              unsigned int NumClassInstances);
 
   /**
    * @brief Sets the constant buffers used by the vertex shader pipeline stage.
@@ -195,9 +175,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers
    */
   void
-  VSSetConstantBuffers( unsigned int StartSlot,
-                        unsigned int NumBuffers,
-                        ID3D11Buffer* const* ppConstantBuffers);
+  VSSetConstantBuffers(unsigned int StartSlot,
+                       unsigned int NumBuffers,
+                       ID3D11Buffer* const* ppConstantBuffers);
 
   /**
    * @brief Sets a pixel shader to the device.
@@ -207,9 +187,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader
    */
   void
-  PSSetShader(  ID3D11PixelShader* pPixelShader,
-                  ID3D11ClassInstance* const* ppClassInstances,
-                  unsigned int NumClassInstances);
+  PSSetShader(ID3D11PixelShader* pPixelShader,
+              ID3D11ClassInstance* const* ppClassInstances,
+              unsigned int NumClassInstances);
 
   /**
    * @brief Sets the constant buffers used by the pixel shader pipeline stage.
@@ -219,9 +199,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetconstantbuffers
    */
   void
-  PSSetConstantBuffers( unsigned int StartSlot,
-                          unsigned int NumBuffers,
-                          ID3D11Buffer* const* ppConstantBuffers);
+  PSSetConstantBuffers(unsigned int StartSlot,
+                       unsigned int NumBuffers,
+                       ID3D11Buffer* const* ppConstantBuffers);
 
   /**
    * @brief Binds an array of shader resources to the pixel shader stage.
@@ -231,9 +211,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources
    */
   void
-  PSSetShaderResources( unsigned int StartSlot,
-                        unsigned int NumViews,
-                        ID3D11ShaderResourceView* const* ppShaderResourceViews);
+  PSSetShaderResources(unsigned int StartSlot,
+                       unsigned int NumViews,
+                       ID3D11ShaderResourceView* const* ppShaderResourceViews);
 
   /**
    * @brief Sets an array of sampler states to the pixel shader pipeline stage.
@@ -243,9 +223,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-pssetsamplers
    */
   void
-  PSSetSamplers(  unsigned int StartSlot,
-                  unsigned int NumSamplers,
-                  ID3D11SamplerState* const* ppSamplers);
+  PSSetSamplers(unsigned int StartSlot,
+                unsigned int NumSamplers,
+                ID3D11SamplerState* const* ppSamplers);
 
   /**
    * @brief Draws indexed, non-instanced primitives.
@@ -255,9 +235,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed
    */
   void
-  DrawIndexed(  unsigned int IndexCount,
-                unsigned int StartIndexLocation,
-                INT BaseVertexLocation);
+  DrawIndexed(unsigned int IndexCount,
+              unsigned int StartIndexLocation,
+              int BaseVertexLocation);
 
   /**
    * @brief Sets the rasterizer state for the rasterizer stage of the pipeline.
@@ -265,7 +245,7 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-rssetstate
    */
   void
-  RSSetState( ID3D11RasterizerState* pRasterizerState );
+  RSSetState(ID3D11RasterizerState* pRasterizerState );
 
   /**
    * @brief Sets the blend state of the output-merger stage.
@@ -275,9 +255,9 @@ public:
    * @see https://docs.microsoft.com/en-us/windows/win32/api/d3d11/nf-d3d11-id3d11devicecontext-omsetblendstate
    */
   void
-  OMSetBlendState(  ID3D11BlendState* pBlendState,
-                    const float BlendFactor[4],
-                    unsigned int SampleMask);
+  OMSetBlendState(ID3D11BlendState* pBlendState,
+                  const float BlendFactor[4],
+                  unsigned int SampleMask);
 
 public:
   /**

@@ -14,6 +14,8 @@
 #include "Texture.h";
 #include "RenderTargetView.h"
 #include "DepthStencilView.h"
+#include "Viewport.h"
+#include "InputLayout.h"
 
 //--------------------------------------------------------------------------------------
 // Global Variables
@@ -28,18 +30,13 @@ Texture                             g_backBuffer;
 RenderTargetView                    g_renderTargetView;
 Texture														  g_depthStencil;
 DepthStencilView                    g_depthStencilView;
+Viewport                            g_viewport;
+InputLayout                         g_inputLayout;
 
-//D3D_DRIVER_TYPE                     g_driverType = D3D_DRIVER_TYPE_NULL;
-//D3D_FEATURE_LEVEL                   g_featureLevel = D3D_FEATURE_LEVEL_11_0;
-//ID3D11Device*                       g_device.m_device = NULL;
-//ID3D11DeviceContext*                g_deviceContext.m_deviceContext = NULL;
-//IDXGISwapChain*                     g_pSwapChain = NULL;
-//ID3D11RenderTargetView*             g_pRenderTargetView = NULL;
-//ID3D11Texture2D*                    g_pDepthStencil = NULL;
-//ID3D11DepthStencilView*             g_pDepthStencilView = NULL;
+
 ID3D11VertexShader*                 g_pVertexShader = NULL;
 ID3D11PixelShader*                  g_pPixelShader = NULL;
-ID3D11InputLayout*                  g_pVertexLayout = NULL;
+//ID3D11InputLayout*                  g_pVertexLayout = NULL;
 ID3D11Buffer*                       g_pVertexBuffer = NULL;
 ID3D11Buffer*                       g_pIndexBuffer = NULL;
 ID3D11Buffer*                       g_pCBNeverChanges = NULL;
@@ -328,15 +325,27 @@ HRESULT InitDevice()
       return hr;
     }
 
+    // Create the viewport
+    hr = g_viewport.init(g_window);
+
+    if (FAILED(hr)) {
+      ERROR("Main", "InitDevice", 
+           ("Failed to initialize Viewport. HRESULT: " + std::to_string(hr)).c_str());
+      return hr;
+    }
+
+    // Load Resources
+
+
     // Setup the viewport
-    D3D11_VIEWPORT vp;
-    vp.Width = (FLOAT)g_window.m_width;
-    vp.Height = (FLOAT)g_window.m_height;
-    vp.MinDepth = 0.0f;
-    vp.MaxDepth = 1.0f;
-    vp.TopLeftX = 0;
-    vp.TopLeftY = 0;
-    g_deviceContext.m_deviceContext->RSSetViewports( 1, &vp );
+    //D3D11_VIEWPORT vp;
+    //vp.Width = (FLOAT)g_window.m_width;
+    //vp.Height = (FLOAT)g_window.m_height;
+    //vp.MinDepth = 0.0f;
+    //vp.MaxDepth = 1.0f;
+    //vp.TopLeftX = 0;
+    //vp.TopLeftY = 0;
+    //g_deviceContext.m_deviceContext->RSSetViewports( 1, &vp );
 
     // Compile the vertex shader
     ID3DBlob* pVSBlob = NULL;
@@ -362,25 +371,57 @@ HRESULT InitDevice()
     }
 
     // Define the input layout
+    std::vector<D3D11_INPUT_ELEMENT_DESC> layout;
+    D3D11_INPUT_ELEMENT_DESC position;
+    position.SemanticName = "POSITION";
+    position.SemanticIndex = 0;
+    position.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+    position.InputSlot = 0;
+    position.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT /*0*/;
+    position.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+    position.InstanceDataStepRate = 0;
+    layout.push_back(position);
+
+    D3D11_INPUT_ELEMENT_DESC texcoord;
+    texcoord.SemanticName = "TEXCOORD";
+    texcoord.SemanticIndex = 0;
+    texcoord.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+    texcoord.InputSlot = 0;
+    texcoord.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT /*0*/;
+    texcoord.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+    texcoord.InstanceDataStepRate = 0;
+    layout.push_back(texcoord);
+
+   /*
     D3D11_INPUT_ELEMENT_DESC layout[] =
     {
       { "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },
       { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },
     };
     UINT numElements = ARRAYSIZE( layout );
+    */
 
     // Create the input layout
-    hr = g_device.m_device->CreateInputLayout(layout, 
+    /*hr = g_device.m_device->CreateInputLayout(layout,
                                               numElements, 
                                               pVSBlob->GetBufferPointer(),
                                               pVSBlob->GetBufferSize(), 
                                               &g_pVertexLayout );
+
     pVSBlob->Release();
     if( FAILED( hr ) )
-        return hr;
+        return hr;*/
+
+    hr = g_inputLayout.init(g_device, layout, pVSBlob);
+    SAFE_RELEASE(pVSBlob);
+
+    if (FAILED(hr)) {
+      ERROR("ShaderProgram", "CreateInputLayout", "Failed to create input layout.");
+      return hr;
+    }
 
     // Set the input layout
-    g_deviceContext.m_deviceContext->IASetInputLayout( g_pVertexLayout );
+    g_deviceContext.IASetInputLayout(g_inputLayout.m_inputLayout);
 
     // Compile the pixel shader
     ID3DBlob* pPSBlob = NULL;
@@ -593,7 +634,8 @@ void CleanupDevice()
     if( g_pCBChangesEveryFrame ) g_pCBChangesEveryFrame->Release();
     if( g_pVertexBuffer ) g_pVertexBuffer->Release();
     if( g_pIndexBuffer ) g_pIndexBuffer->Release();
-    if( g_pVertexLayout ) g_pVertexLayout->Release();
+    g_inputLayout.destroy();
+    //if( g_pVertexLayout ) g_pVertexLayout->Release();
     if( g_pVertexShader ) g_pVertexShader->Release();
     if( g_pPixelShader ) g_pPixelShader->Release();
     
@@ -669,6 +711,7 @@ void Render()
     g_renderTargetView.render(g_deviceContext, g_depthStencilView, 1, ClearColor);
 
     // Set Viewport
+    g_viewport.render(g_deviceContext);
 
     // Set depth stencil view
     g_depthStencilView.render(g_deviceContext);
@@ -684,6 +727,7 @@ void Render()
     //
     // Render the cube
     //
+    g_inputLayout.render(g_deviceContext);
     g_deviceContext.VSSetShader(g_pVertexShader, NULL, 0);
     g_deviceContext.VSSetConstantBuffers(0, 1, &g_pCBNeverChanges);
     g_deviceContext.VSSetConstantBuffers(1, 1, &g_pCBChangeOnResize);

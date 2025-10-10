@@ -38,7 +38,7 @@ public:
 	 * @param fileName The path to the .hlsl shader file.
 	 * @param layout A vector describing the vertex input layout.
 	 */
-	void
+	HRESULT
 	init(Device& device,
 			 const std::string& fileName,
 			 std::vector<D3D11_INPUT_ELEMENT_DESC> layout);

@@ -135,3 +135,15 @@ ExtensionType {
   PNG = 1, ///< Portable Network Graphics (PNG) image format.
   JPG = 2  ///< JPEG (JPG) image format.
 };
+
+/**
+ * @enum ShaderType
+ * @brief Enumerates the types of shaders supported by the engine.
+ *
+ * This enumeration is used to specify the type of shader being referenced or created.
+ * It helps in distinguishing between vertex and pixel shaders in rendering operations.
+ */
+enum ShaderType {
+  VERTEX_SHADER = 0, ///< Vertex shader type.
+  PIXEL_SHADER = 1   ///< Pixel shader type.
+};

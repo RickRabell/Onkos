@@ -15,7 +15,7 @@
 #include "RenderTargetView.h"
 #include "DepthStencilView.h"
 #include "Viewport.h"
-#include "InputLayout.h"
+#include "ShaderProgram.h"
 
 //--------------------------------------------------------------------------------------
 // Global Variables
@@ -31,11 +31,12 @@ RenderTargetView                    g_renderTargetView;
 Texture														  g_depthStencil;
 DepthStencilView                    g_depthStencilView;
 Viewport                            g_viewport;
-InputLayout                         g_inputLayout;
+//InputLayout                         g_inputLayout;
+ShaderProgram                       g_shaderProgram;
 
 
-ID3D11VertexShader*                 g_pVertexShader = NULL;
-ID3D11PixelShader*                  g_pPixelShader = NULL;
+//ID3D11VertexShader*                 g_pVertexShader = NULL;
+//ID3D11PixelShader*                  g_pPixelShader = NULL;
 //ID3D11InputLayout*                  g_pVertexLayout = NULL;
 ID3D11Buffer*                       g_pVertexBuffer = NULL;
 ID3D11Buffer*                       g_pIndexBuffer = NULL;
@@ -141,6 +142,7 @@ HRESULT InitWindow(HINSTANCE hInstance, int nCmdShow)
 }*/
 
 
+/*
 //--------------------------------------------------------------------------------------
 // Helper for compiling shaders with D3DX11
 //--------------------------------------------------------------------------------------
@@ -174,6 +176,7 @@ HRESULT CompileShaderFromFile(char* szFileName,
 
     return S_OK;
 }
+*/
 
 
 //--------------------------------------------------------------------------------------
@@ -336,17 +339,7 @@ HRESULT InitDevice()
 
     // Load Resources
 
-
-    // Setup the viewport
-    //D3D11_VIEWPORT vp;
-    //vp.Width = (FLOAT)g_window.m_width;
-    //vp.Height = (FLOAT)g_window.m_height;
-    //vp.MinDepth = 0.0f;
-    //vp.MaxDepth = 1.0f;
-    //vp.TopLeftX = 0;
-    //vp.TopLeftY = 0;
-    //g_deviceContext.m_deviceContext->RSSetViewports( 1, &vp );
-
+    /*
     // Compile the vertex shader
     ID3DBlob* pVSBlob = NULL;
     hr = CompileShaderFromFile( "Onkos.fx", "VS", "vs_4_0", &pVSBlob );
@@ -369,6 +362,7 @@ HRESULT InitDevice()
         pVSBlob->Release();
         return hr;
     }
+    */
 
     // Define the input layout
     std::vector<D3D11_INPUT_ELEMENT_DESC> layout;
@@ -400,9 +394,9 @@ HRESULT InitDevice()
     };
     UINT numElements = ARRAYSIZE( layout );
     */
-
+    /*
     // Create the input layout
-    /*hr = g_device.m_device->CreateInputLayout(layout,
+    hr = g_device.m_device->CreateInputLayout(layout,
                                               numElements, 
                                               pVSBlob->GetBufferPointer(),
                                               pVSBlob->GetBufferSize(), 
@@ -410,7 +404,7 @@ HRESULT InitDevice()
 
     pVSBlob->Release();
     if( FAILED( hr ) )
-        return hr;*/
+        return hr;
 
     hr = g_inputLayout.init(g_device, layout, pVSBlob);
     SAFE_RELEASE(pVSBlob);
@@ -419,6 +413,7 @@ HRESULT InitDevice()
       ERROR("ShaderProgram", "CreateInputLayout", "Failed to create input layout.");
       return hr;
     }
+    
 
     // Set the input layout
     g_deviceContext.IASetInputLayout(g_inputLayout.m_inputLayout);
@@ -434,7 +429,17 @@ HRESULT InitDevice()
                    MB_OK );
         return hr;
     }
+    */
 
+    // Create the Shader Program
+    hr = g_shaderProgram.init(g_device, "Onkos.fx", layout);
+    if (FAILED(hr)) {
+      ERROR("Main", "InitDevice",
+           ("Failed to initialize ShaderProgram. HRESULT: " + std::to_string(hr)).c_str());
+      return hr;
+    }
+
+    /*
     // Create the pixel shader
     hr = g_device.m_device->CreatePixelShader(pPSBlob->GetBufferPointer(), 
                                               pPSBlob->GetBufferSize(), 
@@ -443,6 +448,7 @@ HRESULT InitDevice()
     pPSBlob->Release();
     if( FAILED( hr ) )
         return hr;
+    */
 
     // Create vertex buffer
     SimpleVertex vertices[] =
@@ -634,11 +640,12 @@ void CleanupDevice()
     if( g_pCBChangesEveryFrame ) g_pCBChangesEveryFrame->Release();
     if( g_pVertexBuffer ) g_pVertexBuffer->Release();
     if( g_pIndexBuffer ) g_pIndexBuffer->Release();
-    g_inputLayout.destroy();
+    //g_inputLayout.destroy();
     //if( g_pVertexLayout ) g_pVertexLayout->Release();
-    if( g_pVertexShader ) g_pVertexShader->Release();
-    if( g_pPixelShader ) g_pPixelShader->Release();
+    //if( g_pVertexShader ) g_pVertexShader->Release();
+    //if( g_pPixelShader ) g_pPixelShader->Release();
     
+    g_shaderProgram.destroy();
     g_depthStencil.destroy();
     g_depthStencilView.destroy();
 		g_renderTargetView.destroy();
@@ -716,6 +723,9 @@ void Render()
     // Set depth stencil view
     g_depthStencilView.render(g_deviceContext);
 
+    // Set shader program
+    g_shaderProgram.render(g_deviceContext);
+
     //
     // Update variables that change once per frame
     //
@@ -727,12 +737,12 @@ void Render()
     //
     // Render the cube
     //
-    g_inputLayout.render(g_deviceContext);
-    g_deviceContext.VSSetShader(g_pVertexShader, NULL, 0);
+    //g_inputLayout.render(g_deviceContext);
+    //g_deviceContext.VSSetShader(g_pVertexShader, NULL, 0);
     g_deviceContext.VSSetConstantBuffers(0, 1, &g_pCBNeverChanges);
     g_deviceContext.VSSetConstantBuffers(1, 1, &g_pCBChangeOnResize);
     g_deviceContext.VSSetConstantBuffers(2, 1, &g_pCBChangesEveryFrame);
-    g_deviceContext.PSSetShader(g_pPixelShader, NULL, 0);
+    //g_deviceContext.PSSetShader(g_pPixelShader, NULL, 0);
     g_deviceContext.PSSetConstantBuffers(2, 1, &g_pCBChangesEveryFrame);
     g_deviceContext.PSSetShaderResources(0, 1, &g_pTextureRV);
     g_deviceContext.PSSetSamplers(0, 1, &g_pSamplerLinear);

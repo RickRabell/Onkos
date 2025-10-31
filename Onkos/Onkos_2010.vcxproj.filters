@@ -62,6 +62,9 @@
     <ClCompile Include="source\BaseApp.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="source\ModelLoader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Onkos.fx">

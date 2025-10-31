@@ -83,8 +83,6 @@ Buffer::update(DeviceContext& deviceContext,
 		pSrcData,
 		SrcRowPitch,
 		SrcDepthPitch);
-
-
 }
 
 void
@@ -128,8 +126,8 @@ Buffer::destroy() {
 
 HRESULT
 Buffer::createBuffer(Device& device,
-	D3D11_BUFFER_DESC& desc,
-	D3D11_SUBRESOURCE_DATA* initData) {
+										 D3D11_BUFFER_DESC& desc,
+										 D3D11_SUBRESOURCE_DATA* initData) {
 	if (!device.m_device) {
 		ERROR("Buffer", "createBuffer", "Device is nullptr");
 		return E_POINTER;

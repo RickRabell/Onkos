@@ -1,7 +1,8 @@
 # Onkos
 Este es un motor gráfico que utiliza la API de DirectX 11 para el renderizado de modelos 3D, encapsulando la lógica por medio de clases abstractas y sus implementaciones, esto con el objetivo de tener un código limpio, modular, con responsabilidades únicas y escalable.
 
-<img width="674" height="2033" alt="Pipeline Diagram" src="https://github.com/user-attachments/assets/670df238-d5e3-44fd-80ef-25b08943adf8" />
+<img width="500" height="5000" alt="image" src="https://github.com/user-attachments/assets/3b8bc90e-9962-445c-971f-faf1047a1e1b" />
+
 
 # Pipeline
 El flujo se divide en 3 fases principales:
@@ -67,3 +68,77 @@ Por medio del Swap Chain, se intercambian el Front Buffer y el Back Buffer por m
 
 # Limpieza
 Cuando la aplicación se cierra (o falla en algún punto), se llama a la función CleanupDevice() para liberar todos los recursos (texturas, shaders, buffers, etc) en orden inverso para evitar fugas de memoria.
+
+-------------------------------------------------------------------------------------------------
+# Uso del ModelLoader.h (Parser obj -> Onkos Engine)
+## ModelLoader (ModelLoader.h)
+
+`ModelLoader` es una clase de utilidad esencial diseñada para parsear (analizar) archivos de geometría en formato `.obj`. Su única responsabilidad es leer el archivo `.obj`, procesar los datos de vértices, y llenar un `MeshComponent` con la geometría lista para usarse en la CPU.
+
+Esta clase está desacoplada de DirectX y no crea ningún recurso de GPU. Su trabajo es preparar el `MeshComponent`, que luego es utilizado por la clase `Buffer` para crear los `VertexBuffer` e `IndexBuffer` correspondientes.
+
+## Archivos .obj
+Un archivo .obj separa sus datos según sus prefijos al inicio de cada línea del archivo. Estos prefijos se distinguen entre:
+* **v:** Para las posiciones X, Y, Z del vértice en el espacio
+* **vt:** Da las coordenadas de textura (UV's)
+* **vn:** Igualmente almacena las posiciones X, Y, Z pero de las normales del modelo
+* **f:** Instruye respecto a como ensamblar los vértices, indicando el índice de la posición, la textura y la normal (en ese órden)
+  * Las líneas **"f"** se subdividen en bloques como en el siguiente ejemplo: 1/7/5
+  * Pueden tener 3 bloques para formar triángulos o 4 para formar Quads (el ModelLoader.h puede manejar ambos casos con un "Fan Triangulation"
+
+## Cómo Utilizar
+
+El flujo de trabajo estándar es crear una instancia del *loader*, crear un `MeshComponent` vacío, y pasarle el componente por referencia para que el *loader* lo llene.
+
+**Ejemplo de código en `BaseApp::init()`:**
+
+```cpp
+#include "ModelLoader.h"
+#include "MeshComponent.h"
+#include "Buffer.h"
+
+// ...
+
+// 1. Crear una instancia del loader (no necesita nada en su constructor)
+ModelLoader myLoader;
+
+// 2. Crear el componente que contendrá los datos de CPU
+// (m_mesh ya existe como variable miembro en BaseApp)
+// MeshComponent m_mesh; 
+
+// 3. Llamar a la función de carga
+bool loadSuccess = myLoader.loadModel("ruta/a/mi_modelo.obj", m_mesh);
+
+if (!loadSuccess)
+{
+    // Manejar el error si no se pudo cargar el archivo
+    ERROR("BaseApp.cpp", "init", "No se pudo cargar el modelo.");
+    return E_FAIL;
+}
+
+// 4. Si la carga fue exitosa, la variable m_mesh ahora está llena.
+//    Ahora podemos usarla para inicializar los buffers de la GPU.
+hr = m_vertexBuffer.init(m_device, m_mesh, D3D11_BIND_VERTEX_BUFFER);
+hr = m_indexBuffer.init(m_device, m_mesh, D3D11_BIND_INDEX_BUFFER);
+
+// ...
+```
+
+### Funciones Públicas
+
+```cpp
+/**
+ * @brief Carga un modelo desde un archivo .obj y llena un MeshComponent.
+ * @param fileName El path (ruta) al archivo .obj.
+ * @param outMesh El componente de malla (pasado por referencia) que se llenará.
+ * @return true si la carga fue exitosa, false si falló.
+ */
+bool loadModel(const std::string& fileName, MeshComponent& outMesh);
+```
+
+### Características y Limitaciones
+
+* **Indexación de Vértices:** Utiliza un `std::map` para indexar vértices únicos, asegurando que no se dupliquen datos de vértices en el `VertexBuffer` (ahorrando VRAM).
+* **Triangulación:** Soporta triangulación automática para caras de 4 vértices (quads) usando el método "fan triangulation" (`0,1,2` y `0,2,3`).
+* **⚠️ Limitación Actual:** Esta implementación asume que el archivo `.obj` **debe** incluir datos de posición, textura y normales (`v`, `vt`, `vn`) para cada vértice. El *parser* fallará si el archivo solo contiene posiciones y UVs (ej: `f 1/1 2/2 3/3`).
+----------------------------------------------------------------------------------------------------------------------------------------------------------

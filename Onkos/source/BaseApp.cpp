@@ -1,4 +1,5 @@
 #include "BaseApp.h"
+#include "ModelLoader.h"
 
 BaseApp::BaseApp(HINSTANCE hInst, int nCmdShow) {
 
@@ -129,6 +130,19 @@ BaseApp::init() {
       return hr;
     }
 
+    //ModelLoader modelLoader;
+		//hr = modelLoader.loadModel("cube.obj", m_mesh);
+
+    ModelLoader myLoader;
+    bool loadSuccess = myLoader.loadModel("test.obj", m_mesh);
+
+    if (!loadSuccess)
+    {
+      ERROR("BaseApp.cpp", "init", "Failed to load model .obj");
+      return E_FAIL;
+    }
+
+    /*
     // Create vertex buffer
     SimpleVertex vertices[] =
     {
@@ -195,6 +209,7 @@ BaseApp::init() {
       m_mesh.m_index.push_back(indices[i]);
     }
     m_mesh.m_numIndex = 36;
+    */
 
     // Create vertex buffer
     hr = m_vertexBuffer.init(m_device, m_mesh, D3D11_BIND_VERTEX_BUFFER);

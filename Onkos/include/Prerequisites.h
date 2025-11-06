@@ -19,6 +19,7 @@
 #include <windows.h>
 #include <xnamath.h>
 #include <thread>
+#include <map>
 
 // Librerias DirectX
 #include <d3d11.h>

@@ -74,7 +74,7 @@ digraph "Onkos/include/Resource.h"
   Node24 -> Node7 [id="edge44_Node000024_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node25 [id="edge45_Node000024_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node25 [id="Node000025",label="Onkos/include/ModelLoader.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8h.html",tooltip=" "];
-  Node25 -> Node5 [id="edge46_Node000025_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node25 -> Node4 [id="edge46_Node000025_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node25 -> Node26 [id="edge47_Node000025_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="Onkos/source/ModelLoader.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8cpp.html",tooltip=" "];
   Node2 -> Node25 [id="edge48_Node000002_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];

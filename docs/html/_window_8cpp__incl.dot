@@ -72,4 +72,8 @@ digraph "Onkos/source/Window.cpp"
   Node15 -> Node27 [id="edge40_Node000015_Node000027",color="steelblue1",style="solid",tooltip=" "];
   Node27 [id="Node000027",label="SamplerState.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_sampler_state_8h.html",tooltip=" "];
   Node27 -> Node3 [id="edge41_Node000027_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node28 [id="edge42_Node000015_Node000028",color="steelblue1",style="solid",tooltip=" "];
+  Node28 [id="Node000028",label="ModelLoader.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8h.html",tooltip=" "];
+  Node28 -> Node3 [id="edge43_Node000028_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node25 [id="edge44_Node000028_Node000025",color="steelblue1",style="solid",tooltip=" "];
 }

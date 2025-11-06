@@ -72,7 +72,7 @@ digraph "Onkos/include/Prerequisites.h"
   Node23 -> Node6 [id="edge114_Node000023_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node24 [id="edge115_Node000023_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="Onkos/include/ModelLoader.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8h.html",tooltip=" "];
-  Node24 -> Node4 [id="edge116_Node000024_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node24 -> Node3 [id="edge116_Node000024_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node25 [id="edge117_Node000024_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node25 [id="Node000025",label="Onkos/source/ModelLoader.cpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8cpp.html",tooltip=" "];
   Node1 -> Node24 [id="edge118_Node000001_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];

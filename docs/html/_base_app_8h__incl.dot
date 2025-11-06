@@ -69,4 +69,8 @@ digraph "Onkos/include/BaseApp.h"
   Node1 -> Node26 [id="edge38_Node000001_Node000026",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="SamplerState.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_sampler_state_8h.html",tooltip=" "];
   Node26 -> Node2 [id="edge39_Node000026_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node27 [id="edge40_Node000001_Node000027",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="ModelLoader.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$_model_loader_8h.html",tooltip=" "];
+  Node27 -> Node2 [id="edge41_Node000027_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node27 -> Node24 [id="edge42_Node000027_Node000024",color="steelblue1",style="solid",tooltip=" "];
 }

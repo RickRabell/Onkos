@@ -120,72 +120,76 @@ $(function(){initNavTree('_base_app_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_component_8h.html">MeshComponent.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_buffer_8h.html">Buffer.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_sampler_state_8h.html">SamplerState.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_base_app.html">   27</a></span><span class="keyword">class</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><a class="code hl_function" href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp</a> {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp</a>(HINSTANCE hInst, <span class="keywordtype">int</span> nCmdShow);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">   41</a></span>    <a class="code hl_function" href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">~BaseApp</a>() { <a class="code hl_function" href="class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b">destroy</a>(); }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    run(HINSTANCE hInst, <span class="keywordtype">int</span> nCmdShow);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    HRESULT</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    init();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    update(<span class="keywordtype">float</span> deltaTime);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    render();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    destroy();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">static</span> LRESULT CALLBACK</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">//--------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// Global Variables</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">//--------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_class" href="class_window.html">Window</a> m_window;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_class" href="class_device.html">Device</a> m_device;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_class" href="class_device_context.html">DeviceContext</a> m_deviceContext;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_class" href="class_swap_chain.html">SwapChain</a> m_swapChain;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_backBuffer;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_class" href="class_render_target_view.html">RenderTargetView</a> m_renderTargetView;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_depthStencil;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_class" href="class_depth_stencil_view.html">DepthStencilView</a> m_depthStencilView;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_class" href="class_viewport.html">Viewport</a> m_viewport;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_class" href="class_shader_program.html">ShaderProgram</a> m_shaderProgram;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_class" href="class_mesh_component.html">MeshComponent</a> m_mesh;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_vertexBuffer;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_indexBuffer;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbNeverChanges;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbChangeOnResize;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbChangesEveryFrame;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_textureCube;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <a class="code hl_class" href="class_sampler_state.html">SamplerState</a> m_samplerState;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    XMMATRIX m_World;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    XMMATRIX m_View;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    XMMATRIX m_Projection;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    XMFLOAT4 m_vMeshColor;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_struct" href="struct_c_b_change_on_resize.html">CBChangeOnResize</a> cbChangesOnResize;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_struct" href="struct_c_b_never_changes.html">CBNeverChanges</a> cbNeverChanges;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_struct" href="struct_c_b_changes_every_frame.html">CBChangesEveryFrame</a> cb;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_model_loader_8h.html">ModelLoader.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_base_app.html">   28</a></span><span class="keyword">class</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><a class="code hl_function" href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp</a>(HINSTANCE hInst, <span class="keywordtype">int</span> nCmdShow);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">   42</a></span>    <a class="code hl_function" href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">~BaseApp</a>() { <a class="code hl_function" href="class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b">destroy</a>(); }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    run(HINSTANCE hInst, <span class="keywordtype">int</span> nCmdShow);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    HRESULT</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    init();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    update(<span class="keywordtype">float</span> deltaTime);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    render();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    destroy();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">static</span> LRESULT CALLBACK</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">//--------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// Global Variables</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">//--------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_class" href="class_window.html">Window</a> m_window;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_class" href="class_device.html">Device</a> m_device;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="class_device_context.html">DeviceContext</a> m_deviceContext;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_class" href="class_swap_chain.html">SwapChain</a> m_swapChain;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_backBuffer;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_class" href="class_render_target_view.html">RenderTargetView</a> m_renderTargetView;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_depthStencil;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_class" href="class_depth_stencil_view.html">DepthStencilView</a> m_depthStencilView;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_class" href="class_viewport.html">Viewport</a> m_viewport;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <a class="code hl_class" href="class_shader_program.html">ShaderProgram</a> m_shaderProgram;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_class" href="class_mesh_component.html">MeshComponent</a> m_mesh;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_vertexBuffer;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_indexBuffer;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbNeverChanges;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbChangeOnResize;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_class" href="class_buffer.html">Buffer</a> m_cbChangesEveryFrame;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_class" href="class_texture.html">Texture</a> m_textureCube;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_class" href="class_sampler_state.html">SamplerState</a> m_samplerState;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    XMMATRIX m_World;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    XMMATRIX m_View;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    XMMATRIX m_Projection;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    XMFLOAT4 m_vMeshColor;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_struct" href="struct_c_b_change_on_resize.html">CBChangeOnResize</a> cbChangesOnResize;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_struct" href="struct_c_b_never_changes.html">CBNeverChanges</a> cbNeverChanges;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_struct" href="struct_c_b_changes_every_frame.html">CBChangesEveryFrame</a> cb;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_class" href="class_model_loader.html">ModelLoader</a> m_modelLoader;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>};</div>
 </div>
 <div class="ttc" id="a_buffer_8h_html"><div class="ttname"><a href="_buffer_8h.html">Buffer.h</a></div></div>
 <div class="ttc" id="a_depth_stencil_view_8h_html"><div class="ttname"><a href="_depth_stencil_view_8h.html">DepthStencilView.h</a></div></div>
 <div class="ttc" id="a_device_8h_html"><div class="ttname"><a href="_device_8h.html">Device.h</a></div></div>
 <div class="ttc" id="a_device_context_8h_html"><div class="ttname"><a href="_device_context_8h.html">DeviceContext.h</a></div></div>
 <div class="ttc" id="a_mesh_component_8h_html"><div class="ttname"><a href="_mesh_component_8h.html">MeshComponent.h</a></div></div>
+<div class="ttc" id="a_model_loader_8h_html"><div class="ttname"><a href="_model_loader_8h.html">ModelLoader.h</a></div></div>
 <div class="ttc" id="a_prerequisites_8h_html"><div class="ttname"><a href="_prerequisites_8h.html">Prerequisites.h</a></div><div class="ttdoc">A precompiled header file for the engine.</div></div>
 <div class="ttc" id="a_render_target_view_8h_html"><div class="ttname"><a href="_render_target_view_8h.html">RenderTargetView.h</a></div></div>
 <div class="ttc" id="a_sampler_state_8h_html"><div class="ttname"><a href="_sampler_state_8h.html">SamplerState.h</a></div></div>
@@ -194,14 +198,15 @@ $(function(){initNavTree('_base_app_8h_source.html',''); initResizable(true); })
 <div class="ttc" id="a_texture_8h_html"><div class="ttname"><a href="_texture_8h.html">Texture.h</a></div></div>
 <div class="ttc" id="a_viewport_8h_html"><div class="ttname"><a href="_viewport_8h.html">Viewport.h</a></div></div>
 <div class="ttc" id="a_window_8h_html"><div class="ttname"><a href="_window_8h.html">Window.h</a></div></div>
-<div class="ttc" id="aclass_base_app_html_a3f3785ed6c6ad8232ed9bd424763751c"><div class="ttname"><a href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp::BaseApp</a></div><div class="ttdeci">BaseApp(HINSTANCE hInst, int nCmdShow)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> BaseApp.cpp:4</div></div>
-<div class="ttc" id="aclass_base_app_html_a45e22a14bfc1f98f452b08ebb3386b2b"><div class="ttname"><a href="class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b">BaseApp::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Cleans up and releases all allocated resources. This ensures all COM objects (Device,...</div><div class="ttdef"><b>Definition</b> BaseApp.cpp:368</div></div>
-<div class="ttc" id="aclass_base_app_html_acd5dea4cb74bc7bbdc200426873723f5"><div class="ttname"><a href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">BaseApp::~BaseApp</a></div><div class="ttdeci">~BaseApp()</div><div class="ttdoc">Destructor. Automatically calls the destroy() method to ensure proper cleanup.</div><div class="ttdef"><b>Definition</b> BaseApp.h:41</div></div>
+<div class="ttc" id="aclass_base_app_html_a3f3785ed6c6ad8232ed9bd424763751c"><div class="ttname"><a href="class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c">BaseApp::BaseApp</a></div><div class="ttdeci">BaseApp(HINSTANCE hInst, int nCmdShow)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition</b> BaseApp.cpp:3</div></div>
+<div class="ttc" id="aclass_base_app_html_a45e22a14bfc1f98f452b08ebb3386b2b"><div class="ttname"><a href="class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b">BaseApp::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Cleans up and releases all allocated resources. This ensures all COM objects (Device,...</div><div class="ttdef"><b>Definition</b> BaseApp.cpp:294</div></div>
+<div class="ttc" id="aclass_base_app_html_acd5dea4cb74bc7bbdc200426873723f5"><div class="ttname"><a href="class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5">BaseApp::~BaseApp</a></div><div class="ttdeci">~BaseApp()</div><div class="ttdoc">Destructor. Automatically calls the destroy() method to ensure proper cleanup.</div><div class="ttdef"><b>Definition</b> BaseApp.h:42</div></div>
 <div class="ttc" id="aclass_buffer_html"><div class="ttname"><a href="class_buffer.html">Buffer</a></div><div class="ttdoc">A generic wrapper for a Direct3D 11 buffer (ID3D11Buffer).</div><div class="ttdef"><b>Definition</b> Buffer.h:21</div></div>
 <div class="ttc" id="aclass_depth_stencil_view_html"><div class="ttname"><a href="class_depth_stencil_view.html">DepthStencilView</a></div><div class="ttdoc">Manages a Direct3D 11 Depth Stencil View (DSV).</div><div class="ttdef"><b>Definition</b> DepthStencilView.h:20</div></div>
 <div class="ttc" id="aclass_device_context_html"><div class="ttname"><a href="class_device_context.html">DeviceContext</a></div><div class="ttdoc">A wrapper class for the DirectX 11 ID3D11DeviceContext interface.</div><div class="ttdef"><b>Definition</b> DeviceContext.h:15</div></div>
 <div class="ttc" id="aclass_device_html"><div class="ttname"><a href="class_device.html">Device</a></div><div class="ttdoc">A wrapper class for the DirectX 11 ID3D11Device interface.</div><div class="ttdef"><b>Definition</b> Device.h:15</div></div>
 <div class="ttc" id="aclass_mesh_component_html"><div class="ttname"><a href="class_mesh_component.html">MeshComponent</a></div><div class="ttdoc">A data component holding CPU-side geometry.</div><div class="ttdef"><b>Definition</b> MeshComponent.h:20</div></div>
+<div class="ttc" id="aclass_model_loader_html"><div class="ttname"><a href="class_model_loader.html">ModelLoader</a></div><div class="ttdoc">A utility class for loading 3D model data from files.</div><div class="ttdef"><b>Definition</b> ModelLoader.h:15</div></div>
 <div class="ttc" id="aclass_render_target_view_html"><div class="ttname"><a href="class_render_target_view.html">RenderTargetView</a></div><div class="ttdoc">Manages a Direct3D 11 Render Target View (RTV).</div><div class="ttdef"><b>Definition</b> RenderTargetView.h:21</div></div>
 <div class="ttc" id="aclass_sampler_state_html"><div class="ttname"><a href="class_sampler_state.html">SamplerState</a></div><div class="ttdoc">Manages a Direct3D 11 Sampler State object.</div><div class="ttdef"><b>Definition</b> SamplerState.h:20</div></div>
 <div class="ttc" id="aclass_shader_program_html"><div class="ttname"><a href="class_shader_program.html">ShaderProgram</a></div><div class="ttdoc">Manages the lifecycle of HLSL shaders.</div><div class="ttdef"><b>Definition</b> ShaderProgram.h:21</div></div>

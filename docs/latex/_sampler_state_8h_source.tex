@@ -1,0 +1,37 @@
+\doxysection{Sampler\+State.\+h}
+\hypertarget{_sampler_state_8h_source}{}\label{_sampler_state_8h_source}\index{Onkos/include/SamplerState.h@{Onkos/include/SamplerState.h}}
+\mbox{\hyperlink{_sampler_state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_prerequisites_8h}{Prerequisites.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_device}{Device}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_device_context}{DeviceContext}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class}}
+\DoxyCodeLine{00020\ \mbox{\hyperlink{class_sampler_state_ac128af8991d49058402e20faa61b499d}{SamplerState}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_sampler_state_ac128af8991d49058402e20faa61b499d}{SamplerState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_sampler_state_a2f8903fc77d06f5ecf18e8d0c582bce4}{\string~SamplerState}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \ \ \ \ HRESULT}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_device_context_a9bbeaf8534205198a8e2c36568a6f81f}{init}}(\mbox{\hyperlink{class_device}{Device}}\&\ device);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_device_context_a6d08e8ddde4580145c5556b2b375e2f0}{update}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_device_context_af51569641f4df1f98e78d4e5bb71577b}{render}}(\mbox{\hyperlink{class_device_context}{DeviceContext}}\&\ deviceContext,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ startSlot,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ numSamplers);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_device_context_a37a4ea5842700e9c6addac6adca96df2}{destroy}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ ID3D11SamplerState*\ \mbox{\hyperlink{class_sampler_state_a59443fbdd117f52de5fdadd52dc9ce74}{m\_sampler}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

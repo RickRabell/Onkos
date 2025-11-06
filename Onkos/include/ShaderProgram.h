@@ -45,8 +45,6 @@ public:
 
 	/**
 	 * @brief Per-frame update logic for the shader program.
-	 * @note Placeholder for future functionality like hot-reloading.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	update();

@@ -1,0 +1,146 @@
+\doxysection{Base\+App Class Reference}
+\hypertarget{class_base_app}{}\label{class_base_app}\index{BaseApp@{BaseApp}}
+
+
+The core application class that initializes and runs the engine.  
+
+
+
+
+{\ttfamily \#include $<$Base\+App.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_app_a3f3785ed6c6ad8232ed9bd424763751c}{Base\+App}} (HINSTANCE h\+Inst, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_app_acd5dea4cb74bc7bbdc200426873723f5}{\texorpdfstring{$\sim$}{\string~}\+Base\+App}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Automatically calls the \doxylink{class_base_app_a45e22a14bfc1f98f452b08ebb3386b2b}{destroy()} method to ensure proper cleanup. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_base_app_a3cf0b29ba0e997d8cbac4fca91635cb9}{run}} (HINSTANCE h\+Inst, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em The main entry point and message loop of the application. This function initializes the application (via \doxylink{class_base_app_a2c64e873874aed23aa14e0c8a659e3ca}{init()}) and then enters the Win32 message loop, processing OS messages and triggering \doxylink{class_base_app_abdc46a4c89b86fd0441615214e19fb4d}{update()} and \doxylink{class_base_app_a4002d0cff2225b7b79501aeb17a3e970}{render()} calls each frame. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_base_app_a2c64e873874aed23aa14e0c8a659e3ca}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes all application and graphics systems. This includes creating the window, initializing the D3\+D11 device and swap chain, creating render targets, compiling shaders, and setting up initial scene geometry and buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_app_abdc46a4c89b86fd0441615214e19fb4d}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the application logic once per frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_app_a4002d0cff2225b7b79501aeb17a3e970}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders a single frame. This function binds all necessary pipeline states (shaders, buffers, render targets) and issues the final draw calls for the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_app_a45e22a14bfc1f98f452b08ebb3386b2b}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up and releases all allocated resources. This ensures all COM objects (\doxylink{class_device}{Device}, \doxylink{class_swap_chain}{Swap\+Chain}, Buffers, etc.) are properly released and the window is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The core application class that initializes and runs the engine. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/29
+\end{DoxyDate}
+\doxylink{class_base_app}{Base\+App} is responsible for owning and managing the lifecycle of all primary graphics objects (\doxylink{class_device}{Device}, \doxylink{class_device_context}{Device\+Context}, \doxylink{class_swap_chain}{Swap\+Chain}, etc.), handling the main message loop, and orchestrating the per-\/frame update and render calls. It serves as the central hub for the entire application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_base_app_a3f3785ed6c6ad8232ed9bd424763751c}\index{BaseApp@{BaseApp}!BaseApp@{BaseApp}}
+\index{BaseApp@{BaseApp}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{BaseApp()}{BaseApp()}}
+{\footnotesize\ttfamily \label{class_base_app_a3f3785ed6c6ad8232ed9bd424763751c} 
+Base\+App\+::\+Base\+App (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Inst}{, }\item[{int}]{n\+Cmd\+Show}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Inst} & Handle to the application instance. \\
+\hline
+{\em n\+Cmd\+Show} & Command show parameter for the main window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_base_app_acd5dea4cb74bc7bbdc200426873723f5}\index{BaseApp@{BaseApp}!````~BaseApp@{\texorpdfstring{$\sim$}{\string~}BaseApp}}
+\index{````~BaseApp@{\texorpdfstring{$\sim$}{\string~}BaseApp}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BaseApp()}{\string~BaseApp()}}
+{\footnotesize\ttfamily \label{class_base_app_acd5dea4cb74bc7bbdc200426873723f5} 
+Base\+App\+::\texorpdfstring{$\sim$}{\string~}\+Base\+App (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. Automatically calls the \doxylink{class_base_app_a45e22a14bfc1f98f452b08ebb3386b2b}{destroy()} method to ensure proper cleanup. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_base_app_a45e22a14bfc1f98f452b08ebb3386b2b}\index{BaseApp@{BaseApp}!destroy@{destroy}}
+\index{destroy@{destroy}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_base_app_a45e22a14bfc1f98f452b08ebb3386b2b} 
+void Base\+App\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleans up and releases all allocated resources. This ensures all COM objects (\doxylink{class_device}{Device}, \doxylink{class_swap_chain}{Swap\+Chain}, Buffers, etc.) are properly released and the window is destroyed. 
+
+\Hypertarget{class_base_app_a2c64e873874aed23aa14e0c8a659e3ca}\index{BaseApp@{BaseApp}!init@{init}}
+\index{init@{init}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_base_app_a2c64e873874aed23aa14e0c8a659e3ca} 
+HRESULT Base\+App\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes all application and graphics systems. This includes creating the window, initializing the D3\+D11 device and swap chain, creating render targets, compiling shaders, and setting up initial scene geometry and buffers. 
+
+\begin{DoxyReturn}{Returns}
+HRESULT S\+\_\+\+OK if all initializations are successful. 
+\end{DoxyReturn}
+\Hypertarget{class_base_app_a4002d0cff2225b7b79501aeb17a3e970}\index{BaseApp@{BaseApp}!render@{render}}
+\index{render@{render}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_base_app_a4002d0cff2225b7b79501aeb17a3e970} 
+void Base\+App\+::render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Renders a single frame. This function binds all necessary pipeline states (shaders, buffers, render targets) and issues the final draw calls for the scene. 
+
+\Hypertarget{class_base_app_a3cf0b29ba0e997d8cbac4fca91635cb9}\index{BaseApp@{BaseApp}!run@{run}}
+\index{run@{run}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{class_base_app_a3cf0b29ba0e997d8cbac4fca91635cb9} 
+int Base\+App\+::run (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Inst}{, }\item[{int}]{n\+Cmd\+Show}{}\end{DoxyParamCaption})}
+
+
+
+The main entry point and message loop of the application. This function initializes the application (via \doxylink{class_base_app_a2c64e873874aed23aa14e0c8a659e3ca}{init()}) and then enters the Win32 message loop, processing OS messages and triggering \doxylink{class_base_app_abdc46a4c89b86fd0441615214e19fb4d}{update()} and \doxylink{class_base_app_a4002d0cff2225b7b79501aeb17a3e970}{render()} calls each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Inst} & Handle to the application instance. \\
+\hline
+{\em n\+Cmd\+Show} & Command show parameter for the main window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The exit code of the application. 
+\end{DoxyReturn}
+\Hypertarget{class_base_app_abdc46a4c89b86fd0441615214e19fb4d}\index{BaseApp@{BaseApp}!update@{update}}
+\index{update@{update}!BaseApp@{BaseApp}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_base_app_abdc46a4c89b86fd0441615214e19fb4d} 
+void Base\+App\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Updates the application logic once per frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_base_app_8h}{Base\+App.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_base_app_8cpp}{Base\+App.\+cpp}}\end{DoxyCompactItemize}

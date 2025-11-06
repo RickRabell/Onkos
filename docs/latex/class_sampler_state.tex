@@ -1,0 +1,144 @@
+\doxysection{Sampler\+State Class Reference}
+\hypertarget{class_sampler_state}{}\label{class_sampler_state}\index{SamplerState@{SamplerState}}
+
+
+Manages a Direct3D 11 Sampler State object.  
+
+
+
+
+{\ttfamily \#include $<$Sampler\+State.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sampler_state_ac128af8991d49058402e20faa61b499d}{Sampler\+State}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_sampler_state_a2f8903fc77d06f5ecf18e8d0c582bce4}{\texorpdfstring{$\sim$}{\string~}\+Sampler\+State}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_sampler_state_a21eb1b99b6492b00fbd51ea1dde92a9b}{init}} (\mbox{\hyperlink{class_device}{Device}} \&device)
+\begin{DoxyCompactList}\small\item\em Initializes the sampler state object. This method creates the underlying ID3\+D11\+Sampler\+State with specific filter, address, and LOD parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sampler_state_a9b0c4bc3e9f1ad489edbec874dfae86a}{update}} ()
+\begin{DoxyCompactList}\small\item\em Per-\/frame update logic for the sampler state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sampler_state_aec9228dd668db50c1d96667c27aaed0c}{render}} (\mbox{\hyperlink{class_device_context}{Device\+Context}} \&device\+Context, unsigned int start\+Slot, unsigned int num\+Samplers)
+\begin{DoxyCompactList}\small\item\em Binds the sampler state to a shader stage (typically the Pixel Shader). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sampler_state_a8d36030d3bad4033f0063dec4e990309}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Releases the underlying ID3\+D11\+Sampler\+State COM object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ID3\+D11\+Sampler\+State \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sampler_state_a59443fbdd117f52de5fdadd52dc9ce74}{m\+\_\+sampler}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the underlying DirectX 11 Sampler State interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a Direct3D 11 Sampler State object. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/29
+\end{DoxyDate}
+This class encapsulates an ID3\+D11\+Sampler\+State. The sampler state defines how texture data is sampled by a shader. It controls parameters like filtering (e.\+g., linear, point, anisotropic), addressing modes (e.\+g., wrap, clamp, mirror), and mipmap LOD (Level of Detail) biasing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sampler_state_ac128af8991d49058402e20faa61b499d}\index{SamplerState@{SamplerState}!SamplerState@{SamplerState}}
+\index{SamplerState@{SamplerState}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{SamplerState()}{SamplerState()}}
+{\footnotesize\ttfamily \label{class_sampler_state_ac128af8991d49058402e20faa61b499d} 
+Sampler\+State\+::\+Sampler\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_sampler_state_a2f8903fc77d06f5ecf18e8d0c582bce4}\index{SamplerState@{SamplerState}!````~SamplerState@{\texorpdfstring{$\sim$}{\string~}SamplerState}}
+\index{````~SamplerState@{\texorpdfstring{$\sim$}{\string~}SamplerState}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SamplerState()}{\string~SamplerState()}}
+{\footnotesize\ttfamily \label{class_sampler_state_a2f8903fc77d06f5ecf18e8d0c582bce4} 
+Sampler\+State\+::\texorpdfstring{$\sim$}{\string~}\+Sampler\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sampler_state_a8d36030d3bad4033f0063dec4e990309}\index{SamplerState@{SamplerState}!destroy@{destroy}}
+\index{destroy@{destroy}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_sampler_state_a8d36030d3bad4033f0063dec4e990309} 
+void Sampler\+State\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases the underlying ID3\+D11\+Sampler\+State COM object. 
+
+\Hypertarget{class_sampler_state_a21eb1b99b6492b00fbd51ea1dde92a9b}\index{SamplerState@{SamplerState}!init@{init}}
+\index{init@{init}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_sampler_state_a21eb1b99b6492b00fbd51ea1dde92a9b} 
+HRESULT Sampler\+State\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device}{Device}} \&}]{device}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the sampler state object. This method creates the underlying ID3\+D11\+Sampler\+State with specific filter, address, and LOD parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The graphics device used to create the sampler state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT S\+\_\+\+OK if successful, otherwise an error code. 
+\end{DoxyReturn}
+\Hypertarget{class_sampler_state_aec9228dd668db50c1d96667c27aaed0c}\index{SamplerState@{SamplerState}!render@{render}}
+\index{render@{render}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_sampler_state_aec9228dd668db50c1d96667c27aaed0c} 
+void Sampler\+State\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device_context}{Device\+Context}} \&}]{device\+Context}{, }\item[{unsigned int}]{start\+Slot}{, }\item[{unsigned int}]{num\+Samplers}{}\end{DoxyParamCaption})}
+
+
+
+Binds the sampler state to a shader stage (typically the Pixel Shader). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Context} & The device context used to issue the binding command. \\
+\hline
+{\em start\+Slot} & The starting shader register slot to bind the sampler to (e.\+g., 0). \\
+\hline
+{\em num\+Samplers} & The number of samplers to bind (typically 1). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_sampler_state_a9b0c4bc3e9f1ad489edbec874dfae86a}\index{SamplerState@{SamplerState}!update@{update}}
+\index{update@{update}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_sampler_state_a9b0c4bc3e9f1ad489edbec874dfae86a} 
+void Sampler\+State\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update logic for the sampler state. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_sampler_state_a59443fbdd117f52de5fdadd52dc9ce74}\index{SamplerState@{SamplerState}!m\_sampler@{m\_sampler}}
+\index{m\_sampler@{m\_sampler}!SamplerState@{SamplerState}}
+\doxysubsubsection{\texorpdfstring{m\_sampler}{m\_sampler}}
+{\footnotesize\ttfamily \label{class_sampler_state_a59443fbdd117f52de5fdadd52dc9ce74} 
+ID3\+D11\+Sampler\+State\texorpdfstring{$\ast$}{*} Sampler\+State\+::m\+\_\+sampler = nullptr}
+
+
+
+Pointer to the underlying DirectX 11 Sampler State interface. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_sampler_state_8h}{Sampler\+State.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_sampler_state_8cpp}{Sampler\+State.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,168 @@
+\doxysection{Viewport Class Reference}
+\hypertarget{class_viewport}{}\label{class_viewport}\index{Viewport@{Viewport}}
+
+
+Manages a Direct3D 11 \doxylink{class_viewport}{Viewport} configuration.  
+
+
+
+
+{\ttfamily \#include $<$Viewport.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_viewport_a0ab3549845ad77677c5c0d358c8098b0}{Viewport}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_viewport_a90d7e3b443886cacec33d470315c2b9e}{\texorpdfstring{$\sim$}{\string~}\+Viewport}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_viewport_add4a0ec13bc8e92f4df30038bc12287a}{init}} (const \mbox{\hyperlink{class_window}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Initializes the viewport to match the dimensions of a given window. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_viewport_a88e7413754d0524719ee007ca6d0b31e}{init}} (unsigned int width, unsigned int height)
+\begin{DoxyCompactList}\small\item\em Initializes the viewport with explicit dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_viewport_a7997e0e684a4f8b5709f4d98be6cebb4}{update}} ()
+\begin{DoxyCompactList}\small\item\em Per-\/frame update logic for the viewport. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_viewport_a15c07f83aed9b27afa0a9cf731840da4}{render}} (\mbox{\hyperlink{class_device_context}{Device\+Context}} \&device\+Context)
+\begin{DoxyCompactList}\small\item\em Binds the viewport to the rasterizer stage of the graphics pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_viewport_ab3f9e97c614f43869a283e0a9dbeae73}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up any resources associated with the viewport. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+D3\+D11\+\_\+\+VIEWPORT \mbox{\hyperlink{class_viewport_a52cc9d4a0d56083a2d55391c2e8f6aeb}{m\+\_\+viewport}}
+\begin{DoxyCompactList}\small\item\em The underlying D3\+D11\+\_\+\+VIEWPORT structure. This struct holds the top-\/left corner coordinates (Top\+LeftX, Top\+LeftY), dimensions (Width, Height), and depth range (Min\+Depth, Max\+Depth). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a Direct3D 11 \doxylink{class_viewport}{Viewport} configuration. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/09
+\end{DoxyDate}
+This class encapsulates a D3\+D11\+\_\+\+VIEWPORT structure. The viewport defines the 2D rectangle area on a render target to which a 3D scene is projected. It\textquotesingle{}s used by the rasterizer stage to map vertices from normalized device coordinates to window coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_viewport_a0ab3549845ad77677c5c0d358c8098b0}\index{Viewport@{Viewport}!Viewport@{Viewport}}
+\index{Viewport@{Viewport}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{Viewport()}{Viewport()}}
+{\footnotesize\ttfamily \label{class_viewport_a0ab3549845ad77677c5c0d358c8098b0} 
+Viewport\+::\+Viewport (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_viewport_a90d7e3b443886cacec33d470315c2b9e}\index{Viewport@{Viewport}!````~Viewport@{\texorpdfstring{$\sim$}{\string~}Viewport}}
+\index{````~Viewport@{\texorpdfstring{$\sim$}{\string~}Viewport}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Viewport()}{\string~Viewport()}}
+{\footnotesize\ttfamily \label{class_viewport_a90d7e3b443886cacec33d470315c2b9e} 
+Viewport\+::\texorpdfstring{$\sim$}{\string~}\+Viewport (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_viewport_ab3f9e97c614f43869a283e0a9dbeae73}\index{Viewport@{Viewport}!destroy@{destroy}}
+\index{destroy@{destroy}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_viewport_ab3f9e97c614f43869a283e0a9dbeae73} 
+void Viewport\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cleans up any resources associated with the viewport. 
+
+\begin{DoxyNote}{Note}
+As D3\+D11\+\_\+\+VIEWPORT is a struct, this may not be strictly necessary unless other dynamically allocated resources are added. 
+\end{DoxyNote}
+\Hypertarget{class_viewport_add4a0ec13bc8e92f4df30038bc12287a}\index{Viewport@{Viewport}!init@{init}}
+\index{init@{init}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_viewport_add4a0ec13bc8e92f4df30038bc12287a} 
+HRESULT Viewport\+::init (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_window}{Window}} \&}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the viewport to match the dimensions of a given window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The application window to get the dimensions from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT S\+\_\+\+OK if successful, otherwise an error code. 
+\end{DoxyReturn}
+\Hypertarget{class_viewport_a88e7413754d0524719ee007ca6d0b31e}\index{Viewport@{Viewport}!init@{init}}
+\index{init@{init}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_viewport_a88e7413754d0524719ee007ca6d0b31e} 
+HRESULT Viewport\+::init (\begin{DoxyParamCaption}\item[{unsigned int}]{width}{, }\item[{unsigned int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the viewport with explicit dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the viewport in pixels. \\
+\hline
+{\em height} & The height of the viewport in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT S\+\_\+\+OK if successful. 
+\end{DoxyReturn}
+\Hypertarget{class_viewport_a15c07f83aed9b27afa0a9cf731840da4}\index{Viewport@{Viewport}!render@{render}}
+\index{render@{render}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_viewport_a15c07f83aed9b27afa0a9cf731840da4} 
+void Viewport\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device_context}{Device\+Context}} \&}]{device\+Context}{}\end{DoxyParamCaption})}
+
+
+
+Binds the viewport to the rasterizer stage of the graphics pipeline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Context} & The device context used to issue the binding command. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_viewport_a7997e0e684a4f8b5709f4d98be6cebb4}\index{Viewport@{Viewport}!update@{update}}
+\index{update@{update}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_viewport_a7997e0e684a4f8b5709f4d98be6cebb4} 
+void Viewport\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update logic for the viewport. 
+
+\begin{DoxyNote}{Note}
+Can be used to handle window resize events and update viewport dimensions accordingly. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_viewport_a52cc9d4a0d56083a2d55391c2e8f6aeb}\index{Viewport@{Viewport}!m\_viewport@{m\_viewport}}
+\index{m\_viewport@{m\_viewport}!Viewport@{Viewport}}
+\doxysubsubsection{\texorpdfstring{m\_viewport}{m\_viewport}}
+{\footnotesize\ttfamily \label{class_viewport_a52cc9d4a0d56083a2d55391c2e8f6aeb} 
+D3\+D11\+\_\+\+VIEWPORT Viewport\+::m\+\_\+viewport}
+
+
+
+The underlying D3\+D11\+\_\+\+VIEWPORT structure. This struct holds the top-\/left corner coordinates (Top\+LeftX, Top\+LeftY), dimensions (Width, Height), and depth range (Min\+Depth, Max\+Depth). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_viewport_8h}{Viewport.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_viewport_8cpp}{Viewport.\+cpp}}\end{DoxyCompactItemize}

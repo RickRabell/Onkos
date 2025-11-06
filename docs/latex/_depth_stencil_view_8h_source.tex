@@ -1,0 +1,36 @@
+\doxysection{Depth\+Stencil\+View.\+h}
+\hypertarget{_depth_stencil_view_8h_source}{}\label{_depth_stencil_view_8h_source}\index{Onkos/include/DepthStencilView.h@{Onkos/include/DepthStencilView.h}}
+\mbox{\hyperlink{_depth_stencil_view_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_prerequisites_8h}{Prerequisites.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Forward\ declarations}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_device}{Device}};}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_device_context}{DeviceContext}};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texture}{Texture}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }}
+\DoxyCodeLine{00020\ \mbox{\hyperlink{class_depth_stencil_view_a1b691304f3c224fb9a368c59f152822d}{DepthStencilView}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_a1b691304f3c224fb9a368c59f152822d}{DepthStencilView}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_af951c8918b75d1e085114c5c1ab60e8c}{\string~DepthStencilView}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00039\ \ \ \ \ HRESULT}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_a577271a39193da2f3e8a9df52c167670}{init}}(\mbox{\hyperlink{class_device}{Device}}\&\ device,\ \mbox{\hyperlink{class_texture}{Texture}}\&\ depthStencil,\ DXGI\_FORMAT\ format);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_aab6d96a774c5e88e7736e00cdc2f0929}{update}}()\ \{\};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_a87d09cc62b11bd3cdf92b3e51b7128df}{render}}(\mbox{\hyperlink{class_device_context}{DeviceContext}}\&\ deviceContext);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_depth_stencil_view_a09eeac13e34e94a5aeda476d4624ce55}{destroy}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ ID3D11DepthStencilView*\ \mbox{\hyperlink{class_depth_stencil_view_a97a6836b3e61ca8cfa252bf5bffc7ffb}{m\_depthStencilView}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00067\ \};}
+
+\end{DoxyCode}

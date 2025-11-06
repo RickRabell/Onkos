@@ -1,0 +1,127 @@
+\doxysection{Model\+Loader Class Reference}
+\hypertarget{class_model_loader}{}\label{class_model_loader}\index{ModelLoader@{ModelLoader}}
+
+
+A utility class for loading 3D model data from files.  
+
+
+
+
+{\ttfamily \#include $<$Model\+Loader.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_loader_a9649aff536ecafe391cbbc2a39340ce5}{Model\+Loader}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_loader_aa0a39f9d9770c071ce10ed07a604f903}{\texorpdfstring{$\sim$}{\string~}\+Model\+Loader}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_loader_a85b5a2958aa52aa84d93acb683ffd860}{load\+Model}} (const std\+::string \&file\+Name, \mbox{\hyperlink{class_mesh_component}{Mesh\+Component}} \&out\+Mesh)
+\begin{DoxyCompactList}\small\item\em Loads a model from a specified file and populates a \doxylink{class_mesh_component}{Mesh\+Component}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_loader_ac80d82a3265381af56026c65aa3a2e78}{parse\+Vec2}} (std\+::stringstream \&stream\+Line, std\+::vector$<$ XMFLOAT2 $>$ \&out\+Vector)
+\begin{DoxyCompactList}\small\item\em A utility function to parse a 2-\/component vector (XMFLOAT2) from a string stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_loader_a025ededbad53f19a1a8779e51c89402c}{parse\+Vec3}} (std\+::stringstream \&stream\+Line, std\+::vector$<$ XMFLOAT3 $>$ \&out\+Vector)
+\begin{DoxyCompactList}\small\item\em A utility function to parse a 3-\/component vector (XMFLOAT3) from a string stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for loading 3D model data from files. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/11-\/05
+\end{DoxyDate}
+This class provides functionality to parse a 3D model file (like a .obj file) and load its geometry data (vertices, texture coordinates, normals, and faces) into a \doxylink{class_mesh_component}{Mesh\+Component} object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_model_loader_a9649aff536ecafe391cbbc2a39340ce5}\index{ModelLoader@{ModelLoader}!ModelLoader@{ModelLoader}}
+\index{ModelLoader@{ModelLoader}!ModelLoader@{ModelLoader}}
+\doxysubsubsection{\texorpdfstring{ModelLoader()}{ModelLoader()}}
+{\footnotesize\ttfamily \label{class_model_loader_a9649aff536ecafe391cbbc2a39340ce5} 
+Model\+Loader\+::\+Model\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_model_loader_aa0a39f9d9770c071ce10ed07a604f903}\index{ModelLoader@{ModelLoader}!````~ModelLoader@{\texorpdfstring{$\sim$}{\string~}ModelLoader}}
+\index{````~ModelLoader@{\texorpdfstring{$\sim$}{\string~}ModelLoader}!ModelLoader@{ModelLoader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ModelLoader()}{\string~ModelLoader()}}
+{\footnotesize\ttfamily \label{class_model_loader_aa0a39f9d9770c071ce10ed07a604f903} 
+Model\+Loader\+::\texorpdfstring{$\sim$}{\string~}\+Model\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_model_loader_a85b5a2958aa52aa84d93acb683ffd860}\index{ModelLoader@{ModelLoader}!loadModel@{loadModel}}
+\index{loadModel@{loadModel}!ModelLoader@{ModelLoader}}
+\doxysubsubsection{\texorpdfstring{loadModel()}{loadModel()}}
+{\footnotesize\ttfamily \label{class_model_loader_a85b5a2958aa52aa84d93acb683ffd860} 
+bool Model\+Loader\+::load\+Model (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{, }\item[{\mbox{\hyperlink{class_mesh_component}{Mesh\+Component}} \&}]{out\+Mesh}{}\end{DoxyParamCaption})}
+
+
+
+Loads a model from a specified file and populates a \doxylink{class_mesh_component}{Mesh\+Component}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & The path to the model file (e.\+g., "{}my\+Model.\+obj"{}). \\
+\hline
+{\em out\+Mesh} & A reference to the \doxylink{class_mesh_component}{Mesh\+Component} object that will be populated with the loaded vertex and index data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true if the model was loaded and parsed successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_model_loader_ac80d82a3265381af56026c65aa3a2e78}\index{ModelLoader@{ModelLoader}!parseVec2@{parseVec2}}
+\index{parseVec2@{parseVec2}!ModelLoader@{ModelLoader}}
+\doxysubsubsection{\texorpdfstring{parseVec2()}{parseVec2()}}
+{\footnotesize\ttfamily \label{class_model_loader_ac80d82a3265381af56026c65aa3a2e78} 
+void Model\+Loader\+::parse\+Vec2 (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{stream\+Line}{, }\item[{std\+::vector$<$ XMFLOAT2 $>$ \&}]{out\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+A utility function to parse a 2-\/component vector (XMFLOAT2) from a string stream. 
+
+\begin{DoxyNote}{Note}
+This is likely a helper function for load\+Model, used for parsing texture coordinates (vt) from a .obj file. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Line} & The string stream containing the line of text to parse. \\
+\hline
+{\em out\+Vector} & The vector where the parsed XMFLOAT2 will be stored. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_model_loader_a025ededbad53f19a1a8779e51c89402c}\index{ModelLoader@{ModelLoader}!parseVec3@{parseVec3}}
+\index{parseVec3@{parseVec3}!ModelLoader@{ModelLoader}}
+\doxysubsubsection{\texorpdfstring{parseVec3()}{parseVec3()}}
+{\footnotesize\ttfamily \label{class_model_loader_a025ededbad53f19a1a8779e51c89402c} 
+void Model\+Loader\+::parse\+Vec3 (\begin{DoxyParamCaption}\item[{std\+::stringstream \&}]{stream\+Line}{, }\item[{std\+::vector$<$ XMFLOAT3 $>$ \&}]{out\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+A utility function to parse a 3-\/component vector (XMFLOAT3) from a string stream. 
+
+\begin{DoxyNote}{Note}
+This is likely a helper function for load\+Model, used for parsing vertex positions (v) or normals (vn) from a .obj file. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em stream\+Line} & The string stream containing the line of text to parse. \\
+\hline
+{\em out\+Vector} & The vector where the parsed XMFLOAT3 will be stored. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_model_loader_8h}{Model\+Loader.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_model_loader_8cpp}{Model\+Loader.\+cpp}}\end{DoxyCompactItemize}

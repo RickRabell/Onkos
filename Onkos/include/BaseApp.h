@@ -12,6 +12,7 @@
 #include "MeshComponent.h"
 #include "Buffer.h"
 #include "SamplerState.h"
+#include "ModelLoader.h"
 
 /**
  * @class BaseApp
@@ -153,4 +154,7 @@ private:
 	CBNeverChanges cbNeverChanges;
 	/** @brief CPU-side struct for the 'ChangesEveryFrame' constant buffer. */
 	CBChangesEveryFrame cb;
+
+	/** @brief Utility class for loading 3D model data from files into mesh components. */
+	ModelLoader m_modelLoader;
 };

@@ -1,0 +1,37 @@
+\doxysection{Window.\+h}
+\hypertarget{_window_8h_source}{}\label{_window_8h_source}\index{Onkos/include/Window.h@{Onkos/include/Window.h}}
+\mbox{\hyperlink{_window_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_prerequisites_8h}{Prerequisites.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }}
+\DoxyCodeLine{00015\ \mbox{\hyperlink{class_window_a685a2ed99afee9abe60252d5378c8078}{Window}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_window_a685a2ed99afee9abe60252d5378c8078}{Window}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_window_adc361d2d83c3531576b0d7bc1589cdfb}{\string~Window}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \ \ \ \ HRESULT}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_window_a3a6f96e110843d60c6e3c29913143674}{init}}(HINSTANCE\ hInstance,\ \textcolor{keywordtype}{int}\ nCmdShow,\ WNDPROC\ wndproc);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_window_a59515fc5a56e86d5a46d771595daac55}{update}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_window_a0a2093bd2ed34740c08a6a2fdfc059c9}{render}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_window_aa89262ad2538473c8d7e4d8dd641849d}{destroy}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ HWND\ \mbox{\hyperlink{class_window_ab39b5ba6b3adea40aa19ffa50e306dbb}{m\_hWnd}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_window_a134b55aae0af092cb293aab2edd477de}{m\_width}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_window_a525698a3ce02b30dd7620b85d70269ec}{m\_height}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ HINSTANCE\ m\_hInst\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00078\ \ \ \ \ RECT\ m\_rect;}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ m\_windowName\ =\ \textcolor{stringliteral}{"{}Onkos\ Engine"{}};}
+\DoxyCodeLine{00083\ \};}
+
+\end{DoxyCode}

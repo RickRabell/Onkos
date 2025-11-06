@@ -47,16 +47,12 @@ public:
 	/**
 	 * @brief Per-frame update logic for the swap chain.
 	 * @note Can be used to handle events like window resizing.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	update();
 
 	/**
 	 * @brief Per-frame rendering logic related to the swap chain.
-	 * @note This is likely a placeholder, as most rendering commands are issued
-	 * via the DeviceContext.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	render();

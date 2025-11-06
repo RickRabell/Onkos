@@ -1,0 +1,144 @@
+\doxysection{Input\+Layout Class Reference}
+\hypertarget{class_input_layout}{}\label{class_input_layout}\index{InputLayout@{InputLayout}}
+
+
+Manages a Direct3D 11 Input Layout object.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Layout.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_layout_af5294c6ab534b1e388897c146f6c9b44}{Input\+Layout}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_input_layout_aa1e7138ae46d3fc9407a33c6a4d4a010}{\texorpdfstring{$\sim$}{\string~}\+Input\+Layout}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_input_layout_a7d3460a76490c617d8eb63a6e4090a62}{init}} (\mbox{\hyperlink{class_device}{Device}} \&device, std\+::vector$<$ D3\+D11\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC $>$ \&layout, ID3\+DBlob \texorpdfstring{$\ast$}{*}vertex\+Shader\+Data)
+\begin{DoxyCompactList}\small\item\em Initializes the Input Layout object. This function creates the ID3\+D11\+Input\+Layout object by describing the per-\/vertex data structure and validating it against a compiled vertex shader\textquotesingle{}s input signature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_layout_ab88140b2eea4e96e9b5099f8ca15c29f}{update}} ()
+\begin{DoxyCompactList}\small\item\em Per-\/frame update logic for the input layout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_layout_ae5bb86e9c73d6b92bdfc22029c378314}{render}} (\mbox{\hyperlink{class_device_context}{Device\+Context}} \&device\+Context)
+\begin{DoxyCompactList}\small\item\em Binds the input layout to the Input-\/\+Assembler (IA) stage of the pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_layout_a1f5cebfa79d4fb6675263fbefeb7e16a}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Releases the underlying ID3\+D11\+Input\+Layout COM object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ID3\+D11\+Input\+Layout \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_input_layout_aa8319b0fe96ae2be02a9658ee8e1afcd}{m\+\_\+input\+Layout}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the underlying DirectX 11 Input Layout interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages a Direct3D 11 Input Layout object. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/09
+\end{DoxyDate}
+This class encapsulates an ID3\+D11\+Input\+Layout. The input layout\textquotesingle{}s critical role is to describe how vertex data from a vertex buffer is streamed into the Input-\/\+Assembler (IA) stage of the graphics pipeline. It defines the format, size, and semantic meaning of each element in a vertex (e.\+g., position, color, texture coordinate) so that it correctly matches the input signature of the vertex shader. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_input_layout_af5294c6ab534b1e388897c146f6c9b44}\index{InputLayout@{InputLayout}!InputLayout@{InputLayout}}
+\index{InputLayout@{InputLayout}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{InputLayout()}{InputLayout()}}
+{\footnotesize\ttfamily \label{class_input_layout_af5294c6ab534b1e388897c146f6c9b44} 
+Input\+Layout\+::\+Input\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_input_layout_aa1e7138ae46d3fc9407a33c6a4d4a010}\index{InputLayout@{InputLayout}!````~InputLayout@{\texorpdfstring{$\sim$}{\string~}InputLayout}}
+\index{````~InputLayout@{\texorpdfstring{$\sim$}{\string~}InputLayout}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}InputLayout()}{\string~InputLayout()}}
+{\footnotesize\ttfamily \label{class_input_layout_aa1e7138ae46d3fc9407a33c6a4d4a010} 
+Input\+Layout\+::\texorpdfstring{$\sim$}{\string~}\+Input\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_layout_a1f5cebfa79d4fb6675263fbefeb7e16a}\index{InputLayout@{InputLayout}!destroy@{destroy}}
+\index{destroy@{destroy}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_input_layout_a1f5cebfa79d4fb6675263fbefeb7e16a} 
+void Input\+Layout\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases the underlying ID3\+D11\+Input\+Layout COM object. 
+
+\Hypertarget{class_input_layout_a7d3460a76490c617d8eb63a6e4090a62}\index{InputLayout@{InputLayout}!init@{init}}
+\index{init@{init}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_input_layout_a7d3460a76490c617d8eb63a6e4090a62} 
+HRESULT Input\+Layout\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device}{Device}} \&}]{device}{, }\item[{std\+::vector$<$ D3\+D11\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC $>$ \&}]{layout}{, }\item[{ID3\+DBlob \texorpdfstring{$\ast$}{*}}]{vertex\+Shader\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the Input Layout object. This function creates the ID3\+D11\+Input\+Layout object by describing the per-\/vertex data structure and validating it against a compiled vertex shader\textquotesingle{}s input signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The graphics device used to create the input layout. \\
+\hline
+{\em layout} & A vector of D3\+D11\+\_\+\+INPUT\+\_\+\+ELEMENT\+\_\+\+DESC structures that defines the vertex format. \\
+\hline
+{\em vertex\+Shader\+Data} & A pointer to the compiled vertex shader bytecode, used for validation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT S\+\_\+\+OK if the layout is created successfully and matches the shader signature. 
+\end{DoxyReturn}
+\Hypertarget{class_input_layout_ae5bb86e9c73d6b92bdfc22029c378314}\index{InputLayout@{InputLayout}!render@{render}}
+\index{render@{render}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_input_layout_ae5bb86e9c73d6b92bdfc22029c378314} 
+void Input\+Layout\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device_context}{Device\+Context}} \&}]{device\+Context}{}\end{DoxyParamCaption})}
+
+
+
+Binds the input layout to the Input-\/\+Assembler (IA) stage of the pipeline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Context} & The device context used to issue the binding command. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_layout_ab88140b2eea4e96e9b5099f8ca15c29f}\index{InputLayout@{InputLayout}!update@{update}}
+\index{update@{update}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_input_layout_ab88140b2eea4e96e9b5099f8ca15c29f} 
+void Input\+Layout\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update logic for the input layout. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_input_layout_aa8319b0fe96ae2be02a9658ee8e1afcd}\index{InputLayout@{InputLayout}!m\_inputLayout@{m\_inputLayout}}
+\index{m\_inputLayout@{m\_inputLayout}!InputLayout@{InputLayout}}
+\doxysubsubsection{\texorpdfstring{m\_inputLayout}{m\_inputLayout}}
+{\footnotesize\ttfamily \label{class_input_layout_aa8319b0fe96ae2be02a9658ee8e1afcd} 
+ID3\+D11\+Input\+Layout\texorpdfstring{$\ast$}{*} Input\+Layout\+::m\+\_\+input\+Layout = nullptr}
+
+
+
+Pointer to the underlying DirectX 11 Input Layout interface. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_input_layout_8h}{Input\+Layout.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_input_layout_8cpp}{Input\+Layout.\+cpp}}\end{DoxyCompactItemize}

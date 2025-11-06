@@ -1,0 +1,193 @@
+\doxysection{Mesh\+Component Class Reference}
+\hypertarget{class_mesh_component}{}\label{class_mesh_component}\index{MeshComponent@{MeshComponent}}
+
+
+A data component holding CPU-\/side geometry.  
+
+
+
+
+{\ttfamily \#include $<$Mesh\+Component.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_component_a6f23f9f4c0fb23ee33a3798708c9a741}{Mesh\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes vertex and index counts to zero. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_mesh_component_ae67721293067058ea82d84386b97dd88}{\texorpdfstring{$\sim$}{\string~}\+Mesh\+Component}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_component_af70f734c1f7cb69688889a3c8ab1f428}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the mesh component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_component_a1a727778a30f7c00f1d82caaecc5fdbd}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Per-\/frame update logic for the mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_component_a36fc62d4168b22b354c5132fa1bb9b57}{render}} (\mbox{\hyperlink{class_device_context}{Device\+Context}} \&device\+Context)
+\begin{DoxyCompactList}\small\item\em Issues the final draw call for this mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_component_abf479cd528abbc43d4d17b0d7beeec7b}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Clears the CPU-\/side vertex and index data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_mesh_component_aca93105715e4c0db20da9bef44f9419e}{m\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em An identifier name for the mesh (e.\+g., "{}cube"{}, "{}sphere\+\_\+mesh"{}). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_simple_vertex}{Simple\+Vertex}} $>$ \mbox{\hyperlink{class_mesh_component_a574672bf5e30970697951be110a74426}{m\+\_\+vertex}}
+\begin{DoxyCompactList}\small\item\em The list of vertices (position, texcoords) stored in system memory. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_component_a3a6c10b4fdcd60870e052d1b62c72683}{m\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em The list of indices stored in system memory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_component_a1c9a3212ca4c3ebd52c536d8e874ea14}{m\+\_\+num\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Cached count of the number of vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_component_aa049bdc296f10d4700dceb2659c47051}{m\+\_\+num\+Index}}
+\begin{DoxyCompactList}\small\item\em Cached count of the number of indices. This is used for draw calls. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A data component holding CPU-\/side geometry. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/10-\/17
+\end{DoxyDate}
+This class represents the raw geometry for a 3D model, storing the list of vertices and indices in system memory (on the CPU). It acts as a data container that is typically used by a {\ttfamily \doxylink{class_buffer}{Buffer}} to create GPU-\/side vertex and index buffers. It is likely part of an Entity-\/\+Component System (ECS) architecture. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_component_a6f23f9f4c0fb23ee33a3798708c9a741}\index{MeshComponent@{MeshComponent}!MeshComponent@{MeshComponent}}
+\index{MeshComponent@{MeshComponent}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{MeshComponent()}{MeshComponent()}}
+{\footnotesize\ttfamily \label{class_mesh_component_a6f23f9f4c0fb23ee33a3798708c9a741} 
+Mesh\+Component\+::\+Mesh\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. Initializes vertex and index counts to zero. 
+
+\Hypertarget{class_mesh_component_ae67721293067058ea82d84386b97dd88}\index{MeshComponent@{MeshComponent}!````~MeshComponent@{\texorpdfstring{$\sim$}{\string~}MeshComponent}}
+\index{````~MeshComponent@{\texorpdfstring{$\sim$}{\string~}MeshComponent}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MeshComponent()}{\string~MeshComponent()}}
+{\footnotesize\ttfamily \label{class_mesh_component_ae67721293067058ea82d84386b97dd88} 
+virtual Mesh\+Component\+::\texorpdfstring{$\sim$}{\string~}\+Mesh\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_component_abf479cd528abbc43d4d17b0d7beeec7b}\index{MeshComponent@{MeshComponent}!destroy@{destroy}}
+\index{destroy@{destroy}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_mesh_component_abf479cd528abbc43d4d17b0d7beeec7b} 
+void Mesh\+Component\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears the CPU-\/side vertex and index data. 
+
+\Hypertarget{class_mesh_component_af70f734c1f7cb69688889a3c8ab1f428}\index{MeshComponent@{MeshComponent}!init@{init}}
+\index{init@{init}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_mesh_component_af70f734c1f7cb69688889a3c8ab1f428} 
+void Mesh\+Component\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the mesh component. 
+
+\begin{DoxyNote}{Note}
+Can be used to load mesh data from a file (e.\+g., .obj, .fbx) or to procedurally generate geometry. 
+\end{DoxyNote}
+\Hypertarget{class_mesh_component_a36fc62d4168b22b354c5132fa1bb9b57}\index{MeshComponent@{MeshComponent}!render@{render}}
+\index{render@{render}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_mesh_component_a36fc62d4168b22b354c5132fa1bb9b57} 
+void Mesh\+Component\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device_context}{Device\+Context}} \&}]{device\+Context}{}\end{DoxyParamCaption})}
+
+
+
+Issues the final draw call for this mesh. 
+
+\begin{DoxyNote}{Note}
+This method assumes that the associated Vertex and Index buffers have already been bound to the pipeline by another system. It simply calls Draw\+Indexed using the stored index count. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Context} & The device context to issue the draw command. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mesh_component_a1a727778a30f7c00f1d82caaecc5fdbd}\index{MeshComponent@{MeshComponent}!update@{update}}
+\index{update@{update}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_mesh_component_a1a727778a30f7c00f1d82caaecc5fdbd} 
+void Mesh\+Component\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update logic for the mesh. 
+
+\begin{DoxyNote}{Note}
+Useful for CPU-\/side procedural mesh manipulation or animation. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & Time elapsed since the last frame. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_component_a3a6c10b4fdcd60870e052d1b62c72683}\index{MeshComponent@{MeshComponent}!m\_index@{m\_index}}
+\index{m\_index@{m\_index}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{m\_index}{m\_index}}
+{\footnotesize\ttfamily \label{class_mesh_component_a3a6c10b4fdcd60870e052d1b62c72683} 
+std\+::vector$<$unsigned int$>$ Mesh\+Component\+::m\+\_\+index}
+
+
+
+The list of indices stored in system memory. 
+
+\Hypertarget{class_mesh_component_aca93105715e4c0db20da9bef44f9419e}\index{MeshComponent@{MeshComponent}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \label{class_mesh_component_aca93105715e4c0db20da9bef44f9419e} 
+std\+::string Mesh\+Component\+::m\+\_\+name}
+
+
+
+An identifier name for the mesh (e.\+g., "{}cube"{}, "{}sphere\+\_\+mesh"{}). 
+
+\Hypertarget{class_mesh_component_aa049bdc296f10d4700dceb2659c47051}\index{MeshComponent@{MeshComponent}!m\_numIndex@{m\_numIndex}}
+\index{m\_numIndex@{m\_numIndex}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{m\_numIndex}{m\_numIndex}}
+{\footnotesize\ttfamily \label{class_mesh_component_aa049bdc296f10d4700dceb2659c47051} 
+int Mesh\+Component\+::m\+\_\+num\+Index}
+
+
+
+Cached count of the number of indices. This is used for draw calls. 
+
+\Hypertarget{class_mesh_component_a1c9a3212ca4c3ebd52c536d8e874ea14}\index{MeshComponent@{MeshComponent}!m\_numVertex@{m\_numVertex}}
+\index{m\_numVertex@{m\_numVertex}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{m\_numVertex}{m\_numVertex}}
+{\footnotesize\ttfamily \label{class_mesh_component_a1c9a3212ca4c3ebd52c536d8e874ea14} 
+int Mesh\+Component\+::m\+\_\+num\+Vertex}
+
+
+
+Cached count of the number of vertices. 
+
+\Hypertarget{class_mesh_component_a574672bf5e30970697951be110a74426}\index{MeshComponent@{MeshComponent}!m\_vertex@{m\_vertex}}
+\index{m\_vertex@{m\_vertex}!MeshComponent@{MeshComponent}}
+\doxysubsubsection{\texorpdfstring{m\_vertex}{m\_vertex}}
+{\footnotesize\ttfamily \label{class_mesh_component_a574672bf5e30970697951be110a74426} 
+std\+::vector$<$\mbox{\hyperlink{struct_simple_vertex}{Simple\+Vertex}}$>$ Mesh\+Component\+::m\+\_\+vertex}
+
+
+
+The list of vertices (position, texcoords) stored in system memory. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_mesh_component_8h}{Mesh\+Component.\+h}}\end{DoxyCompactItemize}

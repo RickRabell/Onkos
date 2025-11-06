@@ -1,0 +1,237 @@
+\doxysection{Texture Class Reference}
+\hypertarget{class_texture}{}\label{class_texture}\index{Texture@{Texture}}
+
+
+A wrapper for DirectX 2D texture resources (ID3\+D11\+Texture2D).  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a66179be276016021e80b1c67c047d4ad}{Texture}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_ad2a9673e810b8c1f8c7dcb9b94fd71e5}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_texture_a8a3c74fe9614699ead9965b5c346fb27}{init}} (\mbox{\hyperlink{class_device}{Device}} \&deivce, const std\+::string \&texture\+Name, \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a}{Extension\+Type}} extension\+Type)
+\begin{DoxyCompactList}\small\item\em Initializes a texture by loading it from a file. \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_texture_aee4c9aab845d5a1e0710e1ee2d0cd6d8}{init}} (\mbox{\hyperlink{class_device}{Device}} \&device, unsigned int width, unsigned int height, DXGI\+\_\+\+FORMAT format, unsigned int bind\+Flags, unsigned int sample\+Count=1, unsigned int quality\+Levels=0)
+\begin{DoxyCompactList}\small\item\em Initializes a procedural texture (e.\+g., for a render target or depth buffer). \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_texture_afcdc415773ccf163d828913ef4d8167c}{init}} (\mbox{\hyperlink{class_device}{Device}} \&device, \mbox{\hyperlink{class_texture}{Texture}} \&texture\+Ref, DXGI\+\_\+\+FORMAT format)
+\begin{DoxyCompactList}\small\item\em Initializes a texture based on an existing texture resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a5f238ba1919408c1cd3ef6c103d62434}{update}} ()
+\begin{DoxyCompactList}\small\item\em Per-\/frame update logic for the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a2f821fbd57833895831f05b115d1471f}{render}} (\mbox{\hyperlink{class_device_context}{Device\+Context}} \&device\+Context, unsigned int start\+Slot, unsigned int num\+Views)
+\begin{DoxyCompactList}\small\item\em Binds the texture\textquotesingle{}s shader resource view to a shader stage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a9885329fec4191d5a7aee3d198519ea9}{destroy}} ()
+\begin{DoxyCompactList}\small\item\em Releases the underlying D3\+D11 texture and shader resource view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ID3\+D11\+Texture2D \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_ac4fff716a8f730618c12857b7e08421d}{m\+\_\+texture}} = nullptr
+\begin{DoxyCompactList}\small\item\em The underlying DirectX 2D texture resource. \end{DoxyCompactList}\item 
+ID3\+D11\+Shader\+Resource\+View \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_add2f7d0ebab7a1d34f6f7b7e00a68875}{m\+\_\+texture\+From\+Img}} = nullptr
+\begin{DoxyCompactList}\small\item\em The shader resource view (SRV) for this texture. The SRV is what allows shaders to read from the texture. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_texture_ac8428ffa114c66c9abc928c7e2a47077}{m\+\_\+texture\+Name}}
+\begin{DoxyCompactList}\small\item\em The name or file path of the texture, used for identification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A wrapper for DirectX 2D texture resources (ID3\+D11\+Texture2D). 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/09-\/18
+\end{DoxyDate}
+This class handles the creation, management, and binding of 2D textures. It supports loading textures from image files and creating procedural textures for use as render targets or depth-\/stencil buffers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_texture_a66179be276016021e80b1c67c047d4ad}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily \label{class_texture_a66179be276016021e80b1c67c047d4ad} 
+Texture\+::\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_texture_ad2a9673e810b8c1f8c7dcb9b94fd71e5}\index{Texture@{Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{class_texture_ad2a9673e810b8c1f8c7dcb9b94fd71e5} 
+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_texture_a9885329fec4191d5a7aee3d198519ea9}\index{Texture@{Texture}!destroy@{destroy}}
+\index{destroy@{destroy}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_texture_a9885329fec4191d5a7aee3d198519ea9} 
+void Texture\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases the underlying D3\+D11 texture and shader resource view. 
+
+\Hypertarget{class_texture_a8a3c74fe9614699ead9965b5c346fb27}\index{Texture@{Texture}!init@{init}}
+\index{init@{init}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_texture_a8a3c74fe9614699ead9965b5c346fb27} 
+HRESULT Texture\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device}{Device}} \&}]{deivce}{, }\item[{const std\+::string \&}]{texture\+Name}{, }\item[{\mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a}{Extension\+Type}}}]{extension\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a texture by loading it from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The graphics device used to create the texture resource. \\
+\hline
+{\em texture\+Name} & The file path of the image to load. \\
+\hline
+{\em extension\+Type} & The file extension type (e.\+g., PNG, JPG) to guide the loading process. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT Returns S\+\_\+\+OK if successful, otherwise an error code. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_afcdc415773ccf163d828913ef4d8167c}\index{Texture@{Texture}!init@{init}}
+\index{init@{init}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_texture_afcdc415773ccf163d828913ef4d8167c} 
+HRESULT Texture\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device}{Device}} \&}]{device}{, }\item[{\mbox{\hyperlink{class_texture}{Texture}} \&}]{texture\+Ref}{, }\item[{DXGI\+\_\+\+FORMAT}]{format}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a texture based on an existing texture resource. 
+
+\begin{DoxyNote}{Note}
+This is useful for creating a specific view (e.\+g. a depth stencil view) from an existing typeless texture resource. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The graphics device used for creation. \\
+\hline
+{\em texture\+Ref} & A reference to an existing \doxylink{class_texture}{Texture} object whose resource will be used. \\
+\hline
+{\em format} & The specific format for the view being created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT Returns S\+\_\+\+OK if successful, otherwise an error code. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_aee4c9aab845d5a1e0710e1ee2d0cd6d8}\index{Texture@{Texture}!init@{init}}
+\index{init@{init}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_texture_aee4c9aab845d5a1e0710e1ee2d0cd6d8} 
+HRESULT Texture\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device}{Device}} \&}]{device}{, }\item[{unsigned int}]{width}{, }\item[{unsigned int}]{height}{, }\item[{DXGI\+\_\+\+FORMAT}]{format}{, }\item[{unsigned int}]{bind\+Flags}{, }\item[{unsigned int}]{sample\+Count}{ = {\ttfamily 1}, }\item[{unsigned int}]{quality\+Levels}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Initializes a procedural texture (e.\+g., for a render target or depth buffer). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The graphics device used to create the texture resource. \\
+\hline
+{\em width} & The width of the texture in pixels. \\
+\hline
+{\em height} & The height of the texture in pixels. \\
+\hline
+{\em format} & The texture data format (e.\+g., DXGI\+\_\+\+FORMAT\+\_\+\+R8\+G8\+B8\+A8\+\_\+\+UNORM). \\
+\hline
+{\em bind\+Flags} & Flags indicating how the texture will be bound to the pipeline (e.\+g., D3\+D11\+\_\+\+BIND\+\_\+\+RENDER\+\_\+\+TARGET). \\
+\hline
+{\em sample\+Count} & The number of multisamples per pixel (for MSAA). Defaults to 1. \\
+\hline
+{\em quality\+Levels} & The quality level for multisampling. Defaults to 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+HRESULT Returns S\+\_\+\+OK if successful, otherwise an error code. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_a2f821fbd57833895831f05b115d1471f}\index{Texture@{Texture}!render@{render}}
+\index{render@{render}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_texture_a2f821fbd57833895831f05b115d1471f} 
+void Texture\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_device_context}{Device\+Context}} \&}]{device\+Context}{, }\item[{unsigned int}]{start\+Slot}{, }\item[{unsigned int}]{num\+Views}{}\end{DoxyParamCaption})}
+
+
+
+Binds the texture\textquotesingle{}s shader resource view to a shader stage. 
+
+\begin{DoxyNote}{Note}
+This method makes the texture available for sampling in a shader (e.\+g., a pixel shader). 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device\+Context} & The device context used to issue the binding command. \\
+\hline
+{\em start\+Slot} & The starting shader register slot to bind the texture to. \\
+\hline
+{\em num\+Views} & The number of views to bind (typically 1). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_texture_a5f238ba1919408c1cd3ef6c103d62434}\index{Texture@{Texture}!update@{update}}
+\index{update@{update}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_texture_a5f238ba1919408c1cd3ef6c103d62434} 
+void Texture\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update logic for the texture. 
+
+\begin{DoxyNote}{Note}
+Can be used for animated textures or other dynamic effects. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_texture_ac4fff716a8f730618c12857b7e08421d}\index{Texture@{Texture}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily \label{class_texture_ac4fff716a8f730618c12857b7e08421d} 
+ID3\+D11\+Texture2D\texorpdfstring{$\ast$}{*} Texture\+::m\+\_\+texture = nullptr}
+
+
+
+The underlying DirectX 2D texture resource. 
+
+\Hypertarget{class_texture_add2f7d0ebab7a1d34f6f7b7e00a68875}\index{Texture@{Texture}!m\_textureFromImg@{m\_textureFromImg}}
+\index{m\_textureFromImg@{m\_textureFromImg}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_textureFromImg}{m\_textureFromImg}}
+{\footnotesize\ttfamily \label{class_texture_add2f7d0ebab7a1d34f6f7b7e00a68875} 
+ID3\+D11\+Shader\+Resource\+View\texorpdfstring{$\ast$}{*} Texture\+::m\+\_\+texture\+From\+Img = nullptr}
+
+
+
+The shader resource view (SRV) for this texture. The SRV is what allows shaders to read from the texture. 
+
+\Hypertarget{class_texture_ac8428ffa114c66c9abc928c7e2a47077}\index{Texture@{Texture}!m\_textureName@{m\_textureName}}
+\index{m\_textureName@{m\_textureName}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_textureName}{m\_textureName}}
+{\footnotesize\ttfamily \label{class_texture_ac8428ffa114c66c9abc928c7e2a47077} 
+std\+::string Texture\+::m\+\_\+texture\+Name}
+
+
+
+The name or file path of the texture, used for identification. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Onkos/include/\mbox{\hyperlink{_texture_8h}{Texture.\+h}}\item 
+Onkos/source/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

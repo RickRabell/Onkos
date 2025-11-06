@@ -1,0 +1,194 @@
+\doxysection{Onkos/include/\+Prerequisites.h File Reference}
+\hypertarget{_prerequisites_8h}{}\label{_prerequisites_8h}\index{Onkos/include/Prerequisites.h@{Onkos/include/Prerequisites.h}}
+
+
+A precompiled header file for the engine.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$xnamath.\+h$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$d3d11.\+h$>$}\newline
+{\ttfamily \#include $<$d3dx11.\+h$>$}\newline
+{\ttfamily \#include $<$d3dcompiler.\+h$>$}\newline
+{\ttfamily \#include "{}Resource.\+h"{}}\newline
+Include dependency graph for Prerequisites.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_simple_vertex}{Simple\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Defines the vertex structure for simple geometry. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_b_never_changes}{CBNever\+Changes}}
+\begin{DoxyCompactList}\small\item\em Constant buffer structure for data that is updated once per view. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_b_change_on_resize}{CBChange\+On\+Resize}}
+\begin{DoxyCompactList}\small\item\em Constant buffer structure for data that changes when the window is resized. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_b_changes_every_frame}{CBChanges\+Every\+Frame}}
+\begin{DoxyCompactList}\small\item\em Constant buffer for data that is updated for each object drawn in a frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_prerequisites_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\+\_\+\+RELEASE}}(x)
+\begin{DoxyCompactList}\small\item\em Safely releases a COM object pointer and sets it to nullptr. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_prerequisites_8h_a8fe30e7b51deb1d5519885ad20b879c8}{MESSAGE}}(class\+Obj,  method,  state)
+\begin{DoxyCompactList}\small\item\em Logs a debug message indicating the state of a resource creation. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_prerequisites_8h_ab5d83f25f2317ec67a651392ed1ac091}{ERROR}}(class\+Obj,  method,  error\+MSG)
+\begin{DoxyCompactList}\small\item\em Logs a formatted error message to the debug output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a}{Extension\+Type}} \{ \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa539f41b68fd1d3b17779d462aad6f8b3}{DDS}} = 0
+, \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa842c5fc4bbe3f780e57c76d1a3cafe9f}{PNG}} = 1
+, \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa193eff471c99a2d5cad5433221091f7f}{JPG}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Represents supported image file extensions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46}{Shader\+Type}} \{ \mbox{\hyperlink{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a63f069899614a9d92dd3c59d0aa97c91}{VERTEX\+\_\+\+SHADER}} = 0
+, \mbox{\hyperlink{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a279b3a8fd9f35e982c7c0e8733b1e66d}{PIXEL\+\_\+\+SHADER}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerates the types of shaders supported by the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A precompiled header file for the engine. 
+
+\begin{DoxyAuthor}{Author}
+Ricardo Rabell 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/09-\/05
+\end{DoxyDate}
+This file includes commonly used headers from the Standard Library, Windows API, and DirectX 11. It also defines several utility macros and data structures that are used throughout the project. It is intended to be included in nearly all source files to reduce compilation times and simplify dependency management. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_prerequisites_8h_ab5d83f25f2317ec67a651392ed1ac091}\index{Prerequisites.h@{Prerequisites.h}!ERROR@{ERROR}}
+\index{ERROR@{ERROR}!Prerequisites.h@{Prerequisites.h}}
+\doxysubsubsection{\texorpdfstring{ERROR}{ERROR}}
+{\footnotesize\ttfamily \label{_prerequisites_8h_ab5d83f25f2317ec67a651392ed1ac091} 
+\#define ERROR(\begin{DoxyParamCaption}\item[{}]{class\+Obj}{, }\item[{}]{method}{, }\item[{}]{error\+MSG}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{try}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::wostringstream\ os\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ os\_\ <<\ L\textcolor{stringliteral}{"{}ERROR\ :\ "{}}\ <<\ classObj\ <<\ L\textcolor{stringliteral}{"{}::"{}}\ <<\ method\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ <<\ L\textcolor{stringliteral}{"{}\ :\ "{}}\ <<\ errorMSG\ <<\ L\textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ OutputDebugStringW(os\_.str().c\_str());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (...)\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ OutputDebugStringW(L\textcolor{stringliteral}{"{}Failed\ to\ log\ error\ message.\(\backslash\)n"{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Logs a formatted error message to the debug output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Obj} & The name of the class where the error occurred. \\
+\hline
+{\em method} & The name of the method where the error occurred. \\
+\hline
+{\em error\+MSG} & A detailed message describing the error. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_prerequisites_8h_a8fe30e7b51deb1d5519885ad20b879c8}\index{Prerequisites.h@{Prerequisites.h}!MESSAGE@{MESSAGE}}
+\index{MESSAGE@{MESSAGE}!Prerequisites.h@{Prerequisites.h}}
+\doxysubsubsection{\texorpdfstring{MESSAGE}{MESSAGE}}
+{\footnotesize\ttfamily \label{_prerequisites_8h_a8fe30e7b51deb1d5519885ad20b879c8} 
+\#define MESSAGE(\begin{DoxyParamCaption}\item[{}]{class\+Obj}{, }\item[{}]{method}{, }\item[{}]{state}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ std::wostringstream\ os\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ os\_\ <<\ classObj\ <<\ \textcolor{stringliteral}{"{}::"{}}\ <<\ method\ <<\ \textcolor{stringliteral}{"{}\ :\ "{}}\ <<\ \textcolor{stringliteral}{"{}[CREATION\ OF\ RESOURCE\ "{}}\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ state\ <<\ \textcolor{stringliteral}{"{}]\ \(\backslash\)n"{}};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ OutputDebugStringW(\ os\_.str().c\_str()\ );\ \ \(\backslash\)}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Logs a debug message indicating the state of a resource creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Obj} & The name of the class where the message is logged. \\
+\hline
+{\em method} & The name of the method where the message is logged. \\
+\hline
+{\em state} & A string describing the status (e.\+g., "{}\+SUCCESS"{}, "{}\+FAILURE"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_prerequisites_8h_a2bc549675ca29f733709b4656d22d52a}\index{Prerequisites.h@{Prerequisites.h}!SAFE\_RELEASE@{SAFE\_RELEASE}}
+\index{SAFE\_RELEASE@{SAFE\_RELEASE}!Prerequisites.h@{Prerequisites.h}}
+\doxysubsubsection{\texorpdfstring{SAFE\_RELEASE}{SAFE\_RELEASE}}
+{\footnotesize\ttfamily \label{_prerequisites_8h_a2bc549675ca29f733709b4656d22d52a} 
+\#define SAFE\+\_\+\+RELEASE(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(x\ !=\ \textcolor{keyword}{nullptr})\ x-\/>Release();\ x\ =\ \textcolor{keyword}{nullptr};}
+
+\end{DoxyCode}
+
+
+Safely releases a COM object pointer and sets it to nullptr. 
+
+
+\begin{DoxyItemize}
+\item Checks if the pointer {\ttfamily x} is not null, calls its Release() method, and then nullifies the pointer to prevent dangling references. 
+\end{DoxyItemize}
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a}\index{Prerequisites.h@{Prerequisites.h}!ExtensionType@{ExtensionType}}
+\index{ExtensionType@{ExtensionType}!Prerequisites.h@{Prerequisites.h}}
+\doxysubsubsection{\texorpdfstring{ExtensionType}{ExtensionType}}
+{\footnotesize\ttfamily \label{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a} 
+enum \mbox{\hyperlink{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65a}{Extension\+Type}}}
+
+
+
+Represents supported image file extensions. 
+
+This enumeration defines the types of image file extensions that can be handled by the engine. It is used to identify and process different image formats for textures and resources. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DDS@{DDS}!Prerequisites.h@{Prerequisites.h}}\index{Prerequisites.h@{Prerequisites.h}!DDS@{DDS}}}\Hypertarget{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa539f41b68fd1d3b17779d462aad6f8b3}\label{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa539f41b68fd1d3b17779d462aad6f8b3} 
+DDS&Direct\+Draw Surface (DDS) image format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PNG@{PNG}!Prerequisites.h@{Prerequisites.h}}\index{Prerequisites.h@{Prerequisites.h}!PNG@{PNG}}}\Hypertarget{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa842c5fc4bbe3f780e57c76d1a3cafe9f}\label{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa842c5fc4bbe3f780e57c76d1a3cafe9f} 
+PNG&Portable Network Graphics (PNG) image format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JPG@{JPG}!Prerequisites.h@{Prerequisites.h}}\index{Prerequisites.h@{Prerequisites.h}!JPG@{JPG}}}\Hypertarget{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa193eff471c99a2d5cad5433221091f7f}\label{_prerequisites_8h_ab8685fb7f8f0003664786f0e1e04f65aa193eff471c99a2d5cad5433221091f7f} 
+JPG&JPEG (JPG) image format. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46}\index{Prerequisites.h@{Prerequisites.h}!ShaderType@{ShaderType}}
+\index{ShaderType@{ShaderType}!Prerequisites.h@{Prerequisites.h}}
+\doxysubsubsection{\texorpdfstring{ShaderType}{ShaderType}}
+{\footnotesize\ttfamily \label{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46} 
+enum \mbox{\hyperlink{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46}{Shader\+Type}}}
+
+
+
+Enumerates the types of shaders supported by the engine. 
+
+This enumeration is used to specify the type of shader being referenced or created. It helps in distinguishing between vertex and pixel shaders in rendering operations. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX\_SHADER@{VERTEX\_SHADER}!Prerequisites.h@{Prerequisites.h}}\index{Prerequisites.h@{Prerequisites.h}!VERTEX\_SHADER@{VERTEX\_SHADER}}}\Hypertarget{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a63f069899614a9d92dd3c59d0aa97c91}\label{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a63f069899614a9d92dd3c59d0aa97c91} 
+VERTEX\+\_\+\+SHADER&Vertex shader type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PIXEL\_SHADER@{PIXEL\_SHADER}!Prerequisites.h@{Prerequisites.h}}\index{Prerequisites.h@{Prerequisites.h}!PIXEL\_SHADER@{PIXEL\_SHADER}}}\Hypertarget{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a279b3a8fd9f35e982c7c0e8733b1e66d}\label{_prerequisites_8h_a6230e1b9ecbf2d82d10856fd7e1fde46a279b3a8fd9f35e982c7c0e8733b1e66d} 
+PIXEL\+\_\+\+SHADER&Pixel shader type. \\
+\hline
+
+\end{DoxyEnumFields}

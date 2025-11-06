@@ -37,7 +37,6 @@ public:
 	/**
 	 * @brief Updates the window state.
 	 * * This method should be called once per frame to process window messages.
-	 * @todo Implementation details should be added.
 	 */
 	void
 	update();

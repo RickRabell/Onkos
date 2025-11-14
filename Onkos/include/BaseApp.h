@@ -33,7 +33,8 @@ public:
 	 * @param hInst Handle to the application instance.
 	 * @param nCmdShow Command show parameter for the main window.
 	 */
-	BaseApp(HINSTANCE hInst, int nCmdShow);
+	//BaseApp(HINSTANCE hInst, int nCmdShow);
+	BaseApp() = default;
 
 	/**
 	 * @brief Destructor.

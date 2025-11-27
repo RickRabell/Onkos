@@ -1,4 +1,5 @@
 #include "BaseApp.h"
+#include "Model3D.h"
 
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
@@ -33,7 +34,7 @@ BaseApp::run(HINSTANCE hInst, int nCmdShow) {
   return (int)msg.wParam;
 }
 
-HRESULT 
+HRESULT
 BaseApp::init() {
     HRESULT hr = S_OK;
 
@@ -212,6 +213,15 @@ BaseApp::init() {
     cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
 
     return S_OK;
+}
+
+void Model3D::unload()
+{
+}
+
+size_t Model3D::getSizeInBytes() const
+{
+    return size_t();
 }
 
 void BaseApp::update(float deltaTime) {

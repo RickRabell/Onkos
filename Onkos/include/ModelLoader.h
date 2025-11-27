@@ -1,6 +1,7 @@
 #pragma once
 #include "Prerequisites.h"
 #include "MeshComponent.h"
+#include "fbxsdk.h"
 
 /**
  * @class ModelLoader
@@ -33,7 +34,7 @@ public:
 	 * false otherwise.
 	 */
 	bool
-		loadModel(const std::string& fileName, MeshComponent& outMesh);
+	loadModel(const std::string& fileName, MeshComponent& outMesh);
 
 	/**
 	 * @brief A utility function to parse a 2-component vector (XMFLOAT2) from a string stream.
@@ -43,7 +44,7 @@ public:
 	 * @param outVector The vector where the parsed XMFLOAT2 will be stored.
 	 */
 	void
-		parseVec2(std::stringstream& streamLine, std::vector<XMFLOAT2>& outVector);
+	parseVec2(std::stringstream& streamLine, std::vector<XMFLOAT2>& outVector);
 
 	/**
 	 * @brief A utility function to parse a 3-component vector (XMFLOAT3) from a string stream.
@@ -53,5 +54,12 @@ public:
 	 * @param outVector The vector where the parsed XMFLOAT3 will be stored.
 	 */
 	void
-		parseVec3(std::stringstream& streamLine, std::vector<XMFLOAT3>& outVector);
+	parseVec3(std::stringstream& streamLine, std::vector<XMFLOAT3>& outVector);
+
+private:
+	FbxManager* lSdkManager;
+	FbxScene* lScene;
+	std::vector<std::string> textureFileNames;
+public:
+	std::string modelName;
 };

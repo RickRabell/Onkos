@@ -2,7 +2,7 @@
 #include "Prerequisites.h"
 
 enum class
-ResourceType {
+	ResourceType {
 	Unknown,
 	Model3D,
 	Texture,
@@ -12,49 +12,44 @@ ResourceType {
 };
 
 enum class
-ResourceState {
+	ResourceState {
 	Unloaded,
 	Loading,
 	Loaded,
 	Failed
 };
 
-class 
-IResource {
+class IResource {
 public:
-	IResource(const std::string& name) : m_name(name) {}
-	virtual 
-	~IResource() = default;
+	IResource(const std::string& name)
+		: m_name(name)
+		, m_filePath("")
+		, m_type(ResourceType::Unknown)
+		, m_state(ResourceState::Unloaded)
+		, m_id(GenerateID())
+	{
+	}
+	virtual ~IResource() = default;
 
-	// Create resource from GPU
-	virtual bool 
-	init() = 0;
+	// Crear recurso GPU
+	virtual bool init() = 0;
+	// Carga desde disco
+	virtual bool load(const std::string& filename) = 0;
+	// Liberar memoria
+	virtual void unload() = 0;
+	// Para profiler
+	virtual size_t getSizeInBytes() const = 0;
 
-	// Load from disk
-	virtual bool 
-	load(const std::string& filename) = 0;
-	// Free memory
-	virtual void 
-	unload() = 0;
+	void SetPath(const std::string& path) { m_filePath = path; }
+	void SetType(ResourceType t) { m_type = t; }
+	void SetState(ResourceState s) { m_state = s; }
 
-	// For Profiler
-	virtual size_t 
-	getSizeInBytes() const = 0;
 
-	const std::string& 
-	getName() const { return m_name; }
-
-	const std::string& 
-	getPath() const { return m_filePath; }
-
-	ResourceType 
-	getType() const { return m_type; }
-
-	ResourceState 
-	getState() const { return m_state; }
-
-	uint64_t 
-	getID() const { return m_id; }
+	const std::string& GetName() const { return m_name; }
+	const std::string& GetPath() const { return m_filePath; }
+	ResourceType GetType() const { return m_type; }
+	ResourceState GetState() const { return m_state; }
+	uint64_t GetID() const { return m_id; }
 
 protected:
 	std::string m_name;
@@ -64,8 +59,8 @@ protected:
 	uint64_t m_id;
 
 private:
-	static uint64_t 
-	GenerateID() {
+	static uint64_t GenerateID()
+	{
 		static uint64_t nextID = 1;
 		return nextID++;
 	}

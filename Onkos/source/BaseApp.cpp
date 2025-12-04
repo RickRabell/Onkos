@@ -1,5 +1,5 @@
 #include "BaseApp.h"
-#include "Model3D.h"
+#include <ResourceManager.h>
 
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
@@ -60,12 +60,12 @@ BaseApp::init() {
 
     // Create depth stencil texture
     hr = m_depthStencil.init(m_device,
-      m_window.m_width,
-      m_window.m_height,
-      DXGI_FORMAT_D24_UNORM_S8_UINT,
-      D3D11_BIND_DEPTH_STENCIL,
-      4,
-      0);
+         m_window.m_width,
+         m_window.m_height,
+         DXGI_FORMAT_D24_UNORM_S8_UINT,
+         D3D11_BIND_DEPTH_STENCIL,
+         4,
+         0);
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
@@ -126,6 +126,10 @@ BaseApp::init() {
       return hr;
     }
 
+    m_model = new Model3D("AbeBowser.fbx", ModelType::FBX);
+    Bowser = m_model->GetMeshes();
+
+    /*
     bool loadSuccess = m_modelLoader.loadModel("test.obj", m_mesh);
 
     if (!loadSuccess)
@@ -133,9 +137,10 @@ BaseApp::init() {
       ERROR("BaseApp.cpp", "init", "Failed to load model .obj");
       return E_FAIL;
     }
+    */
 
     // Create vertex buffer
-    hr = m_vertexBuffer.init(m_device, m_mesh, D3D11_BIND_VERTEX_BUFFER);
+    hr = m_vertexBuffer.init(m_device, Bowser[0], D3D11_BIND_VERTEX_BUFFER);
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
@@ -144,13 +149,17 @@ BaseApp::init() {
     }
 
     // Create index buffer
-    hr = m_indexBuffer.init(m_device, m_mesh, D3D11_BIND_INDEX_BUFFER);
+    hr = m_indexBuffer.init(m_device, Bowser[0], D3D11_BIND_INDEX_BUFFER);
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
         ("Failed to initialize IndexBuffer. HRESULT: " + std::to_string(hr)).c_str());
       return hr;
     }
+
+    auto& resourceMan = ResourceManager::getInstance();
+
+    std::shared_ptr<Model3D> model = resourceMan.GetOrLoad<Model3D>("CubeModel", "AbeBowser.fbx", ModelType::FBX);
 
     // Set primitive topology
     m_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -215,15 +224,6 @@ BaseApp::init() {
     return S_OK;
 }
 
-void Model3D::unload()
-{
-}
-
-size_t Model3D::getSizeInBytes() const
-{
-    return size_t();
-}
-
 void BaseApp::update(float deltaTime) {
   // Update our time
   static float t = 0.0f;
@@ -257,7 +257,15 @@ void BaseApp::update(float deltaTime) {
 	m_vMeshColor.z = 1.0f;
 
   // Rotate cube around the origin
-  m_World = XMMatrixRotationY(t);
+  // Apply Scale
+	XMMATRIX scaleMatrix = XMMatrixScaling(0.1f, 0.1f, 0.1f);
+	// Apply Rotation
+	XMMATRIX rotationMatrix = XMMatrixRotationRollPitchYaw(-0.60f, 3.0f, -0.20f);
+	// Apply Translation
+  XMMATRIX translationMatrix = XMMatrixTranslation(2.0f, -4.9f, 11.0f);
+
+	// Compose the final matrix in order: scale -> rotate -> translate
+	m_World = scaleMatrix * rotationMatrix * translationMatrix;
   cb.mWorld = XMMatrixTranspose(m_World);
   cb.vMeshColor = m_vMeshColor;
   m_cbChangesEveryFrame.update(m_deviceContext, nullptr, 0, nullptr, &cb, 0, 0);
@@ -293,7 +301,7 @@ BaseApp::render() {
   // Asignar textura y sampler
   m_textureCube.render(m_deviceContext, 0, 1);
   m_samplerState.render(m_deviceContext, 0, 1);
-  m_deviceContext.DrawIndexed(m_mesh.m_numIndex, 0, 0);
+  m_deviceContext.DrawIndexed(Bowser[0].m_numIndex, 0, 0);
 
   //
   // Present our back buffer to our front buffer

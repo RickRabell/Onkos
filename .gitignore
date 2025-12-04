@@ -416,3 +416,14 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+Onkos/lib/fbxlibs/alembic-md.lib
+Onkos/lib/fbxlibs/alembic-mt.lib
+Onkos/lib/fbxlibs/alembic.lib
+Onkos/lib/fbxlibs/libfbxsdk-md.lib
+Onkos/lib/fbxlibs/libfbxsdk-mt.lib
+Onkos/lib/fbxlibs/libfbxsdk.lib
+Onkos/lib/fbxlibs/libfbxsdk.lib
+Onkos/lib/fbxlibs/libfbxsdk-mt.lib
+Onkos/lib/fbxlibs/libfbxsdk-md.lib
+*.lib
+*.lib

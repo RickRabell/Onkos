@@ -20,6 +20,9 @@
 #include <xnamath.h>
 #include <thread>
 #include <map>
+#include <memory>
+#include <unordered_map>
+#include <type_traits>
 
 // Librerias DirectX
 #include <d3d11.h>

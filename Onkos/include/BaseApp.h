@@ -12,7 +12,8 @@
 #include "MeshComponent.h"
 #include "Buffer.h"
 #include "SamplerState.h"
-#include "ModelLoader.h"
+//#include "ModelLoader.h"
+#include "Model3D.h"
 
 /**
  * @class BaseApp
@@ -124,7 +125,7 @@ private:
 	/** @brief The vertex and pixel shader program. */
 	ShaderProgram m_shaderProgram;
 	/** @brief The CPU-side mesh data (vertices/indices). */
-	MeshComponent m_mesh;
+	//MeshComponent m_mesh;
 	/** @brief The GPU-side vertex buffer. */
 	Buffer m_vertexBuffer;
 	/** @brief The GPU-side index buffer. */
@@ -149,13 +150,13 @@ private:
 	/** @brief A color tint for the mesh. */
 	XMFLOAT4 m_vMeshColor;
 
+	std::vector<MeshComponent> Bowser;
+	Model3D* m_model;
+
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
 	CBChangeOnResize cbChangesOnResize;
 	/** @brief CPU-side struct for the 'NeverChanges' constant buffer. */
 	CBNeverChanges cbNeverChanges;
 	/** @brief CPU-side struct for the 'ChangesEveryFrame' constant buffer. */
 	CBChangesEveryFrame cb;
-
-	/** @brief Utility class for loading 3D model data from files into mesh components. */
-	ModelLoader m_modelLoader;
 };

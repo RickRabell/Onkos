@@ -21,6 +21,9 @@
     <Filter Include="include\Patterns">
       <UniqueIdentifier>{fa9c25a2-63af-4f25-807e-0277ecfedb71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Utilities">
+      <UniqueIdentifier>{e3359e43-0c1d-4d30-92b7-0545c3f1f55b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Onkos.cpp">
@@ -140,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="include\stb_image.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ResourceManager.h">
+      <Filter>include\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

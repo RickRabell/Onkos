@@ -4,50 +4,56 @@
 #include "MeshComponent.h"
 #include "fbxsdk.h"
 
-enum ModelType {
+enum
+	ModelType {
 	OBJ,
 	FBX
 };
 
-class Model3D : public IResource {
+class
+	Model3D : public IResource {
 public:
-	Model3D(const std::string& name, ModelType modelType);
+	Model3D(const std::string& name, ModelType modelType)
+		: IResource(name), m_modelType(modelType), lSdkManager(nullptr), lScene(nullptr) {
+		SetType(ResourceType::Model3D);
+		load(name);
+	}
+
 	~Model3D() = default;
 
-	bool 
-	load(const std::string& filePath) override;
-	
 	bool
-	init() override;
+		load(const std::string& path) override;
+
+	bool
+		init() override;
 
 	void
-	unload() override;
+		unload() override;
 
-	size_t 
-	getSizeInBytes() const override;
+	size_t
+		getSizeInBytes() const override;
 
 	const std::vector<MeshComponent>&
-	getMeshes() const { return m_meshes; }
+		GetMeshes() const { return m_meshes; }
 
-	// FBX Model Loader
+	/* FBX MODEL LOADER*/
 	bool
-	initializeFBXManager();
+		InitializeFBXManager();
 
 	std::vector<MeshComponent>
-	loadFBXModel(const std::string& filePath);
+		LoadFBXModel(const std::string& filePath);
 
 	void
-	processFBXNode(FbxNode* node);
+		ProcessFBXNode(FbxNode* node);
 
 	void
-	processFBXMesh(FbxNode* node);
+		ProcessFBXMesh(FbxNode* node);
 
 	void
-	processFBXMaterials(FbxSurfaceMaterial* material);
+		ProcessFBXMaterials(FbxSurfaceMaterial* material);
 
 	std::vector<std::string>
-	getTextureFileNames() const { return textureFileNames; }
-	
+		GetTextureFileNames() const { return textureFileNames; }
 private:
 	FbxManager* lSdkManager;
 	FbxScene* lScene;

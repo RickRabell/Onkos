@@ -159,7 +159,7 @@ BaseApp::init() {
 
     auto& resourceMan = ResourceManager::getInstance();
 
-    std::shared_ptr<Model3D> model = resourceMan.GetOrLoad<Model3D>("CubeModel", "AbeBowser.fbx", ModelType::FBX);
+    //std::shared_ptr<Model3D> model = resourceMan.GetOrLoad<Model3D>("CubeModel", "AbeBowser.fbx", ModelType::FBX);
 
     // Set primitive topology
     m_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -258,7 +258,7 @@ void BaseApp::update(float deltaTime) {
 
   // Rotate cube around the origin
   // Apply Scale
-	XMMATRIX scaleMatrix = XMMatrixScaling(0.1f, 0.1f, 0.1f);
+	XMMATRIX scaleMatrix = XMMatrixScaling(0.2f, 0.2f, 0.2f);
 	// Apply Rotation
 	XMMATRIX rotationMatrix = XMMatrixRotationRollPitchYaw(-0.60f, 3.0f, -0.20f);
 	// Apply Translation

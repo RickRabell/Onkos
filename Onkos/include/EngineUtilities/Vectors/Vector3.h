@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2025 Roberto Charreton
+ * Copyright (c) 2024 Roberto Charreton
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -28,8 +28,7 @@
 */
 #pragma once
 
-#include "EngineUtilities/Utilities/EngineMath.h"
-
+#include "EngineUtilities\Utilities\EngineMath.h"
 namespace EU {
 	/**
  * @brief A 3D vector class.
@@ -72,6 +71,12 @@ namespace EU {
 			return Vector3(x + other.x, y + other.y, z + other.z);
 		}
 
+		// Operador += (para acumuladores de tangentes/bitangentes)
+		Vector3& operator+=(const Vector3& other) {
+			x += other.x; y += other.y; z += other.z;
+			return *this;
+		}
+
 		/**
 		 * @brief Subtracts another vector from this vector.
 		 *
@@ -98,7 +103,7 @@ namespace EU {
 		 * @return The magnitude of the vector.
 		 */
 		float magnitude() const {
-			return sqrt(x * x + y * y + z * z);
+			return EU::sqrt(x * x + y * y + z * z);
 		}
 
 		/**
@@ -114,7 +119,31 @@ namespace EU {
 			return Vector3(x / mag, y / mag, z / mag);
 		}
 
-		// Método para obtener un puntero a los datos como un arreglo
+		void
+			zero() {
+			Vector3(0, 0, 0);
+		}
+
+		void
+			one() {
+			Vector3(1, 1, 1);
+		}
+
+
+		// ---- helpers con tu Vector3 ----
+		float dot(const Vector3& a, const Vector3& b) {
+			return a.x * b.x + a.y * b.y + a.z * b.z;
+		}
+
+		Vector3 cross(const Vector3& a, const Vector3& b) {
+			return Vector3(
+				a.y * b.z - a.z * b.y,
+				a.z * b.x - a.x * b.z,
+				a.x * b.y - a.y * b.x
+			);
+		}
+
+		// M?todo para obtener un puntero a los datos como un arreglo
 		// @return: Puntero a los componentes del vector
 		float* data() { return &x; }
 		const float* data() const { return &x; }

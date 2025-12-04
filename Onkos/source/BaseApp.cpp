@@ -157,12 +157,12 @@ BaseApp::init() {
       return hr;
     }
 
-    auto& resourceMan = ResourceManager::getInstance();
+    //auto& resourceMan = ResourceManager::getInstance();
 
     //std::shared_ptr<Model3D> model = resourceMan.GetOrLoad<Model3D>("CubeModel", "AbeBowser.fbx", ModelType::FBX);
 
     // Set primitive topology
-    m_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    //m_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
     // Create the constant buffers
     hr = m_cbNeverChanges.init(m_device, sizeof(CBNeverChanges));
@@ -302,6 +302,9 @@ BaseApp::render() {
   m_textureCube.render(m_deviceContext, 0, 1);
   m_samplerState.render(m_deviceContext, 0, 1);
   m_deviceContext.DrawIndexed(Bowser[0].m_numIndex, 0, 0);
+
+  // Set Primitive Topology
+  m_deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
   //
   // Present our back buffer to our front buffer

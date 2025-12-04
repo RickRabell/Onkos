@@ -32,6 +32,12 @@
 #include "resource.h"
 
 // Third Party Libraries
+#include "EngineUtilities/Vectors/Vector2.h"
+#include "EngineUtilities/Vectors/Vector3.h"
+#include "EngineUtilities\Memory\TSharedPointer.h"
+#include "EngineUtilities\Memory\TWeakPointer.h"
+#include "EngineUtilities\Memory\TStaticPtr.h"
+#include "EngineUtilities\Memory\TUniquePtr.h"
 
 // MACROS
 /**
@@ -147,7 +153,16 @@ ExtensionType {
  * This enumeration is used to specify the type of shader being referenced or created.
  * It helps in distinguishing between vertex and pixel shaders in rendering operations.
  */
-enum ShaderType {
+enum
+ShaderType {
   VERTEX_SHADER = 0, ///< Vertex shader type.
   PIXEL_SHADER = 1   ///< Pixel shader type.
+};
+
+enum
+ComponentType {
+  NONE = 0,
+  TRANSFORM = 1,
+  MESH = 2,
+  MATERIAL = 3
 };

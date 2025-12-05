@@ -14,6 +14,7 @@
 #include "SamplerState.h"
 //#include "ModelLoader.h"
 #include "Model3D.h"
+#include "ECS/Actor.h"
 
 /**
  * @class BaseApp
@@ -127,30 +128,32 @@ private:
 	/** @brief The CPU-side mesh data (vertices/indices). */
 	//MeshComponent m_mesh;
 	/** @brief The GPU-side vertex buffer. */
-	Buffer m_vertexBuffer;
+	//Buffer m_vertexBuffer;
 	/** @brief The GPU-side index buffer. */
-	Buffer m_indexBuffer;
+	//Buffer m_indexBuffer;
 	/** @brief GPU constant buffer for data updated once (e.g., View matrix). */
 	Buffer m_cbNeverChanges;
 	/** @brief GPU constant buffer for data updated on resize (e.g., Projection matrix). */
 	Buffer m_cbChangeOnResize;
 	/** @brief GPU constant buffer for data updated every frame (e.g., World matrix). */
-	Buffer m_cbChangesEveryFrame;
+	//Buffer m_cbChangesEveryFrame;
 	/** @brief A sample texture for the mesh. */
-	Texture m_textureCube;
+	Texture m_abeBowserAlbedo;
 	/** @brief The sampler state for texture sampling. */
-	SamplerState m_samplerState;
+	//SamplerState m_samplerState;
 
 	/** @brief The world transformation matrix. */
-	XMMATRIX m_World;
+	//XMMATRIX m_World;
 	/** @brief The view (camera) transformation matrix. */
 	XMMATRIX m_View;
 	/** @brief The projection (perspective) transformation matrix. */
 	XMMATRIX m_Projection;
 	/** @brief A color tint for the mesh. */
-	XMFLOAT4 m_vMeshColor;
+	//XMFLOAT4 m_vMeshColor;
 
-	std::vector<MeshComponent> Bowser;
+	std::vector<EU::TSharedPointer<Actor>> m_actors;
+	EU::TSharedPointer<Actor> m_abeBowser;
+
 	Model3D* m_model;
 
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
@@ -158,5 +161,5 @@ private:
 	/** @brief CPU-side struct for the 'NeverChanges' constant buffer. */
 	CBNeverChanges cbNeverChanges;
 	/** @brief CPU-side struct for the 'ChangesEveryFrame' constant buffer. */
-	CBChangesEveryFrame cb;
+	//CBChangesEveryFrame cb;
 };

@@ -1,5 +1,6 @@
 #pragma once
 #include "Prerequisites.h"
+#include "ECS/Component.h"
 
 // Forward declarations
 class DeviceContext;
@@ -17,12 +18,12 @@ class DeviceContext;
  * architecture.
  */
 class 
-MeshComponent {
+MeshComponent : public Component {
 public:
 	/**
 	 * @brief Default constructor. Initializes vertex and index counts to zero.
 	 */
-	MeshComponent() : m_numVertex(0), m_numIndex(0) {}
+	MeshComponent() : m_numVertex(0), m_numIndex(0), Component(ComponentType::MESH) {}
 
 	/**
 	 * @brief Virtual destructor.
@@ -36,7 +37,7 @@ public:
 	 * or to procedurally generate geometry.
 	 */
 	void
-	init();
+	init() override {};
 
 	/**
 	 * @brief Per-frame update logic for the mesh.
@@ -44,7 +45,7 @@ public:
 	 * @param deltaTime Time elapsed since the last frame.
 	 */
 	void
-	update(float deltaTime);
+	update(float deltaTime) override {};
 
 	/**
 	 * @brief Issues the final draw call for this mesh.
@@ -54,13 +55,13 @@ public:
 	 * @param deviceContext The device context to issue the draw command.
 	 */
 	void
-	render(DeviceContext& deviceContext);
+	render(DeviceContext& deviceContext) override {};
 
 	/**
 	 * @brief Clears the CPU-side vertex and index data.
 	 */
 	void
-	destroy();
+	destroy() override {};
 
 public:
 	/** @brief An identifier name for the mesh (e.g., "cube", "sphere_mesh"). */

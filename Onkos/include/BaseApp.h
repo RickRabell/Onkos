@@ -15,6 +15,7 @@
 //#include "ModelLoader.h"
 #include "Model3D.h"
 #include "ECS/Actor.h"
+#include "UserInterface.h"
 
 /**
  * @class BaseApp
@@ -162,4 +163,6 @@ private:
 	CBNeverChanges cbNeverChanges;
 	/** @brief CPU-side struct for the 'ChangesEveryFrame' constant buffer. */
 	//CBChangesEveryFrame cb;
+
+	UserInterface m_userInterface;
 };

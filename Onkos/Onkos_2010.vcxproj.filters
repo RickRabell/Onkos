@@ -45,6 +45,12 @@
     <Filter Include="Imgui\Resources">
       <UniqueIdentifier>{31747ad2-b9a5-40f6-97ff-ebd64df4b99f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\UI">
+      <UniqueIdentifier>{37278041-1290-4556-811a-96bad5583c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\UI">
+      <UniqueIdentifier>{29c59837-7e54-48da-8cad-1b9bcfbf98d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Onkos.cpp">
@@ -251,6 +257,9 @@
     </ClInclude>
     <ClInclude Include="Imgui\imgui-docking\imstb_truetype.h">
       <Filter>Imgui\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\UserInterface.h">
+      <Filter>include\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

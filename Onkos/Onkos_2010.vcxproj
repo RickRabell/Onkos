@@ -490,6 +490,7 @@
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\SwapChain.h" />
     <ClInclude Include="include\Texture.h" />
+    <ClInclude Include="include\UserInterface.h" />
     <ClInclude Include="include\Viewport.h" />
     <ClInclude Include="include\Window.h" />
     <CLInclude Include="resource.h" />

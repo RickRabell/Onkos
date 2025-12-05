@@ -108,61 +108,75 @@ private:
 	//--------------------------------------------------------------------------------------
 	/** @brief The main application window. */
 	Window m_window;
+
 	/** @brief The D3D11 device (resource factory). */
 	Device m_device;
+
 	/** @brief The D3D11 device context (command issuer). */
 	DeviceContext m_deviceContext;
+
 	/** @brief The DXGI swap chain for front/back buffers. */
 	SwapChain m_swapChain;
+
 	/** @brief The texture resource for the swap chain's back buffer. */
 	Texture m_backBuffer;
+
 	/** @brief The render target view (RTV) for the back buffer. */
 	RenderTargetView m_renderTargetView;
+
 	/** @brief The texture resource for the depth-stencil buffer. */
 	Texture m_depthStencil;
+
 	/** @brief The depth-stencil view (DSV) for the depth buffer. */
 	DepthStencilView m_depthStencilView;
+
 	/** @brief The viewport configuration. */
 	Viewport m_viewport;
+
 	/** @brief The vertex and pixel shader program. */
 	ShaderProgram m_shaderProgram;
-	/** @brief The CPU-side mesh data (vertices/indices). */
-	//MeshComponent m_mesh;
-	/** @brief The GPU-side vertex buffer. */
-	//Buffer m_vertexBuffer;
-	/** @brief The GPU-side index buffer. */
-	//Buffer m_indexBuffer;
+	
 	/** @brief GPU constant buffer for data updated once (e.g., View matrix). */
 	Buffer m_cbNeverChanges;
 	/** @brief GPU constant buffer for data updated on resize (e.g., Projection matrix). */
 	Buffer m_cbChangeOnResize;
-	/** @brief GPU constant buffer for data updated every frame (e.g., World matrix). */
-	//Buffer m_cbChangesEveryFrame;
+	
 	/** @brief A sample texture for the mesh. */
 	Texture m_abeBowserAlbedo;
-	/** @brief The sampler state for texture sampling. */
-	//SamplerState m_samplerState;
 
-	/** @brief The world transformation matrix. */
-	//XMMATRIX m_World;
 	/** @brief The view (camera) transformation matrix. */
 	XMMATRIX m_View;
+
 	/** @brief The projection (perspective) transformation matrix. */
 	XMMATRIX m_Projection;
-	/** @brief A color tint for the mesh. */
-	//XMFLOAT4 m_vMeshColor;
 
+	/**
+	* @brief The list of actors present in the scene.
+	* Each actor is managed via a shared pointer for automatic memory management.
+	*/
 	std::vector<EU::TSharedPointer<Actor>> m_actors;
+
+	/**
+	* @brief Shared pointer to the main Abe Bowser actor.
+	* Used for direct access and manipulation of this specific actor.
+	*/
 	EU::TSharedPointer<Actor> m_abeBowser;
 
+	/**
+	* @brief Pointer to the loaded 3D model resource.
+	* Represents the current model used in the scene.
+	*/
 	Model3D* m_model;
 
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
 	CBChangeOnResize cbChangesOnResize;
+
 	/** @brief CPU-side struct for the 'NeverChanges' constant buffer. */
 	CBNeverChanges cbNeverChanges;
-	/** @brief CPU-side struct for the 'ChangesEveryFrame' constant buffer. */
-	//CBChangesEveryFrame cb;
 
+	/**
+	* @brief The user interface manager for the application.
+	* Handles UI rendering, input, and interaction logic.
+	*/
 	UserInterface m_userInterface;
 };

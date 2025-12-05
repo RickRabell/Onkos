@@ -57,9 +57,15 @@ public:
 	parseVec3(std::stringstream& streamLine, std::vector<XMFLOAT3>& outVector);
 
 private:
+	/** @brief */
 	FbxManager* lSdkManager;
+
+	/** @brief */
 	FbxScene* lScene;
+
+	/** @brief */
 	std::vector<std::string> textureFileNames;
 public:
+	/** @brief */
 	std::string modelName;
 };

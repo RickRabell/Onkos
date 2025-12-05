@@ -159,10 +159,18 @@ ShaderType {
   PIXEL_SHADER = 1   ///< Pixel shader type.
 };
 
+/**
+ * @enum ComponentType
+ * @brief Enumerates the types of components supported by the engine.
+ *
+ * This enumeration is used to specify the type of component attached to an entity.
+ * It helps in identifying and managing different aspects of an entity, such as its transformation,
+ * mesh, and material properties.
+ */
 enum
 ComponentType {
-  NONE = 0,
-  TRANSFORM = 1,
-  MESH = 2,
-  MATERIAL = 3
+  NONE = 0,      ///< No component.
+  TRANSFORM = 1, ///< Transform component (position, rotation, scale).
+  MESH = 2,      ///< Mesh component (geometry data).
+  MATERIAL = 3   ///< Material component (visual appearance).
 };

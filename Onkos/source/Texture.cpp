@@ -81,7 +81,10 @@ Texture::init(Device& device,
     srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
     srvDesc.Texture2D.MipLevels = 1;
 
-    hr = device.m_device->CreateShaderResourceView(m_texture, &srvDesc, &m_textureFromImg);
+    hr = device.m_device->CreateShaderResourceView(m_texture, 
+                                                   &srvDesc, 
+                                                   &m_textureFromImg);
+
     SAFE_RELEASE(m_texture); // Liberar textura intermedia
 
     if (FAILED(hr)) {
@@ -130,7 +133,10 @@ Texture::init(Device& device,
     srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
     srvDesc.Texture2D.MipLevels = 1;
 
-    hr = device.m_device->CreateShaderResourceView(m_texture, &srvDesc, &m_textureFromImg);
+    hr = device.m_device->CreateShaderResourceView(m_texture, 
+                                                   &srvDesc, 
+                                                   &m_textureFromImg);
+
     SAFE_RELEASE(m_texture); // Liberar textura intermedia
 
     if (FAILED(hr)) {
@@ -183,7 +189,8 @@ Texture::init(Device& device,
 
   if (FAILED(hr)) {
     ERROR("Texture", "init",
-      ("Failed to create texture with specified params. HRESULT: " + std::to_string(hr)).c_str());
+      ("Failed to create texture with specified params. HRESULT: " 
+        + std::to_string(hr)).c_str());
     return hr;
   }
 
@@ -213,7 +220,8 @@ Texture::init(Device& device, Texture& textureRef, DXGI_FORMAT format) {
 
   if (FAILED(hr)) {
     ERROR("Texture", "init",
-      ("Failed to create shader resource view for PNG textures. HRESULT: " + std::to_string(hr)).c_str());
+      ("Failed to create shader resource view for PNG textures. HRESULT: " 
+        + std::to_string(hr)).c_str());
     return hr;
   }
 

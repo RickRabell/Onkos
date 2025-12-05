@@ -18,7 +18,8 @@ class DeviceContext;
  * texture coordinate) so that it correctly matches the input signature of the
  * vertex shader.
  */
-class InputLayout {
+class 
+InputLayout {
 public:
 	/**
 	 * @brief Default constructor.

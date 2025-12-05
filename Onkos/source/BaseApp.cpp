@@ -1,7 +1,10 @@
 #include "BaseApp.h"
 #include <ResourceManager.h>
 
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, 
+                                                             UINT msg, 
+                                                             WPARAM wParam, 
+                                                             LPARAM lParam);
 
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
@@ -113,7 +116,8 @@ BaseApp::init() {
       // Load the Texture
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-          ("Failed to initialize abeBowserAlbedo. HRESULT: " + std::to_string(hr)).c_str());
+          ("Failed to initialize abeBowserAlbedo. HRESULT: " 
+            + std::to_string(hr)).c_str());
         return hr;
       }
 			abeBowserTextures.push_back(m_abeBowserAlbedo);
@@ -201,14 +205,16 @@ BaseApp::init() {
     hr = m_cbNeverChanges.init(m_device, sizeof(CBNeverChanges));
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize NeverChanges Buffer. HRESULT: " + std::to_string(hr)).c_str());
+        ("Failed to initialize NeverChanges Buffer. HRESULT: " 
+          + std::to_string(hr)).c_str());
       return hr;
     }
 
     hr = m_cbChangeOnResize.init(m_device, sizeof(CBChangeOnResize));
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize ChangeOnResize Buffer. HRESULT: " + std::to_string(hr)).c_str());
+        ("Failed to initialize ChangeOnResize Buffer. HRESULT: " 
+          + std::to_string(hr)).c_str());
       return hr;
     }
 
@@ -248,7 +254,9 @@ BaseApp::init() {
                                             100.0f);
     cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
 
-    m_userInterface.init(m_window.m_hWnd, m_device.m_device, m_deviceContext.m_deviceContext);
+    m_userInterface.init(m_window.m_hWnd, 
+                         m_device.m_device, 
+                         m_deviceContext.m_deviceContext);
 
     // Asignar el actor que queremos editar (AbeBowser)
     if (!m_abeBowser.isNull()) {
@@ -280,9 +288,18 @@ BaseApp::update(float deltaTime) {
   // Actualizar la matriz de proyección y vista
   cbNeverChanges.mView = XMMatrixTranspose(m_View);
   m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
-  m_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, m_window.m_width / (FLOAT)m_window.m_height, 0.01f, 100.0f);
+  m_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, 
+                                          m_window.m_width / (FLOAT)m_window.m_height, 
+                                          0.01f, 100.0f);
+
   cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
-  m_cbChangeOnResize.update(m_deviceContext, nullptr, 0, nullptr, &cbChangesOnResize, 0, 0);
+  m_cbChangeOnResize.update(m_deviceContext, 
+                            nullptr, 
+                            0, 
+                            nullptr, 
+                            &cbChangesOnResize, 
+                            0, 
+                            0);
 
   // Update Actors
   for (auto& actor : m_actors) {

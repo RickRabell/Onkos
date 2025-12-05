@@ -102,12 +102,20 @@ Buffer::render(DeviceContext& deviceContext,
 
 	switch (m_bindFlag) {
 	case D3D11_BIND_VERTEX_BUFFER:
-		deviceContext.m_deviceContext->IASetVertexBuffers(StartSlot, NumBuffers, &m_buffer, &m_stride, &m_offset);
+		deviceContext.m_deviceContext->IASetVertexBuffers(StartSlot, 
+																											NumBuffers, 
+																											&m_buffer, 
+																											&m_stride, 
+																											&m_offset);
 		break;
 	case D3D11_BIND_CONSTANT_BUFFER:
-		deviceContext.m_deviceContext->VSSetConstantBuffers(StartSlot, NumBuffers, &m_buffer);
+		deviceContext.m_deviceContext->VSSetConstantBuffers(StartSlot, 
+																												NumBuffers, 
+																												&m_buffer);
 		if (setPixelShader) {
-			deviceContext.m_deviceContext->PSSetConstantBuffers(StartSlot, NumBuffers, &m_buffer);
+			deviceContext.m_deviceContext->PSSetConstantBuffers(StartSlot, 
+																													NumBuffers, 
+																													&m_buffer);
 		}
 		break;
 	case D3D11_BIND_INDEX_BUFFER:

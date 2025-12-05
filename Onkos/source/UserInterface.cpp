@@ -1,7 +1,10 @@
 #include "UserInterface.h"
 
 void
-UserInterface::init(void* window, ID3D11Device* device, ID3D11DeviceContext* deviceContext) {
+UserInterface::init(void* window, 
+                    ID3D11Device* device, 
+                    ID3D11DeviceContext* deviceContext) {
+
 	// Setup Dear ImGui context
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
@@ -70,11 +73,15 @@ UserInterface::render() {
         // --- ROTACIÓN ---
         // Leemos radianes, convertimos a grados para la UI
         EU::Vector3 rot = transformComponent->getRotation();
-        float r[3] = { XMConvertToDegrees(rot.x), XMConvertToDegrees(rot.y), XMConvertToDegrees(rot.z) };
+        float r[3] = { XMConvertToDegrees(rot.x), 
+                       XMConvertToDegrees(rot.y), 
+                       XMConvertToDegrees(rot.z) };
 
         if (vec3Control("Rotation", r)) {
           // Convertimos grados a radianes para guardarlo
-          transformComponent->setRotation(EU::Vector3(XMConvertToRadians(r[0]), XMConvertToRadians(r[1]), XMConvertToRadians(r[2])));
+          transformComponent->setRotation(EU::Vector3(XMConvertToRadians(r[0]), 
+                                                      XMConvertToRadians(r[1]), 
+                                                      XMConvertToRadians(r[2])));
         }
 
         // --- ESCALA ---
@@ -107,7 +114,10 @@ UserInterface::destroy() {
 }
 
 bool 
-UserInterface::vec3Control(const std::string& label, float* values, float resetValue, float columnWidth) {
+UserInterface::vec3Control(const std::string& label, 
+                           float* values, 
+                           float resetValue, 
+                           float columnWidth) {
   bool changed = false;
   ImGui::PushID(label.c_str());
 

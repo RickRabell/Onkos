@@ -40,7 +40,9 @@ Model3D::InitializeFBXManager() {
     return false;
   }
   else {
-    MESSAGE("ModelLoader", "ModelLoader", "Autodesk FBX SDK version " << lSdkManager->GetVersion())
+    MESSAGE("ModelLoader", 
+            "ModelLoader", 
+            "Autodesk FBX SDK version " << lSdkManager->GetVersion())
   }
 
   // Create an IOSettings object
@@ -158,7 +160,9 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
     mesh->GenerateTangentsData(uvSetName);
 
   const FbxGeometryElementUV* uvElem = (mesh->GetElementUVCount() > 0) ? mesh->GetElementUV(0) : nullptr;
+
   const FbxGeometryElementTangent* tanElem = (mesh->GetElementTangentCount() > 0) ? mesh->GetElementTangent(0) : nullptr;
+
   const FbxGeometryElementBinormal* binElem = (mesh->GetElementBinormalCount() > 0) ? mesh->GetElementBinormal(0) : nullptr;
 
   std::vector<SimpleVertex>       vertices;

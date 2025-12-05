@@ -58,10 +58,12 @@ public:
 	 * @brief The handle to the window. This is the primary identifier for the window in the OS.
 	 */
 	HWND m_hWnd = nullptr;
+
 	/**
 	 * @brief The current width of the window's client area in pixels.
 	 */
 	unsigned int m_width;
+
 	/**
 	 * @brief The current height of the window's client area in pixels.
 	 */
@@ -72,10 +74,12 @@ private:
 	 * @brief The handle to the instance of the application.
 	 */
 	HINSTANCE m_hInst = nullptr;
+
 	/**
 	 * @brief A RECT structure that holds the client area coordinates of the window.
 	 */
 	RECT m_rect;
+
 	/**
 	 * @brief The name/title of the window that appears in the title bar.
 	 */

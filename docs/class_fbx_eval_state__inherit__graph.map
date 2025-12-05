@@ -1,0 +1,7 @@
+<map id="FbxEvalState" name="FbxEvalState">
+<area shape="rect" id="Node000001" title="This class serves as the base class for an evaluation state element." alt="" coords="102,5,202,32"/>
+<area shape="rect" id="Node000002" href="$class_fbx_node_eval_state.html" title="This class hold results for node evaluation." alt="" coords="5,80,137,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,44,87,82,83,78,125,41"/>
+<area shape="rect" id="Node000003" href="$class_fbx_property_eval_state.html" title="This class hold results for property evaluation." alt="" coords="160,80,310,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,40,223,78,219,82,176,45"/>
+</map>

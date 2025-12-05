@@ -1,0 +1,9 @@
+<map id="FbxSkin" name="FbxSkin">
+<area shape="rect" id="Node000001" title=" " alt="" coords="19,229,89,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_deformer.html" title=" " alt="" coords="5,155,103,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,197,57,229,51,229,51,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="13,80,95,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,122,57,154,51,154,51,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="11,5,97,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="57,48,57,80,51,80,51,48"/>
+</map>

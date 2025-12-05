@@ -1,0 +1,5 @@
+<map id="FbxAutoFreePtr&lt; Type &gt;" name="FbxAutoFreePtr&lt; Type &gt;">
+<area shape="rect" id="Node000001" title="Scoped pointer for FbxMalloc allocations, which call FbxFree() to deallocate." alt="" coords="25,96,190,123"/>
+<area shape="rect" id="Node000002" href="$class_fbx_auto_ptr.html" title=" " alt="" coords="5,5,210,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,64,110,95,105,95,105,64"/>
+</map>

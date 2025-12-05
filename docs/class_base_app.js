@@ -1,6 +1,6 @@
 var class_base_app =
 [
-    [ "BaseApp", "class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c", null ],
+    [ "BaseApp", "class_base_app.html#af32e9c8881b8a57ee6937deec8499746", null ],
     [ "~BaseApp", "class_base_app.html#acd5dea4cb74bc7bbdc200426873723f5", null ],
     [ "destroy", "class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b", null ],
     [ "init", "class_base_app.html#a2c64e873874aed23aa14e0c8a659e3ca", null ],

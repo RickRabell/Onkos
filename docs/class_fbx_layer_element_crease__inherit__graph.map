@@ -1,0 +1,7 @@
+<map id="FbxLayerElementCrease" name="FbxLayerElementCrease">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,171,176,197"/>
+<area shape="rect" id="Node000002" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="5,80,182,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,139,96,170,91,170,91,139"/>
+<area shape="rect" id="Node000003" href="$class_fbx_layer_element.html" title=" " alt="" coords="32,5,155,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,48,96,80,91,80,91,48"/>
+</map>

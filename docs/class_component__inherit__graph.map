@@ -1,0 +1,7 @@
+<map id="Component" name="Component">
+<area shape="rect" id="Node000001" title="Abstract base class for all components attached to entities." alt="" coords="83,5,171,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh_component.html" title="A data component holding CPU&#45;side geometry." alt="" coords="5,80,126,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,46,78,81,74,78,104,42"/>
+<area shape="rect" id="Node000003" href="$class_transform.html" title="Manages the position, rotation, and scale of an entity." alt="" coords="149,80,230,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,42,181,78,177,81,146,46"/>
+</map>

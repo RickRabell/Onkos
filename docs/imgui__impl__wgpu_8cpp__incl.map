@@ -1,0 +1,26 @@
+<map id="Onkos/Imgui/imgui&#45;docking/backends/imgui_impl_wgpu.cpp" name="Onkos/Imgui/imgui&#45;docking/backends/imgui_impl_wgpu.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="330,5,540,48"/>
+<area shape="rect" id="Node000002" href="$imgui_8h.html" title=" " alt="" coords="240,171,303,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,51,330,70,299,98,283,126,276,156,271,155,278,124,295,94,327,66,365,46"/>
+<area shape="rect" id="Node000009" href="$imgui__impl__wgpu_8h.html" title=" " alt="" coords="309,96,442,123"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="422,50,396,85,392,82,418,47"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="465,96,528,123"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="453,47,480,82,476,85,449,50"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="552,96,612,123"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="474,46,547,86,545,91,472,51"/>
+<area shape="rect" id="Node000003" href="$imconfig_8h.html" title=" " alt="" coords="5,245,87,272"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,198,101,243,99,238,238,193"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="111,245,168,272"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,200,177,240,174,235,247,196"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="192,245,260,272"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="266,199,244,233,240,231,261,196"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="284,245,352,272"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="282,196,304,231,300,234,277,199"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="376,245,441,272"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="296,196,372,235,370,240,294,200"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="465,245,534,272"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,193,451,239,450,244,303,198"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="359,125,303,164,300,159,356,121"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="327,171,453,197"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="381,123,387,155,382,156,375,124"/>
+</map>

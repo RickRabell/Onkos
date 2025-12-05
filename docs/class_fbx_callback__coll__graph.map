@@ -1,0 +1,19 @@
+<map id="FbxCallback" name="FbxCallback">
+<area shape="rect" id="Node000001" title=" " alt="" coords="307,432,401,459"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="169,325,250,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,359,338,429,335,434,238,363"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="54,227,139,253"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,262,197,323,193,327,121,266"/>
+<area shape="rect" id="Node000004" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="19,128,174,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="99,170,99,226,94,226,94,170"/>
+<area shape="rect" id="Node000005" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="99,79,99,128,94,128,94,79"/>
+<area shape="rect" id="Node000006" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="164,227,256,253"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="212,269,212,325,207,325,207,269"/>
+<area shape="rect" id="Node000007" href="$class_fbx_array.html" title=" " alt="" coords="276,325,437,352"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="358,368,357,376,357,432,351,431,352,376,352,368"/>
+<area shape="rect" id="Node000008" href="$struct_fbx_array_1_1t_data.html" title=" " alt="" coords="280,219,438,261"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="361,277,360,325,354,325,356,277"/>
+<area shape="rect" id="Node000009" href="$class_fbx_class_id.html" title=" " alt="" coords="463,325,551,352"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="504,368,495,390,480,410,462,423,442,432,402,443,401,437,440,427,459,418,476,406,490,387,499,366"/>
+</map>

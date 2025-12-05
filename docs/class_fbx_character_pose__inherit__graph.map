@@ -1,0 +1,7 @@
+<map id="FbxCharacterPose" name="FbxCharacterPose">
+<area shape="rect" id="Node000001" title="A character pose is a character and an associated hierarchy of nodes." alt="" coords="5,155,136,181"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="30,80,111,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,122,73,154,68,154,68,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="28,5,113,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,48,73,80,68,80,68,48"/>
+</map>

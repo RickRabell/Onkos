@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['jpg_0',['JPG',['../_prerequisites_8h.html#ab8685fb7f8f0003664786f0e1e04f65aa193eff471c99a2d5cad5433221091f7f',1,'Prerequisites.h']]]
+  ['8_20encoding_0',['About UTF-8 Encoding',['../md__onkos_2_imgui_2imgui-docking_2docs_2_f_o_n_t_s.html#autotoc_md165',1,'']]],
+  ['8_20encoding_20of_20your_20non_20ascii_20strings_1',['(2) Invalid UTF-8 encoding of your non-ASCII strings.',['../md__onkos_2_imgui_2imgui-docking_2docs_2_f_o_n_t_s.html#autotoc_md123',1,'']]],
+  ['8_20encoding_20viewer_2',['UTF-8 Encoding Viewer**',['../md__onkos_2_imgui_2imgui-docking_2docs_2_f_o_n_t_s.html#autotoc_md170',1,'']]]
 ];

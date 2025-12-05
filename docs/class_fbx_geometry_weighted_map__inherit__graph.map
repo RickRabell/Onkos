@@ -1,0 +1,7 @@
+<map id="FbxGeometryWeightedMap" name="FbxGeometryWeightedMap">
+<area shape="rect" id="Node000001" title="This class provides the structure to build a correspondence between 2 geometries." alt="" coords="5,155,185,181"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="54,80,136,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,122,98,154,92,154,92,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="52,5,138,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,48,98,80,92,80,92,48"/>
+</map>

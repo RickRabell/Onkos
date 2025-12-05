@@ -1,0 +1,9 @@
+<map id="ImGui_ImplSDL3_Data" name="ImGui_ImplSDL3_Data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="105,187,261,213"/>
+<area shape="rect" id="Node000002" href="$struct_im_gui_platform_ime_data.html" title=" " alt="" coords="5,96,161,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,131,170,184,167,188,107,135"/>
+<area shape="rect" id="Node000003" href="$struct_im_vec2.html" title=" " alt="" coords="50,5,116,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,48,86,95,80,95,80,48"/>
+<area shape="rect" id="Node000004" href="$struct_im_vector.html" title=" " alt="" coords="185,96,381,123"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="259,135,199,188,196,184,255,131"/>
+</map>

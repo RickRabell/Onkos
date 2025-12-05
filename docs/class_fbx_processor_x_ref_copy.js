@@ -1,0 +1,25 @@
+var class_fbx_processor_x_ref_copy =
+[
+    [ "AutoRevertPropertyChanges", "struct_fbx_processor_x_ref_copy_1_1_auto_revert_property_changes.html", "struct_fbx_processor_x_ref_copy_1_1_auto_revert_property_changes" ],
+    [ "MissingUrlHandler", "class_fbx_processor_x_ref_copy_1_1_missing_url_handler.html", "class_fbx_processor_x_ref_copy_1_1_missing_url_handler" ],
+    [ "PropertyUpdate", "struct_fbx_processor_x_ref_copy_1_1_property_update.html", "struct_fbx_processor_x_ref_copy_1_1_property_update" ],
+    [ "PropertyUpdateMap", "class_fbx_processor_x_ref_copy.html#af0408f51b60aa6c9fb8aab6e73f57eb7", null ],
+    [ "UpdateSet", "class_fbx_processor_x_ref_copy.html#aa745209208dc5e21926fa7d4dde84afb", null ],
+    [ "Construct", "class_fbx_processor_x_ref_copy.html#aae1645d8f5fd3a8cb5e4a7571d918cc0", null ],
+    [ "ConstructProperties", "class_fbx_processor_x_ref_copy.html#a9e9ac4c620de2ea88e86444fa094d5d6", null ],
+    [ "GetUpdatedProperties", "class_fbx_processor_x_ref_copy.html#aa892afe344fd4242869a432b64a10ed2", null ],
+    [ "internal_ProcessCollectionBegin", "class_fbx_processor_x_ref_copy.html#a86f2116372440f64950bbaf4335ae8c6", null ],
+    [ "internal_ProcessCollectionEnd", "class_fbx_processor_x_ref_copy.html#ab88b5a295dbf15ce2dedf1540c88f6c8", null ],
+    [ "internal_ProcessObject", "class_fbx_processor_x_ref_copy.html#afdfb9a1e29db0f1774d63df556f888d6", null ],
+    [ "ProcessPathProperty", "class_fbx_processor_x_ref_copy.html#af29ec1373d66383d6b9140421c4c0166", null ],
+    [ "RevertPropertyChanges", "class_fbx_processor_x_ref_copy.html#acb594ac9c10bdc9cf32efb2a64840654", null ],
+    [ "ShouldCopyFile", "class_fbx_processor_x_ref_copy.html#a9457667850d550b1ccf1f848434f44c5", null ],
+    [ "ValidPropertyForXRefCopy", "class_fbx_processor_x_ref_copy.html#a528c9b217f22eb04f68d3687774a18fd", null ],
+    [ "CopyFileTimes", "class_fbx_processor_x_ref_copy.html#af289c6fcb05767b0ef362376790efee7", null ],
+    [ "ForceCopy", "class_fbx_processor_x_ref_copy.html#ad0ab8028a48ec1f2062a75aab8f1b023", null ],
+    [ "MissingUrlHandlerCB", "class_fbx_processor_x_ref_copy.html#a76eb69f4d30a3c8be51ae2f3ee57dae5", null ],
+    [ "mUpdatedProperties", "class_fbx_processor_x_ref_copy.html#ac42ed09834ba503d47e328d8c9734131", null ],
+    [ "OutputDirectory", "class_fbx_processor_x_ref_copy.html#ae6b30eabb327bb56e3e2cf5b7b829e29", null ],
+    [ "TrackUpdatedProperties", "class_fbx_processor_x_ref_copy.html#a0b9debffb0e6257ae9cbeec846ca72d0", null ],
+    [ "UpdateProperties", "class_fbx_processor_x_ref_copy.html#a3e375b4793e369ff82265b61d56ebb91", null ]
+];

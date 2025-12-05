@@ -1,0 +1,7 @@
+<map id="EU::Vertex" name="EU::Vertex">
+<area shape="rect" id="Node000001" title="Estructura que representa un vértice en el espacio 3D. Contiene una posición 3D y coordenadas de textura 2..." alt="" coords="66,96,152,123"/>
+<area shape="rect" id="Node000002" href="$class_e_u_1_1_vector3.html" title="A 3D vector class." alt="" coords="5,5,98,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,44,103,94,98,97,66,47"/>
+<area shape="rect" id="Node000003" href="$class_e_u_1_1_vector2.html" title="A 2D vector class." alt="" coords="121,5,214,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,47,119,97,115,94,149,44"/>
+</map>

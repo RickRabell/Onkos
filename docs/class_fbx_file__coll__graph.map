@@ -1,0 +1,7 @@
+<map id="FbxFile" name="FbxFile">
+<area shape="rect" id="Node000001" title=" " alt="" coords="68,96,132,123"/>
+<area shape="rect" id="Node000002" href="$class_fbx_stream.html" title=" " alt="" coords="5,5,91,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,47,52,71,62,83,75,93,72,97,58,87,48,73,42,48"/>
+<area shape="rect" id="Node000003" href="$class_fbx_string.html" title=" " alt="" coords="115,5,192,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,47,126,73,111,97,106,94,122,71,137,44"/>
+</map>

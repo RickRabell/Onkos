@@ -1,0 +1,23 @@
+<map id="ExampleAssetsBrowser" name="ExampleAssetsBrowser">
+<area shape="rect" id="Node000001" title=" " alt="" coords="241,475,403,501"/>
+<area shape="rect" id="Node000002" href="$struct_im_vector.html" title=" " alt="" coords="15,368,197,395"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,399,297,472,295,476,145,404"/>
+<area shape="rect" id="Node000003" href="$struct_example_asset.html" title=" " alt="" coords="49,277,155,304"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,320,108,367,103,368,101,320"/>
+<area shape="rect" id="Node000004" href="$struct_im_gui_table_sort_specs.html" title=" " alt="" coords="28,187,176,213"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,229,105,277,99,277,99,229"/>
+<area shape="rect" id="Node000005" href="$struct_im_gui_table_column_sort_specs.html" title=" " alt="" coords="5,96,199,123"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="105,138,105,186,99,186,99,138"/>
+<area shape="rect" id="Node000006" href="$struct_example_selection_with_deletion.html" title=" " alt="" coords="221,368,423,395"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="325,410,325,474,319,474,319,410"/>
+<area shape="rect" id="Node000007" href="$struct_im_gui_selection_basic_storage.html" title=" " alt="" coords="228,277,416,304"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="325,320,325,367,319,367,319,320"/>
+<area shape="rect" id="Node000008" href="$struct_im_gui_storage.html" title=" " alt="" coords="271,187,373,213"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="325,229,325,277,319,277,319,229"/>
+<area shape="rect" id="Node000009" href="$struct_im_vector.html" title=" " alt="" coords="223,96,424,123"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="326,138,325,186,320,186,320,138"/>
+<area shape="rect" id="Node000010" href="$struct_im_gui_storage_pair.html" title=" " alt="" coords="261,5,386,32"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="326,48,326,95,321,95,321,48"/>
+<area shape="rect" id="Node000011" href="$struct_im_vec2.html" title=" " alt="" coords="447,368,512,395"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="453,407,387,453,347,477,344,472,385,448,450,402"/>
+</map>

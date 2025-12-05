@@ -1,0 +1,31 @@
+<map id="FbxConstraintAim" name="FbxConstraintAim">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1604,213,1731,240"/>
+<area shape="rect" id="Node000002" href="$class_fbx_constraint.html" title=" " alt="" coords="1302,36,1405,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1421,58,1501,82,1543,99,1582,122,1607,143,1630,168,1660,211,1656,214,1626,171,1604,147,1579,126,1540,104,1499,87,1420,64"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="871,21,953,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="968,26,1030,21,1122,17,1214,21,1302,35,1301,40,1214,27,1122,22,1030,27,968,31"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="600,21,686,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="701,32,871,32,871,37,701,37"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="351,21,506,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="521,32,600,32,600,37,521,37"/>
+<area shape="rect" id="Node000006" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="203,32,350,32,350,37,203,37"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="597,157,689,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="668,145,712,110,752,87,794,69,870,43,872,48,796,74,754,92,715,114,671,149"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="818,76,1006,103"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="690,149,713,140,851,101,853,106,714,145,691,154"/>
+<area shape="rect" id="Node000009" href="$class_fbx_property_t.html" title=" " alt="" coords="826,135,998,161"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="705,163,825,153,826,158,705,168"/>
+<area shape="rect" id="Node000010" href="$class_fbx_property_t.html" title=" " alt="" coords="1238,191,1469,233"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="705,172,1238,203,1237,208,705,177"/>
+<area shape="rect" id="Node000011" href="$class_fbx_property_t.html" title=" " alt="" coords="1030,272,1214,299"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="669,193,690,210,714,224,795,252,878,269,959,279,1030,283,1029,289,958,285,877,275,793,257,712,229,687,214,666,197"/>
+<area shape="rect" id="Node000012" href="$class_fbx_property_t.html" title=" " alt="" coords="1032,344,1212,371"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="661,195,684,228,715,257,752,279,792,298,876,326,958,342,1032,351,1031,356,958,348,875,331,790,303,750,284,712,261,680,231,657,199"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1009,71,1029,68,1177,55,1301,49,1301,54,1178,61,1030,73,1009,76"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="1013,140,1155,135,1319,133,1472,140,1534,147,1581,159,1604,169,1624,183,1656,211,1652,215,1621,187,1601,174,1579,164,1533,153,1471,145,1319,138,1155,140,1014,145"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="1014,133,1213,106,1225,97,1237,87,1301,61,1303,66,1239,92,1228,101,1215,110,1014,138"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1485,222,1493,223,1604,225,1604,230,1493,228,1485,228"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1230,290,1238,291,1354,298,1405,298,1469,291,1515,281,1560,267,1634,238,1636,243,1562,272,1516,286,1470,296,1405,304,1354,304,1238,296,1230,296"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="1228,358,1308,355,1398,345,1491,325,1536,310,1579,291,1619,265,1650,238,1654,242,1622,269,1582,296,1538,315,1492,330,1399,350,1308,361,1228,364"/>
+</map>

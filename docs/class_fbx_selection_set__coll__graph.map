@@ -1,0 +1,18 @@
+<map id="FbxSelectionSet" name="FbxSelectionSet">
+<area shape="rect" id="Node000001" title=" " alt="" coords="128,487,246,513"/>
+<area shape="rect" id="Node000002" href="$class_fbx_collection.html" title=" " alt="" coords="86,411,187,437"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,449,181,485,176,488,151,452"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="90,309,172,336"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,352,139,410,133,411,130,352"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="54,219,139,245"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="108,259,118,284,128,308,123,310,113,286,103,261"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="19,128,174,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="99,170,99,218,94,218,94,170"/>
+<area shape="rect" id="Node000006" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="99,79,99,128,94,128,94,79"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="180,219,272,245"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="167,253,144,271,136,290,133,309,128,309,131,288,140,268,164,249"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="152,360,332,387"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="232,260,243,359,238,360,226,261"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="233,402,195,487,190,485,228,400"/>
+</map>

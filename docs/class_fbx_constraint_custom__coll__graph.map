@@ -1,0 +1,21 @@
+<map id="FbxConstraintCustom" name="FbxConstraintCustom">
+<area shape="rect" id="Node000001" title="This constraint class contains methods for custom constraint." alt="" coords="180,492,330,519"/>
+<area shape="rect" id="Node000002" href="$class_fbx_constraint.html" title=" " alt="" coords="204,416,307,443"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,458,258,492,252,492,252,458"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="56,309,137,336"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,342,237,413,234,418,127,347"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="54,219,139,245"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="99,261,99,309,94,309,94,261"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="19,128,174,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="99,170,99,218,94,218,94,170"/>
+<area shape="rect" id="Node000006" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="99,79,99,128,94,128,94,79"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="209,219,301,245"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="207,254,170,272,113,311,110,306,167,267,205,249"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="162,309,349,336"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="258,261,258,309,252,309,252,261"/>
+<area shape="rect" id="Node000009" href="$class_fbx_property_t.html" title=" " alt="" coords="373,309,545,336"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="299,249,431,306,429,311,297,254"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="258,351,258,416,252,416,252,351"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="422,346,281,418,279,413,420,341"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="MetalContext" name="MetalContext">
+<area shape="rect" id="Node000001" title=" " alt="" coords="16,172,116,199"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,47,67,171,62,172,45,48"/>
+<area shape="rect" id="Node000003" href="$interface_framebuffer_descriptor.html" title=" " alt="" coords="81,81,232,108"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="78,39,139,79,136,83,75,43"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,121,81,173,77,170,131,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="108,5,213,32"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="162,47,160,81,155,81,156,47"/>
+</map>

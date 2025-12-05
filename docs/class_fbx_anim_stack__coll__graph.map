@@ -1,0 +1,21 @@
+<map id="FbxAnimStack" name="FbxAnimStack">
+<area shape="rect" id="Node000001" title=" " alt="" coords="171,524,278,551"/>
+<area shape="rect" id="Node000002" href="$class_fbx_collection.html" title=" " alt="" coords="70,429,171,456"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,464,212,521,209,525,144,468"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="73,309,154,336"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,351,122,429,117,429,113,352"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="54,219,139,245"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="105,260,114,308,109,309,99,261"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="19,128,174,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="99,170,99,218,94,218,94,170"/>
+<area shape="rect" id="Node000006" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="99,79,99,128,94,128,94,79"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="196,219,288,245"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="182,250,162,259,144,271,129,290,120,310,115,308,125,287,140,267,159,254,180,245"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="134,360,315,387"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="241,261,229,360,223,359,236,260"/>
+<area shape="rect" id="Node000009" href="$class_fbx_property_t.html" title=" " alt="" coords="321,360,496,387"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="270,253,395,357,392,362,267,257"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="227,403,227,523,222,523,222,403"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="387,400,302,477,242,526,239,522,299,473,383,396"/>
+</map>

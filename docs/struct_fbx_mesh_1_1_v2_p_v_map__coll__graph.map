@@ -1,0 +1,11 @@
+<map id="FbxMesh::V2PVMap" name="FbxMesh::V2PVMap">
+<area shape="rect" id="Node000001" title=" " alt="" coords="619,72,761,99"/>
+<area shape="rect" id="Node000002" href="$struct_fbx_mesh_1_1_polygon_index_def.html" title=" " alt="" coords="286,5,469,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="462,33,596,61,629,69,628,74,594,67,461,38"/>
+<area shape="rect" id="Node000003" href="$class_fbx_set.html" title=" " alt="" coords="254,56,501,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="516,83,618,83,618,88,516,88"/>
+<area shape="rect" id="Node000004" href="$class_fbx_array.html" title=" " alt="" coords="321,139,434,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="448,135,594,104,628,97,629,102,596,109,449,140"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_array_1_1t_data.html" title=" " alt="" coords="5,131,163,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,149,321,149,321,155,178,155"/>
+</map>

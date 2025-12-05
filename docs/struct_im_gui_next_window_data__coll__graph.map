@@ -1,0 +1,13 @@
+<map id="ImGuiNextWindowData" name="ImGuiNextWindowData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="181,288,340,315"/>
+<area shape="rect" id="Node000002" href="$struct_im_vec2.html" title=" " alt="" coords="160,5,225,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,38,114,52,80,72,49,98,25,129,13,155,8,177,12,199,25,222,56,253,96,274,139,288,181,295,180,300,137,293,94,279,53,257,21,226,7,201,3,177,8,153,20,127,45,94,77,68,111,48,144,33"/>
+<area shape="rect" id="Node000003" href="$struct_im_rect.html" title=" " alt="" coords="161,163,225,189"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="195,48,195,162,190,162,190,48"/>
+<area shape="rect" id="Node000004" href="$struct_im_gui_size_callback_data.html" title=" " alt="" coords="249,163,411,189"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="218,42,229,54,322,160,318,164,225,58,214,45"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,204,183,234,185,249,190,263,202,276,218,285,215,290,199,280,186,265,180,250,177,234,181,204"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="330,205,322,235,308,266,284,289,280,286,304,262,317,233,324,204"/>
+<area shape="rect" id="Node000005" href="$struct_im_gui_window_class.html" title=" " alt="" coords="435,163,572,189"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="484,202,448,236,402,266,370,280,336,290,335,285,368,275,399,262,444,231,480,199"/>
+</map>

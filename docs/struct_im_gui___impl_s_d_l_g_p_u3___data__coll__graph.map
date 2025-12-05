@@ -1,0 +1,7 @@
+<map id="ImGui_ImplSDLGPU3_Data" name="ImGui_ImplSDLGPU3_Data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="127,96,313,123"/>
+<area shape="rect" id="Node000002" href="$struct_im_gui___impl_s_d_l_g_p_u3___init_info.html" title=" " alt="" coords="5,5,203,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,40,205,93,202,98,131,44"/>
+<area shape="rect" id="Node000003" href="$struct_im_gui___impl_s_d_l_g_p_u3___frame_data.html" title=" " alt="" coords="226,5,448,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="310,44,238,98,235,93,307,40"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="FbxScopedLoadingFileName" name="FbxScopedLoadingFileName">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,194,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_loading_strategy.html" title=" " alt="" coords="31,155,168,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,197,102,229,97,229,97,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_plugin_container.html" title=" " alt="" coords="32,80,167,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,122,102,154,97,154,97,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="57,5,142,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="102,48,102,80,97,80,97,48"/>
+</map>

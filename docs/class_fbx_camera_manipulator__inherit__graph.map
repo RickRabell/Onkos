@@ -1,0 +1,7 @@
+<map id="FbxCameraManipulator" name="FbxCameraManipulator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,162,181"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="43,80,124,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,122,86,154,81,154,81,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="41,5,126,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,48,86,80,81,80,81,48"/>
+</map>

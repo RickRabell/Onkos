@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['baseapp_0',['BaseApp',['../class_base_app.html',1,'BaseApp'],['../class_base_app.html#a3f3785ed6c6ad8232ed9bd424763751c',1,'BaseApp::BaseApp()']]],
-  ['baseapp_2ecpp_1',['BaseApp.cpp',['../_base_app_8cpp.html',1,'']]],
-  ['baseapp_2eh_2',['BaseApp.h',['../_base_app_8h.html',1,'']]],
-  ['buffer_3',['Buffer',['../class_buffer.html',1,'Buffer'],['../class_buffer.html#a92fd371409790ee64d2ca9bdaec2dd1a',1,'Buffer::Buffer()']]],
-  ['buffer_2ecpp_4',['Buffer.cpp',['../_buffer_8cpp.html',1,'']]],
-  ['buffer_2eh_5',['Buffer.h',['../_buffer_8h.html',1,'']]]
+  ['0_2010_0',['0 10',['../C:/Users/richa/OneDrive/Documentos/GitHub/Onkos/Onkos/Imgui/imgui-docking/examples/example_glfw_wgpu/README.md#autotoc_md211',1,'Generate Emscripten forcing &lt;tt&gt;-sUSE_WEBGPU=1&lt;/tt&gt; deprecated flag even with EMS &gt;= 4.0.10'],['../C:/Users/richa/OneDrive/Documentos/GitHub/Onkos/Onkos/Imgui/imgui-docking/examples/example_sdl2_wgpu/README.md#autotoc_md244',1,'Generate Emscripten forcing &lt;tt&gt;-sUSE_WEBGPU=1&lt;/tt&gt; deprecated flag even with EMS &gt;= 4.0.10'],['../C:/Users/richa/OneDrive/Documentos/GitHub/Onkos/Onkos/Imgui/imgui-docking/examples/example_sdl3_wgpu/README.md#autotoc_md275',1,'Generate Emscripten forcing &lt;tt&gt;-sUSE_WEBGPU=1&lt;/tt&gt; deprecated flag even with EMS &gt;= 4.0.10']]],
+  ['04_20and_20macos_1',['On Ubuntu 14.04+ and macOS',['../C:/Users/richa/OneDrive/Documentos/GitHub/Onkos/Onkos/Imgui/imgui-docking/examples/example_allegro5/README.md#autotoc_md195',1,'']]]
 ];

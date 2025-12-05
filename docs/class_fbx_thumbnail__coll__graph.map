@@ -1,0 +1,16 @@
+<map id="FbxThumbnail" name="FbxThumbnail">
+<area shape="rect" id="Node000001" title=" " alt="" coords="117,416,220,443"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="56,309,137,336"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,347,162,414,158,417,111,350"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="54,219,139,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,261,99,309,94,309,94,261"/>
+<area shape="rect" id="Node000004" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="19,128,174,155"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="99,170,99,218,94,218,94,170"/>
+<area shape="rect" id="Node000005" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="99,79,99,128,94,128,94,79"/>
+<area shape="rect" id="Node000006" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="180,219,272,245"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="178,254,148,272,125,291,108,311,104,307,122,287,145,267,175,250"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property_t.html" title=" " alt="" coords="161,309,322,336"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="233,260,242,308,237,309,228,261"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="227,350,179,417,175,414,222,347"/>
+</map>

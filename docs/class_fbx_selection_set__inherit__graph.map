@@ -1,0 +1,9 @@
+<map id="FbxSelectionSet" name="FbxSelectionSet">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,123,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_collection.html" title=" " alt="" coords="13,155,115,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,197,67,229,61,229,61,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="23,80,105,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="67,122,67,154,61,154,61,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="21,5,107,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="67,48,67,80,61,80,61,48"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="FbxReader" name="FbxReader">
+<area shape="rect" id="Node000001" title=" " alt="" coords="115,203,201,229"/>
+<area shape="rect" id="Node000002" href="$class_fbx_status.html" title=" " alt="" coords="5,112,87,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,148,101,177,137,200,134,204,98,181,66,152"/>
+<area shape="rect" id="Node000003" href="$class_fbx_manager.html" title=" " alt="" coords="111,112,205,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,154,161,202,155,202,155,154"/>
+<area shape="rect" id="Node000004" href="$class_fbx_i_o_default_render_resolution.html" title=" " alt="" coords="228,112,432,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="293,149,230,181,184,204,182,200,227,176,291,144"/>
+<area shape="rect" id="Node000005" href="$class_fbx_string.html" title=" " alt="" coords="291,5,369,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="333,47,333,112,327,112,327,47"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ImStb::STB_TexteditState" name="ImStb::STB_TexteditState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,180,213"/>
+<area shape="rect" id="Node000002" href="$struct_im_stb_1_1_stb_undo_state.html" title=" " alt="" coords="19,96,166,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,138,95,186,90,186,90,138"/>
+<area shape="rect" id="Node000003" href="$struct_im_stb_1_1_stb_undo_record.html" title=" " alt="" coords="14,5,171,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,48,95,95,90,95,90,48"/>
+</map>

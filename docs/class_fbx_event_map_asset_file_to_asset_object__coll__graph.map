@@ -1,0 +1,17 @@
+<map id="FbxEventMapAssetFileToAssetObject" name="FbxEventMapAssetFileToAssetObject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="88,416,293,459"/>
+<area shape="rect" id="Node000002" href="$class_fbx_event.html" title=" " alt="" coords="5,309,210,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,363,176,414,172,417,131,366"/>
+<area shape="rect" id="Node000003" href="$class_fbx_event_base.html" title=" " alt="" coords="54,219,161,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,261,110,309,105,309,105,261"/>
+<area shape="rect" id="Node000004" href="$class_fbx_object.html" title=" " alt="" coords="234,317,315,344"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,358,209,417,205,414,253,354"/>
+<area shape="rect" id="Node000005" href="$class_fbx_emitter.html" title=" " alt="" coords="208,219,293,245"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="260,260,274,316,269,318,254,261"/>
+<area shape="rect" id="Node000006" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="172,128,328,155"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="253,170,253,218,248,218,248,170"/>
+<area shape="rect" id="Node000007" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="159,5,341,64"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="253,79,253,128,248,128,248,79"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="317,219,410,245"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="344,258,288,319,284,315,340,255"/>
+</map>

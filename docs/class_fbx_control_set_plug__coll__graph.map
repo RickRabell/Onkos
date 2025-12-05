@@ -1,0 +1,22 @@
+<map id="FbxControlSetPlug" name="FbxControlSetPlug">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1145,109,1276,136"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="870,21,951,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="967,42,1041,59,1122,81,1182,106,1180,111,1120,87,1040,64,966,47"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="600,21,686,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="701,32,870,32,870,37,701,37"/>
+<area shape="rect" id="Node000004" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="351,21,506,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="521,32,600,32,600,37,521,37"/>
+<area shape="rect" id="Node000005" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,5,188,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="203,32,350,32,350,37,203,37"/>
+<area shape="rect" id="Node000006" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="597,119,689,145"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="685,109,712,98,817,57,869,42,870,47,819,63,714,102,688,114"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property_t.html" title=" " alt="" coords="822,72,999,115"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="704,121,822,103,822,109,705,126"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="824,139,997,165"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="705,134,824,143,823,148,705,139"/>
+<area shape="rect" id="Node000009" href="$class_fbx_property_t.html" title=" " alt="" coords="818,189,1003,216"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="705,145,858,186,856,191,704,151"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1014,101,1144,114,1144,119,1014,106"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1012,142,1120,132,1144,129,1145,134,1121,137,1012,147"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1018,187,1069,177,1120,163,1184,134,1186,139,1122,168,1070,182,1019,192"/>
+</map>

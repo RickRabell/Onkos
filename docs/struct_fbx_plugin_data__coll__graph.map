@@ -1,0 +1,16 @@
+<map id="FbxPluginData" name="FbxPluginData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="215,400,322,427"/>
+<area shape="rect" id="Node000002" href="$class_fbx_emitter.html" title=" " alt="" coords="226,219,312,245"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="272,261,272,400,266,400,266,261"/>
+<area shape="rect" id="Node000006" href="$class_fbx_plugin_container.html" title=" " alt="" coords="74,309,210,336"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="240,257,162,311,159,307,237,252"/>
+<area shape="rect" id="Node000003" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="191,128,346,155"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,170,272,218,266,218,266,170"/>
+<area shape="rect" id="Node000004" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="178,5,360,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,79,272,128,266,128,266,79"/>
+<area shape="rect" id="Node000005" href="$class_fbx_manager.html" title=" " alt="" coords="385,309,478,336"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="396,346,293,402,291,397,393,342"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="139,351,140,364,145,374,159,388,177,398,216,408,214,413,175,403,156,392,141,378,135,365,134,351"/>
+<area shape="rect" id="Node000007" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,219,202,245"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="118,259,139,308,134,310,113,261"/>
+</map>

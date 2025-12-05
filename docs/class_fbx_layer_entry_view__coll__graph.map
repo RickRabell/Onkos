@@ -1,0 +1,9 @@
+<map id="FbxLayerEntryView" name="FbxLayerEntryView">
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,311,147,337"/>
+<area shape="rect" id="Node000002" href="$class_fbx_entry_view.html" title=" " alt="" coords="28,235,131,261"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,276,82,310,77,310,77,276"/>
+<area shape="rect" id="Node000003" href="$class_fbx_binding_table_entry.html" title=" " alt="" coords="5,144,154,171"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,186,82,234,77,234,77,186"/>
+<area shape="rect" id="Node000004" href="$class_fbx_string.html" title=" " alt="" coords="41,5,118,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,48,82,143,77,143,77,48"/>
+</map>

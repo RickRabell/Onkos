@@ -1,0 +1,25 @@
+<map id="FbxAnimCurveFilter" name="FbxAnimCurveFilter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,307,143,333"/>
+<area shape="rect" id="Node000002" href="$class_fbx_anim_curve_filter_constant_key_reducer.html" title=" " alt="" coords="218,5,408,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,291,89,240,110,178,142,113,164,84,189,58,216,41,219,46,192,62,168,87,147,116,114,180,94,242,82,292"/>
+<area shape="rect" id="Node000003" href="$class_fbx_anim_curve_filter_gimble_killer.html" title=" " alt="" coords="224,72,402,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,291,97,253,120,208,150,163,189,125,222,107,225,111,192,129,154,167,124,211,102,256,87,293"/>
+<area shape="rect" id="Node000004" href="$class_fbx_anim_curve_filter_key_reducer.html" title=" " alt="" coords="208,139,418,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="87,292,127,232,156,201,189,175,214,163,216,168,192,180,160,205,132,235,92,295"/>
+<area shape="rect" id="Node000005" href="$class_fbx_anim_curve_filter_key_sync.html" title=" " alt="" coords="218,189,408,216"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="97,293,138,258,189,226,221,214,222,219,192,230,141,262,101,297"/>
+<area shape="rect" id="Node000006" href="$class_fbx_anim_curve_filter_matrix_converter.html" title=" " alt="" coords="226,240,400,283"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="145,300,225,280,227,285,147,305"/>
+<area shape="rect" id="Node000007" href="$class_fbx_anim_curve_filter_resample.html" title=" " alt="" coords="215,307,411,333"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="158,317,214,317,214,323,158,323"/>
+<area shape="rect" id="Node000008" href="$class_fbx_anim_curve_filter_scale.html" title=" " alt="" coords="228,357,398,384"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="153,335,191,343,245,354,244,359,190,348,152,340"/>
+<area shape="rect" id="Node000009" href="$class_fbx_anim_curve_filter_scale_by_curve.html" title=" " alt="" coords="220,408,406,451"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="106,341,146,368,192,394,221,405,219,410,190,398,143,373,103,345"/>
+<area shape="rect" id="Node000010" href="$class_fbx_anim_curve_filter_scale_compensate.html" title=" " alt="" coords="191,475,435,501"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="92,345,132,405,160,435,192,460,216,472,214,477,189,465,156,439,127,408,87,348"/>
+<area shape="rect" id="Node000011" href="$class_fbx_anim_curve_filter_t_s_s.html" title=" " alt="" coords="231,525,394,552"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="86,347,101,385,123,430,154,474,192,511,211,522,232,529,230,534,209,527,189,515,150,478,119,433,96,387,82,349"/>
+<area shape="rect" id="Node000012" href="$class_fbx_anim_curve_filter_unroll.html" title=" " alt="" coords="227,576,398,603"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="83,348,95,395,116,454,148,513,168,539,192,562,209,572,228,580,226,585,207,577,189,566,164,543,143,516,111,456,90,397,78,349"/>
+</map>

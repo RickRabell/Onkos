@@ -1,0 +1,7 @@
+<map id="ExampleAsset" name="ExampleAsset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="49,187,155,213"/>
+<area shape="rect" id="Node000002" href="$struct_im_gui_table_sort_specs.html" title=" " alt="" coords="28,96,176,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,138,105,186,99,186,99,138"/>
+<area shape="rect" id="Node000003" href="$struct_im_gui_table_column_sort_specs.html" title=" " alt="" coords="5,5,199,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="105,48,105,95,99,95,99,48"/>
+</map>

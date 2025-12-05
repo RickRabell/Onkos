@@ -105,6 +105,7 @@ $(function(){initNavTree('class_model_loader.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_model_loader-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ModelLoader Class Reference</div></div>
 </div><!--header-->
@@ -126,12 +127,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85b5a2958aa52aa84d93acb683ffd860" id="r_a85b5a2958aa52aa84d93acb683ffd860"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b5a2958aa52aa84d93acb683ffd860">loadModel</a> (const std::string &amp;fileName, <a class="el" href="class_mesh_component.html">MeshComponent</a> &amp;outMesh)</td></tr>
 <tr class="memdesc:a85b5a2958aa52aa84d93acb683ffd860"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a model from a specified file and populates a <a class="el" href="class_mesh_component.html" title="A data component holding CPU-side geometry.">MeshComponent</a>.  <br /></td></tr>
 <tr class="separator:a85b5a2958aa52aa84d93acb683ffd860"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac80d82a3265381af56026c65aa3a2e78" id="r_ac80d82a3265381af56026c65aa3a2e78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac80d82a3265381af56026c65aa3a2e78">parseVec2</a> (std::stringstream &amp;streamLine, std::vector&lt; XMFLOAT2 &gt; &amp;outVector)</td></tr>
+<tr class="memitem:ac80d82a3265381af56026c65aa3a2e78" id="r_ac80d82a3265381af56026c65aa3a2e78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac80d82a3265381af56026c65aa3a2e78">parseVec2</a> (std::stringstream &amp;streamLine, std::vector&lt; XMFLOAT2 &gt; &amp;outVector)</td></tr>
 <tr class="memdesc:ac80d82a3265381af56026c65aa3a2e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">A utility function to parse a 2-component vector (XMFLOAT2) from a string stream.  <br /></td></tr>
 <tr class="separator:ac80d82a3265381af56026c65aa3a2e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a025ededbad53f19a1a8779e51c89402c" id="r_a025ededbad53f19a1a8779e51c89402c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a025ededbad53f19a1a8779e51c89402c">parseVec3</a> (std::stringstream &amp;streamLine, std::vector&lt; XMFLOAT3 &gt; &amp;outVector)</td></tr>
+<tr class="memitem:a025ededbad53f19a1a8779e51c89402c" id="r_a025ededbad53f19a1a8779e51c89402c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a025ededbad53f19a1a8779e51c89402c">parseVec3</a> (std::stringstream &amp;streamLine, std::vector&lt; XMFLOAT3 &gt; &amp;outVector)</td></tr>
 <tr class="memdesc:a025ededbad53f19a1a8779e51c89402c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A utility function to parse a 3-component vector (XMFLOAT3) from a string stream.  <br /></td></tr>
 <tr class="separator:a025ededbad53f19a1a8779e51c89402c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a84a4fc47854630608bf2a0ba63142266" id="r_a84a4fc47854630608bf2a0ba63142266"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84a4fc47854630608bf2a0ba63142266">modelName</a></td></tr>
+<tr class="separator:a84a4fc47854630608bf2a0ba63142266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A utility class for loading 3D model data from files. </p>
@@ -232,7 +238,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ModelLoader::parseVec2 </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> ModelLoader::parseVec2 </td>
           <td>(</td>
           <td class="paramtype">std::stringstream &amp;</td>          <td class="paramname"><span class="paramname"><em>streamLine</em></span>, </td>
         </tr>
@@ -263,7 +269,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ModelLoader::parseVec3 </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> ModelLoader::parseVec3 </td>
           <td>(</td>
           <td class="paramtype">std::stringstream &amp;</td>          <td class="paramname"><span class="paramname"><em>streamLine</em></span>, </td>
         </tr>
@@ -284,6 +290,21 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a84a4fc47854630608bf2a0ba63142266" name="a84a4fc47854630608bf2a0ba63142266"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84a4fc47854630608bf2a0ba63142266">&#9670;&#160;</a></span>modelName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ModelLoader::modelName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -1,0 +1,15 @@
+<map id="FbxProcessor" name="FbxProcessor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="293,155,396,181"/>
+<area shape="rect" id="Node000004" href="$class_fbx_embedded_files_accumulator.html" title=" " alt="" coords="5,229,212,256"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="290,189,151,231,149,226,288,184"/>
+<area shape="rect" id="Node000005" href="$class_fbx_processor_shader_dependency.html" title=" " alt="" coords="236,229,453,256"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="347,197,347,229,342,229,342,197"/>
+<area shape="rect" id="Node000006" href="$class_fbx_processor_x_ref_copy.html" title=" " alt="" coords="476,229,640,256"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="397,184,521,226,520,231,395,189"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="304,80,385,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,122,347,154,342,154,342,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="302,5,387,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,48,347,80,342,80,342,48"/>
+<area shape="rect" id="Node000007" href="$class_fbx_processor_x_ref_copy_user_library.html" title=" " alt="" coords="462,304,654,347"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="560,272,560,304,555,304,555,272"/>
+</map>

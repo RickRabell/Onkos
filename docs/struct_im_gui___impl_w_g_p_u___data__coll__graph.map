@@ -1,0 +1,19 @@
+<map id="ImGui_ImplWGPU_Data" name="ImGui_ImplWGPU_Data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="187,384,353,411"/>
+<area shape="rect" id="Node000002" href="$struct_im_gui___impl_w_g_p_u___init_info.html" title=" " alt="" coords="5,293,183,320"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,325,246,381,244,386,132,330"/>
+<area shape="rect" id="Node000003" href="$struct_render_resources.html" title=" " alt="" coords="207,293,333,320"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,336,273,383,267,383,267,336"/>
+<area shape="rect" id="Node000004" href="$struct_im_gui_storage.html" title=" " alt="" coords="218,203,319,229"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,245,272,293,267,293,266,245"/>
+<area shape="rect" id="Node000005" href="$struct_im_vector.html" title=" " alt="" coords="162,96,362,123"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="266,138,271,202,265,203,261,138"/>
+<area shape="rect" id="Node000006" href="$struct_im_gui_storage_pair.html" title=" " alt="" coords="200,5,324,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="265,48,265,95,259,95,259,48"/>
+<area shape="rect" id="Node000007" href="$struct_frame_resources.html" title=" " alt="" coords="359,293,480,320"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="406,335,380,362,355,376,329,386,327,381,353,371,376,358,402,331"/>
+<area shape="rect" id="Node000008" href="$struct_im_draw_vert.html" title=" " alt="" coords="374,203,464,229"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="422,245,422,293,417,293,417,245"/>
+<area shape="rect" id="Node000009" href="$struct_im_vec2.html" title=" " alt="" coords="387,96,452,123"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="422,138,422,202,417,202,417,138"/>
+</map>

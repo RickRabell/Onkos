@@ -1,0 +1,5 @@
+<map id="ImGuiSelectionBasicStorage" name="ImGuiSelectionBasicStorage">
+<area shape="rect" id="Node000001" title=" " alt="" coords="12,5,200,32"/>
+<area shape="rect" id="Node000002" href="$struct_example_selection_with_deletion.html" title=" " alt="" coords="5,80,207,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,48,109,80,103,80,103,48"/>
+</map>

@@ -103,10 +103,13 @@ $(function(){initNavTree('_texture_8cpp.html',''); initResizable(true); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Texture.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_texture_8h_source.html">Texture.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="stb__image_8h_source.html">stb_image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_8h_source.html">Texture.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_device_8h_source.html">Device.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_device_context_8h_source.html">DeviceContext.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -114,42 +117,91 @@ Include dependency graph for Texture.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_texture_8cpp__incl.png" border="0" usemap="#a_onkos_2source_2_texture_8cpp" alt=""/></div>
 <map name="a_onkos_2source_2_texture_8cpp" id="a_onkos_2source_2_texture_8cpp">
-<area shape="rect" title=" " alt="" coords="412,5,586,32"/>
-<area shape="rect" href="_texture_8h.html" title=" " alt="" coords="362,80,438,107"/>
-<area shape="poly" title=" " alt="" coords="483,35,431,73,428,69,480,30"/>
-<area shape="rect" href="_device_8h.html" title=" " alt="" coords="462,80,535,107"/>
-<area shape="poly" title=" " alt="" coords="501,33,501,64,496,64,496,33"/>
-<area shape="rect" href="_device_context_8h.html" title=" " alt="" coords="559,80,678,107"/>
-<area shape="poly" title=" " alt="" coords="521,30,586,69,583,74,518,35"/>
-<area shape="rect" href="_prerequisites_8h.html" title="A precompiled header file for the engine." alt="" coords="444,155,553,181"/>
-<area shape="poly" title=" " alt="" coords="419,105,471,143,468,148,416,109"/>
-<area shape="rect" title=" " alt="" coords="5,229,59,256"/>
-<area shape="poly" title=" " alt="" coords="444,177,282,196,180,211,75,232,74,226,179,206,282,190,444,171"/>
-<area shape="rect" title=" " alt="" coords="83,229,152,256"/>
-<area shape="poly" title=" " alt="" coords="445,180,321,201,167,231,166,226,320,196,444,175"/>
-<area shape="rect" title=" " alt="" coords="175,229,233,256"/>
-<area shape="poly" title=" " alt="" coords="445,184,248,231,247,226,443,179"/>
-<area shape="rect" title=" " alt="" coords="257,229,340,256"/>
-<area shape="poly" title=" " alt="" coords="465,184,349,226,347,221,463,179"/>
-<area shape="rect" title=" " alt="" coords="364,229,446,256"/>
-<area shape="poly" title=" " alt="" coords="484,184,435,222,432,218,481,180"/>
-<area shape="rect" title=" " alt="" coords="470,229,527,256"/>
-<area shape="poly" title=" " alt="" coords="501,182,501,214,496,214,496,182"/>
-<area shape="rect" title=" " alt="" coords="552,229,598,256"/>
-<area shape="poly" title=" " alt="" coords="514,180,553,217,549,221,510,184"/>
-<area shape="rect" title=" " alt="" coords="622,229,688,256"/>
-<area shape="poly" title=" " alt="" coords="527,179,615,220,613,225,525,184"/>
-<area shape="rect" title=" " alt="" coords="711,229,785,256"/>
-<area shape="poly" title=" " alt="" coords="543,179,697,224,695,229,541,184"/>
-<area shape="rect" title=" " alt="" coords="809,229,911,256"/>
-<area shape="poly" title=" " alt="" coords="554,178,794,225,793,231,553,183"/>
-<area shape="rect" href="_resource_8h.html" title=" " alt="" coords="936,229,1024,256"/>
-<area shape="poly" title=" " alt="" coords="554,173,714,194,921,227,920,232,713,200,553,179"/>
-<area shape="poly" title=" " alt="" coords="501,107,501,139,496,139,496,107"/>
-<area shape="poly" title=" " alt="" coords="599,109,534,149,531,144,596,105"/>
+<area shape="rect" title=" " alt="" coords="802,5,976,32"/>
+<area shape="rect" href="stb__image_8h.html" title=" " alt="" coords="686,80,778,107"/>
+<area shape="poly" title=" " alt="" coords="863,35,775,75,772,71,861,30"/>
+<area shape="rect" href="_texture_8h.html" title=" " alt="" coords="802,80,878,107"/>
+<area shape="poly" title=" " alt="" coords="883,34,859,69,855,66,879,31"/>
+<area shape="rect" href="_device_8h.html" title=" " alt="" coords="902,80,975,107"/>
+<area shape="poly" title=" " alt="" coords="900,31,924,66,919,69,896,34"/>
+<area shape="rect" href="_device_context_8h.html" title=" " alt="" coords="999,80,1118,107"/>
+<area shape="poly" title=" " alt="" coords="920,30,1016,71,1014,76,918,35"/>
+<area shape="rect" title=" " alt="" coords="659,155,720,181"/>
+<area shape="poly" title=" " alt="" coords="727,109,707,143,702,140,722,106"/>
+<area shape="rect" title=" " alt="" coords="743,155,806,181"/>
+<area shape="poly" title=" " alt="" coords="742,106,762,140,757,143,737,109"/>
+<area shape="rect" href="_prerequisites_8h.html" title="A precompiled header file for the engine." alt="" coords="884,155,993,181"/>
+<area shape="poly" title=" " alt="" coords="859,105,911,143,908,148,856,109"/>
+<area shape="rect" title=" " alt="" coords="5,237,59,264"/>
+<area shape="poly" title=" " alt="" coords="885,178,819,184,704,190,607,190,440,185,361,185,277,191,182,205,71,232,67,233,66,228,70,227,181,200,276,185,361,180,441,179,607,185,704,185,818,179,884,173"/>
+<area shape="rect" title=" " alt="" coords="83,237,152,264"/>
+<area shape="poly" title=" " alt="" coords="885,178,819,184,719,190,633,192,488,191,418,192,344,198,261,211,163,232,157,234,155,229,162,227,260,205,344,193,418,187,488,186,633,187,718,185,818,179,884,172"/>
+<area shape="rect" title=" " alt="" coords="175,237,233,264"/>
+<area shape="poly" title=" " alt="" coords="885,178,819,184,731,190,656,192,529,191,468,193,404,199,331,211,246,232,241,234,239,228,245,227,330,206,403,194,468,188,529,186,656,187,731,185,818,179,884,172"/>
+<area shape="rect" title=" " alt="" coords="257,237,340,264"/>
+<area shape="poly" title=" " alt="" coords="884,177,352,232,343,234,342,229,352,227,884,172"/>
+<area shape="rect" title=" " alt="" coords="364,237,446,264"/>
+<area shape="poly" title=" " alt="" coords="884,178,642,206,458,232,449,234,448,229,457,227,642,201,884,173"/>
+<area shape="rect" title=" " alt="" coords="470,237,527,264"/>
+<area shape="poly" title=" " alt="" coords="884,178,701,202,608,217,541,232,536,233,534,228,539,227,607,212,700,197,884,173"/>
+<area shape="rect" title=" " alt="" coords="552,237,598,264"/>
+<area shape="poly" title=" " alt="" coords="885,180,736,203,663,218,610,232,608,233,606,228,609,227,661,212,735,198,884,174"/>
+<area shape="rect" title=" " alt="" coords="622,237,690,264"/>
+<area shape="poly" title=" " alt="" coords="885,183,799,204,703,232,698,234,696,229,702,227,797,199,883,178"/>
+<area shape="rect" title=" " alt="" coords="714,237,824,264"/>
+<area shape="poly" title=" " alt="" coords="913,184,810,233,808,228,911,179"/>
+<area shape="rect" title=" " alt="" coords="848,237,930,264"/>
+<area shape="poly" title=" " alt="" coords="933,183,907,226,902,223,929,180"/>
+<area shape="rect" title=" " alt="" coords="955,237,1021,264"/>
+<area shape="poly" title=" " alt="" coords="949,180,975,223,970,226,944,183"/>
+<area shape="rect" title=" " alt="" coords="1045,237,1118,264"/>
+<area shape="poly" title=" " alt="" coords="962,180,1047,227,1045,232,960,184"/>
+<area shape="rect" title=" " alt="" coords="1142,237,1244,264"/>
+<area shape="poly" title=" " alt="" coords="980,179,1131,227,1140,230,1138,235,1130,232,978,184"/>
+<area shape="rect" href="_resource_8h.html" title=" " alt="" coords="1269,237,1358,264"/>
+<area shape="poly" title=" " alt="" coords="994,174,1115,195,1257,227,1267,230,1265,235,1255,232,1114,200,993,180"/>
+<area shape="rect" href="_vector2_8h.html" title=" " alt="" coords="1382,229,1535,272"/>
+<area shape="poly" title=" " alt="" coords="994,173,1157,194,1367,226,1366,232,1156,199,993,178"/>
+<area shape="rect" href="_vector3_8h.html" title=" " alt="" coords="1559,229,1713,272"/>
+<area shape="poly" title=" " alt="" coords="993,170,1229,188,1384,204,1544,226,1543,231,1383,210,1228,193,993,175"/>
+<area shape="rect" href="_t_shared_pointer_8h.html" title=" " alt="" coords="1730,320,1886,363"/>
+<area shape="poly" title=" " alt="" coords="993,168,1169,175,1398,186,1608,203,1683,214,1726,227,1749,243,1767,263,1795,305,1790,307,1763,266,1745,247,1724,232,1682,220,1607,209,1398,192,1169,180,993,174"/>
+<area shape="rect" href="_t_weak_pointer_8h.html" title=" " alt="" coords="1788,229,1945,272"/>
+<area shape="poly" title=" " alt="" coords="993,168,1322,184,1544,201,1770,227,1774,227,1773,233,1769,232,1544,206,1322,189,993,173"/>
+<area shape="rect" href="_t_static_ptr_8h.html" title=" " alt="" coords="1968,229,2125,272"/>
+<area shape="poly" title=" " alt="" coords="993,167,1154,169,1390,178,1667,196,1811,209,1953,226,1953,232,1810,214,1667,201,1390,183,1154,175,993,172"/>
+<area shape="rect" href="_t_unique_ptr_8h.html" title=" " alt="" coords="2148,229,2305,272"/>
+<area shape="poly" title=" " alt="" coords="993,166,1180,167,1459,174,1791,192,1963,207,2133,226,2132,232,1962,212,1790,197,1459,179,1180,172,993,171"/>
+<area shape="rect" href="_engine_math_8h.html" title=" " alt="" coords="1497,320,1650,363"/>
+<area shape="poly" title=" " alt="" coords="1487,270,1536,308,1533,312,1484,275"/>
+<area shape="poly" title=" " alt="" coords="1624,274,1599,309,1595,306,1619,271"/>
+<area shape="poly" title=" " alt="" coords="1855,274,1832,309,1828,306,1851,271"/>
+<area shape="poly" title=" " alt="" coords="941,107,941,139,936,139,936,107"/>
+<area shape="poly" title=" " alt="" coords="1039,109,974,149,971,144,1036,105"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a18372412ad2fc3ce1e3240b3cf0efe78" id="r_a18372412ad2fc3ce1e3240b3cf0efe78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18372412ad2fc3ce1e3240b3cf0efe78">STB_IMAGE_IMPLEMENTATION</a></td></tr>
+<tr class="separator:a18372412ad2fc3ce1e3240b3cf0efe78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a18372412ad2fc3ce1e3240b3cf0efe78" name="a18372412ad2fc3ce1e3240b3cf0efe78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18372412ad2fc3ce1e3240b3cf0efe78">&#9670;&#160;</a></span>STB_IMAGE_IMPLEMENTATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STB_IMAGE_IMPLEMENTATION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

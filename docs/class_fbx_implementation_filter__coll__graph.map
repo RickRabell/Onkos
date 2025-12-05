@@ -1,0 +1,7 @@
+<map id="FbxImplementationFilter" name="FbxImplementationFilter">
+<area shape="rect" id="Node000001" title="This object represents a shading node filter criteria based on the shading node implementation." alt="" coords="38,144,200,171"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object_filter.html" title="This object represents a filter criteria on an object." alt="" coords="5,5,116,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,45,116,142,111,145,69,48"/>
+<area shape="rect" id="Node000003" href="$class_fbx_string.html" title=" " alt="" coords="139,5,216,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,48,127,145,122,142,164,45"/>
+</map>

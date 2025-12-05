@@ -1,0 +1,49 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_fbx_layer_element.html" title=" " alt="" coords="5,395,129,421"/>
+<area shape="rect" id="Node000001" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,27,353,69"/>
+<area shape="poly" id="edge193_Node000000_Node000001" title=" " alt="" coords="71,379,82,325,102,256,133,181,152,144,175,110,197,87,223,68,226,72,201,91,179,114,157,147,138,183,107,257,87,326,76,380"/>
+<area shape="rect" id="Node000003" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,124,353,167"/>
+<area shape="poly" id="edge195_Node000000_Node000003" title=" " alt="" coords="75,379,111,292,140,243,175,197,195,179,216,165,219,169,198,184,179,200,144,245,116,295,80,381"/>
+<area shape="rect" id="Node000007" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,211,353,253"/>
+<area shape="poly" id="edge199_Node000000_Node000007" title=" " alt="" coords="83,380,121,327,147,298,175,273,208,252,211,256,178,277,151,302,125,330,87,383"/>
+<area shape="rect" id="Node000009" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,287,353,329"/>
+<area shape="poly" id="edge201_Node000000_Node000009" title=" " alt="" coords="100,383,175,339,201,327,203,332,178,344,102,388"/>
+<area shape="rect" id="Node000012" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,353,353,396"/>
+<area shape="poly" id="edge204_Node000000_Node000012" title=" " alt="" coords="143,392,176,387,177,392,144,398"/>
+<area shape="rect" id="Node000015" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,420,353,463"/>
+<area shape="poly" id="edge207_Node000000_Node000015" title=" " alt="" coords="144,418,177,424,176,429,143,424"/>
+<area shape="rect" id="Node000017" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,487,353,529"/>
+<area shape="poly" id="edge209_Node000000_Node000017" title=" " alt="" coords="102,428,178,472,203,484,201,489,175,477,100,433"/>
+<area shape="rect" id="Node000019" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,553,353,596"/>
+<area shape="poly" id="edge211_Node000000_Node000019" title=" " alt="" coords="86,433,124,487,150,515,178,539,197,550,194,555,175,543,146,518,120,490,82,436"/>
+<area shape="rect" id="Node000021" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,620,353,663"/>
+<area shape="poly" id="edge213_Node000000_Node000021" title=" " alt="" coords="79,435,93,473,114,519,142,565,178,606,195,617,192,622,175,610,138,569,109,522,88,475,74,437"/>
+<area shape="rect" id="Node000023" href="$class_fbx_layer_element_template.html" title=" " alt="" coords="177,687,353,729"/>
+<area shape="poly" id="edge215_Node000000_Node000023" title=" " alt="" coords="75,436,85,487,105,550,135,615,155,646,178,673,193,684,190,688,175,677,151,649,130,618,100,552,80,488,70,437"/>
+<area shape="rect" id="Node000002" href="$class_fbx_layer_element_material.html" title=" " alt="" coords="419,5,588,32"/>
+<area shape="poly" id="edge194_Node000001_Node000002" title=" " alt="" coords="368,33,418,26,419,32,369,38"/>
+<area shape="rect" id="Node000004" href="$class_fbx_layer_element_binormal.html" title="Layer element for mapping Binormals to a geometry." alt="" coords="416,56,591,83"/>
+<area shape="poly" id="edge196_Node000003_Node000004" title=" " alt="" coords="333,115,400,92,441,81,443,86,402,97,335,120"/>
+<area shape="rect" id="Node000005" href="$class_fbx_layer_element_normal.html" title="Layer element for mapping Normals to a geometry." alt="" coords="421,107,586,133"/>
+<area shape="poly" id="edge197_Node000003_Node000005" title=" " alt="" coords="368,132,420,126,421,131,369,137"/>
+<area shape="rect" id="Node000006" href="$class_fbx_layer_element_tangent.html" title="Layer element for mapping Tangents to a geometry." alt="" coords="419,157,588,184"/>
+<area shape="poly" id="edge198_Node000003_Node000006" title=" " alt="" coords="369,154,419,159,418,164,368,159"/>
+<area shape="rect" id="Node000008" href="$class_fbx_layer_element_crease.html" title=" " alt="" coords="421,208,586,235"/>
+<area shape="poly" id="edge200_Node000007_Node000008" title=" " alt="" coords="368,225,420,222,421,228,369,230"/>
+<area shape="rect" id="Node000010" href="$class_fbx_layer_element_hole.html" title=" " alt="" coords="428,259,579,285"/>
+<area shape="poly" id="edge202_Node000009_Node000010" title=" " alt="" coords="368,290,427,281,428,286,369,295"/>
+<area shape="rect" id="Node000011" href="$class_fbx_layer_element_visibility.html" title=" " alt="" coords="418,309,590,336"/>
+<area shape="poly" id="edge203_Node000009_Node000011" title=" " alt="" coords="369,312,417,315,417,320,369,317"/>
+<area shape="rect" id="Node000013" href="$class_fbx_layer_element_polygon_group.html" title="Layer element for grouping related polygons together." alt="" coords="401,360,606,387"/>
+<area shape="poly" id="edge205_Node000012_Node000013" title=" " alt="" coords="369,371,401,371,401,377,369,377"/>
+<area shape="rect" id="Node000014" href="$class_fbx_layer_element_smoothing.html" title=" " alt="" coords="411,411,596,437"/>
+<area shape="poly" id="edge206_Node000012_Node000014" title=" " alt="" coords="369,393,436,407,435,413,368,399"/>
+<area shape="rect" id="Node000016" href="$class_fbx_layer_element_texture.html" title="Layer element for mapping Textures to a geometry. This class is deprecated." alt="" coords="420,461,587,488"/>
+<area shape="poly" id="edge208_Node000015_Node000016" title=" " alt="" coords="369,453,420,460,420,466,368,458"/>
+<area shape="rect" id="Node000018" href="$class_fbx_layer_element_u_v.html" title="Layer element for mapping UVs to a geometry." alt="" coords="432,512,575,539"/>
+<area shape="poly" id="edge210_Node000017_Node000018" title=" " alt="" coords="368,513,432,518,432,523,368,518"/>
+<area shape="rect" id="Node000020" href="$class_fbx_layer_element_user_data.html" title="Layer element for mapping custom user data to a geometry. This layer element is different from the ot..." alt="" coords="414,563,593,589"/>
+<area shape="poly" id="edge212_Node000019_Node000020" title=" " alt="" coords="369,573,413,573,413,578,369,578"/>
+<area shape="rect" id="Node000022" href="$class_fbx_layer_element_vertex_color.html" title="Layer element for mapping Vertex Colors to a geometry." alt="" coords="408,628,599,655"/>
+<area shape="poly" id="edge214_Node000021_Node000022" title=" " alt="" coords="368,639,407,639,407,644,368,644"/>
+</map>

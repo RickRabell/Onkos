@@ -1,0 +1,7 @@
+<map id="FbxAnimCurveFilterUnroll" name="FbxAnimCurveFilterUnroll">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,188,177,215"/>
+<area shape="rect" id="Node000002" href="$class_fbx_anim_curve_filter.html" title=" " alt="" coords="22,112,160,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,154,94,188,88,188,88,154"/>
+<area shape="rect" id="Node000003" href="$class_fbx_time.html" title=" " alt="" coords="55,5,127,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,47,94,112,88,112,88,47"/>
+</map>

@@ -1,13 +1,21 @@
 <map id="Onkos/include/SamplerState.h" name="Onkos/include/SamplerState.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="257,5,456,32"/>
-<area shape="rect" id="Node000002" href="$_base_app_8h.html" title=" " alt="" coords="162,80,335,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="327,43,269,82,266,77,324,39"/>
-<area shape="rect" id="Node000006" href="$_sampler_state_8cpp.html" title=" " alt="" coords="359,80,570,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="389,39,447,77,444,82,386,43"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="567,5,765,32"/>
+<area shape="rect" id="Node000002" href="$_base_app_8h.html" title=" " alt="" coords="265,80,437,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="597,39,407,82,406,77,595,33"/>
+<area shape="rect" id="Node000006" href="$_actor_8h.html" title=" " alt="" coords="575,80,757,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="668,48,668,80,663,80,663,48"/>
+<area shape="rect" id="Node000010" href="$_sampler_state_8cpp.html" title=" " alt="" coords="781,80,991,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="719,35,848,77,846,82,718,40"/>
 <area shape="rect" id="Node000003" href="$_onkos_8cpp.html" title=" " alt="" coords="5,155,132,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="204,115,101,157,99,152,202,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,114,119,157,117,151,287,108"/>
 <area shape="rect" id="Node000004" href="$_base_app_8cpp.html" title=" " alt="" coords="156,155,341,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="251,122,251,154,246,154,246,122"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="322,118,268,156,265,152,319,114"/>
 <area shape="rect" id="Node000005" href="$_window_8cpp.html" title=" " alt="" coords="365,155,542,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="300,110,419,152,417,157,298,115"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="383,114,437,152,434,156,380,118"/>
+<area shape="rect" id="Node000007" href="$_user_interface_8h.html" title=" " alt="" coords="567,155,765,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="668,122,668,154,663,154,663,122"/>
+<area shape="rect" id="Node000009" href="$_actor_8cpp.html" title=" " alt="" coords="789,155,983,181"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="719,109,848,151,846,157,718,114"/>
+<area shape="rect" id="Node000008" href="$_user_interface_8cpp.html" title=" " alt="" coords="561,229,771,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="668,197,668,229,663,229,663,197"/>
 </map>

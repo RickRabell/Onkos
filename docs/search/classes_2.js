@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['depthstencilview_0',['DepthStencilView',['../class_depth_stencil_view.html',1,'']]],
-  ['device_1',['Device',['../class_device.html',1,'']]],
-  ['devicecontext_2',['DeviceContext',['../class_device_context.html',1,'']]]
+  ['baseapp_0',['BaseApp',['../class_base_app.html',1,'']]],
+  ['buffer_1',['Buffer',['../class_buffer.html',1,'']]]
 ];

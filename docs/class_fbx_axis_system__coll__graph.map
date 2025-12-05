@@ -1,0 +1,6 @@
+<map id="FbxAxisSystem" name="FbxAxisSystem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="33,171,147,197"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="126,163,143,162,158,165,170,172,174,184,168,198,153,205,133,206,112,201,113,195,133,200,151,200,164,194,169,184,165,175,156,170,143,167,127,169"/>
+<area shape="rect" id="Node000002" href="$class_fbx_axis_system_1_1_axis_def.html" title=" " alt="" coords="5,5,175,32"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="93,47,93,170,87,170,87,47"/>
+</map>

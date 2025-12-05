@@ -1,6 +1,8 @@
 #include "BaseApp.h"
 #include <ResourceManager.h>
 
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
   if (FAILED(m_window.init(hInst, nCmdShow, wndProc))) {
@@ -106,7 +108,7 @@ BaseApp::init() {
       abeBowserMeshes = m_model->GetMeshes();
 
       std::vector<Texture> abeBowserTextures;
-      hr = m_abeBowserAlbedo.init(m_device, "Cracked2", ExtensionType::PNG);
+      hr = m_abeBowserAlbedo.init(m_device, "JapaneseShrineAlbedo", ExtensionType::PNG);
 
       // Load the Texture
       if (FAILED(hr)) {
@@ -246,10 +248,18 @@ BaseApp::init() {
                                             100.0f);
     cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
 
+    m_userInterface.init(m_window.m_hWnd, m_device.m_device, m_deviceContext.m_deviceContext);
+
+    // Asignar el actor que queremos editar (AbeBowser)
+    if (!m_abeBowser.isNull()) {
+      m_userInterface.setSelectedActor(m_abeBowser.get());
+    }
+
     return S_OK;
 }
 
-void BaseApp::update(float deltaTime) {
+void 
+BaseApp::update(float deltaTime) {
   // Update our time
   static float t = 0.0f;
   if (m_swapChain.m_driverType == D3D_DRIVER_TYPE_REFERENCE)
@@ -264,7 +274,8 @@ void BaseApp::update(float deltaTime) {
       dwTimeStart = dwTimeCur;
     t = (dwTimeCur - dwTimeStart) / 1000.0f;
   }
-	// Update User Interface
+	// Update User Interface (Inicia el frame de ImGui)
+  m_userInterface.update();
 
   // Actualizar la matriz de proyección y vista
   cbNeverChanges.mView = XMMatrixTranspose(m_View);
@@ -328,8 +339,8 @@ BaseApp::render() {
 		actor->render(m_deviceContext);
   }
 
-  // Render UI
-
+  // Render UI (Dibuja la ventana y emite comandos de DX11)
+  m_userInterface.render();
   // Render the cube
   // Asignar buffers Vertex e Index
   //m_vertexBuffer.render(m_deviceContext, 0, 1);
@@ -357,6 +368,8 @@ BaseApp::destroy() {
   //m_samplerState.destroy();
   //m_textureCube.destroy();
 
+  m_userInterface.destroy();
+
   m_cbNeverChanges.destroy();
   m_cbChangeOnResize.destroy();
   //m_cbChangesEveryFrame.destroy();
@@ -374,6 +387,10 @@ BaseApp::destroy() {
 
 LRESULT 
 BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
+  // Permitir que ImGui procese los eventos primero
+  if (ImGui_ImplWin32_WndProcHandler(hWnd, message, wParam, lParam))
+    return true;
+  
   switch (message)
   {
   case WM_CREATE:

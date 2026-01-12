@@ -29,6 +29,9 @@ public:
 	virtual
 	~Entity() = default;
 
+	virtual void
+	awake() = 0;
+
 	/**
 	 * @brief Initializes the entity and potentially its components.
 	 */

@@ -45,6 +45,9 @@ public:
 	 */
 	~BaseApp() { destroy(); }
 
+	HRESULT
+	awake();
+
 	/**
 	 * @brief The main entry point and message loop of the application.
 	 * This function initializes the application (via init()) and then enters

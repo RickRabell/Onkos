@@ -6,13 +6,34 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd,
                                                              WPARAM wParam, 
                                                              LPARAM lParam);
 
+HRESULT
+BaseApp::awake() {
+  HRESULT hr = S_OK;
+
+  // Initialization of DLL's and extern elements to the engine.
+
+  // Log success Message
+  MESSAGE("Main", "Awake", "Application awake succesfully");
+
+  return hr;
+}
+
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
+  // 1) Initialize Window
   if (FAILED(m_window.init(hInst, nCmdShow, wndProc))) {
+    ERROR("Main", "Run", "Failed to initialize Window.");
     return 0;
   }
-  if (FAILED(init()))
+  // 2) Awake Application
+  if (FAILED(awake())) {
+    ERROR("Main", "Run", "Failed to awake application.");
+  }
+  // 3) Initialize Device and Device Contex
+  if (FAILED(init())) {
+    ERROR("Main", "Run", "Failed to initialize Device and Device Context.");
     return 0;
+  }
 
   // Main message loop
   MSG msg = {};

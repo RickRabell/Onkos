@@ -46,6 +46,9 @@ public:
   virtual 
   ~Actor() = default;
 
+  void
+   awake() override;
+
   /**
    * @brief Initializes the actor.
    * @note Override from Entity. Implementation is currently empty as initialization usually happens via setMesh.

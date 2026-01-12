@@ -120,12 +120,12 @@ namespace EU {
 		}
 
 		void
-			zero() {
+		zero() {
 			Vector3(0, 0, 0);
 		}
 
 		void
-			one() {
+		one() {
 			Vector3(1, 1, 1);
 		}
 

@@ -6,13 +6,37 @@ extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd,
                                                              WPARAM wParam, 
                                                              LPARAM lParam);
 
+HRESULT
+BaseApp::awake() {
+  HRESULT hr = S_OK;
+
+  // Initialize DLL's and external elements to the engine
+
+  // Log success Message
+  MESSAGE("Main", "Awake", "Application awake succesfully.");
+
+  return hr;
+}
+
 int 
 BaseApp::run(HINSTANCE hInst, int nCmdShow) {
+  // 1) Initialize Window
   if (FAILED(m_window.init(hInst, nCmdShow, wndProc))) {
+    ERROR("Main", "Run", "Failed to initialize window.");
     return 0;
   }
-  if (FAILED(init()))
+  // 2) Awake Application
+  if (FAILED(awake())) {
+    ERROR("Main", "Run", "Failed to awake application.");
     return 0;
+  }
+  // 3) Initialize Device and Device Context
+  if (FAILED(init())) {
+    ERROR("Main", "Run", "Failed to initialize device and device context.");
+    return 0;
+  }
+  // 4) Initialize GUI
+  m_gui.init(m_window, m_device, m_deviceContext);
 
   // Main message loop
   MSG msg = {};
@@ -48,7 +72,7 @@ BaseApp::init() {
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize SwapChain. HRESULT: " + std::to_string(hr)).c_str());
+           ("Failed to initialize SwapChain. HRESULT: " + std::to_string(hr)).c_str());
       return hr;
     }
 
@@ -58,19 +82,19 @@ BaseApp::init() {
     if (FAILED(hr))
     {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize RenderTargetView. HRESULT: "
-          + std::to_string(hr)).c_str());
+           ("Failed to initialize RenderTargetView. HRESULT: "
+             + std::to_string(hr)).c_str());
       return hr;
     }
 
     // Create depth stencil texture
     hr = m_depthStencil.init(m_device,
-         m_window.m_width,
-         m_window.m_height,
-         DXGI_FORMAT_D24_UNORM_S8_UINT,
-         D3D11_BIND_DEPTH_STENCIL,
-         4,
-         0);
+                             m_window.m_width,
+                             m_window.m_height,
+                             DXGI_FORMAT_D24_UNORM_S8_UINT,
+                             D3D11_BIND_DEPTH_STENCIL,
+                             4,
+                             16);
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
@@ -80,8 +104,8 @@ BaseApp::init() {
 
     // Crete the depth stencil view
     hr = m_depthStencilView.init(m_device,
-      m_depthStencil,
-      DXGI_FORMAT_D24_UNORM_S8_UINT);
+                                 m_depthStencil,
+                                 DXGI_FORMAT_D24_UNORM_S8_UINT);
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
@@ -95,7 +119,7 @@ BaseApp::init() {
 
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize Viewport. HRESULT: " + std::to_string(hr)).c_str());
+           ("Failed to initialize Viewport. HRESULT: " + std::to_string(hr)).c_str());
       return hr;
     }
 
@@ -254,15 +278,6 @@ BaseApp::init() {
                                             100.0f);
     cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
 
-    m_userInterface.init(m_window.m_hWnd, 
-                         m_device.m_device, 
-                         m_deviceContext.m_deviceContext);
-
-    // Asignar el actor que queremos editar (AbeBowser)
-    if (!m_abeBowser.isNull()) {
-      m_userInterface.setSelectedActor(m_abeBowser.get());
-    }
-
     return S_OK;
 }
 
@@ -282,8 +297,13 @@ BaseApp::update(float deltaTime) {
       dwTimeStart = dwTimeCur;
     t = (dwTimeCur - dwTimeStart) / 1000.0f;
   }
-	// Update User Interface (Inicia el frame de ImGui)
-  m_userInterface.update();
+	
+  // Update User Interface (Inicia el frame de ImGui)
+  m_gui.update(m_window);
+	bool show_demo_window = true;
+
+  m_gui.inspectorGeneral(m_actors[m_gui.selectedActorIndex]);
+  m_gui.outliner(m_actors);
 
   // Actualizar la matriz de proyección y vista
   cbNeverChanges.mView = XMMatrixTranspose(m_View);
@@ -305,6 +325,8 @@ BaseApp::update(float deltaTime) {
   for (auto& actor : m_actors) {
 		actor->update(deltaTime, m_deviceContext);
   }
+
+  m_gui.editTransform(m_View, m_Projection, m_actors[m_gui.selectedActorIndex]);
 
   // Modify the color
   //m_vMeshColor.x = (sinf(t * 1.0f) + 1.0f) * 0.5f;
@@ -357,22 +379,7 @@ BaseApp::render() {
   }
 
   // Render UI (Dibuja la ventana y emite comandos de DX11)
-  m_userInterface.render();
-  // Render the cube
-  // Asignar buffers Vertex e Index
-  //m_vertexBuffer.render(m_deviceContext, 0, 1);
-  //m_indexBuffer.render(m_deviceContext, 0, 1, false, DXGI_FORMAT_R32_UINT);
-  //m_cbChangesEveryFrame.render(m_deviceContext, 2, 1);
-  //m_cbChangesEveryFrame.render(m_deviceContext, 2, 1, true);
-  // Asignar textura y sampler
-  //m_textureCube.render(m_deviceContext, 0, 1);
-  //m_samplerState.render(m_deviceContext, 0, 1);
-  //m_deviceContext.DrawIndexed(Bowser[0].m_numIndex, 0, 0);
-  // Set Primitive Topology
-  //m_deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-  //
-  // Present our back buffer to our front buffer
-  //
+  m_gui.render();
 
 	// Present our back buffer to our front buffer
   m_swapChain.present();
@@ -381,23 +388,18 @@ BaseApp::render() {
 void
 BaseApp::destroy() {
   if (m_deviceContext.m_deviceContext) m_deviceContext.m_deviceContext->ClearState();
-  
-  //m_samplerState.destroy();
-  //m_textureCube.destroy();
-
-  m_userInterface.destroy();
 
   m_cbNeverChanges.destroy();
   m_cbChangeOnResize.destroy();
-  //m_cbChangesEveryFrame.destroy();
-  //m_vertexBuffer.destroy();
-  //m_indexBuffer.destroy();
   m_shaderProgram.destroy();
   m_depthStencil.destroy();
   m_depthStencilView.destroy();
   m_renderTargetView.destroy();
   m_swapChain.destroy();
   m_backBuffer.destroy();
+
+  m_gui.destroy();
+
   m_deviceContext.destroy();
   m_device.destroy();
 }
@@ -405,8 +407,9 @@ BaseApp::destroy() {
 LRESULT 
 BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
   // Permitir que ImGui procese los eventos primero
-  if (ImGui_ImplWin32_WndProcHandler(hWnd, message, wParam, lParam))
+  if (ImGui_ImplWin32_WndProcHandler(hWnd, message, wParam, lParam)) {
     return true;
+  }
   
   switch (message)
   {

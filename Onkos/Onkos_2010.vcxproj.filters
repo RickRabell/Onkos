@@ -45,10 +45,10 @@
     <Filter Include="Imgui\Resources">
       <UniqueIdentifier>{31747ad2-b9a5-40f6-97ff-ebd64df4b99f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\UI">
+    <Filter Include="include\GUI">
       <UniqueIdentifier>{37278041-1290-4556-811a-96bad5583c8e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\UI">
+    <Filter Include="source\GUI">
       <UniqueIdentifier>{29c59837-7e54-48da-8cad-1b9bcfbf98d0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -125,8 +125,9 @@
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_win32.cpp">
       <Filter>Imgui\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="source\UserInterface.cpp">
-      <Filter>source\UI</Filter>
+    <ClCompile Include="source\GUI.cpp" />
+    <ClCompile Include="Imgui\ImGuizmo-master\ImGuizmo.cpp">
+      <Filter>Imgui\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -261,9 +262,10 @@
     <ClInclude Include="Imgui\imgui-docking\imstb_truetype.h">
       <Filter>Imgui\Includes</Filter>
     </ClInclude>
-    <ClInclude Include="include\UserInterface.h">
-      <Filter>include\UI</Filter>
+    <ClInclude Include="Imgui\ImGuizmo-master\ImGuizmo.h">
+      <Filter>Imgui\Includes</Filter>
     </ClInclude>
+    <ClInclude Include="include\GUI.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

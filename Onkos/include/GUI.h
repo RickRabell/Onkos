@@ -4,7 +4,13 @@
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
 #include <imgui_internal.h>
-#include "ECS/Actor.h"
+//#include "ECS/Actor.h"
+#include "ImGuizmo.h"
+
+class Device;
+class DeviceContext;
+class Window;
+class Actor;
 
 /**
  * @class UserInterface
@@ -19,17 +25,20 @@
  * for the UI layer.
  */
 class 
-UserInterface {
+GUI {
 public:
 	/**
 	 * @brief Default constructor.
 	 */
-	UserInterface() = default;
+	GUI() = default;
 
 	/**
 	 * @brief Default destructor.
 	 */
-	~UserInterface() = default;
+	~GUI() = default;
+
+	void
+	awake();
 
 	/**
 	 * @brief Initializes the ImGui context and backends.
@@ -39,7 +48,7 @@ public:
 	 * @param deviceContext Pointer to the D3D11 Device Context.
 	 */
 	void
-	init(void* window, ID3D11Device* device, ID3D11DeviceContext* deviceContext);
+	init(Window& window, Device& device, DeviceContext& deviceContext);
 
 	/**
 	 * @brief Starts a new ImGui frame.
@@ -47,7 +56,7 @@ public:
 	 * Usually handles inputs and time delta updates for the UI.
 	 */
 	void
-	update();
+	update(Window& window);
 
 	/**
 	 * @brief Renders the generated UI draw data.
@@ -62,6 +71,15 @@ public:
 	void
 	destroy();
 
+	void
+	toolBar();
+
+	void
+	closeApp();
+
+	void
+	toolTipData();
+
 	/**
 	 * @brief Renders a custom control widget for a 3-component vector (X, Y, Z).
 	 *
@@ -74,7 +92,7 @@ public:
 	 * @param columnWidth The width reserved for the label text.
 	 * @return bool Returns true if any value was modified in this frame.
 	 */
-	bool
+	void
 	vec3Control(const std::string& label,
 							float* values,
 							float resetValues = 0.0f,
@@ -85,10 +103,37 @@ public:
 	 * The UI will update to display the properties (components) of this actor.
 	 * @param actor Pointer to the actor to select.
 	 */
+	//void
+	//setSelectedActor(Actor* actor) { m_selectedActor = actor; }
+
 	void
-	setSelectedActor(Actor* actor) { m_selectedActor = actor; }
+	inspectorGeneral(EU::TSharedPointer<Actor> actor);
+
+	void
+	inspectorContainer(EU::TSharedPointer<Actor> actor);
+
+	void
+	outliner(const std::vector<EU::TSharedPointer<Actor>>& actors);
+
+	void
+	editTransform(const XMMATRIX& view, 
+								const XMMATRIX& projection, 
+								EU::TSharedPointer<Actor> actor);
+
+	void
+	drawGizmoToolbar();
 
 private:
 	/** @brief Pointer to the actor currently selected for inspection in the editor UI. */
-	Actor* m_selectedActor = nullptr;
+	//Actor* m_selectedActor = nullptr;
+
+	bool checkboxValue = true;
+	bool checkboxValue2 = false;
+	std::vector<const char*> m_objectsNames;
+	std::vector<const char*> m_tooltips;
+
+	bool show_exit_popup = false;
+
+public:
+	int selectedActorIndex = -1;
 };

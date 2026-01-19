@@ -15,7 +15,10 @@
 //#include "ModelLoader.h"
 #include "Model3D.h"
 #include "ECS/Actor.h"
-#include "UserInterface.h"
+#include "GUI.h"
+
+extern IMGUI_IMPL_API
+LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 /**
  * @class BaseApp
@@ -44,6 +47,9 @@ public:
 	 * Automatically calls the destroy() method to ensure proper cleanup.
 	 */
 	~BaseApp() { destroy(); }
+
+	HRESULT
+	awake();
 
 	/**
 	 * @brief The main entry point and message loop of the application.
@@ -138,6 +144,7 @@ private:
 	
 	/** @brief GPU constant buffer for data updated once (e.g., View matrix). */
 	Buffer m_cbNeverChanges;
+
 	/** @brief GPU constant buffer for data updated on resize (e.g., Projection matrix). */
 	Buffer m_cbChangeOnResize;
 	
@@ -178,5 +185,5 @@ private:
 	* @brief The user interface manager for the application.
 	* Handles UI rendering, input, and interaction logic.
 	*/
-	UserInterface m_userInterface;
+	GUI m_gui;
 };

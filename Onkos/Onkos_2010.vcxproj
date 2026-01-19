@@ -161,7 +161,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; _DEBUG;DEBUG;PROFILE;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
@@ -205,7 +205,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FloatingPointModel>Fast</FloatingPointModel>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; _DEBUG;DEBUG;PROFILE;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -250,7 +250,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; NDEBUG;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -295,7 +295,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FloatingPointModel>Fast</FloatingPointModel>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; NDEBUG;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -341,7 +341,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; NDEBUG;PROFILE;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -386,7 +386,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FloatingPointModel>Fast</FloatingPointModel>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./include/;DXUT\Core;DXUT\Optional;./include/fbx/;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\imgui-docking\backends;C:\Users\richa\OneDrive\Documentos\GitHub\Onkos\Onkos\Imgui\ImGuizmo-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
       <PreprocessorDefinitions>WIN32;FBXSDK_SHARED; NDEBUG;PROFILE;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -430,6 +430,7 @@
     <ClCompile Include="Imgui\imgui-docking\imgui_draw.cpp" />
     <ClCompile Include="Imgui\imgui-docking\imgui_tables.cpp" />
     <ClCompile Include="Imgui\imgui-docking\imgui_widgets.cpp" />
+    <ClCompile Include="Imgui\ImGuizmo-master\ImGuizmo.cpp" />
     <ClCompile Include="Onkos.cpp" />
     <ClCompile Include="source\BaseApp.cpp" />
     <ClCompile Include="source\Buffer.cpp" />
@@ -445,7 +446,7 @@
     <ClCompile Include="source\ShaderProgram.cpp" />
     <ClCompile Include="source\SwapChain.cpp" />
     <ClCompile Include="source\Texture.cpp" />
-    <ClCompile Include="source\UserInterface.cpp" />
+    <ClCompile Include="source\GUI.cpp" />
     <ClCompile Include="source\Viewport.cpp" />
     <ClCompile Include="source\Window.cpp" />
   </ItemGroup>
@@ -461,6 +462,7 @@
     <ClInclude Include="Imgui\imgui-docking\imstb_rectpack.h" />
     <ClInclude Include="Imgui\imgui-docking\imstb_textedit.h" />
     <ClInclude Include="Imgui\imgui-docking\imstb_truetype.h" />
+    <ClInclude Include="Imgui\ImGuizmo-master\ImGuizmo.h" />
     <ClInclude Include="include\BaseApp.h" />
     <ClInclude Include="include\Buffer.h" />
     <ClInclude Include="include\DepthStencilView.h" />
@@ -491,7 +493,7 @@
     <ClInclude Include="include\stb_image.h" />
     <ClInclude Include="include\SwapChain.h" />
     <ClInclude Include="include\Texture.h" />
-    <ClInclude Include="include\UserInterface.h" />
+    <ClInclude Include="include\GUI.h" />
     <ClInclude Include="include\Viewport.h" />
     <ClInclude Include="include\Window.h" />
     <CLInclude Include="resource.h" />

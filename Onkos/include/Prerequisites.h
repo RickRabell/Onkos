@@ -172,5 +172,7 @@ ComponentType {
   NONE = 0,      ///< No component.
   TRANSFORM = 1, ///< Transform component (position, rotation, scale).
   MESH = 2,      ///< Mesh component (geometry data).
-  MATERIAL = 3   ///< Material component (visual appearance).
+  MATERIAL = 3,   ///< Material component (visual appearance).
+	HIERARCHY = 4 ///< Material component (visual appearance).
 };
+

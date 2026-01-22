@@ -61,11 +61,18 @@ namespace
 		 * @return Un TSharedPointer al objeto gestionado, o nullptr si el objeto ha sido destruido.
 		 */
 		TSharedPointer<T>
-			lock() const {
+		lock() const {
 			if (refCount && *refCount > 0) {
 				return TSharedPointer<T>(ptr, refCount);
 			}
 			return TSharedPointer<T>();
+		}
+
+		// Reset
+		void
+		reset() {
+			ptr = nullptr;
+			refCount = nullptr;
 		}
 
 		// Hacer que TSharedPointer sea un amigo para acceder a los miembros privados.

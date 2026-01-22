@@ -51,6 +51,12 @@
     <Filter Include="source\GUI">
       <UniqueIdentifier>{29c59837-7e54-48da-8cad-1b9bcfbf98d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\SceneGraph">
+      <UniqueIdentifier>{59ac57e2-69c7-42aa-bf74-59572c64ca27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\SceneGraph">
+      <UniqueIdentifier>{5935ba99-39d1-49ad-9304-c16c420f2de0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Onkos.cpp">
@@ -125,9 +131,14 @@
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_win32.cpp">
       <Filter>Imgui\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="source\GUI.cpp" />
     <ClCompile Include="Imgui\ImGuizmo-master\ImGuizmo.cpp">
       <Filter>Imgui\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GUI.cpp">
+      <Filter>source\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\SceneGraph\SceneGraph.cpp">
+      <Filter>source\SceneGraph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -265,7 +276,15 @@
     <ClInclude Include="Imgui\ImGuizmo-master\ImGuizmo.h">
       <Filter>Imgui\Includes</Filter>
     </ClInclude>
-    <ClInclude Include="include\GUI.h" />
+    <ClInclude Include="include\GUI.h">
+      <Filter>include\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneGraph\SceneGraph.h">
+      <Filter>include\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneGraph\HierarchyComponent.h">
+      <Filter>include\SceneGraph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

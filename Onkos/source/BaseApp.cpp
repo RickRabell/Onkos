@@ -299,7 +299,7 @@ BaseApp::update(float deltaTime) {
   }
 	
   // Update User Interface (Inicia el frame de ImGui)
-  m_gui.update(m_window);
+  m_gui.update(m_viewport, m_window);
 	bool show_demo_window = true;
 
   m_gui.inspectorGeneral(m_actors[m_gui.selectedActorIndex]);

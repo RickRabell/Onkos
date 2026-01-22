@@ -7,6 +7,7 @@
 //#include "ECS/Actor.h"
 #include "ImGuizmo.h"
 
+class Viewport;
 class Device;
 class DeviceContext;
 class Window;
@@ -56,7 +57,7 @@ public:
 	 * Usually handles inputs and time delta updates for the UI.
 	 */
 	void
-	update(Window& window);
+	update(Viewport& viewport, Window& window);
 
 	/**
 	 * @brief Renders the generated UI draw data.
@@ -122,6 +123,14 @@ public:
 
 	void
 	drawGizmoToolbar();
+
+	// Auxiliar function to convert a XMMATRIX to what ImGuizmo wants
+	void
+	toFloatArray(const XMMATRIX& mat, float* dest) {
+		XMFLOAT4X4 temp;
+		XMStoreFloat4x4(&temp, mat);
+		memcpy(dest, &temp, sizeof(float) * 16);
+	}
 
 private:
 	/** @brief Pointer to the actor currently selected for inspection in the editor UI. */

@@ -152,6 +152,8 @@ private:
 	/** @brief A sample texture for the mesh. */
 	Texture m_abeBowserAlbedo;
 
+	Texture m_skyboxTexture;
+
 	/** @brief The view (camera) transformation matrix. */
 	XMMATRIX m_View;
 

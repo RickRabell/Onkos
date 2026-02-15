@@ -125,6 +125,15 @@ BaseApp::init() {
     }
 
     // Load Resources -> Modelos, Texturas e Interfaz de Usuario
+    std::array<std::string, 6> faces = {
+      "Skybox/cubemap_0.png",
+      "Skybox/cubemap_1.png",
+      "Skybox/cubemap_2.png",
+      "Skybox/cubemap_3.png",
+      "Skybox/cubemap_4.png",
+      "Skybox/cubemap_5.png"
+    };
+    m_skyboxTexture.CreateCubemap(m_device, m_deviceContext, faces, true);
 
 		// Set AbeBowser Actor
     m_abeBowser = EU::MakeShared<Actor>(m_device);
@@ -161,18 +170,10 @@ BaseApp::init() {
       return E_FAIL;
     }
 
-    m_character = EU::MakeShared<Actor>(m_device);
-    m_character->setName("m_Character");
-    m_character->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -4.90f, 11.60f),
-                                                         EU::Vector3(-0.60f, 3.0f, -0.20f),
-                                                         EU::Vector3(1.0f, 1.0f, 1.0f));
-
     // Store the Actors in the Scene Graph
     for (auto& actor : m_actors) {
       m_sceneGraph.addEntity(actor.get());
     }
-
-    m_sceneGraph.attach(m_character.get(), m_sceneGraph.m_entities[0]); // Attach to root
 
     // Define the input layout
     std::vector<D3D11_INPUT_ELEMENT_DESC> layout;
@@ -319,7 +320,36 @@ BaseApp::update(float deltaTime) {
   m_gui.inspectorGeneral(m_actors[m_gui.selectedActorIndex]);
   m_gui.outliner(m_actors);
 
-  // Actualizar la matriz de proyección y vista
+  // Shot cubemap on imgui image
+  static ID3D11ShaderResourceView* faceSRV[6] = { nullptr };
+
+  if (!faceSRV[0]) {
+    for (UINT i = 0; i < 6; ++i) {
+      faceSRV[i] = m_skyboxTexture.CreateCubemapFaceSRV(m_device.m_device, 
+                                                        m_skyboxTexture.m_texture,
+                                                        DXGI_FORMAT_R8G8B8A8_UNORM, 
+                                                        i, 
+                                                        1);
+    }
+  }
+
+  ImGui::Text("Cubemap Faces:");
+  const float thumb = 128.0f;
+
+  for (int i = 0; i < 6; ++i) {
+    ImGui::Image((ImTextureID)faceSRV[i], ImVec2(thumb, thumb));
+    if ((i % 3) != 2) ImGui::SameLine();
+  }
+
+  ImGui::Begin("Cubemap");
+  ImGui::Text("Skybox Cubemap");
+  ImGui::Image((void*)m_skyboxTexture.m_textureFromImg,
+    ImVec2(256, 256),
+    ImVec2(0, 0),
+    ImVec2(1, 1));
+  ImGui::End();
+
+	// Update the projection and view matrices in the constant buffers
   cbNeverChanges.mView = XMMatrixTranspose(m_View);
   m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
   m_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, 
@@ -374,6 +404,7 @@ void
 BaseApp::destroy() {
   if (m_deviceContext.m_deviceContext) m_deviceContext.m_deviceContext->ClearState();
 
+	m_sceneGraph.destroy();
   m_cbNeverChanges.destroy();
   m_cbChangeOnResize.destroy();
   m_shaderProgram.destroy();

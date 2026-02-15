@@ -65,7 +65,7 @@ public:
 		);
 	}
 
-private:
+public:
 	Entity* m_parent;
 	std::vector<Entity*> m_children;
 };

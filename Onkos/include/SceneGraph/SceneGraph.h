@@ -17,9 +17,15 @@ public:
 	addEntity(Entity* entity); // Registers in the Graph
 
 	void
+	removeEntity(Entity* entity);
+
+	bool
+	isAncestor(Entity* possibleAncestor, Entity* node) const;
+
+	bool
 	attach(Entity* child, Entity* parent);
 
-	void
+	bool
 	detach(Entity* child);
 
 	void
@@ -33,11 +39,11 @@ public:
 
 private:
 	void
-	updateWorldRecursive(const EU::TSharedPointer<Entity>& node,
+	updateWorldRecursive(Entity* node,
 											 const XMMATRIX& parentWorld);
 
 	bool
-	isRoot(const EU::TSharedPointer<Entity>& e) const;
+	isRoot(Entity* entity) const;
 
 	bool
 	isRegistered(Entity* entity) const;

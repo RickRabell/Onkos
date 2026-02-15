@@ -14,14 +14,13 @@ public:
 	init();
 
 	void
-	addEntity(const EU::TSharedPointer<Entity>& entity); // Registers in the Graph
+	addEntity(Entity* entity); // Registers in the Graph
 
 	void
-	attach(const EU::TSharedPointer<Entity>& child,
-				 const EU::TSharedPointer<Entity>& parent);
+	attach(Entity* child, Entity* parent);
 
 	void
-	detach(const EU::TSharedPointer<Entity>& child);
+	detach(Entity* child);
 
 	void
 	update(float deltaTime, DeviceContext& deviceContext);
@@ -29,14 +28,20 @@ public:
 	void
 	render(DeviceContext& deviceContext);
 
+	void
+	destroy();
+
 private:
 	void
 	updateWorldRecursive(const EU::TSharedPointer<Entity>& node,
 											 const XMMATRIX& parentWorld);
 
 	bool
-		isRoot(const EU::TSharedPointer<Entity>& e) const;
+	isRoot(const EU::TSharedPointer<Entity>& e) const;
+
+	bool
+	isRegistered(Entity* entity) const;
 
 private:
-	std::vector<EU::TSharedPointer<Entity>> m_entities;
+	std::vector<Entity*> m_entities;
 };

@@ -11,6 +11,7 @@ BaseApp::awake() {
   HRESULT hr = S_OK;
 
   // Initialize DLL's and external elements to the engine
+  m_sceneGraph.init();
 
   // Log success Message
   MESSAGE("Main", "Awake", "Application awake succesfully.");
@@ -158,6 +159,11 @@ BaseApp::init() {
     else {
       ERROR("Main", "InitDevice", "Failed to create Abe Bowser Actor.");
       return E_FAIL;
+    }
+
+    // Store the Actors in the Scene Graph
+    for (auto& actor : m_actors) {
+      m_sceneGraph.addEntity(actor);
     }
 
     // Define the input layout

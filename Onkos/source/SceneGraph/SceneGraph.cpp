@@ -9,80 +9,41 @@ SceneGraph::init() {
 	m_entities.clear();
 }
 
+void 
+SceneGraph::destroy() {
+	for (auto& e : m_entities) {
+		if (!e) {
+			continue;
+		}
+		auto hierarchy = e->getComponent<HierarchyComponent>();
+		if (hierarchy) {
+			hierarchy->getParent() == nullptr;
+			hierarchy->getChildren();
+		}
+		m_entities.clear();
+	}
+}
+
 void
-SceneGraph::addEntity(const EU::TSharedPointer<Entity>& entity) {
+	SceneGraph::addEntity(Entity* entity) {
 	if (!entity) {
 		return;
 	}
-
-	// Register if not exists
-	for (auto& it : m_entities) {
-		if (it == entity) {
-			return;
-		}
+	if (isRegistered(entity)) {
+		return;
 	}
 
-	m_entities.push_back(entity);
-
-	// Validate that exists the minimum components
+	//	// Validar que existen los componentes minimos
 	if (!entity->getComponent<Transform>()) {
 		entity->addComponent(EU::MakeShared<Transform>());
 		entity->getComponent<Transform>()->init();
 	}
-
 	if (!entity->getComponent<HierarchyComponent>()) {
 		entity->addComponent(EU::MakeShared<HierarchyComponent>());
 		entity->getComponent<HierarchyComponent>()->init();
 	}
-}
 
-void
-SceneGraph::attach(const EU::TSharedPointer<Entity>& child,
-									 const EU::TSharedPointer<Entity>& parent) {
-	if (!child || !parent || child == parent) {
-		return;
-	}
-
-	addEntity(child);
-	addEntity(parent);
-
-	auto childHierarchy = child->getComponent<HierarchyComponent>();
-	auto parentHierarchy = parent->getComponent<HierarchyComponent>();
-
-	// Detach from previous parent if any
-	if (auto oldParent = childHierarchy->getParent()) {
-		detach(child);
-	}
-
-	// Set new parent
-	childHierarchy->setParent(parent);
-	parentHierarchy->addChild(child);
-
-	// Update child's transform relative to new parent - Dirty World Transform
-}
-
-void
-SceneGraph::detach(const EU::TSharedPointer<Entity>& child) {
-	if (!child) {
-		return;
-	}
-
-	auto childHierarchy = child->getComponent<HierarchyComponent>();
-	if (!childHierarchy) {
-		return;
-	}
-
-	auto parent = childHierarchy->getParent();
-	if (parent) {
-		auto parentHierarchy = parent->getComponent<HierarchyComponent>();
-		if (parentHierarchy) {
-			parentHierarchy->removeChild(child);
-		}
-	}
-
-	childHierarchy->setParent(EU::TSharedPointer<Entity>());
-
-	// Update chil's transform relative to new parent - Dirty World Transform
+	m_entities.push_back(entity);
 }
 
 bool
@@ -94,6 +55,11 @@ SceneGraph::isRoot(const EU::TSharedPointer<Entity>& entity) const {
 	}
 
 	return (hierarchy->getParent() == EU::TSharedPointer<Entity>());
+}
+
+bool
+SceneGraph::isRegistered(Entity* entity) const {
+	return std::find(m_entities.begin(), m_entities.end(), entity) != m_entities.end();
 }
 
 void

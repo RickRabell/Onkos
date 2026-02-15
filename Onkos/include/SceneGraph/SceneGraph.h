@@ -48,6 +48,6 @@ private:
 	bool
 	isRegistered(Entity* entity) const;
 
-private:
+public:
 	std::vector<Entity*> m_entities;
 };

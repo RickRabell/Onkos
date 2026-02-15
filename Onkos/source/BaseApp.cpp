@@ -161,10 +161,18 @@ BaseApp::init() {
       return E_FAIL;
     }
 
+    m_character = EU::MakeShared<Actor>(m_device);
+    m_character->setName("m_Character");
+    m_character->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -4.90f, 11.60f),
+                                                         EU::Vector3(-0.60f, 3.0f, -0.20f),
+                                                         EU::Vector3(1.0f, 1.0f, 1.0f));
+
     // Store the Actors in the Scene Graph
     for (auto& actor : m_actors) {
-      m_sceneGraph.addEntity(actor);
+      m_sceneGraph.addEntity(actor.get());
     }
+
+    m_sceneGraph.attach(m_character.get(), m_sceneGraph.m_entities[0]); // Attach to root
 
     // Define the input layout
     std::vector<D3D11_INPUT_ELEMENT_DESC> layout;
@@ -328,36 +336,9 @@ BaseApp::update(float deltaTime) {
                             0);
 
   // Update Actors
-  for (auto& actor : m_actors) {
-		actor->update(deltaTime, m_deviceContext);
-  }
+  m_sceneGraph.update(deltaTime, m_deviceContext);
 
   m_gui.editTransform(m_View, m_Projection, m_actors[m_gui.selectedActorIndex]);
-
-  // Modify the color
-  //m_vMeshColor.x = (sinf(t * 1.0f) + 1.0f) * 0.5f;
-  //m_vMeshColor.y = (cosf(t * 3.0f) + 1.0f) * 0.5f;
-  //m_vMeshColor.z = (sinf(t * 5.0f) + 1.0f) * 0.5f;
-
- // m_vMeshColor.x = 1.0f;
- //m_vMeshColor.y = 1.0f;
- //m_vMeshColor.z = 1.0f;
-
-  // Rotate cube around the origin
-  // Apply Scale
-	//XMMATRIX scaleMatrix = XMMatrixScaling(0.2f, 0.2f, 0.2f);
-	// Apply Rotation
-	//XMMATRIX rotationMatrix = XMMatrixRotationRollPitchYaw(-0.60f, 3.0f, -0.20f);
-	// Apply Translation
-  //XMMATRIX translationMatrix = XMMatrixTranslation(2.0f, -4.9f, 11.0f);
-
-	// Compose the final matrix in order: scale -> rotate -> translate
-	/*
-  m_World = scaleMatrix * rotationMatrix * translationMatrix;
-  cb.mWorld = XMMatrixTranspose(m_World);
-  cb.vMeshColor = m_vMeshColor;
-  m_cbChangesEveryFrame.update(m_deviceContext, nullptr, 0, nullptr, &cb, 0, 0);
-  */
 }
 
 void
@@ -380,9 +361,7 @@ BaseApp::render() {
   m_cbChangeOnResize.render(m_deviceContext, 1, 1);
 
   // Render All Actors
-  for (auto& actor : m_actors) {
-		actor->render(m_deviceContext);
-  }
+  m_sceneGraph.render(m_deviceContext);
 
   // Render UI (Dibuja la ventana y emite comandos de DX11)
   m_gui.render();
@@ -417,8 +396,7 @@ BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
     return true;
   }
   
-  switch (message)
-  {
+  switch (message) {
   case WM_CREATE:
   {
     CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);

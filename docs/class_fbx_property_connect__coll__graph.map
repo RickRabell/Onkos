@@ -1,0 +1,7 @@
+<map id="FbxPropertyConnect" name="FbxPropertyConnect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="82,96,223,123"/>
+<area shape="rect" id="Node000002" href="$class_fbx_connection_point.html" title=" " alt="" coords="5,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,46,92,70,105,83,121,93,119,98,102,88,87,74,76,48"/>
+<area shape="rect" id="Node000003" href="$class_fbx_property_page.html" title=" " alt="" coords="168,5,291,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,48,202,74,174,98,171,94,198,70,215,45"/>
+</map>

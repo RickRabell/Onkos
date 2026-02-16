@@ -1,0 +1,15 @@
+<map id="ExampleAppLog" name="ExampleAppLog">
+<area shape="rect" id="Node000001" title=" " alt="" coords="171,309,287,336"/>
+<area shape="rect" id="Node000002" href="$struct_im_gui_text_buffer.html" title=" " alt="" coords="26,219,142,245"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,251,210,306,207,311,116,256"/>
+<area shape="rect" id="Node000003" href="$struct_im_vector.html" title=" " alt="" coords="5,120,128,147"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,161,84,218,79,219,69,162"/>
+<area shape="rect" id="Node000004" href="$struct_im_gui_text_filter.html" title=" " alt="" coords="174,219,284,245"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,261,232,309,226,309,226,261"/>
+<area shape="rect" id="Node000005" href="$struct_im_vector.html" title=" " alt="" coords="151,112,326,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="238,170,233,219,228,218,232,170"/>
+<area shape="rect" id="Node000006" href="$struct_im_gui_text_filter_1_1_im_gui_text_range.html" title=" " alt="" coords="149,5,328,48"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="241,64,241,111,236,111,236,64"/>
+<area shape="rect" id="Node000007" href="$struct_im_vector.html" title=" " alt="" coords="308,219,420,245"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="333,256,250,311,247,307,331,252"/>
+</map>

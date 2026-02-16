@@ -1,0 +1,48 @@
+<map id="FbxCharacterLink" name="FbxCharacterLink">
+<area shape="rect" id="Node000001" title="This class represents a link between a given FBX node and the associated node in the character hierar..." alt="" coords="1484,1046,1608,1073"/>
+<area shape="rect" id="Node000002" href="$class_fbx_node.html" title=" " alt="" coords="1252,698,1326,725"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1312,736,1537,1044,1533,1047,1307,739"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="893,234,975,261"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="941,218,958,174,985,122,1023,71,1046,49,1072,32,1113,12,1151,3,1169,4,1187,9,1224,32,1233,47,1242,71,1256,144,1267,240,1276,349,1286,562,1290,698,1285,698,1281,562,1270,349,1262,240,1251,145,1237,73,1228,49,1220,36,1185,13,1168,9,1151,8,1115,17,1075,36,1049,54,1027,75,990,125,963,177,946,220"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="600,234,686,261"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="702,245,893,245,893,250,702,250"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_emitter_1_1_event_data.html" title=" " alt="" coords="351,234,506,261"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="521,245,600,245,600,250,521,250"/>
+<area shape="rect" id="Node000006" href="$class_fbx_intrusive_list.html" title=" " alt="" coords="5,218,188,277"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="203,245,350,245,350,250,203,250"/>
+<area shape="rect" id="Node000007" href="$class_fbx_property.html" title="Class to hold user properties." alt="" coords="597,659,689,686"/>
+<area shape="poly" id="edge27_Node000001_Node000007" title=" " alt="" coords="650,701,657,737,669,781,688,826,715,866,739,886,762,897,819,916,944,974,1000,996,1074,1015,1132,1026,1181,1031,1266,1032,1351,1030,1460,1038,1488,1043,1487,1048,1460,1043,1351,1035,1266,1037,1181,1037,1131,1031,1073,1021,998,1001,942,979,817,921,760,902,736,891,711,869,683,828,664,783,652,738,645,702"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="646,643,662,571,693,473,716,421,743,370,777,323,817,281,853,260,892,249,893,254,855,265,820,286,781,326,748,373,720,423,698,475,667,572,652,645"/>
+<area shape="rect" id="Node000008" href="$class_fbx_property_t.html" title=" " alt="" coords="818,295,1050,338"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="659,645,711,570,822,436,910,337,914,340,826,439,715,573,663,648"/>
+<area shape="rect" id="Node000009" href="$class_fbx_property_t.html" title=" " alt="" coords="840,466,1028,493"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="670,647,712,613,819,542,907,491,910,495,822,547,715,618,673,651"/>
+<area shape="rect" id="Node000010" href="$class_fbx_property_t.html" title=" " alt="" coords="848,578,1020,605"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="692,651,713,644,791,621,865,603,866,608,792,626,714,649,693,656"/>
+<area shape="rect" id="Node000011" href="$class_fbx_property_t.html" title=" " alt="" coords="832,629,1036,671"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="704,665,831,655,831,661,705,671"/>
+<area shape="rect" id="Node000012" href="$class_fbx_property_t.html" title=" " alt="" coords="838,695,1030,738"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="705,679,838,700,837,705,704,685"/>
+<area shape="rect" id="Node000013" href="$class_fbx_property_t.html" title=" " alt="" coords="837,762,1031,805"/>
+<area shape="poly" id="edge18_Node000013_Node000007" title=" " alt="" coords="687,691,749,719,819,748,853,759,851,764,817,753,747,724,685,695"/>
+<area shape="rect" id="Node000014" href="$class_fbx_property_t.html" title=" " alt="" coords="842,829,1026,855"/>
+<area shape="poly" id="edge20_Node000014_Node000007" title=" " alt="" coords="668,696,715,744,764,785,819,814,853,826,851,831,817,819,761,789,712,748,664,700"/>
+<area shape="rect" id="Node000015" href="$class_fbx_property_t.html" title=" " alt="" coords="853,879,1015,906"/>
+<area shape="poly" id="edge22_Node000015_Node000007" title=" " alt="" coords="655,700,678,755,695,784,715,810,746,835,781,854,818,868,854,878,852,883,816,873,778,859,743,839,711,813,690,787,673,757,650,702"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1023,286,1048,271,1055,263,1059,255,1063,246,1072,238,1114,220,1151,211,1169,211,1187,216,1223,239,1236,254,1247,274,1265,327,1277,393,1285,465,1291,605,1291,698,1286,697,1286,605,1279,466,1272,394,1260,329,1242,276,1232,257,1220,243,1185,221,1168,217,1151,216,1115,225,1075,243,1067,249,1063,257,1059,266,1051,275,1025,291"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="974,456,1028,435,1094,419,1128,416,1162,419,1194,428,1223,445,1238,464,1251,492,1270,565,1283,641,1289,697,1284,698,1278,642,1265,566,1246,494,1234,467,1220,449,1192,433,1161,424,1128,422,1095,424,1030,440,976,461"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="1036,607,1051,615,1063,626,1075,637,1114,651,1147,654,1181,656,1223,668,1271,695,1268,700,1221,673,1180,662,1146,660,1113,656,1072,642,1060,630,1048,619,1033,612"/>
+<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="1027,673,1074,683,1170,698,1252,706,1251,711,1170,703,1073,689,1026,678"/>
+<area shape="poly" id="edge15_Node000002_Node000012" title=" " alt="" coords="1046,731,1132,736,1221,730,1251,723,1252,728,1222,735,1132,741,1046,736"/>
+<area shape="poly" id="edge17_Node000002_Node000013" title=" " alt="" coords="1046,785,1133,778,1178,770,1221,757,1249,741,1272,723,1276,727,1252,746,1223,762,1179,775,1134,784,1046,791"/>
+<area shape="poly" id="edge19_Node000002_Node000014" title=" " alt="" coords="1032,855,1078,856,1127,852,1176,841,1220,821,1244,800,1262,774,1282,724,1287,726,1267,776,1248,804,1223,826,1177,846,1128,858,1078,861,1032,860"/>
+<area shape="poly" id="edge21_Node000002_Node000015" title=" " alt="" coords="1005,907,1056,913,1113,913,1169,903,1196,893,1220,879,1237,863,1251,844,1271,801,1281,758,1285,725,1290,726,1286,759,1276,803,1256,847,1241,867,1223,883,1198,898,1171,908,1113,919,1056,919,1004,912"/>
+<area shape="rect" id="Node000016" href="$class_fbx_string.html" title=" " alt="" coords="1251,1054,1328,1081"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="1343,1063,1483,1059,1484,1064,1344,1068"/>
+<area shape="rect" id="Node000017" href="$class_fbx_vector4.html" title=" " alt="" coords="1246,1170,1333,1197"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="1348,1186,1404,1182,1432,1175,1459,1164,1485,1144,1507,1119,1536,1072,1541,1074,1512,1122,1489,1148,1461,1168,1434,1180,1405,1187,1349,1191"/>
+<area shape="rect" id="Node000018" href="$class_fbx_vector_template4.html" title=" " alt="" coords="888,1170,980,1197"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="995,1181,1245,1181,1245,1186,995,1186"/>
+<area shape="rect" id="Node000019" href="$class_fbx_limits.html" title=" " alt="" coords="1250,1221,1328,1247"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="1344,1236,1402,1230,1432,1222,1458,1208,1490,1177,1514,1139,1530,1102,1539,1072,1544,1074,1535,1103,1519,1141,1495,1180,1462,1212,1434,1227,1403,1235,1344,1241"/>
+</map>

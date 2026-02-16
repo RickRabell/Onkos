@@ -1,0 +1,13 @@
+<map id="FbxRenamingStrategy" name="FbxRenamingStrategy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="666,80,817,107"/>
+<area shape="rect" id="Node000002" href="$class_fbx_renaming_strategy_interface.html" title=" " alt="" coords="261,5,463,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,25,560,37,643,53,710,77,708,82,641,59,559,42,478,31"/>
+<area shape="rect" id="Node000003" href="$class_fbx_char_ptr_set.html" title=" " alt="" coords="308,56,416,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="432,71,666,86,665,91,431,76"/>
+<area shape="rect" id="Node000004" href="$class_fbx_array.html" title=" " alt="" coords="254,107,470,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="485,119,642,105,665,102,666,108,642,111,486,124"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_array_1_1t_data.html" title=" " alt="" coords="5,107,163,149"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,125,253,125,253,131,178,131"/>
+<area shape="rect" id="Node000006" href="$class_fbx_string.html" title=" " alt="" coords="323,181,400,208"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="416,197,465,199,523,196,583,188,641,171,667,157,691,140,727,105,730,109,694,144,670,162,643,176,584,193,523,202,465,204,416,202"/>
+</map>

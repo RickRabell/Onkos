@@ -1,0 +1,8 @@
+<map id="ImApp::ImApp" name="ImApp::ImApp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="87,96,192,123"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="209,101,219,109,210,118,193,120,192,115,208,113,213,109,206,105"/>
+<area shape="rect" id="Node000002" href="$struct_im_app_1_1_config.html" title=" " alt="" coords="5,5,111,32"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="82,42,130,94,126,97,78,45"/>
+<area shape="rect" id="Node000003" href="$struct_im_app_1_1_im_app_1_1_w_i_n_i_n_f_o.html" title=" " alt="" coords="134,5,307,32"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="201,45,153,97,149,94,197,42"/>
+</map>

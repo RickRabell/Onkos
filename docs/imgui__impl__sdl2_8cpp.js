@@ -1,0 +1,27 @@
+var imgui__impl__sdl2_8cpp =
+[
+    [ "ImGui_ImplSDL2_Data", "struct_im_gui___impl_s_d_l2___data.html", "struct_im_gui___impl_s_d_l2___data" ],
+    [ "ImGui_ImplSDL2_ViewportData", "struct_im_gui___impl_s_d_l2___viewport_data.html", "struct_im_gui___impl_s_d_l2___viewport_data" ],
+    [ "SDL_HAS_ALWAYS_ON_TOP", "imgui__impl__sdl2_8cpp.html#ac1a35c4eee8bee7e3df73b7831248d8b", null ],
+    [ "SDL_HAS_CAPTURE_AND_GLOBAL_MOUSE", "imgui__impl__sdl2_8cpp.html#a313b5bc58c0de4eb53710ddc720e094d", null ],
+    [ "SDL_HAS_DISPLAY_EVENT", "imgui__impl__sdl2_8cpp.html#a5282ae07540b750e02a6f5b654a71329", null ],
+    [ "SDL_HAS_OPEN_URL", "imgui__impl__sdl2_8cpp.html#ab8d044bc8631c9044d5c869a43163836", null ],
+    [ "SDL_HAS_PER_MONITOR_DPI", "imgui__impl__sdl2_8cpp.html#a9edf138c0164f6bc6b711d4824631615", null ],
+    [ "SDL_HAS_SHOW_WINDOW_ACTIVATION_HINT", "imgui__impl__sdl2_8cpp.html#a6cc5e4470ad3b95993127bb7bbad877a", null ],
+    [ "SDL_HAS_USABLE_DISPLAY_BOUNDS", "imgui__impl__sdl2_8cpp.html#ad0ae23e2c9d00a932c6116ca1bb19956", null ],
+    [ "SDL_HAS_VULKAN", "imgui__impl__sdl2_8cpp.html#aea2eeaab96a591241a01aa9cda35be47", null ],
+    [ "SDL_HAS_WINDOW_ALPHA", "imgui__impl__sdl2_8cpp.html#a9874dfd196522ba18571a993f3dfe843", null ],
+    [ "ImGui_ImplSDL2_GetContentScaleForDisplay", "imgui__impl__sdl2_8cpp.html#a1ebdc1b1a59621de0a4bacca06829813", null ],
+    [ "ImGui_ImplSDL2_GetContentScaleForWindow", "imgui__impl__sdl2_8cpp.html#a135cb683f003cbb48267346467b53e97", null ],
+    [ "ImGui_ImplSDL2_InitForD3D", "imgui__impl__sdl2_8cpp.html#ae7d148dd2c382c50e59d125907530838", null ],
+    [ "ImGui_ImplSDL2_InitForMetal", "imgui__impl__sdl2_8cpp.html#a890ac8639fb6eb52d06d11b9d157e035", null ],
+    [ "ImGui_ImplSDL2_InitForOpenGL", "imgui__impl__sdl2_8cpp.html#a64942ba4101d9d607f601a381ce40d95", null ],
+    [ "ImGui_ImplSDL2_InitForOther", "imgui__impl__sdl2_8cpp.html#a88aeb36e8a08c9ce8f3f61b68003ba08", null ],
+    [ "ImGui_ImplSDL2_InitForSDLRenderer", "imgui__impl__sdl2_8cpp.html#a3fdc9531f8ca3cdc5f70364aab324b21", null ],
+    [ "ImGui_ImplSDL2_InitForVulkan", "imgui__impl__sdl2_8cpp.html#a37fa767ee8df754bd923b1d1e4de55a7", null ],
+    [ "ImGui_ImplSDL2_KeyEventToImGuiKey", "imgui__impl__sdl2_8cpp.html#ab691c465125e247cd3bb160a1bfcf2fd", null ],
+    [ "ImGui_ImplSDL2_NewFrame", "imgui__impl__sdl2_8cpp.html#ade7f27ebdb4261e5e9184379677e0bac", null ],
+    [ "ImGui_ImplSDL2_ProcessEvent", "imgui__impl__sdl2_8cpp.html#af02f4ad765d4f65b334eb14a4065f8eb", null ],
+    [ "ImGui_ImplSDL2_SetGamepadMode", "imgui__impl__sdl2_8cpp.html#a34f0127746f48fbac6ae14fdda8ccc33", null ],
+    [ "ImGui_ImplSDL2_Shutdown", "imgui__impl__sdl2_8cpp.html#af32b62f3df7cef2d1b3a88b8fb96d811", null ]
+];

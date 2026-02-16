@@ -1,0 +1,11 @@
+<map id="ImGuiDemoWindowData" name="ImGuiDemoWindowData">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,172,213"/>
+<area shape="rect" id="Node000002" href="$struct_example_tree_node.html" title=" " alt="" coords="176,96,305,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,132,164,149,106,188,103,184,161,144,195,127"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="322,101,332,109,324,117,306,120,305,115,321,112,327,109,319,105"/>
+<area shape="rect" id="Node000003" href="$struct_im_vector.html" title=" " alt="" coords="196,187,410,213"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="235,138,235,150,239,161,250,174,265,184,262,188,247,178,234,164,230,151,230,138"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="288,174,272,148,251,124,255,121,276,145,292,171"/>
+<area shape="rect" id="Node000004" href="$struct_im_vec2.html" title=" " alt="" coords="208,5,273,32"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="243,48,243,95,238,95,238,48"/>
+</map>

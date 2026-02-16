@@ -1,0 +1,9 @@
+<map id="FbxBlendShapeChannel" name="FbxBlendShapeChannel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,167,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_sub_deformer.html" title=" " alt="" coords="26,155,146,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,197,89,229,83,229,83,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="45,80,127,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,122,89,154,83,154,83,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="43,5,129,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,48,89,80,83,80,83,48"/>
+</map>

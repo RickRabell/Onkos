@@ -1,0 +1,8 @@
+<map id="GraphEditorDelegate" name="GraphEditorDelegate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,96,152,123"/>
+<area shape="rect" id="Node000002" href="$struct_graph_editor_1_1_delegate.html" title=" " alt="" coords="5,5,156,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,48,77,95,71,96,69,48"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="92,48,90,96,84,95,86,48"/>
+<area shape="rect" id="Node000003" href="$struct_graph_editor_1_1_template.html" title=" " alt="" coords="180,5,331,32"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="218,42,107,98,104,93,215,37"/>
+</map>

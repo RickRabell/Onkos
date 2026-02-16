@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['loadmodel_0',['loadModel',['../class_model_loader.html#a85b5a2958aa52aa84d93acb683ffd860',1,'ModelLoader']]]
+  ['92_0',['Rendering: Adding support for &lt;tt&gt;ImGuiBackendFlags_RendererHasTextures&lt;/tt&gt; (1.92+)',['../md__onkos_2_imgui_2imgui-docking_2docs_2_b_a_c_k_e_n_d_s.html#autotoc_md13',1,'']]],
+  ['92_20june_202025_1',['New! Dynamic Fonts system in 1.92 (June 2025)',['../md__onkos_2_imgui_2imgui-docking_2docs_2_f_o_n_t_s.html#autotoc_md128',1,'']]]
 ];

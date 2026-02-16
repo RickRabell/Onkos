@@ -1,0 +1,9 @@
+<map id="FbxConstraintPosition" name="FbxConstraintPosition">
+<area shape="rect" id="Node000001" title="This constraint class contains methods for accessing the properties of a position constraint...." alt="" coords="5,229,156,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_constraint.html" title=" " alt="" coords="29,155,132,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,197,83,229,78,229,78,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="40,80,121,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,122,83,154,78,154,78,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="38,5,123,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,48,83,80,78,80,78,48"/>
+</map>

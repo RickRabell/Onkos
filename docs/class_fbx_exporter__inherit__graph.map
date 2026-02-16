@@ -1,0 +1,9 @@
+<map id="FbxExporter" name="FbxExporter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,98,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_i_o_base.html" title="Base class for FBX file importer and exporter." alt="" coords="8,155,95,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,197,54,229,49,229,49,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="11,80,92,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="54,122,54,154,49,154,49,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="9,5,94,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,48,54,80,49,80,49,48"/>
+</map>

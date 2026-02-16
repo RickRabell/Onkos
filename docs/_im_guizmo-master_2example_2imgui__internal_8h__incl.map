@@ -1,0 +1,25 @@
+<map id="Onkos/Imgui/ImGuizmo&#45;master/example/imgui_internal.h" name="Onkos/Imgui/ImGuizmo&#45;master/example/imgui_internal.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="362,5,522,64"/>
+<area shape="rect" id="Node000002" href="$_im_guizmo-master_2example_2imgui_8h.html" title=" " alt="" coords="240,112,303,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,67,310,107,308,102,385,62"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="326,112,387,139"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="416,66,381,102,378,99,413,62"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="410,112,474,139"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="445,64,445,96,439,96,439,64"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="498,112,559,139"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="472,62,508,99,504,103,468,66"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="584,112,647,139"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="499,62,579,102,576,107,497,67"/>
+<area shape="rect" id="Node000003" href="$_im_guizmo-master_2example_2imconfig_8h.html" title=" " alt="" coords="5,187,87,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,140,101,184,99,179,238,134"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="111,187,168,213"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,142,177,181,174,177,247,137"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="192,187,260,213"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="266,141,244,175,240,172,261,138"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="284,187,352,213"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="282,138,304,172,300,175,277,141"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="376,187,441,213"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="296,137,372,177,370,181,294,142"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="465,187,534,213"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,134,451,181,450,186,303,139"/>
+</map>

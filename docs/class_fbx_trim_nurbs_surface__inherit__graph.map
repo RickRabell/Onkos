@@ -1,0 +1,15 @@
+<map id="FbxTrimNurbsSurface" name="FbxTrimNurbsSurface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,453,155,480"/>
+<area shape="rect" id="Node000002" href="$class_fbx_geometry.html" title=" " alt="" coords="30,379,130,405"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,421,83,453,77,453,77,421"/>
+<area shape="rect" id="Node000003" href="$class_fbx_geometry_base.html" title=" " alt="" coords="15,304,145,331"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,346,83,378,77,378,77,346"/>
+<area shape="rect" id="Node000004" href="$class_fbx_layer_container.html" title="Contains a collection of FbxLayer objects. This class is used for managing layers construction,..." alt="" coords="14,229,146,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,272,83,304,77,304,77,272"/>
+<area shape="rect" id="Node000005" href="$class_fbx_node_attribute.html" title="This class is the base class to all types of node attributes.A node attribute is the content of a nod..." alt="" coords="18,155,142,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="83,197,83,229,77,229,77,197"/>
+<area shape="rect" id="Node000006" href="$class_fbx_object.html" title=" " alt="" coords="39,80,121,107"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="83,122,83,154,77,154,77,122"/>
+<area shape="rect" id="Node000007" href="$class_fbx_emitter.html" title=" " alt="" coords="37,5,123,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="83,48,83,80,77,80,77,48"/>
+</map>

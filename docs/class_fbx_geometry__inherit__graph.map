@@ -1,0 +1,33 @@
+<map id="FbxGeometry" name="FbxGeometry">
+<area shape="rect" id="Node000001" title=" " alt="" coords="797,233,897,260"/>
+<area shape="rect" id="Node000007" href="$class_fbx_boundary.html" title=" " alt="" coords="977,5,1076,32"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="852,218,863,179,881,131,908,83,944,42,975,25,978,30,947,46,912,86,886,134,868,180,857,219"/>
+<area shape="rect" id="Node000008" href="$class_fbx_line.html" title=" " alt="" coords="993,56,1060,83"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="857,218,889,155,914,121,944,93,967,80,992,72,993,77,969,84,947,97,918,125,894,158,861,220"/>
+<area shape="rect" id="Node000009" href="$class_fbx_mesh.html" title=" " alt="" coords="989,107,1064,133"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="865,219,899,180,944,143,988,125,990,130,947,148,903,184,869,222"/>
+<area shape="rect" id="Node000010" href="$class_fbx_nurbs.html" title=" " alt="" coords="987,157,1066,184"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="884,223,944,194,986,179,988,184,946,198,887,228"/>
+<area shape="rect" id="Node000011" href="$class_fbx_nurbs_curve.html" title=" " alt="" coords="970,208,1083,235"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="912,235,969,227,970,232,913,240"/>
+<area shape="rect" id="Node000012" href="$class_fbx_nurbs_surface.html" title=" " alt="" coords="965,259,1088,285"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="913,253,965,261,964,266,912,259"/>
+<area shape="rect" id="Node000013" href="$class_fbx_patch.html" title=" " alt="" coords="988,309,1065,336"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="887,266,946,295,988,310,986,315,944,300,884,270"/>
+<area shape="rect" id="Node000014" href="$class_fbx_procedural_geometry.html" title=" " alt="" coords="945,360,1108,387"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="869,271,903,310,947,346,970,357,968,362,944,350,899,313,865,274"/>
+<area shape="rect" id="Node000015" href="$class_fbx_sub_div.html" title=" " alt="" coords="983,411,1070,437"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="861,273,894,335,918,368,947,397,964,407,984,414,982,419,962,412,944,401,914,372,889,338,857,275"/>
+<area shape="rect" id="Node000016" href="$class_fbx_trim_nurbs_surface.html" title=" " alt="" coords="952,461,1101,488"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="857,274,868,313,886,360,912,407,947,447,965,459,962,463,944,451,908,410,881,362,863,315,852,276"/>
+<area shape="rect" id="Node000002" href="$class_fbx_geometry_base.html" title=" " alt="" coords="619,233,749,260"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="765,244,797,244,797,249,765,249"/>
+<area shape="rect" id="Node000003" href="$class_fbx_layer_container.html" title="Contains a collection of FbxLayer objects. This class is used for managing layers construction,..." alt="" coords="439,233,571,260"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="586,244,618,244,618,249,586,249"/>
+<area shape="rect" id="Node000004" href="$class_fbx_node_attribute.html" title="This class is the base class to all types of node attributes.A node attribute is the content of a nod..." alt="" coords="268,233,391,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="407,244,439,244,439,249,407,249"/>
+<area shape="rect" id="Node000005" href="$class_fbx_object.html" title=" " alt="" coords="139,233,220,260"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="236,244,268,244,268,249,236,249"/>
+<area shape="rect" id="Node000006" href="$class_fbx_emitter.html" title=" " alt="" coords="5,233,91,260"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="106,244,138,244,138,249,106,249"/>
+</map>

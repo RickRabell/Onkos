@@ -1,0 +1,7 @@
+<map id="FramebufferDescriptor" name="FramebufferDescriptor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="27,80,177,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,84,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,43,94,78,90,81,62,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="108,5,213,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,46,114,81,110,78,139,43"/>
+</map>

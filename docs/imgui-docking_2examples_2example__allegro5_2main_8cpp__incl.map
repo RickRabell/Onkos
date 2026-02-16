@@ -1,0 +1,14 @@
+<map id="Onkos/Imgui/imgui&#45;docking/examples/example_allegro5/main.cpp" name="Onkos/Imgui/imgui&#45;docking/examples/example_allegro5/main.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,421,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,70,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,67,85,112,84,107,234,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,112,213,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,67,193,107,191,102,270,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="237,112,419,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="331,64,331,96,326,96,326,64"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="479,187,542,213"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="372,63,433,110,493,173,489,177,429,114,369,67"/>
+<area shape="rect" id="Node000006" href="$imgui__impl__allegro5_8h.html" title=" " alt="" coords="494,112,640,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="407,62,520,104,518,109,405,67"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="559,141,532,176,528,173,555,138"/>
+</map>

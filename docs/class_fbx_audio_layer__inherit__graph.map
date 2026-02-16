@@ -1,0 +1,9 @@
+<map id="FbxAudioLayer" name="FbxAudioLayer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,114,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_collection.html" title=" " alt="" coords="9,155,110,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,197,62,229,57,229,57,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="19,80,100,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,122,62,154,57,154,57,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="17,5,102,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="62,48,62,80,57,80,57,48"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="FbxFileTexture" name="FbxFileTexture">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,229,113,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_texture.html" title=" " alt="" coords="16,155,102,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,197,62,229,56,229,56,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="18,80,100,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="62,122,62,154,56,154,56,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="16,5,102,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="62,48,62,80,56,80,56,48"/>
+</map>

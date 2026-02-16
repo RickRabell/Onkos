@@ -1,0 +1,25 @@
+var struct_im_gui___impl_d_x12___data =
+[
+    [ "ImGui_ImplDX12_Data", "struct_im_gui___impl_d_x12___data.html#a2dc01db87c392f50d408e5bb4135206d", null ],
+    [ "commandQueueOwned", "struct_im_gui___impl_d_x12___data.html#a74e21d58b51dc0bfb7a30d80910f036b", null ],
+    [ "DSVFormat", "struct_im_gui___impl_d_x12___data.html#aa745c784b64c5dd64f5fa2017f4fa7ee", null ],
+    [ "Fence", "struct_im_gui___impl_d_x12___data.html#a18255be10fad1dbe043f05a3bb8251c3", null ],
+    [ "FenceEvent", "struct_im_gui___impl_d_x12___data.html#a187dbc4571e1edac8d8dbe6a653b8eb2", null ],
+    [ "FenceLastSignaledValue", "struct_im_gui___impl_d_x12___data.html#ad3586af65e162ffb10897a3d2e72ca8e", null ],
+    [ "InitInfo", "struct_im_gui___impl_d_x12___data.html#a6f74010b81268b3bb3ff525fcbc52541", null ],
+    [ "LegacySingleDescriptorUsed", "struct_im_gui___impl_d_x12___data.html#aab34c5ec81da10226909a837765befa9", null ],
+    [ "numFramesInFlight", "struct_im_gui___impl_d_x12___data.html#a6a541239da42836b2127d1428032cf7d", null ],
+    [ "pCommandQueue", "struct_im_gui___impl_d_x12___data.html#a707d5d6da5b5754db9067a47b0a195f0", null ],
+    [ "pd3dDevice", "struct_im_gui___impl_d_x12___data.html#a1c8a790e04e775e3dc8e3f9b5a8f886e", null ],
+    [ "pd3dSrvDescHeap", "struct_im_gui___impl_d_x12___data.html#a470d80e9fd5c7b77c19640654466721b", null ],
+    [ "pdxgiFactory", "struct_im_gui___impl_d_x12___data.html#a20ce85204d95322c7b258580bfe2dfe9", null ],
+    [ "pPipelineState", "struct_im_gui___impl_d_x12___data.html#a56ca2ec999af6c639ad32f7204248500", null ],
+    [ "pRootSignature", "struct_im_gui___impl_d_x12___data.html#a5ec586be9457edb382e26db52b84bba5", null ],
+    [ "pTexCmdAllocator", "struct_im_gui___impl_d_x12___data.html#a82645fbd0feced54f0bb600cd18c174b", null ],
+    [ "pTexCmdList", "struct_im_gui___impl_d_x12___data.html#aea4e0263f27011f0174efda6bebc2bb1", null ],
+    [ "pTexUploadBuffer", "struct_im_gui___impl_d_x12___data.html#a3d14785a755125fc3b084d15eca4650e", null ],
+    [ "pTexUploadBufferMapped", "struct_im_gui___impl_d_x12___data.html#a514832521523557012a3d8df61d68a0f", null ],
+    [ "pTexUploadBufferSize", "struct_im_gui___impl_d_x12___data.html#a1a82495a0db7010acb79157b74ae0aa4", null ],
+    [ "RTVFormat", "struct_im_gui___impl_d_x12___data.html#ac51215a8aa27a0c0fa095abc87e0a80b", null ],
+    [ "tearingSupport", "struct_im_gui___impl_d_x12___data.html#a3bfa9b57f0b6250b2d9bc1d7e02e7ec9", null ]
+];

@@ -1,0 +1,36 @@
+<map id="Onkos/include/fbx/fbxsdk/scene" name="Onkos/include/fbx/fbxsdk/scene">
+<area shape="rect" id="node1" href="dir_0154eaf1f968c1157ba8563f1fb4447b.html" title="fileio" alt="" coords="264,213,312,240"/>
+<area shape="rect" id="node2" href="dir_60ef002bd6921aeb869bbeeeb09ca47b.html" title="core" alt="" coords="120,363,166,389"/>
+<area shape="poly" id="edge1" href="dir_000069_000050.html" alt="" coords="223,89,278,198,273,201,218,91"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000069_000050.html" title="3" alt="" coords="278,185,285,201"/>
+<area shape="poly" id="edge3" href="dir_000069_000006.html" alt="" coords="235,88,268,114,304,150,318,171,328,193,331,217,327,241,315,264,300,285,262,319,220,346,181,364,179,359,217,341,258,315,296,281,310,261,321,239,326,217,323,195,313,173,299,153,265,118,232,93"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000069_000006.html" title="71" alt="" coords="179,360,193,376"/>
+<area shape="rect" id="node4" href="dir_e7303af6eaed7a97b870620d55bddbd3.html" title="animation" alt="" coords="139,139,216,165"/>
+<area shape="poly" id="edge4" href="dir_000069_000000.html" alt="" coords="211,92,193,126,189,123,206,89"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000069_000000.html" title="1" alt="" coords="196,118,203,134"/>
+<area shape="rect" id="node6" href="dir_355bf45a1c2444ab14e011b63a509d81.html" title="geometry" alt="" coords="146,213,222,240"/>
+<area shape="poly" id="edge2" href="dir_000069_000053.html" alt="" coords="222,89,232,124,234,145,231,166,221,186,209,203,205,200,217,183,225,165,229,145,227,125,217,91"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000069_000053.html" title="5" alt="" coords="212,197,219,213"/>
+<area shape="poly" id="edge5" href="dir_000000_000050.html" alt="" coords="198,164,258,202,255,207,195,168"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000000_000050.html" title="1" alt="" coords="254,188,261,204"/>
+<area shape="poly" id="edge7" href="dir_000000_000006.html" alt="" coords="167,167,150,188,137,214,130,249,130,285,138,347,133,348,124,285,125,248,132,212,146,185,163,164"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000000_000006.html" title="14" alt="" coords="136,335,150,351"/>
+<area shape="poly" id="edge6" href="dir_000000_000053.html" alt="" coords="181,166,184,197,179,198,176,166"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000000_000053.html" title="1" alt="" coords="186,186,193,202"/>
+<area shape="rect" id="node5" href="dir_2374019ffd4a7ad2ff63e6425da5e8b5.html" title="constraint" alt="" coords="37,139,115,165"/>
+<area shape="poly" id="edge9" href="dir_000005_000006.html" alt="" coords="81,165,97,233,124,324,133,348,128,349,119,326,92,235,76,166"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000005_000006.html" title="3" alt="" coords="133,334,140,350"/>
+<area shape="poly" id="edge8" href="dir_000005_000053.html" alt="" coords="96,164,154,202,151,206,93,168"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000005_000053.html" title="1" alt="" coords="151,188,158,204"/>
+<area shape="poly" id="edge11" href="dir_000053_000006.html" alt="" coords="179,242,159,289,148,347,142,346,153,287,174,239"/>
+<area shape="rect" id="edge11-headlabel" href="dir_000053_000006.html" title="23" alt="" coords="147,337,161,353"/>
+<area shape="rect" id="node7" href="dir_3ab5cf247c41c61d45d3a9ac8514bdef.html" title="shading" alt="" coords="168,288,234,315"/>
+<area shape="poly" id="edge10" href="dir_000053_000072.html" alt="" coords="183,240,189,273,184,274,177,241"/>
+<area shape="rect" id="edge10-headlabel" href="dir_000053_000072.html" title="2" alt="" coords="190,260,197,276"/>
+<area shape="poly" id="edge13" href="dir_000072_000006.html" alt="" coords="193,317,164,352,160,349,189,314"/>
+<area shape="rect" id="edge13-headlabel" href="dir_000072_000006.html" title="9" alt="" coords="167,346,174,362"/>
+<area shape="poly" id="edge12" href="dir_000072_000053.html" alt="" coords="203,288,197,255,202,254,208,287"/>
+<area shape="rect" id="edge12-headlabel" href="dir_000072_000053.html" title="1" alt="" coords="189,252,196,268"/>
+<area shape="rect" id="clust2" href="dir_63652bb08bccee169e27f445314f5f0b.html" alt="" coords="27,53,253,325"/>
+<area shape="rect" id="clust1" href="dir_2625f38c9c327c4d15a8e82564b8e881.html" title="fbxsdk" alt="" coords="16,16,349,400"/>
+</map>

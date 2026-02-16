@@ -115,6 +115,26 @@ $(function(){initNavTree('class_mesh_component.html',''); initResizable(true); }
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_mesh_component_8h_source.html">MeshComponent.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for MeshComponent:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_component__inherit__graph.png" border="0" usemap="#a_mesh_component_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_mesh_component_inherit__map" id="a_mesh_component_inherit__map">
+<area shape="rect" title="A data component holding CPU&#45;side geometry." alt="" coords="5,80,126,107"/>
+<area shape="rect" href="class_component.html" title="Abstract base class for all components attached to entities." alt="" coords="21,5,110,32"/>
+<area shape="poly" title=" " alt="" coords="68,48,68,80,63,80,63,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for MeshComponent:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_component__coll__graph.png" border="0" usemap="#a_mesh_component_coll__map" alt="Collaboration graph"/></div>
+<map name="a_mesh_component_coll__map" id="a_mesh_component_coll__map">
+<area shape="rect" title="A data component holding CPU&#45;side geometry." alt="" coords="5,80,126,107"/>
+<area shape="rect" href="class_component.html" title="Abstract base class for all components attached to entities." alt="" coords="21,5,110,32"/>
+<area shape="poly" title=" " alt="" coords="68,48,68,80,63,80,63,48"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -124,18 +144,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae67721293067058ea82d84386b97dd88" id="r_ae67721293067058ea82d84386b97dd88"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae67721293067058ea82d84386b97dd88">~MeshComponent</a> ()=default</td></tr>
 <tr class="memdesc:ae67721293067058ea82d84386b97dd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
 <tr class="separator:ae67721293067058ea82d84386b97dd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af70f734c1f7cb69688889a3c8ab1f428" id="r_af70f734c1f7cb69688889a3c8ab1f428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af70f734c1f7cb69688889a3c8ab1f428">init</a> ()</td></tr>
-<tr class="memdesc:af70f734c1f7cb69688889a3c8ab1f428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the mesh component.  <br /></td></tr>
-<tr class="separator:af70f734c1f7cb69688889a3c8ab1f428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a727778a30f7c00f1d82caaecc5fdbd" id="r_a1a727778a30f7c00f1d82caaecc5fdbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a727778a30f7c00f1d82caaecc5fdbd">update</a> (float deltaTime)</td></tr>
-<tr class="memdesc:a1a727778a30f7c00f1d82caaecc5fdbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the mesh.  <br /></td></tr>
-<tr class="separator:a1a727778a30f7c00f1d82caaecc5fdbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36fc62d4168b22b354c5132fa1bb9b57" id="r_a36fc62d4168b22b354c5132fa1bb9b57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36fc62d4168b22b354c5132fa1bb9b57">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext)</td></tr>
-<tr class="memdesc:a36fc62d4168b22b354c5132fa1bb9b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Issues the final draw call for this mesh.  <br /></td></tr>
-<tr class="separator:a36fc62d4168b22b354c5132fa1bb9b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf479cd528abbc43d4d17b0d7beeec7b" id="r_abf479cd528abbc43d4d17b0d7beeec7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf479cd528abbc43d4d17b0d7beeec7b">destroy</a> ()</td></tr>
-<tr class="memdesc:abf479cd528abbc43d4d17b0d7beeec7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the CPU-side vertex and index data.  <br /></td></tr>
-<tr class="separator:abf479cd528abbc43d4d17b0d7beeec7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a078fb6f6dc2fd324d4256a935fbf0e9a" id="r_a078fb6f6dc2fd324d4256a935fbf0e9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a078fb6f6dc2fd324d4256a935fbf0e9a">init</a> () override</td></tr>
+<tr class="memdesc:a078fb6f6dc2fd324d4256a935fbf0e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the mesh component.  <br /></td></tr>
+<tr class="separator:a078fb6f6dc2fd324d4256a935fbf0e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44977ec0336d6ef668413bf75fbe5a1f" id="r_a44977ec0336d6ef668413bf75fbe5a1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44977ec0336d6ef668413bf75fbe5a1f">update</a> (float deltaTime) override</td></tr>
+<tr class="memdesc:a44977ec0336d6ef668413bf75fbe5a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the mesh.  <br /></td></tr>
+<tr class="separator:a44977ec0336d6ef668413bf75fbe5a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d5a041d6ef199ca11b0e33db262a86" id="r_af5d5a041d6ef199ca11b0e33db262a86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5d5a041d6ef199ca11b0e33db262a86">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext) override</td></tr>
+<tr class="memdesc:af5d5a041d6ef199ca11b0e33db262a86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Issues the final draw call for this mesh.  <br /></td></tr>
+<tr class="separator:af5d5a041d6ef199ca11b0e33db262a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add21471ffcfcfc3b00b4d1bad9ed79d4" id="r_add21471ffcfcfc3b00b4d1bad9ed79d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add21471ffcfcfc3b00b4d1bad9ed79d4">destroy</a> () override</td></tr>
+<tr class="memdesc:add21471ffcfcfc3b00b4d1bad9ed79d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the CPU-side vertex and index data.  <br /></td></tr>
+<tr class="separator:add21471ffcfcfc3b00b4d1bad9ed79d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:a404098a91640552f9d0284d08b53def4 inherit pub_methods_class_component" id="r_a404098a91640552f9d0284d08b53def4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a404098a91640552f9d0284d08b53def4">Component</a> ()=default</td></tr>
+<tr class="memdesc:a404098a91640552f9d0284d08b53def4 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
+<tr class="separator:a404098a91640552f9d0284d08b53def4 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da90dfe700d29f2d16751aa4948a577 inherit pub_methods_class_component" id="r_a4da90dfe700d29f2d16751aa4948a577"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a4da90dfe700d29f2d16751aa4948a577">Component</a> (const <a class="el" href="_prerequisites_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0">ComponentType</a> <a class="el" href="imgui__impl__opengl3__loader_8h.html#abf70e78c80d135a4b100e5c80e91880b">type</a>)</td></tr>
+<tr class="memdesc:a4da90dfe700d29f2d16751aa4948a577 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with specific type.  <br /></td></tr>
+<tr class="separator:a4da90dfe700d29f2d16751aa4948a577 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
+<tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <br /></td></tr>
+<tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ba6f0bc561e3e24c849e35bdd19c42 inherit pub_methods_class_component" id="r_a39ba6f0bc561e3e24c849e35bdd19c42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_prerequisites_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0">ComponentType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a39ba6f0bc561e3e24c849e35bdd19c42">getType</a> () const</td></tr>
+<tr class="memdesc:a39ba6f0bc561e3e24c849e35bdd19c42 inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type identifier of this component.  <br /></td></tr>
+<tr class="separator:a39ba6f0bc561e3e24c849e35bdd19c42 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -154,6 +187,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aa049bdc296f10d4700dceb2659c47051" id="r_aa049bdc296f10d4700dceb2659c47051"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa049bdc296f10d4700dceb2659c47051">m_numIndex</a></td></tr>
 <tr class="memdesc:aa049bdc296f10d4700dceb2659c47051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached count of the number of indices. This is used for draw calls.  <br /></td></tr>
 <tr class="separator:aa049bdc296f10d4700dceb2659c47051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_class_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:a0f36a9cd926230266bac186f97771bfe inherit pro_attribs_class_component" id="r_a0f36a9cd926230266bac186f97771bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_prerequisites_8h.html#a81f78fc173dedefe5a049c0aa3eed2c0">ComponentType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a0f36a9cd926230266bac186f97771bfe">m_type</a></td></tr>
+<tr class="memdesc:a0f36a9cd926230266bac186f97771bfe inherit pro_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type identifier for this component instance.  <br /></td></tr>
+<tr class="separator:a0f36a9cd926230266bac186f97771bfe inherit pro_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A data component holding CPU-side geometry. </p>
@@ -216,58 +256,86 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abf479cd528abbc43d4d17b0d7beeec7b" name="abf479cd528abbc43d4d17b0d7beeec7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf479cd528abbc43d4d17b0d7beeec7b">&#9670;&#160;</a></span>destroy()</h2>
+<a id="add21471ffcfcfc3b00b4d1bad9ed79d4" name="add21471ffcfcfc3b00b4d1bad9ed79d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add21471ffcfcfc3b00b4d1bad9ed79d4">&#9670;&#160;</a></span>destroy()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MeshComponent::destroy </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> MeshComponent::destroy </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Clears the CPU-side vertex and index data. </p>
 
+<p>Implements <a class="el" href="class_component.html#a89114b1387f1ec60cc865be019fe259a">Component</a>.</p>
+
 </div>
 </div>
-<a id="af70f734c1f7cb69688889a3c8ab1f428" name="af70f734c1f7cb69688889a3c8ab1f428"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af70f734c1f7cb69688889a3c8ab1f428">&#9670;&#160;</a></span>init()</h2>
+<a id="a078fb6f6dc2fd324d4256a935fbf0e9a" name="a078fb6f6dc2fd324d4256a935fbf0e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078fb6f6dc2fd324d4256a935fbf0e9a">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MeshComponent::init </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> MeshComponent::init </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Initializes the mesh component. </p>
 <dl class="section note"><dt>Note</dt><dd>Can be used to load mesh data from a file (e.g., .obj, .fbx) or to procedurally generate geometry. </dd></dl>
 
+<p>Implements <a class="el" href="class_component.html#a56baf8afdea3366554b3c7b13fd6e3f7">Component</a>.</p>
+
 </div>
 </div>
-<a id="a36fc62d4168b22b354c5132fa1bb9b57" name="a36fc62d4168b22b354c5132fa1bb9b57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36fc62d4168b22b354c5132fa1bb9b57">&#9670;&#160;</a></span>render()</h2>
+<a id="af5d5a041d6ef199ca11b0e33db262a86" name="af5d5a041d6ef199ca11b0e33db262a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d5a041d6ef199ca11b0e33db262a86">&#9670;&#160;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MeshComponent::render </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> MeshComponent::render </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_device_context.html">DeviceContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceContext</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Issues the final draw call for this mesh. </p>
@@ -279,21 +347,31 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p>Implements <a class="el" href="class_component.html#ac91ad449b882184077544527fa7ccea3">Component</a>.</p>
+
 </div>
 </div>
-<a id="a1a727778a30f7c00f1d82caaecc5fdbd" name="a1a727778a30f7c00f1d82caaecc5fdbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a727778a30f7c00f1d82caaecc5fdbd">&#9670;&#160;</a></span>update()</h2>
+<a id="a44977ec0336d6ef668413bf75fbe5a1f" name="a44977ec0336d6ef668413bf75fbe5a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44977ec0336d6ef668413bf75fbe5a1f">&#9670;&#160;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MeshComponent::update </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> MeshComponent::update </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Per-frame update logic for the mesh. </p>
@@ -304,6 +382,8 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implements <a class="el" href="class_component.html#a9152b930559c4ece4ea5ddd3e6e4b22b">Component</a>.</p>
 
 </div>
 </div>

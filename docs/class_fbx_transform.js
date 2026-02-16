@@ -1,0 +1,35 @@
+var class_fbx_transform =
+[
+    [ "EInheritType", "class_fbx_transform.html#ac1ab8f75b4873723daa68c57f999b10f", [
+      [ "eInheritRrSs", "class_fbx_transform.html#ac1ab8f75b4873723daa68c57f999b10fa0db9736825409edc03aa1f7a8a04eb09", null ],
+      [ "eInheritRSrs", "class_fbx_transform.html#ac1ab8f75b4873723daa68c57f999b10fa318c1b371c98ae5226e1559f7abaf493", null ],
+      [ "eInheritRrs", "class_fbx_transform.html#ac1ab8f75b4873723daa68c57f999b10fa046d99ce2ae1163ebef1752203e802cb", null ]
+    ] ],
+    [ "FbxTransform", "class_fbx_transform.html#af18e2940f5b28aa68e1648236afce60f", null ],
+    [ "DoF2LRM", "class_fbx_transform.html#a847bede94ccc4f6376c25e9b891472e4", null ],
+    [ "DoF2LT", "class_fbx_transform.html#a37e9fe96d732d9231d8512529db452b0", null ],
+    [ "GetInheritType", "class_fbx_transform.html#ad29a1e87720838947b5444937c9326ae", null ],
+    [ "GetRotationLimits", "class_fbx_transform.html#a6c6bc885204a8ccf3bb5f4eb9c8f367a", null ],
+    [ "GetRotationOrder", "class_fbx_transform.html#a806102c5f7d351b7dd551673977e260e", null ],
+    [ "GetRotationSpaceForLimitOnly", "class_fbx_transform.html#ac84253f0b36bbcbecff02da35d69e474", null ],
+    [ "GetScalingLimits", "class_fbx_transform.html#aa4e1053c50d8b80c0d01adb556e29ff7", null ],
+    [ "GetTranslationLimits", "class_fbx_transform.html#ad28da947717b31700f843d3bd0b80904", null ],
+    [ "GTRSM2GX", "class_fbx_transform.html#a14282735e64e69f9cf4f6e14fa36b841", null ],
+    [ "HasPostRM", "class_fbx_transform.html#ae853dc92acb8600acf2dc7cb29874118", null ],
+    [ "HasPreRM", "class_fbx_transform.html#a60f56f77627047df738fc566fa8a35d8", null ],
+    [ "HasROffset", "class_fbx_transform.html#a0f8a508ce59cb0935a8c365c2ff71c10", null ],
+    [ "HasRPivot", "class_fbx_transform.html#af7c5853f01369b5505255c8a92aa8ef7", null ],
+    [ "HasSOffset", "class_fbx_transform.html#a09e89d031fec95246efe655aee157bac", null ],
+    [ "HasSPivot", "class_fbx_transform.html#a92416fa3e515aea2f5b52e0304a21a05", null ],
+    [ "LRM2DoF", "class_fbx_transform.html#abce0f74a057f18e9f28b605249f15f44", null ],
+    [ "LSM2GSM", "class_fbx_transform.html#a152f85edfff375ffe59e27cbbd41c137", null ],
+    [ "LT2DoF", "class_fbx_transform.html#ae650285f1c785fc88abd2937e6dd1882", null ],
+    [ "SetInheritType", "class_fbx_transform.html#a45fed2a2ce79d3be60f8db31303f8e03", null ],
+    [ "SetPostRM", "class_fbx_transform.html#aa2083d4610e0f3dac32ac07f1b0b67f3", null ],
+    [ "SetPreRM", "class_fbx_transform.html#af0c78d72502a10185b169a3d2e338923", null ],
+    [ "SetROffset", "class_fbx_transform.html#a9711194d9ef07112e7281328d0f0f9a8", null ],
+    [ "SetRotationSpaceForLimitOnly", "class_fbx_transform.html#a36e9405be837036637bf321b31b7b062", null ],
+    [ "SetRPivot", "class_fbx_transform.html#a0c4646271d2b4205288c6dc2200fc57b", null ],
+    [ "SetSOffset", "class_fbx_transform.html#a62c43ef5f9f11e06b88649ed0dd3b4b5", null ],
+    [ "SetSPivot", "class_fbx_transform.html#a7a7084f9afd2f102f8db147e4b1c1583", null ]
+];

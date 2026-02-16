@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_fbx_object_filter.html" title="This object represents a filter criteria on an object." alt="" coords="5,31,116,57"/>
+<area shape="rect" id="Node000001" href="$class_fbx_implementation_filter.html" title="This object represents a shading node filter criteria based on the shading node implementation." alt="" coords="164,5,325,32"/>
+<area shape="poly" id="edge231_Node000000_Node000001" title=" " alt="" coords="131,32,163,27,164,32,132,37"/>
+<area shape="rect" id="Node000002" href="$class_fbx_name_filter.html" title="This class represents a name filter on an object." alt="" coords="191,56,298,83"/>
+<area shape="poly" id="edge232_Node000000_Node000002" title=" " alt="" coords="131,51,191,59,190,65,131,56"/>
+</map>

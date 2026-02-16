@@ -1,0 +1,10 @@
+<map id="FbxIOFileHeaderInfo" name="FbxIOFileHeaderInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="128,203,270,229"/>
+<area shape="rect" id="Node000002" href="$class_fbx_i_o_default_render_resolution.html" title=" " alt="" coords="105,112,308,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,154,203,163,201,202,196,202,198,162,199,154"/>
+<area shape="rect" id="Node000003" href="$class_fbx_string.html" title=" " alt="" coords="5,5,83,32"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="36,48,27,92,29,116,38,137,57,159,81,177,107,190,134,200,133,205,105,195,78,181,53,163,33,140,24,117,22,92,31,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,38,188,109,185,114,74,43"/>
+<area shape="rect" id="Node000004" href="$class_fbx_local_time.html" title=" " alt="" coords="339,112,442,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="384,154,375,168,363,181,342,194,318,203,271,214,270,209,317,198,339,189,360,177,371,165,379,151"/>
+</map>

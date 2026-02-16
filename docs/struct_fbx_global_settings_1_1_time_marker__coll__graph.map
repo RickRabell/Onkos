@@ -1,0 +1,7 @@
+<map id="FbxGlobalSettings::TimeMarker" name="FbxGlobalSettings::TimeMarker">
+<area shape="rect" id="Node000001" title=" " alt="" coords="25,96,162,139"/>
+<area shape="rect" id="Node000002" href="$class_fbx_string.html" title=" " alt="" coords="5,5,83,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,46,66,71,80,94,76,97,61,73,50,48"/>
+<area shape="rect" id="Node000003" href="$class_fbx_time.html" title=" " alt="" coords="106,5,179,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,47,106,97,102,94,127,45"/>
+</map>

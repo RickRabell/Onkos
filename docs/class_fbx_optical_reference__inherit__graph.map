@@ -1,0 +1,9 @@
+<map id="FbxOpticalReference" name="FbxOpticalReference">
+<area shape="rect" id="Node000001" title="This node attribute contains the properties of an optical reference.Mainly used for optical motion ca..." alt="" coords="5,229,150,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_node_attribute.html" title="This class is the base class to all types of node attributes.A node attribute is the content of a nod..." alt="" coords="16,155,139,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,197,80,229,75,229,75,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="37,80,118,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,122,80,154,75,154,75,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="35,5,120,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,48,80,80,75,80,75,48"/>
+</map>

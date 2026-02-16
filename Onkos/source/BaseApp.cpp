@@ -197,7 +197,7 @@ BaseApp::init() {
     texcoord.InstanceDataStepRate = 0;
     layout.push_back(texcoord);
 
-     // Create the Shader Program
+    // Create the Shader Program
     hr = m_shaderProgram.init(m_device, "Onkos.fx", layout);
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
@@ -256,13 +256,6 @@ BaseApp::update(float deltaTime) {
   m_gui.inspectorGeneral(m_actors[m_gui.selectedActorIndex]);
   m_gui.outliner(m_actors);
 
-  /*// Ensure the correct Shader Resource View (SRV) type is bound to the Pixel Shader
-    // Update the code to bind the correct SRV type for the cubemap texture
-
-    // Before rendering the cubemap, ensure the SRV is set correctly
-    m_deviceContext.PSSetShaderResources(0, 1, &m_skyboxTexture.m_textureFromImg);
-  */
-
   // Shot cubemap on imgui image
   static ID3D11ShaderResourceView* faceSRV[6] = { nullptr };
 
@@ -277,7 +270,7 @@ BaseApp::update(float deltaTime) {
   }
 
   ImGui::Text("Cubemap Faces:");
-  const float thumb = 256.0f;
+  const float thumb = 128.0f;
 
   for (int i = 0; i < 6; ++i) {
     ImGui::Image((ImTextureID)faceSRV[i], ImVec2(thumb, thumb));

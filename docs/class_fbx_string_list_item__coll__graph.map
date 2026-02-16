@@ -1,0 +1,5 @@
+<map id="FbxStringListItem" name="FbxStringListItem">
+<area shape="rect" id="Node000001" title="Wraps a string (FbxString) and a pointer (FbxHandle)." alt="" coords="5,96,130,123"/>
+<area shape="rect" id="Node000002" href="$class_fbx_string.html" title=" " alt="" coords="29,5,106,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,48,70,95,65,95,65,48"/>
+</map>

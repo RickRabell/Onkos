@@ -1,0 +1,7 @@
+<map id="FbxRenamingStrategyFbx6" name="FbxRenamingStrategyFbx6">
+<area shape="rect" id="Node000001" title="This class contains the description of the FBX renaming strategy for fbx file format 6." alt="" coords="6,172,186,199"/>
+<area shape="rect" id="Node000002" href="$class_fbx_renaming_strategy_base.html" title="Base class for renaming strategy." alt="" coords="5,96,187,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,138,99,172,93,172,93,138"/>
+<area shape="rect" id="Node000003" href="$class_fbx_char_ptr_set.html" title=" " alt="" coords="42,5,150,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,48,99,95,93,95,93,48"/>
+</map>

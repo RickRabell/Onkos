@@ -1,0 +1,13 @@
+<map id="MySequence" name="MySequence">
+<area shape="rect" id="Node000001" title=" " alt="" coords="64,219,162,245"/>
+<area shape="rect" id="Node000002" href="$struct_im_sequencer_1_1_sequence_interface.html" title=" " alt="" coords="5,128,221,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,170,109,218,104,218,102,170"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="124,170,122,218,117,218,119,170"/>
+<area shape="rect" id="Node000003" href="$struct_ramp_edit.html" title=" " alt="" coords="245,128,325,155"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="248,164,139,220,136,216,246,160"/>
+<area shape="rect" id="Node000004" href="$struct_im_curve_edit_1_1_delegate.html" title=" " alt="" coords="208,5,362,32"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="280,47,279,90,282,127,277,128,273,90,275,47"/>
+<area shape="poly" id="edge5_Node000003_Node000004" title=" " alt="" coords="295,47,297,90,293,128,288,127,291,90,290,47"/>
+<area shape="rect" id="Node000005" href="$struct_im_vec2.html" title=" " alt="" coords="386,5,451,32"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="395,44,301,129,297,126,392,40"/>
+</map>

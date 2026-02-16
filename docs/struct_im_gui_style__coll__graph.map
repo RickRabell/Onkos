@@ -1,0 +1,7 @@
+<map id="ImGuiStyle" name="ImGuiStyle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="83,256,169,283"/>
+<area shape="rect" id="Node000002" href="$struct_im_vec2.html" title=" " alt="" coords="5,5,71,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="32,47,23,86,19,134,23,185,30,209,42,230,60,248,84,258,82,263,57,252,38,234,25,211,18,186,13,134,18,85,27,46"/>
+<area shape="rect" id="Node000003" href="$struct_im_vec4.html" title=" " alt="" coords="181,5,247,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,47,222,86,219,135,209,186,187,233,174,248,158,258,155,253,170,244,182,231,203,184,214,134,216,86,215,48"/>
+</map>

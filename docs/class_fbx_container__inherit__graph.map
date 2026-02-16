@@ -1,0 +1,7 @@
+<map id="FbxContainer" name="FbxContainer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,105,181"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="14,80,96,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,122,58,154,52,154,52,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="12,5,98,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,48,58,80,52,80,52,48"/>
+</map>

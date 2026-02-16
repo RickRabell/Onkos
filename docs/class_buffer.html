@@ -129,13 +129,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a50aa719fb728d4baa7c13e2169ca4155" id="r_a50aa719fb728d4baa7c13e2169ca4155"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50aa719fb728d4baa7c13e2169ca4155">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, unsigned int byteWidth)</td></tr>
 <tr class="memdesc:a50aa719fb728d4baa7c13e2169ca4155"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the buffer for dynamic use, typically a constant buffer. This creates a buffer of a specific size with D3D11_USAGE_DYNAMIC and D3D11_CPU_ACCESS_WRITE flags.  <br /></td></tr>
 <tr class="separator:a50aa719fb728d4baa7c13e2169ca4155"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a246363f9412b48c01dd7a75d08c793ca" id="r_a246363f9412b48c01dd7a75d08c793ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a246363f9412b48c01dd7a75d08c793ca">update</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, ID3D11Resource *pDstResource, unsigned int DstSubresource, const D3D11_BOX *pDstBox, const void *pSrcData, unsigned int SrcRowPitch, unsigned int SrcDepthPitch)</td></tr>
+<tr class="memitem:a246363f9412b48c01dd7a75d08c793ca" id="r_a246363f9412b48c01dd7a75d08c793ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a246363f9412b48c01dd7a75d08c793ca">update</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, ID3D11Resource *pDstResource, unsigned int DstSubresource, const D3D11_BOX *pDstBox, const <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *pSrcData, unsigned int SrcRowPitch, unsigned int SrcDepthPitch)</td></tr>
 <tr class="memdesc:a246363f9412b48c01dd7a75d08c793ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the buffer's contents. Wrapper for ID3D11DeviceContext::UpdateSubresource.  <br /></td></tr>
 <tr class="separator:a246363f9412b48c01dd7a75d08c793ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96d28a8996d3295ec8171048d400e3f5" id="r_a96d28a8996d3295ec8171048d400e3f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96d28a8996d3295ec8171048d400e3f5">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, unsigned int StartSlot, unsigned int NumBuffers, bool setPixelShader=false, DXGI_FORMAT format=DXGI_FORMAT_UNKNOWN)</td></tr>
+<tr class="memitem:a96d28a8996d3295ec8171048d400e3f5" id="r_a96d28a8996d3295ec8171048d400e3f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96d28a8996d3295ec8171048d400e3f5">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, unsigned int StartSlot, unsigned int NumBuffers, bool setPixelShader=false, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>=DXGI_FORMAT_UNKNOWN)</td></tr>
 <tr class="memdesc:a96d28a8996d3295ec8171048d400e3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the buffer to the graphics pipeline. This method's behavior changes based on the m_bindFlag set during init.  <br /></td></tr>
 <tr class="separator:a96d28a8996d3295ec8171048d400e3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7345574d2ad0202f9e1e745df6519d3" id="r_ac7345574d2ad0202f9e1e745df6519d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7345574d2ad0202f9e1e745df6519d3">destroy</a> ()</td></tr>
+<tr class="memitem:ac7345574d2ad0202f9e1e745df6519d3" id="r_ac7345574d2ad0202f9e1e745df6519d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7345574d2ad0202f9e1e745df6519d3">destroy</a> ()</td></tr>
 <tr class="memdesc:ac7345574d2ad0202f9e1e745df6519d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the underlying ID3D11Buffer COM object.  <br /></td></tr>
 <tr class="separator:ac7345574d2ad0202f9e1e745df6519d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e5bfadde7c7c05cccd65ff51596c04" id="r_a30e5bfadde7c7c05cccd65ff51596c04"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30e5bfadde7c7c05cccd65ff51596c04">createBuffer</a> (<a class="el" href="class_device.html">Device</a> &amp;device, D3D11_BUFFER_DESC &amp;desc, D3D11_SUBRESOURCE_DATA *initData)</td></tr>
@@ -247,7 +247,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Buffer::destroy </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Buffer::destroy </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -334,7 +334,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Buffer::render </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Buffer::render </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_device_context.html">DeviceContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceContext</em></span>, </td>
         </tr>
@@ -387,7 +387,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Buffer::update </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Buffer::update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_device_context.html">DeviceContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceContext</em></span>, </td>
         </tr>
@@ -409,7 +409,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>pSrcData</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> *</td>          <td class="paramname"><span class="paramname"><em>pSrcData</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

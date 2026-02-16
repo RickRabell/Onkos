@@ -1,0 +1,8 @@
+<map id="Onkos/include/EngineUtilities/Vectors/Quaternion.h" name="Onkos/include/EngineUtilities/Vectors/Quaternion.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,198,48"/>
+<area shape="rect" id="Node000002" href="$_engine_math_8h.html" title=" " alt="" coords="27,171,176,197"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,49,93,84,92,122,98,155,92,156,87,123,88,83,94,48"/>
+<area shape="rect" id="Node000003" href="$_vector3_8h.html" title=" " alt="" coords="102,96,178,123"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,47,130,80,125,83,109,50"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="136,124,118,158,113,156,131,122"/>
+</map>

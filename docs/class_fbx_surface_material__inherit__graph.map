@@ -1,0 +1,11 @@
+<map id="FbxSurfaceMaterial" name="FbxSurfaceMaterial">
+<area shape="rect" id="Node000001" title=" " alt="" coords="6,155,140,181"/>
+<area shape="rect" id="Node000004" href="$class_fbx_surface_lambert.html" title=" " alt="" coords="5,229,141,256"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="76,197,76,229,70,229,70,197"/>
+<area shape="rect" id="Node000002" href="$class_fbx_object.html" title=" " alt="" coords="32,80,114,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,122,76,154,70,154,70,122"/>
+<area shape="rect" id="Node000003" href="$class_fbx_emitter.html" title=" " alt="" coords="30,5,116,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,48,76,80,70,80,70,48"/>
+<area shape="rect" id="Node000005" href="$class_fbx_surface_phong.html" title=" " alt="" coords="10,304,136,331"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="76,272,76,304,70,304,70,272"/>
+</map>

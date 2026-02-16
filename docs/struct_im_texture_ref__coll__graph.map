@@ -1,0 +1,10 @@
+<map id="ImTextureRef" name="ImTextureRef">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,283,109,309"/>
+<area shape="rect" id="Node000002" href="$struct_im_texture_data.html" title=" " alt="" coords="5,192,113,219"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,234,62,282,56,282,56,234"/>
+<area shape="rect" id="Node000003" href="$struct_im_texture_rect.html" title=" " alt="" coords="5,5,113,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="57,48,52,96,53,149,59,191,54,192,48,149,46,96,52,47"/>
+<area shape="rect" id="Node000004" href="$struct_im_vector.html" title=" " alt="" coords="135,99,319,125"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="97,37,205,96,203,101,94,42"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,135,83,194,81,189,189,131"/>
+</map>

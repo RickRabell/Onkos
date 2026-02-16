@@ -127,21 +127,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8a3c74fe9614699ead9965b5c346fb27" id="r_a8a3c74fe9614699ead9965b5c346fb27"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a3c74fe9614699ead9965b5c346fb27">init</a> (<a class="el" href="class_device.html">Device</a> &amp;deivce, const std::string &amp;textureName, <a class="el" href="_prerequisites_8h.html#ab8685fb7f8f0003664786f0e1e04f65a">ExtensionType</a> extensionType)</td></tr>
 <tr class="memdesc:a8a3c74fe9614699ead9965b5c346fb27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a texture by loading it from a file.  <br /></td></tr>
 <tr class="separator:a8a3c74fe9614699ead9965b5c346fb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee4c9aab845d5a1e0710e1ee2d0cd6d8" id="r_aee4c9aab845d5a1e0710e1ee2d0cd6d8"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee4c9aab845d5a1e0710e1ee2d0cd6d8">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, unsigned int width, unsigned int height, DXGI_FORMAT format, unsigned int bindFlags, unsigned int sampleCount=1, unsigned int qualityLevels=0)</td></tr>
+<tr class="memitem:aee4c9aab845d5a1e0710e1ee2d0cd6d8" id="r_aee4c9aab845d5a1e0710e1ee2d0cd6d8"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee4c9aab845d5a1e0710e1ee2d0cd6d8">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, unsigned int <a class="el" href="imgui__impl__opengl3__loader_8h.html#a161d702bf62ef70b5f44e5071b4c84d6">width</a>, unsigned int <a class="el" href="imgui__impl__opengl3__loader_8h.html#a8d2d049627d5d578ce37f5d7de74a4bb">height</a>, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>, unsigned int bindFlags, unsigned int sampleCount=1, unsigned int qualityLevels=0)</td></tr>
 <tr class="memdesc:aee4c9aab845d5a1e0710e1ee2d0cd6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a procedural texture (e.g., for a render target or depth buffer).  <br /></td></tr>
 <tr class="separator:aee4c9aab845d5a1e0710e1ee2d0cd6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcdc415773ccf163d828913ef4d8167c" id="r_afcdc415773ccf163d828913ef4d8167c"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcdc415773ccf163d828913ef4d8167c">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_texture.html">Texture</a> &amp;textureRef, DXGI_FORMAT format)</td></tr>
+<tr class="memitem:afcdc415773ccf163d828913ef4d8167c" id="r_afcdc415773ccf163d828913ef4d8167c"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcdc415773ccf163d828913ef4d8167c">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_texture.html">Texture</a> &amp;textureRef, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>)</td></tr>
 <tr class="memdesc:afcdc415773ccf163d828913ef4d8167c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a texture based on an existing texture resource.  <br /></td></tr>
 <tr class="separator:afcdc415773ccf163d828913ef4d8167c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f238ba1919408c1cd3ef6c103d62434" id="r_a5f238ba1919408c1cd3ef6c103d62434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f238ba1919408c1cd3ef6c103d62434">update</a> ()</td></tr>
+<tr class="memitem:a5f238ba1919408c1cd3ef6c103d62434" id="r_a5f238ba1919408c1cd3ef6c103d62434"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f238ba1919408c1cd3ef6c103d62434">update</a> ()</td></tr>
 <tr class="memdesc:a5f238ba1919408c1cd3ef6c103d62434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the texture.  <br /></td></tr>
 <tr class="separator:a5f238ba1919408c1cd3ef6c103d62434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f821fbd57833895831f05b115d1471f" id="r_a2f821fbd57833895831f05b115d1471f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f821fbd57833895831f05b115d1471f">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, unsigned int startSlot, unsigned int numViews)</td></tr>
+<tr class="memitem:a2f821fbd57833895831f05b115d1471f" id="r_a2f821fbd57833895831f05b115d1471f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f821fbd57833895831f05b115d1471f">render</a> (<a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, unsigned int startSlot, unsigned int numViews)</td></tr>
 <tr class="memdesc:a2f821fbd57833895831f05b115d1471f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the texture's shader resource view to a shader stage.  <br /></td></tr>
 <tr class="separator:a2f821fbd57833895831f05b115d1471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9885329fec4191d5a7aee3d198519ea9" id="r_a9885329fec4191d5a7aee3d198519ea9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9885329fec4191d5a7aee3d198519ea9">destroy</a> ()</td></tr>
+<tr class="memitem:a9885329fec4191d5a7aee3d198519ea9" id="r_a9885329fec4191d5a7aee3d198519ea9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9885329fec4191d5a7aee3d198519ea9">destroy</a> ()</td></tr>
 <tr class="memdesc:a9885329fec4191d5a7aee3d198519ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the underlying D3D11 texture and shader resource view.  <br /></td></tr>
 <tr class="separator:a9885329fec4191d5a7aee3d198519ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ac8515e7d9e4dc2297ec91f0425a7a" id="r_ab2ac8515e7d9e4dc2297ec91f0425a7a"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2ac8515e7d9e4dc2297ec91f0425a7a">CreateCubemap</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_device_context.html">DeviceContext</a> &amp;deviceContext, const std::array&lt; std::string, 6 &gt; &amp;facePaths, bool generateMips)</td></tr>
+<tr class="memdesc:ab2ac8515e7d9e4dc2297ec91f0425a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a cubemap texture from six image files.  <br /></td></tr>
+<tr class="separator:ab2ac8515e7d9e4dc2297ec91f0425a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43008323950e6b10eb19f8ddbe7d19c4" id="r_a43008323950e6b10eb19f8ddbe7d19c4"><td class="memItemLeft" align="right" valign="top">ID3D11ShaderResourceView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43008323950e6b10eb19f8ddbe7d19c4">CreateCubemapFaceSRV</a> (ID3D11Device *device, ID3D11Texture2D *cubemapTex, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>, UINT faceIndex, UINT mipLevels=1)</td></tr>
+<tr class="memdesc:a43008323950e6b10eb19f8ddbe7d19c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shader resource view (SRV) for a specific face of a cubemap texture.  <br /></td></tr>
+<tr class="separator:a43008323950e6b10eb19f8ddbe7d19c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -216,6 +222,106 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab2ac8515e7d9e4dc2297ec91f0425a7a" name="ab2ac8515e7d9e4dc2297ec91f0425a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ac8515e7d9e4dc2297ec91f0425a7a">&#9670;&#160;</a></span>CreateCubemap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Texture::CreateCubemap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_device.html">Device</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_device_context.html">DeviceContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceContext</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; std::string, 6 &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>facePaths</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>generateMips</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a cubemap texture from six image files. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The graphics device used to create the cubemap resource. </td></tr>
+    <tr><td class="paramname">deviceContext</td><td>The device context used for uploading texture data. </td></tr>
+    <tr><td class="paramname">facePaths</td><td>An array of file paths for the six cubemap faces (order: +X, -X, +Y, -Y, +Z, -Z). </td></tr>
+    <tr><td class="paramname">generateMips</td><td>Whether to generate mipmaps for the cubemap texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>HRESULT Returns S_OK if successful, otherwise an error code. </dd></dl>
+
+</div>
+</div>
+<a id="a43008323950e6b10eb19f8ddbe7d19c4" name="a43008323950e6b10eb19f8ddbe7d19c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43008323950e6b10eb19f8ddbe7d19c4">&#9670;&#160;</a></span>CreateCubemapFaceSRV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11ShaderResourceView * Texture::CreateCubemapFaceSRV </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11Texture2D *</td>          <td class="paramname"><span class="paramname"><em>cubemapTex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DXGI_FORMAT</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>faceIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>mipLevels</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a shader resource view (SRV) for a specific face of a cubemap texture. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Pointer to the DirectX device. </td></tr>
+    <tr><td class="paramname">cubemapTex</td><td>Pointer to the cubemap texture resource. </td></tr>
+    <tr><td class="paramname">format</td><td>The format of the SRV to create. </td></tr>
+    <tr><td class="paramname">faceIndex</td><td>The index of the cubemap face (0-5). </td></tr>
+    <tr><td class="paramname">mipLevels</td><td>Number of mipmap levels for the SRV. Defaults to 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ID3D11ShaderResourceView* Returns a pointer to the created SRV, or nullptr on failure. </dd></dl>
+
+</div>
+</div>
 <a id="a9885329fec4191d5a7aee3d198519ea9" name="a9885329fec4191d5a7aee3d198519ea9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9885329fec4191d5a7aee3d198519ea9">&#9670;&#160;</a></span>destroy()</h2>
 
@@ -223,7 +329,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Texture::destroy </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Texture::destroy </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -378,7 +484,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Texture::render </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Texture::render </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_device_context.html">DeviceContext</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>deviceContext</em></span>, </td>
         </tr>
@@ -415,7 +521,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Texture::update </td>
+          <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> Texture::update </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>

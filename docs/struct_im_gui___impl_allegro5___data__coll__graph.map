@@ -1,0 +1,11 @@
+<map id="ImGui_ImplAllegro5_Data" name="ImGui_ImplAllegro5_Data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="154,293,324,320"/>
+<area shape="rect" id="Node000002" href="$struct_im_vector.html" title=" " alt="" coords="5,203,212,229"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,236,186,267,221,291,218,295,183,272,137,241"/>
+<area shape="rect" id="Node000003" href="$struct_im_draw_vert_allegro.html" title=" " alt="" coords="43,112,174,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,154,111,202,106,202,106,154"/>
+<area shape="rect" id="Node000004" href="$struct_im_vec2.html" title=" " alt="" coords="76,5,141,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="111,47,111,112,106,112,106,47"/>
+<area shape="rect" id="Node000005" href="$struct_im_vector.html" title=" " alt="" coords="236,203,347,229"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="278,244,249,294,244,291,274,242"/>
+</map>

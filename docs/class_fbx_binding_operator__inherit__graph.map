@@ -1,0 +1,9 @@
+<map id="FbxBindingOperator" name="FbxBindingOperator">
+<area shape="rect" id="Node000001" title=" " alt="" coords="11,229,147,256"/>
+<area shape="rect" id="Node000002" href="$class_fbx_binding_table_base.html" title=" " alt="" coords="5,155,153,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,197,82,229,76,229,76,197"/>
+<area shape="rect" id="Node000003" href="$class_fbx_object.html" title=" " alt="" coords="38,80,120,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,122,82,154,76,154,76,122"/>
+<area shape="rect" id="Node000004" href="$class_fbx_emitter.html" title=" " alt="" coords="36,5,122,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="82,48,82,80,76,80,76,48"/>
+</map>

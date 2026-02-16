@@ -1,0 +1,26 @@
+var struct_im_draw_list_shared_data =
+[
+    [ "ImDrawListSharedData", "struct_im_draw_list_shared_data.html#a3fe9d30c0df68cce4db9d2033ba9a589", null ],
+    [ "~ImDrawListSharedData", "struct_im_draw_list_shared_data.html#a57a4e16ebe7a1896e798f1360f21b397", null ],
+    [ "ImDrawListSharedData", "struct_im_draw_list_shared_data.html#a3fe9d30c0df68cce4db9d2033ba9a589", null ],
+    [ "~ImDrawListSharedData", "struct_im_draw_list_shared_data.html#a57a4e16ebe7a1896e798f1360f21b397", null ],
+    [ "SetCircleTessellationMaxError", "struct_im_draw_list_shared_data.html#adc947304370a6d5ee55a44190e923c8d", null ],
+    [ "SetCircleTessellationMaxError", "struct_im_draw_list_shared_data.html#adc947304370a6d5ee55a44190e923c8d", null ],
+    [ "ArcFastRadiusCutoff", "struct_im_draw_list_shared_data.html#aef9a6fbf913823bd0b22aafb7f797c05", null ],
+    [ "ArcFastVtx", "struct_im_draw_list_shared_data.html#a85a60373eb5ad1328e01d71f4fb09ce9", null ],
+    [ "CircleSegmentCounts", "struct_im_draw_list_shared_data.html#afcc08707eddd2c0c7bcd1410b1d1423c", null ],
+    [ "CircleSegmentMaxError", "struct_im_draw_list_shared_data.html#a2343a659b6e750ab09401615b967df10", null ],
+    [ "ClipRectFullscreen", "struct_im_draw_list_shared_data.html#ac8737a7aae92c55d75998a6c9f6f3882", null ],
+    [ "Context", "struct_im_draw_list_shared_data.html#a3aa570f52c8f3e6d795204ee3746bc38", null ],
+    [ "CurveTessellationTol", "struct_im_draw_list_shared_data.html#a5b5bb46f5fd714b43e4b73a131b7f6f7", null ],
+    [ "DrawLists", "struct_im_draw_list_shared_data.html#aa7a80089ddf92f60e3f6d53dac187a3a", null ],
+    [ "Font", "struct_im_draw_list_shared_data.html#a26d76730ef12579f980ed461b39da5c5", null ],
+    [ "FontAtlas", "struct_im_draw_list_shared_data.html#a0523a8f8f0b65e5843d7a3102778e506", null ],
+    [ "FontScale", "struct_im_draw_list_shared_data.html#a1a52282912e7cf687fa4f956fc30fda5", null ],
+    [ "FontSize", "struct_im_draw_list_shared_data.html#a189a412fcd4f66a1d60501ad758d04bd", null ],
+    [ "InitialFlags", "struct_im_draw_list_shared_data.html#a7e00a317793f4ed3ff592b050dfee450", null ],
+    [ "InitialFringeScale", "struct_im_draw_list_shared_data.html#a07999d7da4eeac283556d6d3843d581e", null ],
+    [ "TempBuffer", "struct_im_draw_list_shared_data.html#afaaf529f276c5768e97aa436f531d306", null ],
+    [ "TexUvLines", "struct_im_draw_list_shared_data.html#a7f96a732701247adb82ca5036af7527c", null ],
+    [ "TexUvWhitePixel", "struct_im_draw_list_shared_data.html#a8dff5fc643cab17128012383d75d9ad8", null ]
+];

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_fbx_shared_ptr.html" title=" " alt="" coords="5,5,163,64"/>
+<area shape="rect" id="Node000001" href="$class_fbx_shared_free_ptr.html" title="Scoped pointer for FbxMalloc allocations, which call FbxFree() to deallocate." alt="" coords="211,21,389,48"/>
+<area shape="poly" id="edge305_Node000000_Node000001" title=" " alt="" coords="178,32,210,32,210,37,178,37"/>
+</map>

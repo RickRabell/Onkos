@@ -1,13 +1,15 @@
 <map id="Onkos/include/Window.h" name="Onkos/include/Window.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="418,5,583,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="464,5,630,32"/>
 <area shape="rect" id="Node000002" href="$_base_app_8h.html" title=" " alt="" coords="202,80,375,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="450,40,327,82,325,77,448,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="488,39,335,82,333,77,487,34"/>
 <area shape="rect" id="Node000005" href="$_window_8cpp.html" title=" " alt="" coords="365,155,542,181"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="481,46,460,81,454,120,455,154,450,155,448,120,455,79,476,43"/>
-<area shape="rect" id="Node000006" href="$_swap_chain_8cpp.html" title=" " alt="" coords="469,80,668,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="525,42,559,78,555,81,521,45"/>
-<area shape="rect" id="Node000007" href="$_viewport_8cpp.html" title=" " alt="" coords="692,80,874,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="565,34,734,77,733,82,564,39"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="503,42,479,59,460,81,453,100,451,120,454,154,449,155,446,119,448,99,456,79,475,55,500,37"/>
+<area shape="rect" id="Node000006" href="$_g_u_i_8cpp.html" title=" " alt="" coords="470,80,625,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="550,48,550,80,544,80,544,48"/>
+<area shape="rect" id="Node000007" href="$_swap_chain_8cpp.html" title=" " alt="" coords="649,80,848,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="597,35,714,77,712,82,596,40"/>
+<area shape="rect" id="Node000008" href="$_viewport_8cpp.html" title=" " alt="" coords="872,80,1054,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="635,33,891,77,890,82,634,38"/>
 <area shape="rect" id="Node000003" href="$_onkos_8cpp.html" title=" " alt="" coords="5,155,132,181"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,114,108,157,106,151,235,109"/>
 <area shape="rect" id="Node000004" href="$_base_app_8cpp.html" title=" " alt="" coords="156,155,341,181"/>

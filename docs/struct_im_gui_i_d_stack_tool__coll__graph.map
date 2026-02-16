@@ -1,0 +1,11 @@
+<map id="ImGuiIDStackTool" name="ImGuiIDStackTool">
+<area shape="rect" id="Node000001" title=" " alt="" coords="120,219,249,245"/>
+<area shape="rect" id="Node000002" href="$struct_im_vector.html" title=" " alt="" coords="5,96,191,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,149,177,217,173,220,121,153"/>
+<area shape="rect" id="Node000003" href="$struct_im_gui_stack_level_info.html" title=" " alt="" coords="26,5,170,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,48,101,95,95,95,95,48"/>
+<area shape="rect" id="Node000004" href="$struct_im_gui_text_buffer.html" title=" " alt="" coords="215,104,330,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="256,144,197,220,192,217,252,141"/>
+<area shape="rect" id="Node000005" href="$struct_im_vector.html" title=" " alt="" coords="212,5,334,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="275,48,275,104,270,104,270,48"/>
+</map>

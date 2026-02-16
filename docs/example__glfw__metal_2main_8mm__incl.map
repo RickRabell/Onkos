@@ -1,0 +1,27 @@
+<map id="Onkos/Imgui/imgui&#45;docking/examples/example_glfw_metal/main.mm" name="Onkos/Imgui/imgui&#45;docking/examples/example_glfw_metal/main.mm">
+<area shape="rect" id="Node000001" title=" " alt="" coords="325,5,504,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="55,187,118,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,43,237,50,143,64,63,84,34,98,14,114,8,130,15,146,31,162,51,176,48,180,27,166,11,149,3,130,10,110,31,93,61,79,142,58,236,45,324,37"/>
+<area shape="rect" id="Node000003" href="$imgui__impl__glfw_8h.html" title=" " alt="" coords="24,112,149,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,63,149,110,147,105,324,58"/>
+<area shape="rect" id="Node000004" href="$imgui__impl__metal_8h.html" title=" " alt="" coords="173,112,307,139"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="359,67,279,107,277,102,357,62"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="331,112,391,139"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="400,66,379,100,374,97,395,63"/>
+<area shape="rect" id="Node000006" href="$glfw3_8h.html" title="The header of the GLFW 3 API." alt="" coords="415,112,521,139"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="434,63,455,97,450,100,429,66"/>
+<area shape="rect" id="Node000010" href="$glfw3native_8h.html" title="The header of the native access functions." alt="" coords="544,112,685,139"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="481,62,573,103,571,108,478,67"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="708,112,809,139"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="505,56,695,105,694,110,504,62"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="833,112,1004,139"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="505,49,832,106,831,111,504,54"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="89,139,89,171,84,171,84,139"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="214,142,128,182,126,177,212,137"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="343,187,411,213"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="454,141,406,179,403,175,450,137"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="436,187,500,213"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="471,139,471,171,465,171,465,139"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="524,187,588,213"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="485,137,531,175,527,179,481,141"/>
+</map>

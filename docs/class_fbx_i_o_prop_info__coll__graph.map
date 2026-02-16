@@ -1,0 +1,11 @@
+<map id="FbxIOPropInfo" name="FbxIOPropInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="57,385,164,412"/>
+<area shape="rect" id="Node000002" href="$class_fbx_string_list.html" title=" " alt="" coords="61,295,160,321"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,337,113,385,108,385,108,337"/>
+<area shape="rect" id="Node000003" href="$class_fbx_string_list_t.html" title=" " alt="" coords="23,203,198,245"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,261,113,294,108,294,108,261"/>
+<area shape="rect" id="Node000004" href="$class_fbx_array.html" title=" " alt="" coords="5,112,216,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,155,113,202,108,202,108,155"/>
+<area shape="rect" id="Node000005" href="$struct_fbx_array_1_1t_data.html" title=" " alt="" coords="32,5,189,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="113,64,113,112,108,112,108,64"/>
+</map>

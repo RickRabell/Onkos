@@ -1,0 +1,25 @@
+var struct_im_gui_selection_basic_storage =
+[
+    [ "ImGuiSelectionBasicStorage", "struct_im_gui_selection_basic_storage.html#ac81a4d67326ea25041e140319239126c", null ],
+    [ "ImGuiSelectionBasicStorage", "struct_im_gui_selection_basic_storage.html#afa3bee905b3b70038f8da9ba71f135fc", null ],
+    [ "ApplyRequests", "struct_im_gui_selection_basic_storage.html#a5da8efc0dbe1611b3f980afba295110a", null ],
+    [ "ApplyRequests", "struct_im_gui_selection_basic_storage.html#ab4d25513447762a69e20c9743f9e80a0", null ],
+    [ "Clear", "struct_im_gui_selection_basic_storage.html#a9b1f057e4578e031520a78ae392af037", null ],
+    [ "Clear", "struct_im_gui_selection_basic_storage.html#a15aceba545830f98fb7e8550b8da71cc", null ],
+    [ "Contains", "struct_im_gui_selection_basic_storage.html#ab55dc39b0ce40405957af6ff0086f4af", null ],
+    [ "Contains", "struct_im_gui_selection_basic_storage.html#a93c654da4ae886a353b3d2fe0f1cad09", null ],
+    [ "GetNextSelectedItem", "struct_im_gui_selection_basic_storage.html#a8fe947343b7944c6447b2ae4c6b35d72", null ],
+    [ "GetNextSelectedItem", "struct_im_gui_selection_basic_storage.html#a8aefa744f2cc2e8243225ba23b5f4f0c", null ],
+    [ "GetStorageIdFromIndex", "struct_im_gui_selection_basic_storage.html#a331efab75bdd203770ed5ccaaa09a6d1", null ],
+    [ "GetStorageIdFromIndex", "struct_im_gui_selection_basic_storage.html#a331efab75bdd203770ed5ccaaa09a6d1", null ],
+    [ "SetItemSelected", "struct_im_gui_selection_basic_storage.html#a00b16e65ced786c9446c419ab9a75a0a", null ],
+    [ "SetItemSelected", "struct_im_gui_selection_basic_storage.html#a33772e9a71bff2685324fc9917a9025b", null ],
+    [ "Swap", "struct_im_gui_selection_basic_storage.html#a18377dc1f474f77951a5da925c4cbfac", null ],
+    [ "Swap", "struct_im_gui_selection_basic_storage.html#a3757d7ae4db6b032b1afb7a8403dec26", null ],
+    [ "_SelectionOrder", "struct_im_gui_selection_basic_storage.html#ac19585561995804e48065e21f1bb5b30", null ],
+    [ "_Storage", "struct_im_gui_selection_basic_storage.html#aefb9716a0b190090ce3234fd3f7a0b77", null ],
+    [ "AdapterIndexToStorageId", "struct_im_gui_selection_basic_storage.html#a414aa6303af9314815e3d1c170194bf3", null ],
+    [ "PreserveOrder", "struct_im_gui_selection_basic_storage.html#a5e56e08cdc1dc14def833a98a8b14195", null ],
+    [ "Size", "struct_im_gui_selection_basic_storage.html#a5f6fdbea143f5c65d851ff8ae190685e", null ],
+    [ "UserData", "struct_im_gui_selection_basic_storage.html#ad3103ecba0043ba5465150a68a8ccd5b", null ]
+];

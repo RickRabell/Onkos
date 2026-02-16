@@ -1,0 +1,7 @@
+<map id="ImGuiMultiSelectIO" name="ImGuiMultiSelectIO">
+<area shape="rect" id="Node000001" title=" " alt="" coords="25,203,160,229"/>
+<area shape="rect" id="Node000002" href="$struct_im_vector.html" title=" " alt="" coords="5,96,180,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,154,95,202,90,202,90,154"/>
+<area shape="rect" id="Node000003" href="$struct_im_gui_selection_request.html" title=" " alt="" coords="13,5,172,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="95,48,95,95,90,95,90,48"/>
+</map>

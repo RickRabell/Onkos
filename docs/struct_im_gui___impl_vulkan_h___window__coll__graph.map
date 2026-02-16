@@ -1,0 +1,11 @@
+<map id="ImGui_ImplVulkanH_Window" name="ImGui_ImplVulkanH_Window">
+<area shape="rect" id="Node000001" title=" " alt="" coords="114,203,305,229"/>
+<area shape="rect" id="Node000002" href="$struct_im_vector.html" title=" " alt="" coords="7,96,198,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,147,197,200,194,204,135,151"/>
+<area shape="rect" id="Node000003" href="$struct_im_gui___impl_vulkan_h___frame.html" title=" " alt="" coords="5,5,187,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="101,47,104,95,99,96,95,48"/>
+<area shape="rect" id="Node000004" href="$struct_im_vector.html" title=" " alt="" coords="235,96,426,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,150,227,204,223,200,292,146"/>
+<area shape="rect" id="Node000005" href="$struct_im_gui___impl_vulkan_h___frame_semaphores.html" title=" " alt="" coords="210,5,464,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="338,48,335,96,329,95,333,47"/>
+</map>

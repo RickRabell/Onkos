@@ -1,0 +1,6 @@
+<map id="FbxSystemUnit" name="FbxSystemUnit">
+<area shape="rect" id="Node000001" title="This class describes the units of measurement used within a particular scene." alt="" coords="42,195,155,221"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="128,185,147,181,164,184,176,193,181,208,175,226,158,234,136,233,114,224,116,219,137,228,156,229,171,222,176,208,172,196,162,189,147,187,129,190"/>
+<area shape="rect" id="Node000002" href="$struct_fbx_system_unit_1_1_conversion_options.html" title=" " alt="" coords="5,5,192,48"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="101,64,101,194,96,194,96,64"/>
+</map>

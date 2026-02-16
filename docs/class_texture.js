@@ -2,6 +2,8 @@ var class_texture =
 [
     [ "Texture", "class_texture.html#a66179be276016021e80b1c67c047d4ad", null ],
     [ "~Texture", "class_texture.html#ad2a9673e810b8c1f8c7dcb9b94fd71e5", null ],
+    [ "CreateCubemap", "class_texture.html#ab2ac8515e7d9e4dc2297ec91f0425a7a", null ],
+    [ "CreateCubemapFaceSRV", "class_texture.html#a43008323950e6b10eb19f8ddbe7d19c4", null ],
     [ "destroy", "class_texture.html#a9885329fec4191d5a7aee3d198519ea9", null ],
     [ "init", "class_texture.html#a8a3c74fe9614699ead9965b5c346fb27", null ],
     [ "init", "class_texture.html#afcdc415773ccf163d828913ef4d8167c", null ],

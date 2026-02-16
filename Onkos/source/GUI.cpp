@@ -54,78 +54,6 @@ GUI::update(Viewport& viewport, Window& window) {
 	drawGizmoToolbar();
 }
 
-//void
-//UserInterface::render() {
-//	ImGui::Render();
-//	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-//	ImGuiIO& io = ImGui::GetIO();
-//	if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
-//		ImGui::UpdatePlatformWindows();
-//		ImGui::RenderPlatformWindowsDefault();
-//	}
-//}
-
-/*
-void 
-GUI::render() {
-  // Crear la ventana de Propiedades
-  ImGui::Begin("Inspector de Propiedades");
-
-  if (m_selectedActor) {
-    ImGui::Text("Actor: %s", m_selectedActor->getName().c_str());
-    ImGui::Separator();
-
-    // Obtener el componente Transform
-    auto transformComponent = m_selectedActor->getComponent<Transform>();
-
-    if (transformComponent) {
-      if (ImGui::CollapsingHeader("Transform", ImGuiTreeNodeFlags_DefaultOpen)) {
-        // --- POSICIÓN ---
-        // Leemos los valores actuales
-        EU::Vector3 pos = transformComponent->getPosition();
-        float p[3] = { pos.x, pos.y, pos.z };
-
-        // Dibujamos el control y si devuelve true (hubo cambios), actualizamos
-        if (vec3Control("Position", p)) {
-          transformComponent->setPosition(EU::Vector3(p[0], p[1], p[2]));
-        }
-
-        // --- ROTACIÓN ---
-        // Leemos radianes, convertimos a grados para la UI
-        EU::Vector3 rot = transformComponent->getRotation();
-        float r[3] = { XMConvertToDegrees(rot.x), 
-                       XMConvertToDegrees(rot.y), 
-                       XMConvertToDegrees(rot.z) };
-
-        if (vec3Control("Rotation", r)) {
-          // Convertimos grados a radianes para guardarlo
-          transformComponent->setRotation(EU::Vector3(XMConvertToRadians(r[0]), 
-                                                      XMConvertToRadians(r[1]), 
-                                                      XMConvertToRadians(r[2])));
-        }
-
-        // --- ESCALA ---
-        EU::Vector3 scale = transformComponent->getScale();
-        float s[3] = { scale.x, scale.y, scale.z };
-
-        if (vec3Control("Scale", s, 1.0f)) { // Reset value es 1.0 para escala
-          transformComponent->setScale(EU::Vector3(s[0], s[1], s[2]));
-        }
-      }
-    }
-  }
-  else {
-    ImGui::Text("No hay actor seleccionado.");
-  }
-
-  ImGui::End();
-
-  // Renderizado final de ImGui
-  ImGui::Render();
-  ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-}
-*/
-
 void
 GUI::render() {
   ImGui::Render();
@@ -148,7 +76,10 @@ GUI::destroy() {
 }
 
 void
-GUI::vec3Control(const std::string& label, float* values, float resetValue, float columnWidth) {
+GUI::vec3Control(const std::string& label, 
+								 float* values, 
+								 float resetValue,
+								 float columnWidth) {
 	ImGuiIO& io = ImGui::GetIO();
 	auto boldFont = io.Fonts->Fonts[0];
 
@@ -368,7 +299,9 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 		}
 
 		// Si el actor es seleccionable
-		ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_OpenOnDoubleClick;
+		ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags_OpenOnArrow | 
+															 ImGuiTreeNodeFlags_OpenOnDoubleClick;
+
 		if (selectedActorIndex == i)
 			flags |= ImGuiTreeNodeFlags_Selected;
 
@@ -395,7 +328,9 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 }
 
 void
-GUI::editTransform(const XMMATRIX& view, const XMMATRIX& projection, EU::TSharedPointer<Actor> actor)
+GUI::editTransform(const XMMATRIX& view, 
+									 const XMMATRIX& projection, 
+									 EU::TSharedPointer<Actor> actor)
 {
 	static ImGuizmo::MODE mCurrentGizmoMode(ImGuizmo::WORLD);
 	auto transform = actor->getComponent<Transform>();

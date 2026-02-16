@@ -205,41 +205,6 @@ BaseApp::init() {
       return hr;
     }
 
-    /*
-    bool loadSuccess = m_modelLoader.loadModel("test.obj", m_mesh);
-
-    if (!loadSuccess)
-    {
-      ERROR("BaseApp.cpp", "init", "Failed to load model .obj");
-      return E_FAIL;
-    }
-    */
-
-    // Create vertex buffer
-    //hr = m_vertexBuffer.init(m_device, Bowser[0], D3D11_BIND_VERTEX_BUFFER);
-
-    //if (FAILED(hr)) {
-    //  ERROR("Main", "InitDevice",
-    //    ("Failed to initialize VertexBuffer. HRESULT: " + std::to_string(hr)).c_str());
-    //  return hr;
-    //}
-
-    // Create index buffer
-    //hr = m_indexBuffer.init(m_device, Bowser[0], D3D11_BIND_INDEX_BUFFER);
-
-    //if (FAILED(hr)) {
-    //  ERROR("Main", "InitDevice",
-    //    ("Failed to initialize IndexBuffer. HRESULT: " + std::to_string(hr)).c_str());
-    //  return hr;
-    //}
-
-    //auto& resourceMan = ResourceManager::getInstance();
-
-    //std::shared_ptr<Model3D> model = resourceMan.GetOrLoad<Model3D>("CubeModel", "AbeBowser.fbx", ModelType::FBX);
-
-    // Set primitive topology
-    //m_deviceContext.m_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
     // Create the constant buffers
     hr = m_cbNeverChanges.init(m_device, sizeof(CBNeverChanges));
     if (FAILED(hr)) {
@@ -291,6 +256,13 @@ BaseApp::update(float deltaTime) {
   m_gui.inspectorGeneral(m_actors[m_gui.selectedActorIndex]);
   m_gui.outliner(m_actors);
 
+  /*// Ensure the correct Shader Resource View (SRV) type is bound to the Pixel Shader
+    // Update the code to bind the correct SRV type for the cubemap texture
+
+    // Before rendering the cubemap, ensure the SRV is set correctly
+    m_deviceContext.PSSetShaderResources(0, 1, &m_skyboxTexture.m_textureFromImg);
+  */
+
   // Shot cubemap on imgui image
   static ID3D11ShaderResourceView* faceSRV[6] = { nullptr };
 
@@ -305,7 +277,7 @@ BaseApp::update(float deltaTime) {
   }
 
   ImGui::Text("Cubemap Faces:");
-  const float thumb = 128.0f;
+  const float thumb = 256.0f;
 
   for (int i = 0; i < 6; ++i) {
     ImGui::Image((ImTextureID)faceSRV[i], ImVec2(thumb, thumb));
@@ -330,7 +302,9 @@ BaseApp::update(float deltaTime) {
   // Update Actors
   m_sceneGraph.update(deltaTime, m_deviceContext);
 
-  m_gui.editTransform(m_camera.getView(), m_camera.getProj(), m_actors[m_gui.selectedActorIndex]);
+  m_gui.editTransform(m_camera.getView(), 
+                      m_camera.getProj(), 
+                      m_actors[m_gui.selectedActorIndex]);
 }
 
 void

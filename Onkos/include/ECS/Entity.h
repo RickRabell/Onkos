@@ -29,8 +29,11 @@ public:
 	virtual
 	~Entity() = default;
 
-	virtual void
-	awake() = 0;
+  /**
+  * @brief Called when the entity is first created in the scene.
+  */
+  virtual void
+  awake() = 0;
 
 	/**
 	 * @brief Initializes the entity and potentially its components.

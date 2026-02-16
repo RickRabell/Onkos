@@ -44,7 +44,11 @@ Texture::init(Device& device,
   case PNG: {
     m_textureName = textureName + ".png";
     int width, height, channels;
-    unsigned char* data = stbi_load(m_textureName.c_str(), &width, &height, &channels, 4); // 4 bytes por pixel (RGBA)
+    unsigned char* data = stbi_load(m_textureName.c_str(), 
+                                    &width, 
+                                    &height, 
+                                    &channels, 
+                                    4); // 4 bytes por pixel (RGBA)
     if (!data) {
       ERROR("Texture", "init",
         ("Failed to load PNG texture: " + std::string(stbi_failure_reason())).c_str());
@@ -96,7 +100,11 @@ Texture::init(Device& device,
   case JPG: {
     m_textureName = textureName + ".jpg";
     int width, height, channels;
-    unsigned char* data = stbi_load(m_textureName.c_str(), &width, &height, &channels, 4); // 4 bytes por pixel (RGBA)
+    unsigned char* data = stbi_load(m_textureName.c_str(), 
+                                    &width, 
+                                    &height, 
+                                    &channels, 
+                                    4); // 4 bytes por pixel (RGBA)
     if (!data) {
       ERROR("Texture", "init",
         ("Failed to load JPG texture: " + std::string(stbi_failure_reason())).c_str());
@@ -291,7 +299,9 @@ Texture::CreateCubemap(Device& device,
     }
     else {
       if (w != width || h != height) {
-        ERROR("Texture", "CreateCubemap", "All cubemap faces must have the same dimensions.");
+        ERROR("Texture", 
+              "CreateCubemap", 
+              "All cubemap faces must have the same dimensions.");
         // liberar lo ya cargado
         for (int k = 0; k <= i; ++k) {
           if (facePixels[k]) {
@@ -313,9 +323,11 @@ Texture::CreateCubemap(Device& device,
   texDesc.SampleDesc.Count = 1;
   texDesc.SampleDesc.Quality = 0;
   texDesc.Usage = D3D11_USAGE_DEFAULT;
-  texDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE | (generateMips ? D3D11_BIND_RENDER_TARGET : 0);
+  texDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE | 
+                      (generateMips ? D3D11_BIND_RENDER_TARGET : 0);
   texDesc.CPUAccessFlags = 0;
-  texDesc.MiscFlags = D3D11_RESOURCE_MISC_TEXTURECUBE | (generateMips ? D3D11_RESOURCE_MISC_GENERATE_MIPS : 0);
+  texDesc.MiscFlags = D3D11_RESOURCE_MISC_TEXTURECUBE | 
+                      (generateMips ? D3D11_RESOURCE_MISC_GENERATE_MIPS : 0);
 
   HRESULT hr = S_OK;
 

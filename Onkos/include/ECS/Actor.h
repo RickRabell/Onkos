@@ -5,10 +5,7 @@
 #include "Texture.h"
 #include "Transform.h"
 #include "SamplerState.h"
-//#include "Rasterizer.h"
-//#include "BlendState.h"
 #include "ShaderProgram.h"
-//#include "DepthStencilState.h"
 
 // Forward declarations
 class Device;
@@ -46,6 +43,13 @@ public:
   virtual 
   ~Actor() = default;
 
+  /**
+   * @brief Called when the actor is awakened in the scene.
+   * 
+   * This method is invoked as part of the entity lifecycle when the actor is first activated.
+   * It can be overridden to perform setup tasks that should occur before initialization.
+   * The default implementation is empty.
+   */
   void
   awake() override {};
 
@@ -105,7 +109,7 @@ public:
    * @param textures A vector of initialized Texture objects.
    */
   void
-    setTextures(std::vector<Texture> textures) { m_textures = textures; }
+  setTextures(std::vector<Texture> textures) { m_textures = textures; }
 
   /**
    * @brief Enables or disables shadow casting for this actor.

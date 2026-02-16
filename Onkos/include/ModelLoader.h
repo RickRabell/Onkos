@@ -13,7 +13,8 @@
  * and load its geometry data (vertices, texture coordinates, normals, and faces)
  * into a MeshComponent object.
  */
-class ModelLoader {
+class 
+ModelLoader {
 public:
 	/**
 	 * @brief Default constructor.
@@ -57,15 +58,23 @@ public:
 	parseVec3(std::stringstream& streamLine, std::vector<XMFLOAT3>& outVector);
 
 private:
-	/** @brief */
+	/**
+  * @brief Pointer to the FBX SDK manager, responsible for managing memory and object creation for FBX operations.
+  */
 	FbxManager* lSdkManager;
 
-	/** @brief */
+	/**
+  * @brief Pointer to the FBX scene object, representing the loaded 3D scene data.
+  */
 	FbxScene* lScene;
 
-	/** @brief */
+	/**
+  * @brief List of texture file names associated with the loaded model.
+  */
 	std::vector<std::string> textureFileNames;
 public:
-	/** @brief */
+	/**
+  * @brief The name identifier for the loaded model.
+  */
 	std::string modelName;
 };

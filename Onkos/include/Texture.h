@@ -92,12 +92,29 @@ public:
 	void
 	destroy();
 
+	/**
+	* @brief Initializes a cubemap texture from six image files.
+	* @param device The graphics device used to create the cubemap resource.
+	* @param deviceContext The device context used for uploading texture data.
+	* @param facePaths An array of file paths for the six cubemap faces (order: +X, -X, +Y, -Y, +Z, -Z).
+	* @param generateMips Whether to generate mipmaps for the cubemap texture.
+	* @return HRESULT Returns S_OK if successful, otherwise an error code.
+	*/
 	HRESULT
 	CreateCubemap(Device& device,
 								DeviceContext& deviceContext,
 								const std::array<std::string, 6>& facePaths,
 								bool generateMips /*= false*/);
 
+	/**
+	* @brief Creates a shader resource view (SRV) for a specific face of a cubemap texture.
+	* @param device Pointer to the DirectX device.
+	* @param cubemapTex Pointer to the cubemap texture resource.
+	* @param format The format of the SRV to create.
+	* @param faceIndex The index of the cubemap face (0-5).
+	* @param mipLevels Number of mipmap levels for the SRV. Defaults to 1.
+	* @return ID3D11ShaderResourceView* Returns a pointer to the created SRV, or nullptr on failure.
+	*/
 	ID3D11ShaderResourceView* 
 	CreateCubemapFaceSRV( ID3D11Device* device,
 												ID3D11Texture2D* cubemapTex,
@@ -109,9 +126,9 @@ public:
 		d.Format = format;
 		d.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2DARRAY;
 		d.Texture2DArray.MostDetailedMip = 0;
-		d.Texture2DArray.MipLevels = mipLevels;       // usa 1 para vista simple
-		d.Texture2DArray.FirstArraySlice = faceIndex; // cara
-		d.Texture2DArray.ArraySize = 1;               // solo esa cara
+		d.Texture2DArray.MipLevels = mipLevels;       // 1 for simple view
+		d.Texture2DArray.FirstArraySlice = faceIndex; // Face
+		d.Texture2DArray.ArraySize = 1;               // Only this face
 
 		ID3D11ShaderResourceView* srv = nullptr;
 		if (FAILED(device->CreateShaderResourceView(cubemapTex, &d, &srv))) {

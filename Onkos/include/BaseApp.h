@@ -50,6 +50,11 @@ public:
 	 */
 	~BaseApp() { destroy(); }
 
+	/**
+	* @brief Initializes subsystems that must be ready before main initialization.
+	* Typically used for early resource allocation or configuration.
+	* @return HRESULT S_OK if successful, otherwise an error code.
+	*/
 	HRESULT
 	awake();
 
@@ -153,8 +158,10 @@ private:
 	/** @brief A sample texture for the mesh. */
 	Texture m_abeBowserAlbedo;
 
+	/** @brief The cubemap texture used for rendering the skybox. */
 	Texture m_skyboxTexture;
 
+	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
 
 	/** @brief The view (camera) transformation matrix. */
@@ -163,6 +170,7 @@ private:
 	/** @brief The projection (perspective) transformation matrix. */
 	//XMMATRIX m_Projection;
 
+	/** @brief The scene graph responsible for hierarchical transformations and rendering. */
 	SceneGraph m_sceneGraph;
 
 	/**

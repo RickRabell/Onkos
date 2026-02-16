@@ -282,14 +282,14 @@
     <ClInclude Include="include\GUI.h">
       <Filter>include\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="include\SceneGraph\SceneGraph.h">
-      <Filter>include\SceneGraph</Filter>
-    </ClInclude>
     <ClInclude Include="include\SceneGraph\HierarchyComponent.h">
       <Filter>include\SceneGraph</Filter>
     </ClInclude>
     <ClInclude Include="include\EngineUtilities\Utilities\Camera.h">
       <Filter>include\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneGraph\SceneGraph.h">
+      <Filter>include\SceneGraph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

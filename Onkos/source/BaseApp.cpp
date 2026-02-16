@@ -257,41 +257,12 @@ BaseApp::init() {
       return hr;
     }
 
-    /*
-    hr = m_cbChangesEveryFrame.init(m_device, sizeof(CBChangesEveryFrame));
-    if (FAILED(hr)) {
-      ERROR("Main", "InitDevice",
-        ("Failed to initialize ChangesEveryFrame Buffer. HRESULT: " + std::to_string(hr)).c_str());
-      return hr;
-    }
-    */
+    // Initialize the Camera
+    m_camera.setLens(XM_PIDIV4, m_window.m_width / (float)m_window.m_height, 0.01f, 100.0f);
+    m_camera.setPosition(0.0f, 3.0f, -6.0f);
 
-    // Create the sample state
-    /*
-    hr = m_samplerState.init(m_device);
-    if (FAILED(hr)) {
-      ERROR("Main", "InitDevice",
-        ("Failed to initialize SamplerState. HRESULT: " + std::to_string(hr)).c_str());
-      return hr;
-    }
-    */
-
-    // Initialize the world matrices
-    //m_World = XMMatrixIdentity();
-
-    // Initialize the view matrix
-    XMVECTOR Eye = XMVectorSet(0.0f, 3.0f, -6.0f, 0.0f);
-    XMVECTOR At = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
-    XMVECTOR Up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
-    m_View = XMMatrixLookAtLH(Eye, At, Up);
-
-    // Initialize the projection matrix
-    cbNeverChanges.mView = XMMatrixTranspose(m_View);
-    m_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4,
-                                            m_window.m_width / (FLOAT)m_window.m_height,
-                                            0.01f,
-                                            100.0f);
-    cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
+    cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
+    cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
 
     return S_OK;
 }
@@ -350,25 +321,16 @@ BaseApp::update(float deltaTime) {
   ImGui::End();
 
 	// Update the projection and view matrices in the constant buffers
-  cbNeverChanges.mView = XMMatrixTranspose(m_View);
+  m_camera.updateViewMatrix();
+  cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
   m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
-  m_Projection = XMMatrixPerspectiveFovLH(XM_PIDIV4, 
-                                          m_window.m_width / (FLOAT)m_window.m_height, 
-                                          0.01f, 100.0f);
-
-  cbChangesOnResize.mProjection = XMMatrixTranspose(m_Projection);
-  m_cbChangeOnResize.update(m_deviceContext, 
-                            nullptr, 
-                            0, 
-                            nullptr, 
-                            &cbChangesOnResize, 
-                            0, 
-                            0);
+  m_cbChangeOnResize.update(m_deviceContext, nullptr, 0, nullptr, &cbChangesOnResize, 0, 0);
+  //cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
 
   // Update Actors
   m_sceneGraph.update(deltaTime, m_deviceContext);
 
-  m_gui.editTransform(m_View, m_Projection, m_actors[m_gui.selectedActorIndex]);
+  m_gui.editTransform(m_camera.getView(), m_camera.getProj(), m_actors[m_gui.selectedActorIndex]);
 }
 
 void

@@ -17,6 +17,7 @@
 #include "ECS/Actor.h"
 #include "GUI.h"
 #include "SceneGraph/SceneGraph.h"
+#include "EngineUtilities/Utilities/Camera.h"
 
 extern IMGUI_IMPL_API
 LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -154,11 +155,13 @@ private:
 
 	Texture m_skyboxTexture;
 
+	Camera m_camera;
+
 	/** @brief The view (camera) transformation matrix. */
-	XMMATRIX m_View;
+	//XMMATRIX m_View;
 
 	/** @brief The projection (perspective) transformation matrix. */
-	XMMATRIX m_Projection;
+	//XMMATRIX m_Projection;
 
 	SceneGraph m_sceneGraph;
 

@@ -133,40 +133,69 @@ BaseApp::init() {
       "Skybox/cubemap_4.png",
       "Skybox/cubemap_5.png"
     };
-    m_skyboxTexture.CreateCubemap(m_device, m_deviceContext, faces, false);
+    m_skyboxTex.CreateCubemap(m_device, m_deviceContext, faces, false);
 
-		// Set AbeBowser Actor
-    m_abeBowser = EU::MakeShared<Actor>(m_device);
+		// Set Spitfire Actor
+    m_spitFire = EU::MakeShared<Actor>(m_device);
 
-    if (!m_abeBowser.isNull()) {
+    //-----------
+
+    if (!m_spitFire.isNull()) {
 			// Create vertex and index buffers
-      std::vector<MeshComponent> abeBowserMeshes;
-      m_model = new Model3D("AbeBowser.fbx", ModelType::FBX);
-      abeBowserMeshes = m_model->GetMeshes();
+      std::vector<MeshComponent> spitfireMeshes;
+      m_model = new Model3D("Spitfire/spitfire.fbx", ModelType::FBX);
+      spitfireMeshes = m_model->GetMeshes();
 
-      std::vector<Texture> abeBowserTextures;
-      hr = m_abeBowserAlbedo.init(m_device, "JapaneseShrineAlbedo", ExtensionType::PNG);
-
-      // Load the Texture
+      std::vector<Texture> spitfireTextures;
+      hr = m_AlbedoSRV.init(m_device, "Spitfire/spitfire_d.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-          ("Failed to initialize abeBowserAlbedo. HRESULT: " 
-            + std::to_string(hr)).c_str());
+             ("Failed to initialize Diffuse Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
         return hr;
       }
-			abeBowserTextures.push_back(m_abeBowserAlbedo);
+      hr = m_MetallicSRV.init(m_device, "Spitfire/spitfire_m.png", PNG);
+      if (FAILED(hr)) {
+        ERROR("Main", "InitDevice",
+             ("Failed to initialize Metallic Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+        return hr;
+      }
+      hr = m_RoughnessSRV.init(m_device, "Spitfire/spitfire_r.png", PNG);
+      if (FAILED(hr)) {
+        ERROR("Main", "InitDevice",
+             ("Failed to initialize Roughness Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+        return hr;
+      }
+      hr = m_AOSRV.init(m_device, "Spitfire/spitfire_ao.png", PNG);
+      if (FAILED(hr)) {
+        ERROR("Main", "InitDevice",
+             ("Failed to initialize Ambient Occlusion Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+        return hr;
+      }
+      hr = m_NormalSRV.init(m_device, "Spitfire/spitfire_n.png", PNG);
+      if (FAILED(hr)) {
+        ERROR("Main", "InitDevice",
+             ("Failed to initialize Normals Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+        return hr;
+      }
+      spitfireTextures.push_back(m_AlbedoSRV);
+      spitfireTextures.push_back(m_NormalSRV);
+      spitfireTextures.push_back(m_MetallicSRV);
+      spitfireTextures.push_back(m_RoughnessSRV);
+      spitfireTextures.push_back(m_AOSRV);
 
-      m_abeBowser->setMesh(m_device, abeBowserMeshes);
-			m_abeBowser->setTextures(abeBowserTextures);
-			m_abeBowser->setName("AbeBowser");
-			m_actors.push_back(m_abeBowser);
+      // ------------------------------------
 
-      m_abeBowser->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -4.90f, 11.60f),
+      m_spitFire->setMesh(m_device, spitfireMeshes);
+			m_spitFire->setTextures(spitfireTextures);
+			m_spitFire->setName("Spitfire");
+			m_actors.push_back(m_spitFire);
+
+      m_spitFire->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -4.90f, 11.60f),
                                                            EU::Vector3(-0.60f, 3.0f, -0.20f),
                                                            EU::Vector3(1.0f, 1.0f, 1.0f));
     }
     else {
-      ERROR("Main", "InitDevice", "Failed to create Abe Bowser Actor.");
+      ERROR("Main", "InitDevice", "Failed to create Spitfire Actor.");
       return E_FAIL;
     }
 
@@ -187,6 +216,36 @@ BaseApp::init() {
     position.InstanceDataStepRate = 0;
     layout.push_back(position);
 
+    D3D11_INPUT_ELEMENT_DESC normal;
+    normal.SemanticName = "NORMAL";
+    normal.SemanticIndex = 0;
+    normal.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+    normal.InputSlot = 0;
+    normal.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT /*0*/;
+    normal.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+    normal.InstanceDataStepRate = 0;
+    layout.push_back(normal);
+
+    D3D11_INPUT_ELEMENT_DESC tangent;
+    tangent.SemanticName = "TANGENT";
+    tangent.SemanticIndex = 0;
+    tangent.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+    tangent.InputSlot = 0;
+    tangent.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT /*0*/;
+    tangent.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+    tangent.InstanceDataStepRate = 0;
+    layout.push_back(tangent);
+
+    D3D11_INPUT_ELEMENT_DESC bitangent;
+    bitangent.SemanticName = "BITANGENT";
+    bitangent.SemanticIndex = 0;
+    bitangent.Format = DXGI_FORMAT_R32G32B32_FLOAT;
+    bitangent.InputSlot = 0;
+    bitangent.AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT /*0*/;
+    bitangent.InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+    bitangent.InstanceDataStepRate = 0;
+    layout.push_back(bitangent);
+
     D3D11_INPUT_ELEMENT_DESC texcoord;
     texcoord.SemanticName = "TEXCOORD";
     texcoord.SemanticIndex = 0;
@@ -198,7 +257,8 @@ BaseApp::init() {
     layout.push_back(texcoord);
 
     // Create the Shader Program
-    hr = m_shaderProgram.init(m_device, "Onkos.fx", layout);
+    //hr = m_shaderProgram.init(m_device, "Onkos.fx", layout);
+		hr = m_shaderProgram.init(m_device, "PBRShader.hlsl", layout);
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
         ("Failed to initialize ShaderProgram. HRESULT: " + std::to_string(hr)).c_str());
@@ -206,21 +266,21 @@ BaseApp::init() {
     }
 
     // Create the constant buffers
-    hr = m_cbNeverChanges.init(m_device, sizeof(CBNeverChanges));
+    hr = m_constantBuffer.init(m_device, sizeof(CBMain));
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize NeverChanges Buffer. HRESULT: " 
-          + std::to_string(hr)).c_str());
+           ("Failed to initialize m_constantBuffer Buffer. HRESULT: " 
+           + std::to_string(hr)).c_str());
       return hr;
     }
 
-    hr = m_cbChangeOnResize.init(m_device, sizeof(CBChangeOnResize));
+    /*hr = m_cbChangeOnResize.init(m_device, sizeof(CBChangeOnResize));
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
         ("Failed to initialize ChangeOnResize Buffer. HRESULT: " 
           + std::to_string(hr)).c_str());
       return hr;
-    }
+    }*/
 
     // Initialize the Camera
     m_camera.setLens(XM_PIDIV4, m_window.m_width / (float)m_window.m_height, 0.01f, 100.0f);
@@ -230,7 +290,7 @@ BaseApp::init() {
     cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
 
 		// Initialize the Skybox pass -> Texture load + Buffer and Shaders creation, specific for the skybox pass
-    m_skybox.init(m_device, &m_deviceContext, m_skyboxTexture);
+    m_skybox.init(m_device, &m_deviceContext, m_skyboxTex);
 
     // Initialize default states (Rasterizer, DepthStencil)
     hr = m_defaultRasterizer.init(m_device, D3D11_FILL_SOLID, D3D11_CULL_BACK, false, true);
@@ -276,10 +336,25 @@ BaseApp::update(float deltaTime) {
 
 	// Update the projection and view matrices in the constant buffers
   m_camera.updateViewMatrix();
-  cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
-  m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
-  m_cbChangeOnResize.update(m_deviceContext, nullptr, 0, nullptr, &cbChangesOnResize, 0, 0);
-  //cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
+
+  //cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
+  //m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
+  //m_cbChangeOnResize.update(m_deviceContext, nullptr, 0, nullptr, &cbChangesOnResize, 0, 0);
+  ////cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
+
+  XMStoreFloat4x4(&m_constantBufferStruct.View, XMMatrixTranspose(m_camera.getView()));
+  XMStoreFloat4x4(&m_constantBufferStruct.Projection, XMMatrixTranspose(m_camera.getProj()));
+  m_constantBufferStruct.CameraPos = m_camera.getPosition();
+
+  // Luz blanca fuerte
+  m_gui.vec3Control("Light Direction", &m_constantBufferStruct.LightDir.x, 0.1f);
+  m_gui.vec3Control("Light Color", &m_constantBufferStruct.LightColor.x, 0.1f);
+
+  // Update Skybox Pass -> Solo necesita la vista sin traslación + proyección para funcionar correctamente (ver método update de Skybox)
+  m_skybox.update(m_deviceContext, m_camera);
+
+  // Update constant buffer for Scene Pass
+  m_constantBuffer.update(m_deviceContext, nullptr, 0, nullptr, &m_constantBufferStruct, 0, 0);
 
   // Update Actors
   m_sceneGraph.update(deltaTime, m_deviceContext);
@@ -302,7 +377,7 @@ BaseApp::render() {
   m_depthStencilView.render(m_deviceContext);
 
   // 1) SKYBOX PASS
-  m_skybox.render(m_deviceContext, m_camera);
+  m_skybox.render(m_deviceContext);
 
   // 2) RESTAURAR ESTADOS + PIPELINE DE ESCENA
   m_defaultRasterizer.render(m_deviceContext);
@@ -318,8 +393,9 @@ BaseApp::render() {
   //m_deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
   // CBs para VS (view/proj)
-  m_cbNeverChanges.render(m_deviceContext, 0, 1);
-  m_cbChangeOnResize.render(m_deviceContext, 1, 1);
+  //m_cbNeverChanges.render(m_deviceContext, 0, 1);
+  //m_cbChangeOnResize.render(m_deviceContext, 1, 1);
+  m_constantBuffer.render(m_deviceContext, 0, 1, true);
 
   // 3) SCENE PASS
   m_sceneGraph.render(m_deviceContext);
@@ -336,8 +412,15 @@ BaseApp::destroy() {
   if (m_deviceContext.m_deviceContext) m_deviceContext.m_deviceContext->ClearState();
 
 	m_sceneGraph.destroy();
-  m_cbNeverChanges.destroy();
-  m_cbChangeOnResize.destroy();
+  m_AlbedoSRV.destroy();
+  m_MetallicSRV.destroy();
+  m_NormalSRV.destroy();
+  m_RoughnessSRV.destroy();
+  m_AOSRV.destroy();
+  m_defaultRasterizer.destroy();
+  m_defaultDepthStencil.destroy();
+  //m_cbNeverChanges.destroy();
+  //m_cbChangeOnResize.destroy();
   m_shaderProgram.destroy();
   m_depthStencil.destroy();
   m_depthStencilView.destroy();

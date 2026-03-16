@@ -53,7 +53,7 @@ Actor::render(DeviceContext& deviceContext) {
 		m_vertexBuffers[i].render(deviceContext, 0, 1);
 		m_indexBuffers[i].render(deviceContext, 0, 1, false, DXGI_FORMAT_R32_UINT);
 		// Bind del CB "normal" (world + color)
-		m_modelBuffer.render(deviceContext, 2, 1, true);
+		m_modelBuffer.render(deviceContext, 1, 1, true);
 
 		// Clean by mesh (avoid inheritance)
 		ID3D11ShaderResourceView* nullSRV[1] = { nullptr };
@@ -61,7 +61,9 @@ Actor::render(DeviceContext& deviceContext) {
 
 		// Correct bind by mesh
 		if (i < m_textures.size()) {
-			m_textures[i].render(deviceContext, 0, 1);   // albedo mesh i
+			for (int k = 0; k < m_textures.size(); k++) {
+				m_textures[k].render(deviceContext, k, 1);   // albedo mesh i
+			}
 		}
 		// else: stays null
 

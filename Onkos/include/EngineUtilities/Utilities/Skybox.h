@@ -21,16 +21,16 @@ public:
 	~Skybox() = default;
 
 	HRESULT
-		init(Device& device, DeviceContext* deviceContext, Texture& cubemap);
+	init(Device& device, DeviceContext* deviceContext, Texture& cubemap);
 
 	void
-		update(DeviceContext& deviceContext, Camera& camera);
+	update(DeviceContext& deviceContext, Camera& camera);
 
 	void
-		render(DeviceContext& deviceContext);
+	render(DeviceContext& deviceContext);
 
 	void
-		destroy() {}
+	destroy() {}
 
 private:
 	ShaderProgram m_shaderProgram;

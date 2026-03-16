@@ -150,16 +150,27 @@ private:
 	ShaderProgram m_shaderProgram;
 	
 	/** @brief GPU constant buffer for data updated once (e.g., View matrix). */
-	Buffer m_cbNeverChanges;
+	//Buffer m_cbNeverChanges;
 
 	/** @brief GPU constant buffer for data updated on resize (e.g., Projection matrix). */
-	Buffer m_cbChangeOnResize;
+	//Buffer m_cbChangeOnResize;
 	
 	/** @brief A sample texture for the mesh. */
-	Texture m_abeBowserAlbedo;
+	//Texture m_abeBowserAlbedo;
 
 	/** @brief The cubemap texture used for rendering the skybox. */
-	Texture m_skyboxTexture;
+	//Texture m_skyboxTexture;
+
+	Buffer m_constantBuffer;
+
+	CBMain m_constantBufferStruct;
+
+	// Textures
+	Texture m_AlbedoSRV;
+	Texture m_MetallicSRV;
+	Texture m_RoughnessSRV;
+	Texture m_AOSRV;
+	Texture m_NormalSRV;
 
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
@@ -177,7 +188,7 @@ private:
 	* @brief Shared pointer to the main Abe Bowser actor.
 	* Used for direct access and manipulation of this specific actor.
 	*/
-	EU::TSharedPointer<Actor> m_abeBowser;
+	EU::TSharedPointer<Actor> m_spitFire;
 
 	/**
 	* @brief Pointer to the loaded 3D model resource.
@@ -186,10 +197,10 @@ private:
 	Model3D* m_model;
 
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
-	CBChangeOnResize cbChangesOnResize;
+	//CBChangeOnResize cbChangesOnResize;
 
 	/** @brief CPU-side struct for the 'NeverChanges' constant buffer. */
-	CBNeverChanges cbNeverChanges;
+	//CBNeverChanges cbNeverChanges;
 
 	/**
 	* @brief The user interface manager for the application.
@@ -197,7 +208,11 @@ private:
 	*/
 	GUI m_gui;
 
+	EU::Vector3 m_cameraPos;
+
 	Skybox m_skybox;
+
+	Texture m_skyboxTex;
 
 	RasterizerState m_defaultRasterizer;
 

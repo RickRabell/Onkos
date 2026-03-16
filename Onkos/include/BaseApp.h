@@ -164,12 +164,6 @@ private:
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
 
-	/** @brief The view (camera) transformation matrix. */
-	//XMMATRIX m_View;
-
-	/** @brief The projection (perspective) transformation matrix. */
-	//XMMATRIX m_Projection;
-
 	/** @brief The scene graph responsible for hierarchical transformations and rendering. */
 	SceneGraph m_sceneGraph;
 

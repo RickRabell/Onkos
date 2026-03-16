@@ -98,6 +98,11 @@ SimpleVertex {
   XMFLOAT2 Tex;
 };
 
+struct
+SkyboxVertex {
+  float x, y, z;
+};
+
 /**
  * @struct CBNeverChanges
  * @brief Constant buffer structure for data that is updated once per view.
@@ -108,6 +113,11 @@ SimpleVertex {
 struct 
 CBNeverChanges {
   XMMATRIX mView;
+};
+
+struct
+CBSkybox {
+  XMMATRIX mviewProj;
 };
 
 /**

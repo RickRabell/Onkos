@@ -110,10 +110,11 @@ public:
  							 D3D11_BUFFER_DESC& desc,
 	 						 D3D11_SUBRESOURCE_DATA* initData);
 
-private:
+public:
 	/** @brief Pointer to the underlying DirectX 11 buffer interface. */
 	ID3D11Buffer* m_buffer = nullptr;
 
+private:
 	/** @brief The size in bytes of a single element (e.g., sizeof(SimpleVertex)). Used for vertex buffers. */
 	unsigned int m_stride = 0;
 

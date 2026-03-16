@@ -357,14 +357,12 @@ BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
   }
   
   switch (message) {
-  case WM_CREATE:
-  {
+  case WM_CREATE: {
     CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
     SetWindowLongPtr(hWnd, GWLP_USERDATA, (LONG_PTR)pCreate->lpCreateParams);
   }
   return 0;
-  case WM_PAINT:
-  {
+  case WM_PAINT: {
     PAINTSTRUCT ps;
     BeginPaint(hWnd, &ps);
     EndPaint(hWnd, &ps);

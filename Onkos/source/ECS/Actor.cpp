@@ -44,14 +44,6 @@ Actor::update(float deltaTime, DeviceContext& deviceContext) {
 
 void
 Actor::render(DeviceContext& deviceContext) {
-	// 1) Proyectar sombra primero (sobre el suelo)
-	//if (canCastShadow()) {
-	//	renderShadow(deviceContext);
-	//}
-	//
-	// 2) Estados de raster, blend y sampler para el modelo
-	//m_blendstate.render(deviceContext);
-	//m_rasterizer.render(deviceContext);
 	m_sampler.render(deviceContext, 0, 1);
 
 	deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -68,14 +60,26 @@ Actor::render(DeviceContext& deviceContext) {
 		deviceContext.m_deviceContext->PSSetShaderResources(0, 1, nullSRV);
 
 		// Correct bind by mesh
-		if (i < m_textures.size())
+		if (i < m_textures.size()) {
 			m_textures[i].render(deviceContext, 0, 1);   // albedo mesh i
+		}
 		// else: stays null
 
 		deviceContext.DrawIndexed(m_meshes[i].m_numIndex, 0, 0);
 	}
 }
 
+void
+Actor::renderForSkybox(DeviceContext& deviceContext) {
+	deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	// Update buffer and render all components
+	for (unsigned int i = 0; i < m_meshes.size(); i++) {
+		m_vertexBuffers[i].render(deviceContext, 0, 1);
+		m_indexBuffers[i].render(deviceContext, 0, 1, false, DXGI_FORMAT_R32_UINT);
+
+		deviceContext.DrawIndexed(m_meshes[i].m_numIndex, 0, 0);
+	}
+}
 
 void
 Actor::destroy() {

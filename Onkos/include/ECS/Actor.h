@@ -78,6 +78,9 @@ public:
   void
   render(DeviceContext& deviceContext) override;
 
+  void
+	renderForSkybox(DeviceContext& deviceContext);
+
   /**
    * @brief Releases GPU resources (buffers, textures).
    */
@@ -150,7 +153,7 @@ private:
 
   // Render States (Commented out in source, presumably for future implementation)
   //BlendState m_blendstate;
-  RasterizerState m_rasterizer;
+  //RasterizerState m_rasterizer;
   //BlendState m_shadowBlendState;
   DepthStencilState m_shadowDepthStencilState;
 

@@ -18,6 +18,7 @@
 #include "SceneGraph/SceneGraph.h"
 #include "EngineUtilities/Utilities/Camera.h"
 #include "EngineUtilities\Utilities\Skybox.h"
+#include "EngineUtilities/Utilities/LayoutBuilder.h"
 
 extern IMGUI_IMPL_API
 LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -103,6 +104,9 @@ public:
 	void
 	destroy();
 
+	void
+	onResize(UINT newW, UINT newH);
+
 private:
 	/**
 	 * @brief The static window procedure for handling Win32 messages.
@@ -161,6 +165,8 @@ private:
 	/** @brief The cubemap texture used for rendering the skybox. */
 	//Texture m_skyboxTexture;
 
+	bool m_d3dReady = false;
+	
 	Buffer m_constantBuffer;
 
 	CBMain m_constantBufferStruct;

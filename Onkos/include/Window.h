@@ -1,6 +1,8 @@
 #pragma once
 #include "Prerequisites.h"
 
+class BaseApp;
+
 /**
  * @class Window
  * @brief Manages the creation and lifecycle of the application's main window.
@@ -32,7 +34,7 @@ public:
 	 * @return HRESULT Returns S_OK if successful, otherwise an error code.
 	 */
 	HRESULT
-	init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc);
+	init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc, BaseApp* app);
 
 	/**
 	 * @brief Updates the window state.

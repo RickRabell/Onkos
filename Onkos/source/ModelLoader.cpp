@@ -63,8 +63,8 @@ ModelLoader::loadModel(const std::string& fileName, MeshComponent& outMesh) {
 					nrmIdx = std::stoi(idxData) - 1;
 
 					SimpleVertex newVertex;
-					newVertex.Pos = tempVertexes[posIdx];
-					newVertex.Tex = tempUvs[txtIdx];
+					//newVertex.Pos = tempVertexes[posIdx];
+					//newVertex.Tex = tempUvs[txtIdx];
 					//newVertex.Norm = tempNormals[nrm_idx];
 
 					outMesh.m_vertex.push_back(newVertex);

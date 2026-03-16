@@ -19,7 +19,7 @@ class Texture;
  * for presenting the rendered image to the user.
  */
 class
-SwapChain {
+	SwapChain {
 public:
 	/**
 	 * @brief Default constructor.
@@ -39,29 +39,29 @@ public:
 	 * @return HRESULT Returns S_OK if successful, otherwise an error code.
 	 */
 	HRESULT
-	init(Device& device, 
-			 DeviceContext& deviceContext, 
-			 Texture& backBuffer, 
-			 Window window);
+		init(Device& device,
+			DeviceContext& deviceContext,
+			Texture& backBuffer,
+			Window window);
 
 	/**
 	 * @brief Per-frame update logic for the swap chain.
 	 * @note Can be used to handle events like window resizing.
 	 */
 	void
-	update();
+		update();
 
 	/**
 	 * @brief Per-frame rendering logic related to the swap chain.
 	 */
 	void
-	render();
-	
+		render();
+
 	/**
 	 * @brief Releases the swap chain and all associated COM objects.
 	 */
 	void
-	destroy();
+		destroy();
 
 	/**
 	 * @brief Presents the back buffer to the screen.
@@ -69,7 +69,13 @@ public:
 	 * rendered frame visible to the user.
 	 */
 	void
-	present();
+		present();
+
+	HRESULT
+	resizeBuffers(UINT width, UINT height);
+
+	HRESULT
+	getBackBuffer(Texture& backBuffer);
 
 public:
 	/** 

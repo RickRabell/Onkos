@@ -59,6 +59,9 @@ public:
 	EU::Vector3
 	getPosition() const { return m_position; }
 
+	EU::Vector3&
+	getPosition() { return m_position; }
+
 	/**
 		* @brief Orients the camera to look at a specific point in space.
 		* Context: This function calculates the orthonormal basis vectors (Right, Up, Forward)

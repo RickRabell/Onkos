@@ -11,6 +11,7 @@ class Device;
 class DeviceContext;
 class Window;
 class Actor;
+class Camera;
 
 /**
  * @class GUI
@@ -138,9 +139,7 @@ public:
 	 * @param actor The actor currently being manipulated.
 	 */
 	void
-	editTransform(const XMMATRIX& view,
-								const XMMATRIX& projection,
-								EU::TSharedPointer<Actor> actor);
+	editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor);
 
 	/**
 	 * @brief Draws the UI toolbar to switch between Translate, Rotate, and Scale gizmo modes.

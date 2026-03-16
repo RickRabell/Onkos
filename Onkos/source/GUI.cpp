@@ -5,6 +5,7 @@
 #include "DeviceContext.h"
 #include "MeshComponent.h"
 #include "ECS\Actor.h"
+#include "EngineUtilities/Utilities/Camera.h"
 
 static ImGuizmo::OPERATION mCurrentGizmoOperation(ImGuizmo::TRANSLATE);
 
@@ -45,9 +46,9 @@ GUI::update(Viewport& viewport, Window& window) {
 	ImGui::NewFrame();
 
 	ImGuizmo::BeginFrame();
+	ImGuiIO& io = ImGui::GetIO();
   ImGuizmo::SetOrthographic(false);
-  ImGuiIO& io = ImGui::GetIO();
-  ImGuizmo::SetRect(0, 0, (float)window.m_width, (float)window.m_height);
+  //ImGuizmo::SetRect(0, 0, (float)window.m_width, (float)window.m_height);
 
   toolBar();
   closeApp();
@@ -327,11 +328,8 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 	ImGui::End();
 }
 
-void
-GUI::editTransform(const XMMATRIX& view, 
-									 const XMMATRIX& projection, 
-									 EU::TSharedPointer<Actor> actor)
-{
+void 
+GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor) {
 	static ImGuizmo::MODE mCurrentGizmoMode(ImGuizmo::WORLD);
 	auto transform = actor->getComponent<Transform>();
 
@@ -349,15 +347,35 @@ GUI::editTransform(const XMMATRIX& view,
 	// 3) PREPARAR MATRICES DE CÁMARA (Transponer para que ImGuizmo las entienda)
 	float vArr[16], pArr[16];
 	// Probar SIN transponer primero
-	toFloatArray(view, vArr);
-	toFloatArray(projection, pArr);
+	toFloatArray(cam.getView(), vArr);
+	toFloatArray(cam.getProj(), pArr);
 
-	// 5) DIBUJAR GIZMO
+	// 5) DIBUJAR GIZMO / Config Gizmo
 	ImGuizmo::SetID(0);
 	ImGuizmo::SetGizmoSizeClipSpace(0.15f);
 	ImGuizmo::AllowAxisFlip(false);
 	
 	// Define cuánto quieres que "salte" la rotación (ejemplo: 15 grados)
+	// IMPORTANTE: dibujar encima de todo (aplicación, no ventana ImGui)
+	ImGuizmo::SetDrawlist(ImGui::GetForegroundDrawList());
+
+	// IMPORTANTE: rect = área real de render/backbuffer
+	// Si tu D3D11_VIEWPORT es el real, usa ese tama?o (recomendado).
+	// Si no lo tienes aquí, usa ImGuiIO.DisplaySize como fallback.
+	ImGuiIO& io = ImGui::GetIO();
+
+	float rectX = 0.0f;
+	float rectY = 0.0f;
+	float rectW = io.DisplaySize.x;
+	float rectH = io.DisplaySize.y;
+
+	// Si tienes DPI raro, prueba con framebuffer scale:
+	// rectW *= io.DisplayFramebufferScale.x;
+	// rectH *= io.DisplayFramebufferScale.y;
+
+	ImGuizmo::SetRect(rectX, rectY, rectW, rectH);
+
+	// --- Snap ---
 	float snapValue = 25.0f;
 	if (mCurrentGizmoOperation == ImGuizmo::ROTATE) snapValue = 5.0f;
 	if (mCurrentGizmoOperation == ImGuizmo::TRANSLATE) snapValue = 0.5f;
@@ -381,7 +399,16 @@ GUI::editTransform(const XMMATRIX& view,
 	*/
 
 	// mCurrentGizmoOperation debe venir de tu Toolbar (TRANSLATE, ROTATE o SCALE)
-	ImGuizmo::Manipulate(vArr, pArr, mCurrentGizmoOperation, mCurrentGizmoMode, mArr);
+	//ImGuizmo::Manipulate(vArr, pArr, mCurrentGizmoOperation, mCurrentGizmoMode, mArr);
+
+	ImGuizmo::Manipulate(
+		vArr, pArr,
+		mCurrentGizmoOperation,
+		mCurrentGizmoMode,
+		mArr,
+		nullptr,
+		useSnap ? snap : nullptr
+	);
 
 	// 6) SI SE ESTÁ USANDO, ACTUALIZAR ACTOR
 	if (ImGuizmo::IsUsing()) {
@@ -410,43 +437,38 @@ GUI::editTransform(const XMMATRIX& view,
 	}
 }
 
-void GUI::drawGizmoToolbar() {
-	// 1. Configurar la posición y estilo de la mini ventana
-	ImGuiIO& io = ImGui::GetIO();
-	float windowWidth = 120.0f; // Ajusta según necesites
-
-	// Ubicarla a 10px de la esquina superior izquierda
-	ImGui::SetNextWindowPos(ImVec2(10, 10), ImGuiCond_FirstUseEver);
-	ImGui::SetNextWindowBgAlpha(0.35f); // Semi-transparente como en motores reales
+void 
+GUI::drawGizmoToolbar() {
+	ImGui::SetNextWindowPos(ImVec2(10, 25), ImGuiCond_Always);
+	ImGui::SetNextWindowBgAlpha(0.0f); // 0 = transparente total
 
 	// Flags para que no parezca una ventana común
-	ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoTitleBar |
-		ImGuiWindowFlags_NoResize |
+	ImGuiWindowFlags window_flags =
+		ImGuiWindowFlags_NoDecoration |
 		ImGuiWindowFlags_AlwaysAutoResize |
+		ImGuiWindowFlags_NoMove |
 		ImGuiWindowFlags_NoSavedSettings |
 		ImGuiWindowFlags_NoFocusOnAppearing |
 		ImGuiWindowFlags_NoNav;
 
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+
 	if (ImGui::Begin("GizmoToolBar", nullptr, window_flags)) {
 
-		// Estilo de los botones (más profesional)
-		auto buttonMode = [&](const char* label, ImGuizmo::OPERATION op, const char* shortcut) {
-			bool isActive = (mCurrentGizmoOperation == op);
-			if (isActive) {
-				ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2f, 0.4f, 0.8f, 1.0f)); // Azul si está activo
-			}
+		auto buttonMode = [&](const char* label, ImGuizmo::OPERATION op, const char* shortcut)
+			{
+				bool isActive = (mCurrentGizmoOperation == op);
+				if (isActive)
+					ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(0.2f, 0.4f, 0.8f, 1.0f));
 
-			if (ImGui::Button(label)) {
-				mCurrentGizmoOperation = op;
-			}
+				if (ImGui::Button(label))
+					mCurrentGizmoOperation = op;
 
-			// Tooltip para que el usuario vea el acceso rápido
-			if (ImGui::IsItemHovered()) {
-				ImGui::SetTooltip("%s (%s)", label, shortcut);
-			}
+				if (ImGui::IsItemHovered())
+					ImGui::SetTooltip("%s (%s)", label, shortcut);
 
-			if (isActive) ImGui::PopStyleColor();
-			ImGui::SameLine();
+				if (isActive) ImGui::PopStyleColor();
+				ImGui::SameLine();
 			};
 
 		// Botones de la barra
@@ -462,10 +484,5 @@ void GUI::drawGizmoToolbar() {
 	}
 	ImGui::End();
 
-	// Acceso rápido por teclado
-	if (!ImGui::IsAnyItemActive()) {
-		//if (ImGui::IsKeyPressed(ImGuiKey_W)) mCurrentGizmoOperation = ImGuizmo::TRANSLATE;
-		//if (ImGui::IsKeyPressed(ImGuiKey_E)) mCurrentGizmoOperation = ImGuizmo::ROTATE;
-		//if (ImGui::IsKeyPressed(ImGuiKey_R)) mCurrentGizmoOperation = ImGuizmo::SCALE;
-	}
+	ImGui::PopStyleVar();
 }

@@ -43,8 +43,9 @@ public:
 	 */
 	HRESULT
 	init(Device& device,
-			std::vector<D3D11_INPUT_ELEMENT_DESC>& layout,
-			ID3DBlob* vertexShaderData);
+			 const D3D11_INPUT_ELEMENT_DESC* layoutDesc,
+			 UINT layoutCount,
+			 ID3DBlob* vertexShaderData);
 
 	/**
 	 * @brief Per-frame update logic for the input layout.

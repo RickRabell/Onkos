@@ -1,12 +1,13 @@
 #include "ShaderProgram.h"
 #include "Device.h"
 #include "DeviceContext.h"
+#include "EngineUtilities/Utilities/LayoutBuilder.h"
 
 
 HRESULT
 ShaderProgram::init(Device& device,
 										const std::string& fileName,
-										std::vector<D3D11_INPUT_ELEMENT_DESC> layout) {
+										LayoutBuilder layoutBuilder) {
 	if (!device.m_device) {
 		ERROR("ShaderProgram", "init", "Device is null.");
 		return E_POINTER;
@@ -15,10 +16,10 @@ ShaderProgram::init(Device& device,
 		ERROR("ShaderProgram", "init", "File name is empty.");
 		return E_INVALIDARG;
 	}
-	if (layout.empty()) {
+	/*if (layout.empty()) {
 		ERROR("ShaderProgram", "init", "Input layout is empty.");
 		return E_INVALIDARG;
-	}
+	}*/
 
 	m_shaderFileName = fileName;
 
@@ -30,7 +31,7 @@ ShaderProgram::init(Device& device,
 	}
 
 	// Create the Input Layout
-	hr = CreateInputLayout(device, layout);
+	hr = CreateInputLayout(device, layoutBuilder);
 	if (FAILED(hr)) {
 		ERROR("ShaderProgram", "init", "Failed to create input layout.");
 		return hr;
@@ -48,7 +49,7 @@ ShaderProgram::init(Device& device,
 
 HRESULT
 ShaderProgram::CreateInputLayout(Device& device,
-																 std::vector<D3D11_INPUT_ELEMENT_DESC> Layout) {
+																 LayoutBuilder layoutBuilder) {
 	if (!m_vertexShaderData) {
 		ERROR("ShaderProgram", "CreateInputLayout", "Vertex shader data is null.");
 		return E_POINTER;
@@ -57,12 +58,15 @@ ShaderProgram::CreateInputLayout(Device& device,
 		ERROR("ShaderProgram", "CreateInputLayout", "Device is null.");
 		return E_POINTER;
 	}
-	if (Layout.empty()) {
-		ERROR("ShaderProgram", "CreateInputLayout", "Input layout is empty.");
-		return E_INVALIDARG;
-	}
+	//if (Layout.empty()) {
+	//	ERROR("ShaderProgram", "CreateInputLayout", "Input layout is empty.");
+	//	return E_INVALIDARG;
+	//}
 
-	HRESULT hr = m_inputLayout.init(device, Layout, m_vertexShaderData);
+	//HRESULT hr = m_inputLayout.init(device, Layout, m_vertexShaderData);
+	auto& layout = layoutBuilder.Get();
+
+	HRESULT hr = m_inputLayout.init(device, layout.data(), layout.size(), m_vertexShaderData);
 	SAFE_RELEASE(m_vertexShaderData);
 
 	if (FAILED(hr)) {

@@ -5,7 +5,9 @@
 #include "Texture.h"
 #include "Transform.h"
 #include "SamplerState.h"
+#include "RasterizerState.h"
 #include "ShaderProgram.h"
+#include "DepthStencilState.h"
 
 // Forward declarations
 class Device;
@@ -148,9 +150,9 @@ private:
 
   // Render States (Commented out in source, presumably for future implementation)
   //BlendState m_blendstate;
-  //Rasterizer m_rasterizer;
+  RasterizerState m_rasterizer;
   //BlendState m_shadowBlendState;
-  //DepthStencilState m_shadowDepthStencilState;
+  DepthStencilState m_shadowDepthStencilState;
 
   /** @brief Sampler state for texture sampling. */
   SamplerState m_sampler;

@@ -12,12 +12,12 @@
 #include "MeshComponent.h"
 #include "Buffer.h"
 #include "SamplerState.h"
-//#include "ModelLoader.h"
 #include "Model3D.h"
 #include "ECS/Actor.h"
 #include "GUI.h"
 #include "SceneGraph/SceneGraph.h"
 #include "EngineUtilities/Utilities/Camera.h"
+#include "EngineUtilities\Utilities\Skybox.h"
 
 extern IMGUI_IMPL_API
 LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -196,4 +196,6 @@ private:
 	* Handles UI rendering, input, and interaction logic.
 	*/
 	GUI m_gui;
+
+	Skybox m_skybox;
 };

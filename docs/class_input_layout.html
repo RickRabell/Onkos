@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1e7138ae46d3fc9407a33c6a4d4a010" id="r_aa1e7138ae46d3fc9407a33c6a4d4a010"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1e7138ae46d3fc9407a33c6a4d4a010">~InputLayout</a> ()=default</td></tr>
 <tr class="memdesc:aa1e7138ae46d3fc9407a33c6a4d4a010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:aa1e7138ae46d3fc9407a33c6a4d4a010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d3460a76490c617d8eb63a6e4090a62" id="r_a7d3460a76490c617d8eb63a6e4090a62"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3460a76490c617d8eb63a6e4090a62">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt; &amp;layout, ID3DBlob *vertexShaderData)</td></tr>
-<tr class="memdesc:a7d3460a76490c617d8eb63a6e4090a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Input Layout object. This function creates the ID3D11InputLayout object by describing the per-vertex data structure and validating it against a compiled vertex shader's input signature.  <br /></td></tr>
-<tr class="separator:a7d3460a76490c617d8eb63a6e4090a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa070b0b7b658d5b207c9c02f6deb7ed5" id="r_aa070b0b7b658d5b207c9c02f6deb7ed5"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa070b0b7b658d5b207c9c02f6deb7ed5">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, const D3D11_INPUT_ELEMENT_DESC *layoutDesc, UINT layoutCount, ID3DBlob *vertexShaderData)</td></tr>
+<tr class="memdesc:aa070b0b7b658d5b207c9c02f6deb7ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Input Layout object. This function creates the ID3D11InputLayout object by describing the per-vertex data structure and validating it against a compiled vertex shader's input signature.  <br /></td></tr>
+<tr class="separator:aa070b0b7b658d5b207c9c02f6deb7ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab88140b2eea4e96e9b5099f8ca15c29f" id="r_ab88140b2eea4e96e9b5099f8ca15c29f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88140b2eea4e96e9b5099f8ca15c29f">update</a> ()</td></tr>
 <tr class="memdesc:ab88140b2eea4e96e9b5099f8ca15c29f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the input layout.  <br /></td></tr>
 <tr class="separator:ab88140b2eea4e96e9b5099f8ca15c29f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,8 +223,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d3460a76490c617d8eb63a6e4090a62" name="a7d3460a76490c617d8eb63a6e4090a62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d3460a76490c617d8eb63a6e4090a62">&#9670;&#160;</a></span>init()</h2>
+<a id="aa070b0b7b658d5b207c9c02f6deb7ed5" name="aa070b0b7b658d5b207c9c02f6deb7ed5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa070b0b7b658d5b207c9c02f6deb7ed5">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +237,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>layout</em></span>, </td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *</td>          <td class="paramname"><span class="paramname"><em>layoutDesc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>layoutCount</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

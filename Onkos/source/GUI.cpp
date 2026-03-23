@@ -270,9 +270,12 @@ void
 GUI::inspectorContainer(EU::TSharedPointer<Actor> actor) {
 	//ImGui::Begin("Transform");
 	// Draw the structure
-	vec3Control("Position", const_cast<float*>(actor->getComponent<Transform>()->getPosition().data()));
-	vec3Control("Rotation", const_cast<float*>(actor->getComponent<Transform>()->getRotation().data()));
-	vec3Control("Scale", const_cast<float*>(actor->getComponent<Transform>()->getScale().data()));
+	vec3Control("Position", 
+							const_cast<float*>(actor->getComponent<Transform>()->getPosition().data()));
+	vec3Control("Rotation", 
+							const_cast<float*>(actor->getComponent<Transform>()->getRotation().data()));
+	vec3Control("Scale", 
+							const_cast<float*>(actor->getComponent<Transform>()->getScale().data()));
 
 	//ImGui::End();
 }
@@ -479,7 +482,8 @@ GUI::drawGizmoToolbar() {
 		// Opcional: Selector de modo Local/Mundo
 		static ImGuizmo::MODE mCurrentGizmoMode = ImGuizmo::WORLD;
 		if (ImGui::Button(mCurrentGizmoMode == ImGuizmo::WORLD ? "Global" : "Local")) {
-			mCurrentGizmoMode = (mCurrentGizmoMode == ImGuizmo::WORLD) ? ImGuizmo::LOCAL : ImGuizmo::WORLD;
+			mCurrentGizmoMode = (mCurrentGizmoMode == ImGuizmo::WORLD) 
+													? ImGuizmo::LOCAL : ImGuizmo::WORLD;
 		}
 	}
 	ImGui::End();

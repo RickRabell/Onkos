@@ -155,6 +155,8 @@ private:
   //BlendState m_blendstate;
   //RasterizerState m_rasterizer;
   //BlendState m_shadowBlendState;
+  
+  /** @brief Depth-stencil state used specifically for shadow rendering passes. */
   DepthStencilState m_shadowDepthStencilState;
 
   /** @brief Sampler state for texture sampling. */

@@ -8,6 +8,7 @@ var class_camera =
     [ "GetForward", "class_camera.html#a8a3d6925a41ec6d9fc372b2ae329f688", null ],
     [ "getFovY", "class_camera.html#a805e0c1497f238b14134fb374a0fee7a", null ],
     [ "getNearZ", "class_camera.html#a57d4851982072dc82dfe70a9e3078565", null ],
+    [ "getPosition", "class_camera.html#ace19a9d60efcc15d8f146a441287e72a", null ],
     [ "getPosition", "class_camera.html#a1e671f5b17c948584f8f96900d6d0a36", null ],
     [ "getProj", "class_camera.html#a4f3e342007ed86297a8059680311b931", null ],
     [ "GetRight", "class_camera.html#ae2ad1eda8e7727a6abd690fc986cbdbf", null ],

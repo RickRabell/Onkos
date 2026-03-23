@@ -160,9 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adb225491dbb4da041b3c1581cbc3b51b" id="r_adb225491dbb4da041b3c1581cbc3b51b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb225491dbb4da041b3c1581cbc3b51b">outliner</a> (const std::vector&lt; <a class="el" href="class_e_u_1_1_t_shared_pointer.html">EU::TSharedPointer</a>&lt; <a class="el" href="class_actor.html">Actor</a> &gt; &gt; &amp;actors)</td></tr>
 <tr class="memdesc:adb225491dbb4da041b3c1581cbc3b51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the Outliner (Scene Hierarchy) panel. Context: This is the tree-view list of all Actors currently in the scene, allowing the user to select them.  <br /></td></tr>
 <tr class="separator:adb225491dbb4da041b3c1581cbc3b51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05db9e777325f38a3d8f25d76d54b893" id="r_a05db9e777325f38a3d8f25d76d54b893"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05db9e777325f38a3d8f25d76d54b893">editTransform</a> (const XMMATRIX &amp;view, const XMMATRIX &amp;projection, <a class="el" href="class_e_u_1_1_t_shared_pointer.html">EU::TSharedPointer</a>&lt; <a class="el" href="class_actor.html">Actor</a> &gt; actor)</td></tr>
-<tr class="memdesc:a05db9e777325f38a3d8f25d76d54b893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the 3D manipulation gizmo over the selected actor in the viewport. Context: Calculates the screen-space projection of the 3D object to draw interactive arrows (translation), rings (rotation), or boxes (scale) using ImGuizmo.  <br /></td></tr>
-<tr class="separator:a05db9e777325f38a3d8f25d76d54b893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a694bc4b860c26bc785829fe7d96b74" id="r_a0a694bc4b860c26bc785829fe7d96b74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a694bc4b860c26bc785829fe7d96b74">editTransform</a> (<a class="el" href="class_camera.html">Camera</a> &amp;cam, <a class="el" href="class_window.html">Window</a> &amp;window, <a class="el" href="class_e_u_1_1_t_shared_pointer.html">EU::TSharedPointer</a>&lt; <a class="el" href="class_actor.html">Actor</a> &gt; actor)</td></tr>
+<tr class="memdesc:a0a694bc4b860c26bc785829fe7d96b74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the 3D manipulation gizmo over the selected actor in the viewport. Context: Calculates the screen-space projection of the 3D object to draw interactive arrows (translation), rings (rotation), or boxes (scale) using ImGuizmo.  <br /></td></tr>
+<tr class="separator:a0a694bc4b860c26bc785829fe7d96b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbdeea640ee58495cece619ce971f21f" id="r_adbdeea640ee58495cece619ce971f21f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbdeea640ee58495cece619ce971f21f">drawGizmoToolbar</a> ()</td></tr>
 <tr class="memdesc:adbdeea640ee58495cece619ce971f21f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the UI toolbar to switch between Translate, Rotate, and Scale gizmo modes.  <br /></td></tr>
 <tr class="separator:adbdeea640ee58495cece619ce971f21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,8 +315,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a05db9e777325f38a3d8f25d76d54b893" name="a05db9e777325f38a3d8f25d76d54b893"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05db9e777325f38a3d8f25d76d54b893">&#9670;&#160;</a></span>editTransform()</h2>
+<a id="a0a694bc4b860c26bc785829fe7d96b74" name="a0a694bc4b860c26bc785829fe7d96b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a694bc4b860c26bc785829fe7d96b74">&#9670;&#160;</a></span>editTransform()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,12 +324,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a> GUI::editTransform </td>
           <td>(</td>
-          <td class="paramtype">const XMMATRIX &amp;</td>          <td class="paramname"><span class="paramname"><em>view</em></span>, </td>
+          <td class="paramtype"><a class="el" href="class_camera.html">Camera</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>cam</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const XMMATRIX &amp;</td>          <td class="paramname"><span class="paramname"><em>projection</em></span>, </td>
+          <td class="paramtype"><a class="el" href="class_window.html">Window</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>window</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

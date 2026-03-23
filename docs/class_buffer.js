@@ -7,5 +7,6 @@ var class_buffer =
     [ "init", "class_buffer.html#a38292a603c7858826064b70a111ab9ad", null ],
     [ "init", "class_buffer.html#a50aa719fb728d4baa7c13e2169ca4155", null ],
     [ "render", "class_buffer.html#a96d28a8996d3295ec8171048d400e3f5", null ],
-    [ "update", "class_buffer.html#a246363f9412b48c01dd7a75d08c793ca", null ]
+    [ "update", "class_buffer.html#a246363f9412b48c01dd7a75d08c793ca", null ],
+    [ "m_buffer", "class_buffer.html#a7cd370bc7f3eba762ae7140804619bbf", null ]
 ];

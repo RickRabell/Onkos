@@ -1,3 +1,27 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_limits.html" title=" " alt="" coords="5,5,84,32"/>
+<area shape="rect" id="Node000000" href="$class_fbx_layer_element_array.html" title=" " alt="" coords="5,347,160,373"/>
+<area shape="rect" id="Node000001" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,5,430,48"/>
+<area shape="poly" id="edge217_Node000000_Node000001" title=" " alt="" coords="85,331,96,274,117,200,133,161,153,124,177,89,206,58,222,46,225,51,209,62,181,92,157,127,138,164,122,202,101,275,90,332"/>
+<area shape="rect" id="Node000002" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,72,430,115"/>
+<area shape="poly" id="edge218_Node000000_Node000002" title=" " alt="" coords="88,331,103,286,127,230,161,173,182,147,206,125,224,113,227,117,209,129,186,151,165,176,131,233,108,288,93,333"/>
+<area shape="rect" id="Node000003" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,139,430,181"/>
+<area shape="poly" id="edge219_Node000000_Node000003" title=" " alt="" coords="94,331,137,261,169,223,206,191,227,180,229,184,209,196,173,227,142,264,99,334"/>
+<area shape="rect" id="Node000005" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,205,430,248"/>
+<area shape="poly" id="edge221_Node000000_Node000005" title=" " alt="" coords="106,334,151,295,206,258,233,246,235,251,209,262,154,299,110,338"/>
+<area shape="rect" id="Node000006" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,272,430,315"/>
+<area shape="poly" id="edge222_Node000000_Node000006" title=" " alt="" coords="148,339,245,313,247,318,150,345"/>
+<area shape="rect" id="Node000007" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,339,430,381"/>
+<area shape="poly" id="edge223_Node000000_Node000007" title=" " alt="" coords="175,357,223,357,223,363,175,363"/>
+<area shape="rect" id="Node000008" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,405,430,448"/>
+<area shape="poly" id="edge224_Node000000_Node000008" title=" " alt="" coords="150,375,247,402,245,407,148,381"/>
+<area shape="rect" id="Node000009" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,472,430,515"/>
+<area shape="poly" id="edge225_Node000000_Node000009" title=" " alt="" coords="110,382,154,421,209,458,235,469,233,474,206,462,151,425,106,386"/>
+<area shape="rect" id="Node000010" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,539,430,581"/>
+<area shape="poly" id="edge226_Node000000_Node000010" title=" " alt="" coords="99,386,142,456,173,493,209,524,229,536,227,540,206,529,169,497,137,459,94,389"/>
+<area shape="rect" id="Node000011" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="223,605,430,648"/>
+<area shape="poly" id="edge227_Node000000_Node000011" title=" " alt="" coords="93,387,108,432,131,487,165,544,186,569,209,591,227,603,224,607,206,595,182,573,161,547,127,490,103,434,88,389"/>
+<area shape="rect" id="Node000012" href="$class_fbx_layer_element_array_template.html" title=" " alt="" coords="208,672,446,699"/>
+<area shape="poly" id="edge228_Node000000_Node000012" title=" " alt="" coords="90,389,100,446,121,520,137,558,156,595,180,629,209,658,227,669,224,674,206,662,176,632,152,598,132,560,116,521,95,448,84,390"/>
+<area shape="rect" id="Node000004" href="$class_fbx_layer_element_material_1_1_layer_element_array_proxy.html" title=" " alt="" coords="494,139,668,181"/>
+<area shape="poly" id="edge220_Node000003_Node000004" title=" " alt="" coords="446,157,494,157,494,163,446,163"/>
 </map>

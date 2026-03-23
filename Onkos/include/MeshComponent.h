@@ -70,7 +70,8 @@ public:
 	/** @brief The list of vertices (position, texcoords) stored in system memory. */
 	std::vector<SimpleVertex> m_vertex;
 
-	std::vector<SkyboxVertex> m_skyVertex;
+  /** @brief The list of vertices for skybox geometry stored in system memory. */
+  std::vector<SkyboxVertex> m_skyVertex;
 
 	/** @brief The list of indices stored in system memory. */
 	std::vector<unsigned int> m_index;

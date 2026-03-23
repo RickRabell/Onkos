@@ -101,6 +101,13 @@ SimpleVertex {
   EU::Vector2 TextureCoordinate;
 };
 
+/**
+ * @struct SkyboxVertex
+ * @brief Defines the vertex structure for skybox geometry.
+ *
+ * Contains the position coordinates for a vertex used in skybox rendering.
+ * This structure is typically used to represent the corners of a cube that forms the skybox.
+ */
 struct
 SkyboxVertex {
   float x, y, z;
@@ -118,6 +125,14 @@ CBNeverChanges {
   XMMATRIX mView;
 };
 
+/**
+ * @struct CBSkybox
+ * @brief Constant buffer structure for skybox rendering.
+ *
+ * Contains the combined view-projection matrix used for rendering the skybox.
+ * This buffer is typically updated per frame to reflect the camera's orientation
+ * and projection, ensuring the skybox remains correctly aligned with the scene.
+ */
 struct
 CBSkybox {
   XMMATRIX mviewProj;
@@ -134,16 +149,24 @@ CBChangeOnResize {
   XMMATRIX mProjection;
 };
 
+/**
+ * @struct CBMain
+ * @brief Constant buffer structure for main rendering parameters.
+ *
+ * Contains the view and projection matrices, camera position, light direction, and light color.
+ * This buffer is typically updated per frame and used for rendering the main scene, providing
+ * essential data for camera and lighting calculations in shaders.
+ */
 struct 
 CBMain {
-  XMFLOAT4X4 View;
-  XMFLOAT4X4 Projection;
-  EU::Vector3 CameraPos;
-  float pad0;
-  EU::Vector3 LightDir;
-  float pad1;
-  EU::Vector3 LightColor;
-  float pad2;
+  XMFLOAT4X4 View;         ///< View matrix for the camera.
+  XMFLOAT4X4 Projection;   ///< Projection matrix for the camera.
+  EU::Vector3 CameraPos;   ///< Position of the camera in world space.
+  float pad0;              ///< Padding for alignment.
+  EU::Vector3 LightDir;    ///< Direction of the main light source.
+  float pad1;              ///< Padding for alignment.
+  EU::Vector3 LightColor;  ///< Color of the main light source.
+  float pad2;              ///< Padding for alignment.
 };
 
 /**

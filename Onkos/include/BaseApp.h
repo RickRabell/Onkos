@@ -42,7 +42,6 @@ public:
 	 * @param hInst Handle to the application instance.
 	 * @param nCmdShow Command show parameter for the main window.
 	 */
-	//BaseApp(HINSTANCE hInst, int nCmdShow);
 	BaseApp() = default;
 
 	/**
@@ -104,8 +103,20 @@ public:
 	void
 	destroy();
 
-	void
-	onResize(UINT newW, UINT newH);
+  /**
+  * @brief Handles window resize events and updates all dependent resources.
+  *
+  * This function is called whenever the application window is resized.
+  * It is responsible for resizing the swap chain buffers, recreating the render target
+  * and depth-stencil views, and updating the viewport to match the new window dimensions.
+  * All graphics resources that depend on the window size should be updated here to ensure
+  * correct rendering after a resize event.
+  *
+  * @param newW The new width of the window in pixels.
+  * @param newH The new height of the window in pixels.
+  */
+  void
+  onResize(UINT newW, UINT newH);
 
 private:
 	/**
@@ -114,7 +125,6 @@ private:
 	 * @param message The message identifier.
 	 * @param wParam Additional message-specific information.
 	 * @param lParam Additional message-specific information.
-	 * @return LRESULT The result of the message processing.
 	 */
 	static LRESULT CALLBACK
 	wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -152,31 +162,27 @@ private:
 
 	/** @brief The vertex and pixel shader program. */
 	ShaderProgram m_shaderProgram;
+
+  /** @brief Indicates if the Direct3D device and related resources are fully initialized and ready for use. */
+  bool m_d3dReady = false;
 	
-	/** @brief GPU constant buffer for data updated once (e.g., View matrix). */
-	//Buffer m_cbNeverChanges;
+  /** @brief The GPU constant buffer for per-frame data (view/projection, lighting, etc.). */
+  Buffer m_constantBuffer;
 
-	/** @brief GPU constant buffer for data updated on resize (e.g., Projection matrix). */
-	//Buffer m_cbChangeOnResize;
-	
-	/** @brief A sample texture for the mesh. */
-	//Texture m_abeBowserAlbedo;
-
-	/** @brief The cubemap texture used for rendering the skybox. */
-	//Texture m_skyboxTexture;
-
-	bool m_d3dReady = false;
-	
-	Buffer m_constantBuffer;
-
-	CBMain m_constantBufferStruct;
+  /** @brief CPU-side struct holding the data to be uploaded to the main constant buffer. */
+  CBMain m_constantBufferStruct;
 
 	// Textures
-	Texture m_AlbedoSRV;
-	Texture m_MetallicSRV;
-	Texture m_RoughnessSRV;
-	Texture m_AOSRV;
-	Texture m_NormalSRV;
+  /** @brief The albedo (base color) texture used for PBR rendering. */
+  Texture m_AlbedoSRV;
+  /** @brief The metallic texture map used for PBR material properties. */
+  Texture m_MetallicSRV;
+  /** @brief The roughness texture map used for PBR material properties. */
+  Texture m_RoughnessSRV;
+  /** @brief The ambient occlusion (AO) texture map for PBR shading. */
+  Texture m_AOSRV;
+  /** @brief The normal map texture used for simulating surface detail in PBR. */
+  Texture m_NormalSRV;
 
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
@@ -214,13 +220,28 @@ private:
 	*/
 	GUI m_gui;
 
-	EU::Vector3 m_cameraPos;
+  /**
+   * @brief The current position of the camera in world space.
+   */
+  EU::Vector3 m_cameraPos;
 
-	Skybox m_skybox;
+  /**
+  * @brief The skybox manager responsible for rendering the environment background.
+  */
+  Skybox m_skybox;
 
-	Texture m_skyboxTex;
+  /**
+  * @brief The texture resource used for the skybox environment.
+  */
+  Texture m_skyboxTex;
 
-	RasterizerState m_defaultRasterizer;
+  /**
+	* @brief The default rasterizer state used for rendering.
+  */
+  RasterizerState m_defaultRasterizer;
 
-	DepthStencilState m_defaultDepthStencil;
+  /**
+	* @brief The default depth-stencil state used for depth testing.
+  */
+  DepthStencilState m_defaultDepthStencil;
 };

@@ -59,8 +59,12 @@ public:
 	EU::Vector3
 	getPosition() const { return m_position; }
 
-	EU::Vector3&
-	getPosition() { return m_position; }
+    /**
+    * @brief Retrieves a reference to the current world-space position of the camera.
+    * @return EU::Vector3& Reference to the position vector, allowing direct modification.
+    */
+  EU::Vector3&
+  getPosition() { return m_position; }
 
 	/**
 		* @brief Orients the camera to look at a specific point in space.

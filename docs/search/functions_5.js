@@ -4,7 +4,7 @@ var searchData=
   ['editoptions_1',['EditOptions',['../namespace_graph_editor.html#ab77d94f304b61bc0a8cdfe89c9307b3a',1,'GraphEditor']]],
   ['editpoint_2',['EditPoint',['../struct_ramp_edit.html#a95f922c6f645fd774cbac7dfd0e7c12d',1,'RampEdit::EditPoint()'],['../struct_im_curve_edit_1_1_delegate.html#a2577235232ba45fbbb567c8c3385a231',1,'ImCurveEdit::Delegate::EditPoint()'],['../struct_im_gradient_1_1_delegate.html#a7bd1c671008431e4f8e573773e32e13b',1,'ImGradient::Delegate::EditPoint()'],['../struct_ramp_edit.html#a95f922c6f645fd774cbac7dfd0e7c12d',1,'RampEdit::EditPoint()']]],
   ['edittransform_3',['EditTransform',['../_im_guizmo-master_2example_2main_8cpp.html#ac1aaf253531e279f40710d1620af2e92',1,'EditTransform(float *cameraView, float *cameraProjection, float *matrix):&#160;main.cpp'],['../_im_guizmo-master_2vcpkg-example_2main_8cpp.html#a5fceddae4b7b4d5c23cb4f5a1d10a99c',1,'EditTransform(float *cameraView, float *cameraProjection, float *matrix, bool editTransformDecomposition):&#160;main.cpp']]],
-  ['edittransform_4',['editTransform',['../class_g_u_i.html#a05db9e777325f38a3d8f25d76d54b893',1,'GUI']]],
+  ['edittransform_4',['editTransform',['../class_g_u_i.html#a0a694bc4b860c26bc785829fe7d96b74',1,'GUI']]],
   ['elementbase_5',['ElementBase',['../class_element_base.html#a4c7415e032db4a4d1890edd5fed2eb01',1,'ElementBase']]],
   ['elementcontentaccessor_6',['ElementContentAccessor',['../struct_element_content_accessor.html#a59a1e00643f9f94ff680d2f63f80b0cd',1,'ElementContentAccessor::ElementContentAccessor()'],['../struct_element_content_accessor.html#af1a83e6fae2facae0b94d0c7332e0a2e',1,'ElementContentAccessor::ElementContentAccessor(xmlNode *pElement)']]],
   ['emax_7',['EMax',['../namespace_e_u.html#af7e70bc1467dbb378c8df663e6b75884',1,'EU']]],

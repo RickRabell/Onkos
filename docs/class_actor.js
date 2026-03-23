@@ -9,6 +9,7 @@ var class_actor =
     [ "getName", "class_actor.html#a3774c7733aab5ad0d447db5e32dc9a6c", null ],
     [ "init", "class_actor.html#ae789334128df3f9899d00d0e0c2dad12", null ],
     [ "render", "class_actor.html#ad385c0dc92989174b01c07dd26d423b5", null ],
+    [ "renderForSkybox", "class_actor.html#ad420ba399f8b13122dca55a4d6804e7c", null ],
     [ "renderShadow", "class_actor.html#a7df63570cf61c0046828b4f4e00d10ad", null ],
     [ "setCastShadow", "class_actor.html#a2e272052b63928c34e8e293b261a5c74", null ],
     [ "setMesh", "class_actor.html#ad217dfce01f7c33ef87688f19d28f836", null ],

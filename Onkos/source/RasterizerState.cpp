@@ -54,7 +54,8 @@ void
 RasterizerState::render(DeviceContext& deviceContext) {
 	if (!m_rasterizerState)
 	{
-		ERROR("RasterizerState", "render", "RasterizerState is nullptr (init failed or not called)");
+		ERROR("RasterizerState", "render", 
+					"RasterizerState is nullptr (init failed or not called)");
 		return;
 	}
 	deviceContext.RSSetState(m_rasterizerState);

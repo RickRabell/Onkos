@@ -5,6 +5,7 @@ var class_base_app =
     [ "awake", "class_base_app.html#ad2f4ce08c2c702886c9356bb28e63c96", null ],
     [ "destroy", "class_base_app.html#a45e22a14bfc1f98f452b08ebb3386b2b", null ],
     [ "init", "class_base_app.html#a2c64e873874aed23aa14e0c8a659e3ca", null ],
+    [ "onResize", "class_base_app.html#ada0603119cd0eed0ae9f4971e622ac92", null ],
     [ "render", "class_base_app.html#a4002d0cff2225b7b79501aeb17a3e970", null ],
     [ "run", "class_base_app.html#a3cf0b29ba0e997d8cbac4fca91635cb9", null ],
     [ "update", "class_base_app.html#abdc46a4c89b86fd0441615214e19fb4d", null ]

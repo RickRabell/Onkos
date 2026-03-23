@@ -1,6 +1,7 @@
 var class_model3_d =
 [
     [ "Model3D", "class_model3_d.html#aa749816ca13a57884d8e03586ce1d5b8", null ],
+    [ "Model3D", "class_model3_d.html#a74c76aa75f90597eb90ba1755705483f", null ],
     [ "~Model3D", "class_model3_d.html#adc27396c3f36b9edfa59b32c9d073e6d", null ],
     [ "GetMeshes", "class_model3_d.html#abdb0024f7ee1bf6bbcbcc3d65e659b50", null ],
     [ "getSizeInBytes", "class_model3_d.html#a42dbe41a7435885766515c4ebb2bc87b", null ],

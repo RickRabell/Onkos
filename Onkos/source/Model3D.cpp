@@ -78,7 +78,8 @@ Model3D::LoadFBXModel(const std::string& filePath) {
     // 03. Use the first argument as the filename for the importer
     if (!lImporter->Initialize(filePath.c_str(), -1, lSdkManager->GetIOSettings())) {
       ERROR("ModelLoader", "FbxImporter::Initialize()",
-        "Unable to initialize FBX Importer! Error: " << lImporter->GetStatus().GetErrorString());
+            "Unable to initialize FBX Importer! Error: " 
+            << lImporter->GetStatus().GetErrorString());
       lImporter->Destroy();
       return std::vector<MeshComponent>();
     }
@@ -159,11 +160,14 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
   if (mesh->GetElementTangentCount() == 0 && uvSetName)
     mesh->GenerateTangentsData(uvSetName);
 
-  const FbxGeometryElementUV* uvElem = (mesh->GetElementUVCount() > 0) ? mesh->GetElementUV(0) : nullptr;
+  const FbxGeometryElementUV* uvElem = (mesh->GetElementUVCount() > 0) 
+                                       ? mesh->GetElementUV(0) : nullptr;
 
-  const FbxGeometryElementTangent* tanElem = (mesh->GetElementTangentCount() > 0) ? mesh->GetElementTangent(0) : nullptr;
+  const FbxGeometryElementTangent* tanElem = (mesh->GetElementTangentCount() > 0) 
+                                             ? mesh->GetElementTangent(0) : nullptr;
 
-  const FbxGeometryElementBinormal* binElem = (mesh->GetElementBinormalCount() > 0) ? mesh->GetElementBinormal(0) : nullptr;
+  const FbxGeometryElementBinormal* binElem = (mesh->GetElementBinormalCount() > 0) 
+                                              ? mesh->GetElementBinormal(0) : nullptr;
 
   std::vector<SimpleVertex>       vertices;
   std::vector<unsigned int> indices;
@@ -176,19 +180,29 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
     using E = FbxGeometryElement;
     int idx;
     if (elem->GetMappingMode() == E::eByControlPoint)
-      idx = (elem->GetReferenceMode() == E::eIndexToDirect) ? elem->GetIndexArray().GetAt(cpIdx) : cpIdx;
+      idx = (elem->GetReferenceMode() == E::eIndexToDirect) 
+            ? elem->GetIndexArray().GetAt(cpIdx) : cpIdx;
+
     else
-      idx = (elem->GetReferenceMode() == E::eIndexToDirect) ? elem->GetIndexArray().GetAt(pvIdx) : pvIdx;
+      idx = (elem->GetReferenceMode() == E::eIndexToDirect) 
+            ? elem->GetIndexArray().GetAt(pvIdx) : pvIdx;
+
     return elem->GetDirectArray().GetAt(idx);
     };
   auto readV4 = [](auto* elem, int cpIdx, int pvIdx) -> FbxVector4 {
     if (!elem) return FbxVector4(0, 0, 0, 0);
+    
     using E = FbxGeometryElement;
+    
     int idx;
     if (elem->GetMappingMode() == E::eByControlPoint)
-      idx = (elem->GetReferenceMode() == E::eIndexToDirect) ? elem->GetIndexArray().GetAt(cpIdx) : cpIdx;
+      idx = (elem->GetReferenceMode() == E::eIndexToDirect) 
+            ? elem->GetIndexArray().GetAt(cpIdx) : cpIdx;
+
     else
-      idx = (elem->GetReferenceMode() == E::eIndexToDirect) ? elem->GetIndexArray().GetAt(pvIdx) : pvIdx;
+      idx = (elem->GetReferenceMode() == E::eIndexToDirect) 
+            ? elem->GetIndexArray().GetAt(pvIdx) : pvIdx;
+
     return elem->GetDirectArray().GetAt(idx);
     };
 
@@ -254,9 +268,20 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
   // --- Fallback: calcula T/B si faltan ---
   if (mesh->GetElementTangentCount() == 0 || mesh->GetElementBinormalCount() == 0)
   {
-    auto add = [](EU::Vector3 a, const EU::Vector3& b) { a.x += b.x; a.y += b.y; a.z += b.z; return a; };
-    auto sub = [](const EU::Vector3& a, const EU::Vector3& b) { return EU::Vector3(a.x - b.x, a.y - b.y, a.z - b.z); };
-    auto mul = [](const EU::Vector3& a, float s) { return EU::Vector3(a.x * s, a.y * s, a.z * s); };
+    auto add = [](EU::Vector3 a, const EU::Vector3& b) { 
+      a.x += b.x; 
+      a.y += b.y; 
+      a.z += b.z;
+      return a; 
+    };
+
+    auto sub = [](const EU::Vector3& a, const EU::Vector3& b) { 
+        return EU::Vector3(a.x - b.x, a.y - b.y, a.z - b.z); 
+    };
+
+    auto mul = [](const EU::Vector3& a, float s) { 
+      return EU::Vector3(a.x * s, a.y * s, a.z * s); 
+    };
 
     for (size_t i = 0; i + 2 < indices.size(); i += 3)
     {
@@ -275,8 +300,14 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
       float denom = du1 * dv2 - du2 * dv1;
       float r = (std::fabs(denom) < 1e-8f) ? 0.0f : 1.0f / denom;
 
-      EU::Vector3 T = mul(EU::Vector3(e1.x * dv2 - e2.x * dv1, e1.y * dv2 - e2.y * dv1, e1.z * dv2 - e2.z * dv1), r);
-      EU::Vector3 B = mul(EU::Vector3(e2.x * du1 - e1.x * du2, e2.y * du1 - e1.y * du2, e2.z * du1 - e1.z * du2), r);
+      EU::Vector3 T = mul(EU::Vector3(e1.x * dv2 - e2.x * dv1, 
+                                      e1.y * dv2 - e2.y * dv1, 
+                                      e1.z * dv2 - e2.z * dv1), 
+                                      r);
+      EU::Vector3 B = mul(EU::Vector3(e2.x * du1 - e1.x * du2, 
+                                      e2.y * du1 - e1.y * du2, 
+                                      e2.z * du1 - e1.z * du2), 
+                                      r);
 
       v0.Tangent = add(v0.Tangent, T);
       v1.Tangent = add(v1.Tangent, T);
@@ -320,18 +351,32 @@ Model3D::ProcessFBXMesh(FbxNode* node) {
   }
 
   // --- Ortonormaliza TBN por v?rtice ---
-  auto dot3 = [](const EU::Vector3& a, const EU::Vector3& b) { return a.x * b.x + a.y * b.y + a.z * b.z; };
-  auto norm3 = [](EU::Vector3& v) { float l = std::sqrt(EU::EMax(1e-20f, v.x * v.x + v.y * v.y + v.z * v.z)); v.x /= l; v.y /= l; v.z /= l; };
-  auto sub3 = [](const EU::Vector3& a, const EU::Vector3& b) { return EU::Vector3(a.x - b.x, a.y - b.y, a.z - b.z); };
+  auto dot3 = [](const EU::Vector3& a, const EU::Vector3& b) { 
+      return a.x * b.x + a.y * b.y + a.z * b.z; 
+  };
+  
+  auto norm3 = [](EU::Vector3& v) { 
+    float l = std::sqrt(EU::EMax(1e-20f, v.x * v.x + v.y * v.y + v.z * v.z)); 
+    v.x /= l; v.y /= l; v.z /= l; 
+  };
+  
+  auto sub3 = [](const EU::Vector3& a, const EU::Vector3& b) { 
+    return EU::Vector3(a.x - b.x, a.y - b.y, a.z - b.z); 
+  };
+  
   auto cross3 = [](const EU::Vector3& a, const EU::Vector3& b) {
-    return EU::Vector3(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
-    };
+    return EU::Vector3(a.y * b.z - a.z * b.y, 
+                       a.z * b.x - a.x * b.z, 
+                       a.x * b.y - a.y * b.x);
+  };
 
   for (auto& v : vertices)
   {
     norm3(v.Normal);
     float dTN = dot3(v.Tangent, v.Normal);
-    v.Tangent = sub3(v.Tangent, EU::Vector3(v.Normal.x * dTN, v.Normal.y * dTN, v.Normal.z * dTN));
+    v.Tangent = sub3(v.Tangent, EU::Vector3(v.Normal.x * dTN, 
+                                            v.Normal.y * dTN, 
+                                            v.Normal.z * dTN));
     norm3(v.Tangent);
 
     EU::Vector3 Bcalc = cross3(v.Normal, v.Tangent);

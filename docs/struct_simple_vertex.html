@@ -114,40 +114,100 @@ $(function(){initNavTree('struct_simple_vertex.html',''); initResizable(true); }
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_prerequisites_8h_source.html">Prerequisites.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for SimpleVertex:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_simple_vertex__coll__graph.png" border="0" usemap="#a_simple_vertex_coll__map" alt="Collaboration graph"/></div>
+<map name="a_simple_vertex_coll__map" id="a_simple_vertex_coll__map">
+<area shape="rect" title="Defines the vertex structure for simple geometry." alt="" coords="60,144,158,171"/>
+<area shape="rect" href="class_e_u_1_1_vector3.html" title="A 3D vector class." alt="" coords="5,5,98,32"/>
+<area shape="poly" title=" " alt="" coords="58,46,67,82,82,119,99,142,94,145,77,121,62,83,53,48"/>
+<area shape="rect" href="class_e_u_1_1_vector2.html" title="A 2D vector class." alt="" coords="121,5,214,32"/>
+<area shape="poly" title=" " alt="" coords="165,48,156,83,140,121,123,145,119,142,136,119,151,82,160,46"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6a7d53a8aab8bf354b9f431d87c94a7c" id="r_a6a7d53a8aab8bf354b9f431d87c94a7c"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a7d53a8aab8bf354b9f431d87c94a7c">Pos</a></td></tr>
-<tr class="separator:a6a7d53a8aab8bf354b9f431d87c94a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ec347accd80550ea746c15b6a967d5c" id="r_a9ec347accd80550ea746c15b6a967d5c"><td class="memItemLeft" align="right" valign="top">XMFLOAT2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ec347accd80550ea746c15b6a967d5c">Tex</a></td></tr>
-<tr class="separator:a9ec347accd80550ea746c15b6a967d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6209ca8076c6ee370d81f7d00fd9916" id="r_ad6209ca8076c6ee370d81f7d00fd9916"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6209ca8076c6ee370d81f7d00fd9916">Position</a></td></tr>
+<tr class="separator:ad6209ca8076c6ee370d81f7d00fd9916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c8efd612b8e0da0e4056c29a6e800c1" id="r_a5c8efd612b8e0da0e4056c29a6e800c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c8efd612b8e0da0e4056c29a6e800c1">Normal</a></td></tr>
+<tr class="separator:a5c8efd612b8e0da0e4056c29a6e800c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3b365e061b6eb3f4c6f0186525b04e" id="r_a8b3b365e061b6eb3f4c6f0186525b04e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b3b365e061b6eb3f4c6f0186525b04e">Tangent</a></td></tr>
+<tr class="separator:a8b3b365e061b6eb3f4c6f0186525b04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e14eddaa3a12b239d8fb7fa0d16ad3b" id="r_a6e14eddaa3a12b239d8fb7fa0d16ad3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e14eddaa3a12b239d8fb7fa0d16ad3b">Bitangent</a></td></tr>
+<tr class="separator:a6e14eddaa3a12b239d8fb7fa0d16ad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee3ec4c43647b8f3762d8cc57b0554b" id="r_a0ee3ec4c43647b8f3762d8cc57b0554b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector2.html">EU::Vector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ee3ec4c43647b8f3762d8cc57b0554b">TextureCoordinate</a></td></tr>
+<tr class="separator:a0ee3ec4c43647b8f3762d8cc57b0554b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Defines the vertex structure for simple geometry. </p>
 <p>Contains position and texture coordinates, which is a common layout for textured models. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6a7d53a8aab8bf354b9f431d87c94a7c" name="a6a7d53a8aab8bf354b9f431d87c94a7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a7d53a8aab8bf354b9f431d87c94a7c">&#9670;&#160;</a></span>Pos</h2>
+<a id="a6e14eddaa3a12b239d8fb7fa0d16ad3b" name="a6e14eddaa3a12b239d8fb7fa0d16ad3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e14eddaa3a12b239d8fb7fa0d16ad3b">&#9670;&#160;</a></span>Bitangent</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">XMFLOAT3 SimpleVertex::Pos</td>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> SimpleVertex::Bitangent</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a9ec347accd80550ea746c15b6a967d5c" name="a9ec347accd80550ea746c15b6a967d5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ec347accd80550ea746c15b6a967d5c">&#9670;&#160;</a></span>Tex</h2>
+<a id="a5c8efd612b8e0da0e4056c29a6e800c1" name="a5c8efd612b8e0da0e4056c29a6e800c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c8efd612b8e0da0e4056c29a6e800c1">&#9670;&#160;</a></span>Normal</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">XMFLOAT2 SimpleVertex::Tex</td>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> SimpleVertex::Normal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6209ca8076c6ee370d81f7d00fd9916" name="ad6209ca8076c6ee370d81f7d00fd9916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6209ca8076c6ee370d81f7d00fd9916">&#9670;&#160;</a></span>Position</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> SimpleVertex::Position</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b3b365e061b6eb3f4c6f0186525b04e" name="a8b3b365e061b6eb3f4c6f0186525b04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3b365e061b6eb3f4c6f0186525b04e">&#9670;&#160;</a></span>Tangent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> SimpleVertex::Tangent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ee3ec4c43647b8f3762d8cc57b0554b" name="a0ee3ec4c43647b8f3762d8cc57b0554b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee3ec4c43647b8f3762d8cc57b0554b">&#9670;&#160;</a></span>TextureCoordinate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector2.html">EU::Vector2</a> SimpleVertex::TextureCoordinate</td>
         </tr>
       </table>
 </div><div class="memdoc">

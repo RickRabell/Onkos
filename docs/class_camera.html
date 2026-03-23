@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e671f5b17c948584f8f96900d6d0a36" id="r_a1e671f5b17c948584f8f96900d6d0a36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e671f5b17c948584f8f96900d6d0a36">getPosition</a> () const</td></tr>
 <tr class="memdesc:a1e671f5b17c948584f8f96900d6d0a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current world-space position of the camera.  <br /></td></tr>
 <tr class="separator:a1e671f5b17c948584f8f96900d6d0a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace19a9d60efcc15d8f146a441287e72a" id="r_ace19a9d60efcc15d8f146a441287e72a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace19a9d60efcc15d8f146a441287e72a">getPosition</a> ()</td></tr>
+<tr class="memdesc:ace19a9d60efcc15d8f146a441287e72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a reference to the current world-space position of the camera.  <br /></td></tr>
+<tr class="separator:ace19a9d60efcc15d8f146a441287e72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858c942714de3a10df6f315d7bc09eee" id="r_a858c942714de3a10df6f315d7bc09eee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a858c942714de3a10df6f315d7bc09eee">lookAt</a> (const <a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> &amp;pos, const <a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> &amp;target, const <a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> &amp;up=<a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a>(0, 1, 0))</td></tr>
 <tr class="memdesc:a858c942714de3a10df6f315d7bc09eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Orients the camera to look at a specific point in space. Context: This function calculates the orthonormal basis vectors (Right, Up, Forward) by computing the directional vector towards the target, and using cross products with the global "Up" vector to find the orthogonal axes.  <br /></td></tr>
 <tr class="separator:a858c942714de3a10df6f315d7bc09eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -395,8 +398,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ace19a9d60efcc15d8f146a441287e72a" name="ace19a9d60efcc15d8f146a441287e72a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace19a9d60efcc15d8f146a441287e72a">&#9670;&#160;</a></span>getPosition() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_e_u_1_1_vector3.html">EU::Vector3</a> &amp; Camera::getPosition </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves a reference to the current world-space position of the camera. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_e_u_1_1_vector3.html" title="A 3D vector class.">EU::Vector3</a>&amp; Reference to the position vector, allowing direct modification. </dd></dl>
+
+</div>
+</div>
 <a id="a1e671f5b17c948584f8f96900d6d0a36" name="a1e671f5b17c948584f8f96900d6d0a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e671f5b17c948584f8f96900d6d0a36">&#9670;&#160;</a></span>getPosition()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e671f5b17c948584f8f96900d6d0a36">&#9670;&#160;</a></span>getPosition() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

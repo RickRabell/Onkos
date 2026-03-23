@@ -72,7 +72,8 @@ Skybox::init(Device& device, DeviceContext* deviceContext, Texture& cubemap) {
 	hr = m_constantBuffer.init(device, sizeof(CBSkybox));  // View
 	if (FAILED(hr)) {
 		ERROR("Skybox", "init",
-			("Failed to initialize NeverChanges Buffer. HRESULT: " + std::to_string(hr)).c_str());
+			("Failed to initialize NeverChanges Buffer. HRESULT: " 
+			 + std::to_string(hr)).c_str());
 		return hr;
 	}
 

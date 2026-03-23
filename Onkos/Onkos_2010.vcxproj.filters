@@ -314,5 +314,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="bin\Skybox.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="bin\PBRShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

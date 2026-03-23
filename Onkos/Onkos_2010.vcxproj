@@ -421,7 +421,10 @@
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <FxCompile Include="bin\PBRShader.hlsl" />
+    <FxCompile Include="bin\Skybox.hlsl" />
+  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_win32.cpp" />

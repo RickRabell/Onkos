@@ -108,50 +108,53 @@ $(function(){initNavTree('_window_8h_source.html',''); initResizable(true); });
 <div class="contents">
 <a href="_window_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_prerequisites_8h.html">Prerequisites.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_window.html">   14</a></span><span class="keyword">class </span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_function" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">Window</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">   20</a></span>    <a class="code hl_function" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">Window</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_window.html#adc361d2d83c3531576b0d7bc1589cdfb">   24</a></span>    <a class="code hl_function" href="class_window.html#adc361d2d83c3531576b0d7bc1589cdfb">~Window</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    HRESULT</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="class_window.html#a3a6f96e110843d60c6e3c29913143674">init</a>(HINSTANCE hInstance, <span class="keywordtype">int</span> nCmdShow, WNDPROC wndproc);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="class_window.html#a59515fc5a56e86d5a46d771595daac55">update</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="class_window.html#a0a2093bd2ed34740c08a6a2fdfc059c9">render</a>();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_function" href="class_window.html#aa89262ad2538473c8d7e4d8dd641849d">destroy</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">   60</a></span>    HWND <a class="code hl_variable" href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">m_hWnd</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_window.html#a134b55aae0af092cb293aab2edd477de">   65</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window.html#a134b55aae0af092cb293aab2edd477de">m_width</a>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">   70</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">m_height</a>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    HINSTANCE m_hInst = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    RECT m_rect;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::string m_windowName = <span class="stringliteral">&quot;Onkos Engine&quot;</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">class </span><a class="code hl_class" href="class_base_app.html">BaseApp</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span></div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_window.html">   16</a></span><span class="keyword">class </span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_function" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">Window</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">   22</a></span>    <a class="code hl_function" href="class_window.html#a685a2ed99afee9abe60252d5378c8078">Window</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_window.html#adc361d2d83c3531576b0d7bc1589cdfb">   26</a></span>    <a class="code hl_function" href="class_window.html#adc361d2d83c3531576b0d7bc1589cdfb">~Window</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    HRESULT</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_window.html#a0f76da6d16d2f57552754e1f9cc82912">init</a>(HINSTANCE hInstance, <span class="keywordtype">int</span> nCmdShow, WNDPROC wndproc, <a class="code hl_class" href="class_base_app.html">BaseApp</a>* app);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_window.html#a59515fc5a56e86d5a46d771595daac55">update</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="class_window.html#a0a2093bd2ed34740c08a6a2fdfc059c9">render</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="class_window.html#aa89262ad2538473c8d7e4d8dd641849d">destroy</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">   62</a></span>    HWND <a class="code hl_variable" href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">m_hWnd</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_window.html#a134b55aae0af092cb293aab2edd477de">   67</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window.html#a134b55aae0af092cb293aab2edd477de">m_width</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">   72</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">m_height</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    HINSTANCE m_hInst = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    RECT m_rect;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::string m_windowName = <span class="stringliteral">&quot;Onkos Engine&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
 </div>
 <div class="ttc" id="a_prerequisites_8h_html"><div class="ttname"><a href="_prerequisites_8h.html">Prerequisites.h</a></div><div class="ttdoc">A precompiled header file for the engine.</div></div>
+<div class="ttc" id="aclass_base_app_html"><div class="ttname"><a href="class_base_app.html">BaseApp</a></div><div class="ttdoc">The core application class that initializes and runs the engine.</div><div class="ttdef"><b>Definition</b> BaseApp.h:38</div></div>
 <div class="ttc" id="aclass_window_html_a0a2093bd2ed34740c08a6a2fdfc059c9"><div class="ttname"><a href="class_window.html#a0a2093bd2ed34740c08a6a2fdfc059c9">Window::render</a></div><div class="ttdeci">void render()</div><div class="ttdoc">Handles window-specific rendering tasks.</div><div class="ttdef"><b>Definition</b> Window.cpp:67</div></div>
-<div class="ttc" id="aclass_window_html_a134b55aae0af092cb293aab2edd477de"><div class="ttname"><a href="class_window.html#a134b55aae0af092cb293aab2edd477de">Window::m_width</a></div><div class="ttdeci">unsigned int m_width</div><div class="ttdoc">The current width of the window&#39;s client area in pixels.</div><div class="ttdef"><b>Definition</b> Window.h:65</div></div>
-<div class="ttc" id="aclass_window_html_a3a6f96e110843d60c6e3c29913143674"><div class="ttname"><a href="class_window.html#a3a6f96e110843d60c6e3c29913143674">Window::init</a></div><div class="ttdeci">HRESULT init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc)</div><div class="ttdoc">Initializes the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:5</div></div>
-<div class="ttc" id="aclass_window_html_a525698a3ce02b30dd7620b85d70269ec"><div class="ttname"><a href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">Window::m_height</a></div><div class="ttdeci">unsigned int m_height</div><div class="ttdoc">The current height of the window&#39;s client area in pixels.</div><div class="ttdef"><b>Definition</b> Window.h:70</div></div>
+<div class="ttc" id="aclass_window_html_a0f76da6d16d2f57552754e1f9cc82912"><div class="ttname"><a href="class_window.html#a0f76da6d16d2f57552754e1f9cc82912">Window::init</a></div><div class="ttdeci">HRESULT init(HINSTANCE hInstance, int nCmdShow, WNDPROC wndproc, BaseApp *app)</div><div class="ttdoc">Initializes the window.</div><div class="ttdef"><b>Definition</b> Window.cpp:5</div></div>
+<div class="ttc" id="aclass_window_html_a134b55aae0af092cb293aab2edd477de"><div class="ttname"><a href="class_window.html#a134b55aae0af092cb293aab2edd477de">Window::m_width</a></div><div class="ttdeci">unsigned int m_width</div><div class="ttdoc">The current width of the window&#39;s client area in pixels.</div><div class="ttdef"><b>Definition</b> Window.h:67</div></div>
+<div class="ttc" id="aclass_window_html_a525698a3ce02b30dd7620b85d70269ec"><div class="ttname"><a href="class_window.html#a525698a3ce02b30dd7620b85d70269ec">Window::m_height</a></div><div class="ttdeci">unsigned int m_height</div><div class="ttdoc">The current height of the window&#39;s client area in pixels.</div><div class="ttdef"><b>Definition</b> Window.h:72</div></div>
 <div class="ttc" id="aclass_window_html_a59515fc5a56e86d5a46d771595daac55"><div class="ttname"><a href="class_window.html#a59515fc5a56e86d5a46d771595daac55">Window::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the window state.</div><div class="ttdef"><b>Definition</b> Window.cpp:63</div></div>
 <div class="ttc" id="aclass_window_html_a685a2ed99afee9abe60252d5378c8078"><div class="ttname"><a href="class_window.html#a685a2ed99afee9abe60252d5378c8078">Window::Window</a></div><div class="ttdeci">Window()=default</div><div class="ttdoc">Default constructor.</div></div>
 <div class="ttc" id="aclass_window_html_aa89262ad2538473c8d7e4d8dd641849d"><div class="ttname"><a href="class_window.html#aa89262ad2538473c8d7e4d8dd641849d">Window::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdoc">Destroys the window and unregisters its class.</div><div class="ttdef"><b>Definition</b> Window.cpp:71</div></div>
-<div class="ttc" id="aclass_window_html_ab39b5ba6b3adea40aa19ffa50e306dbb"><div class="ttname"><a href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">Window::m_hWnd</a></div><div class="ttdeci">HWND m_hWnd</div><div class="ttdoc">The handle to the window. This is the primary identifier for the window in the OS.</div><div class="ttdef"><b>Definition</b> Window.h:60</div></div>
+<div class="ttc" id="aclass_window_html_ab39b5ba6b3adea40aa19ffa50e306dbb"><div class="ttname"><a href="class_window.html#ab39b5ba6b3adea40aa19ffa50e306dbb">Window::m_hWnd</a></div><div class="ttdeci">HWND m_hWnd</div><div class="ttdoc">The handle to the window. This is the primary identifier for the window in the OS.</div><div class="ttdef"><b>Definition</b> Window.h:62</div></div>
 <div class="ttc" id="aclass_window_html_adc361d2d83c3531576b0d7bc1589cdfb"><div class="ttname"><a href="class_window.html#adc361d2d83c3531576b0d7bc1589cdfb">Window::~Window</a></div><div class="ttdeci">~Window()=default</div><div class="ttdoc">Default destructor.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

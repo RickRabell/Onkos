@@ -1,8 +1,11 @@
 var _prerequisites_8h =
 [
     [ "SimpleVertex", "struct_simple_vertex.html", "struct_simple_vertex" ],
+    [ "SkyboxVertex", "struct_skybox_vertex.html", "struct_skybox_vertex" ],
     [ "CBNeverChanges", "struct_c_b_never_changes.html", "struct_c_b_never_changes" ],
+    [ "CBSkybox", "struct_c_b_skybox.html", "struct_c_b_skybox" ],
     [ "CBChangeOnResize", "struct_c_b_change_on_resize.html", "struct_c_b_change_on_resize" ],
+    [ "CBMain", "struct_c_b_main.html", "struct_c_b_main" ],
     [ "CBChangesEveryFrame", "struct_c_b_changes_every_frame.html", "struct_c_b_changes_every_frame" ],
     [ "ERROR", "_prerequisites_8h.html#ab5d83f25f2317ec67a651392ed1ac091", null ],
     [ "MESSAGE", "_prerequisites_8h.html#a8fe30e7b51deb1d5519885ad20b879c8", null ],

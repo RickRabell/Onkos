@@ -8,7 +8,9 @@ Buffer::init(Device& device, const MeshComponent& mesh, unsigned int bindFlag) {
 		ERROR("ShaderProgram", "init", "Device is null.");
 		return E_POINTER;
 	}
-	if ((bindFlag & D3D11_BIND_VERTEX_BUFFER) && mesh.m_vertex.empty() && mesh.m_skyVertex.empty()) {
+	if ((bindFlag & D3D11_BIND_VERTEX_BUFFER) 
+			&& mesh.m_vertex.empty() 
+			&& mesh.m_skyVertex.empty()) {
 		ERROR("Buffer", "init", "Vertex buffer is empty");
 		return E_INVALIDARG;
 	}

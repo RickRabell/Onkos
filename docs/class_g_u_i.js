@@ -6,7 +6,7 @@ var class_g_u_i =
     [ "closeApp", "class_g_u_i.html#ad468ca02a4eac88665003b5440eaf534", null ],
     [ "destroy", "class_g_u_i.html#a2abe7f08a1da35af8ae006fbecea94e0", null ],
     [ "drawGizmoToolbar", "class_g_u_i.html#adbdeea640ee58495cece619ce971f21f", null ],
-    [ "editTransform", "class_g_u_i.html#a05db9e777325f38a3d8f25d76d54b893", null ],
+    [ "editTransform", "class_g_u_i.html#a0a694bc4b860c26bc785829fe7d96b74", null ],
     [ "init", "class_g_u_i.html#a672066f16bd53c2443f93c3c10692960", null ],
     [ "inspectorContainer", "class_g_u_i.html#ac8587126813c04e3296e1b03fa9a8191", null ],
     [ "inspectorGeneral", "class_g_u_i.html#a137adc1fa03453660cd9106bd8aa77df", null ],

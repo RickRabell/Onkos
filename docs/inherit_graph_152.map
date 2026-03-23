@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_file.html" title=" " alt="" coords="5,5,70,32"/>
+<area shape="rect" id="Node000000" href="$class_fbx_eval_state.html" title="This class serves as the base class for an evaluation state element." alt="" coords="5,31,106,57"/>
+<area shape="rect" id="Node000001" href="$class_fbx_node_eval_state.html" title="This class hold results for node evaluation." alt="" coords="163,5,294,32"/>
+<area shape="poly" id="edge163_Node000000_Node000001" title=" " alt="" coords="120,32,162,26,162,31,121,37"/>
+<area shape="rect" id="Node000002" href="$class_fbx_property_eval_state.html" title="This class hold results for property evaluation." alt="" coords="154,56,303,83"/>
+<area shape="poly" id="edge164_Node000000_Node000002" title=" " alt="" coords="121,51,154,56,153,61,121,56"/>
 </map>

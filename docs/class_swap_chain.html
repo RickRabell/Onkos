@@ -139,6 +139,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c88d9c1c3baa507cf1ab13d5af902fc" id="r_a1c88d9c1c3baa507cf1ab13d5af902fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c88d9c1c3baa507cf1ab13d5af902fc">present</a> ()</td></tr>
 <tr class="memdesc:a1c88d9c1c3baa507cf1ab13d5af902fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Presents the back buffer to the screen. This function swaps the back buffer and front buffer, making the most recently rendered frame visible to the user.  <br /></td></tr>
 <tr class="separator:a1c88d9c1c3baa507cf1ab13d5af902fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d12d1e4b4856fa40ccae79004b92ed" id="r_ae3d12d1e4b4856fa40ccae79004b92ed"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3d12d1e4b4856fa40ccae79004b92ed">resizeBuffers</a> (UINT <a class="el" href="imgui__impl__opengl3__loader_8h.html#a161d702bf62ef70b5f44e5071b4c84d6">width</a>, UINT <a class="el" href="imgui__impl__opengl3__loader_8h.html#a8d2d049627d5d578ce37f5d7de74a4bb">height</a>)</td></tr>
+<tr class="separator:ae3d12d1e4b4856fa40ccae79004b92ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5549caa3c60675da9c9c6db57f65380" id="r_ab5549caa3c60675da9c9c6db57f65380"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5549caa3c60675da9c9c6db57f65380">getBackBuffer</a> (<a class="el" href="class_texture.html">Texture</a> &amp;backBuffer)</td></tr>
+<tr class="separator:ab5549caa3c60675da9c9c6db57f65380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -229,6 +233,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab5549caa3c60675da9c9c6db57f65380" name="ab5549caa3c60675da9c9c6db57f65380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5549caa3c60675da9c9c6db57f65380">&#9670;&#160;</a></span>getBackBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT SwapChain::getBackBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_texture.html">Texture</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>backBuffer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0d703e12b7170afb6c6be8639fb31718" name="a0d703e12b7170afb6c6be8639fb31718"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d703e12b7170afb6c6be8639fb31718">&#9670;&#160;</a></span>init()</h2>
 
@@ -307,6 +328,27 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Per-frame rendering logic related to the swap chain. </p>
+
+</div>
+</div>
+<a id="ae3d12d1e4b4856fa40ccae79004b92ed" name="ae3d12d1e4b4856fa40ccae79004b92ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d12d1e4b4856fa40ccae79004b92ed">&#9670;&#160;</a></span>resizeBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT SwapChain::resizeBuffers </td>
+          <td>(</td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

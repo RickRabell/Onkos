@@ -152,31 +152,36 @@ BaseApp::init() {
       hr = m_AlbedoSRV.init(m_device, "Spitfire/spitfire_d.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-             ("Failed to initialize Diffuse Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+             ("Failed to initialize Diffuse Spitfire Texture. HRESULT: " 
+              + std::to_string(hr)).c_str());
         return hr;
       }
       hr = m_MetallicSRV.init(m_device, "Spitfire/spitfire_m.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-             ("Failed to initialize Metallic Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+             ("Failed to initialize Metallic Spitfire Texture. HRESULT: " 
+              + std::to_string(hr)).c_str());
         return hr;
       }
       hr = m_RoughnessSRV.init(m_device, "Spitfire/spitfire_r.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-             ("Failed to initialize Roughness Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+             ("Failed to initialize Roughness Spitfire Texture. HRESULT: " 
+              + std::to_string(hr)).c_str());
         return hr;
       }
       hr = m_AOSRV.init(m_device, "Spitfire/spitfire_ao.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-             ("Failed to initialize Ambient Occlusion Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+             ("Failed to initialize Ambient Occlusion Spitfire Texture. HRESULT: " 
+              + std::to_string(hr)).c_str());
         return hr;
       }
       hr = m_NormalSRV.init(m_device, "Spitfire/spitfire_n.png", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
-             ("Failed to initialize Normals Spitfire Texture. HRESULT: " + std::to_string(hr)).c_str());
+             ("Failed to initialize Normals Spitfire Texture. HRESULT: " 
+              + std::to_string(hr)).c_str());
         return hr;
       }
       spitfireTextures.push_back(m_AlbedoSRV);
@@ -193,8 +198,8 @@ BaseApp::init() {
 			m_actors.push_back(m_spitFire);
 
       m_spitFire->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -1.90f, 11.60f),
-                                                           EU::Vector3(-0.60f, 3.0f, -0.20f),
-                                                           EU::Vector3(1.0f, 1.0f, 1.0f));
+                                                          EU::Vector3(-0.60f, 3.0f, -0.20f),
+                                                          EU::Vector3(1.0f, 1.0f, 1.0f));
     }
     else {
       ERROR("Main", "InitDevice", "Failed to create Spitfire Actor.");
@@ -296,9 +301,6 @@ BaseApp::init() {
     m_camera.setLens(XM_PIDIV4, m_window.m_width / (float)m_window.m_height, 0.01f, 100.0f);
     m_camera.setPosition(0.0f, 3.0f, -6.0f);
 
-    //cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
-    //cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
-
     m_constantBufferStruct.LightColor = EU::Vector3(1.0f, 1.0f, 1.0f);
     m_constantBufferStruct.LightDir = EU::Vector3(-0.20f, -1.0f, 1.0f);
 
@@ -309,14 +311,19 @@ BaseApp::init() {
     hr = m_defaultRasterizer.init(m_device, D3D11_FILL_SOLID, D3D11_CULL_BACK, false, true);
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize default Rasterizer. HRESULT: " + std::to_string(hr)).c_str());
+        ("Failed to initialize default Rasterizer. HRESULT: " 
+         + std::to_string(hr)).c_str());
       return hr;
     }
 
-    hr = m_defaultDepthStencil.init(m_device, true, D3D11_DEPTH_WRITE_MASK_ALL, D3D11_COMPARISON_LESS);
+    hr = m_defaultDepthStencil.init(m_device, 
+                                    true, 
+                                    D3D11_DEPTH_WRITE_MASK_ALL, 
+                                    D3D11_COMPARISON_LESS);
     if (FAILED(hr)) {
       ERROR("Main", "InitDevice",
-        ("Failed to initialize default DepthStencilState. HRESULT: " + std::to_string(hr)).c_str());
+        ("Failed to initialize default DepthStencilState. HRESULT: " 
+         + std::to_string(hr)).c_str());
       return hr;
     }
 
@@ -350,13 +357,12 @@ BaseApp::update(float deltaTime) {
 	// Update the projection and view matrices in the constant buffers
   m_camera.updateViewMatrix();
 
-  //cbNeverChanges.mView = XMMatrixTranspose(m_camera.getView());
-  //m_cbNeverChanges.update(m_deviceContext, nullptr, 0, nullptr, &cbNeverChanges, 0, 0);
-  //m_cbChangeOnResize.update(m_deviceContext, nullptr, 0, nullptr, &cbChangesOnResize, 0, 0);
-  ////cbChangesOnResize.mProjection = XMMatrixTranspose(m_camera.getProj());
+  XMStoreFloat4x4(&m_constantBufferStruct.View, 
+                  XMMatrixTranspose(m_camera.getView()));
+  
+  XMStoreFloat4x4(&m_constantBufferStruct.Projection, 
+                  XMMatrixTranspose(m_camera.getProj()));
 
-  XMStoreFloat4x4(&m_constantBufferStruct.View, XMMatrixTranspose(m_camera.getView()));
-  XMStoreFloat4x4(&m_constantBufferStruct.Projection, XMMatrixTranspose(m_camera.getProj()));
   m_constantBufferStruct.CameraPos = m_camera.getPosition();
 
   // Luz blanca fuerte
@@ -367,7 +373,13 @@ BaseApp::update(float deltaTime) {
   m_skybox.update(m_deviceContext, m_camera);
 
   // Update constant buffer for Scene Pass
-  m_constantBuffer.update(m_deviceContext, nullptr, 0, nullptr, &m_constantBufferStruct, 0, 0);
+  m_constantBuffer.update(m_deviceContext, 
+                          nullptr, 
+                          0, 
+                          nullptr, 
+                          &m_constantBufferStruct, 
+                          0, 
+                          0);
 
   // Update Actors
   m_sceneGraph.update(deltaTime, m_deviceContext);
@@ -404,8 +416,6 @@ BaseApp::render() {
   //m_deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
   // CBs para VS (view/proj)
-  //m_cbNeverChanges.render(m_deviceContext, 0, 1);
-  //m_cbChangeOnResize.render(m_deviceContext, 1, 1);
   m_constantBuffer.render(m_deviceContext, 0, 1, true);
 
   // 3) SCENE PASS
@@ -430,8 +440,6 @@ BaseApp::destroy() {
   m_AOSRV.destroy();
   m_defaultRasterizer.destroy();
   m_defaultDepthStencil.destroy();
-  //m_cbNeverChanges.destroy();
-  //m_cbChangeOnResize.destroy();
   m_shaderProgram.destroy();
   m_depthStencil.destroy();
   m_depthStencilView.destroy();
@@ -544,7 +552,13 @@ void BaseApp::onResize(UINT newW, UINT newH)
   if (FAILED(hr)) return;
 
   // 7) Re-crea Depth/DSV (tu init actual lo hace con m_window.m_width/m_height) :contentReference[oaicite:7]{index=7}
-  hr = m_depthStencil.init(m_device, newW, newH, DXGI_FORMAT_D24_UNORM_S8_UINT, D3D11_BIND_DEPTH_STENCIL, 4, 0);
+  hr = m_depthStencil.init(m_device, 
+                           newW, 
+                           newH, 
+                           DXGI_FORMAT_D24_UNORM_S8_UINT, 
+                           D3D11_BIND_DEPTH_STENCIL, 
+                           4, 
+                           0);
   if (FAILED(hr)) return;
 
   hr = m_depthStencilView.init(m_device, m_depthStencil, DXGI_FORMAT_D24_UNORM_S8_UINT);

@@ -134,9 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a82d49021467be422297cb5f306a02428" id="r_a82d49021467be422297cb5f306a02428"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d49021467be422297cb5f306a02428">~ShaderProgram</a> ()=default</td></tr>
 <tr class="memdesc:a82d49021467be422297cb5f306a02428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a82d49021467be422297cb5f306a02428"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67cf8c19007d54507622db69fd6ab9be" id="r_a67cf8c19007d54507622db69fd6ab9be"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67cf8c19007d54507622db69fd6ab9be">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, const std::string &amp;fileName, std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt; layout)</td></tr>
-<tr class="memdesc:a67cf8c19007d54507622db69fd6ab9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the complete shader program. This high-level function compiles both vertex and pixel shaders from a single file and creates the corresponding input layout.  <br /></td></tr>
-<tr class="separator:a67cf8c19007d54507622db69fd6ab9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a23c1a5cc87b1b34f349f161d9b53a" id="r_a66a23c1a5cc87b1b34f349f161d9b53a"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66a23c1a5cc87b1b34f349f161d9b53a">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, const std::string &amp;fileName, <a class="el" href="class_layout_builder.html">LayoutBuilder</a> layoutBuilder)</td></tr>
+<tr class="memdesc:a66a23c1a5cc87b1b34f349f161d9b53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the complete shader program. This high-level function compiles both vertex and pixel shaders from a single file and creates the corresponding input layout.  <br /></td></tr>
+<tr class="separator:a66a23c1a5cc87b1b34f349f161d9b53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eeb60684a692cb96ef155d5e11f4401" id="r_a4eeb60684a692cb96ef155d5e11f4401"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eeb60684a692cb96ef155d5e11f4401">update</a> ()</td></tr>
 <tr class="memdesc:a4eeb60684a692cb96ef155d5e11f4401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the shader program.  <br /></td></tr>
 <tr class="separator:a4eeb60684a692cb96ef155d5e11f4401"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,9 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ccfd4eb43ffdafcc4ad911249c9d770" id="r_a7ccfd4eb43ffdafcc4ad911249c9d770"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ccfd4eb43ffdafcc4ad911249c9d770">destroy</a> ()</td></tr>
 <tr class="memdesc:a7ccfd4eb43ffdafcc4ad911249c9d770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all shader objects and compiled bytecode blobs.  <br /></td></tr>
 <tr class="separator:a7ccfd4eb43ffdafcc4ad911249c9d770"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95297569703b7564ec02626ecaa17f23" id="r_a95297569703b7564ec02626ecaa17f23"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95297569703b7564ec02626ecaa17f23">CreateInputLayout</a> (<a class="el" href="class_device.html">Device</a> &amp;device, std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt; layout)</td></tr>
-<tr class="memdesc:a95297569703b7564ec02626ecaa17f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the input layout object.  <br /></td></tr>
-<tr class="separator:a95297569703b7564ec02626ecaa17f23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda3004301af525933bb875fcf67eb7e" id="r_adda3004301af525933bb875fcf67eb7e"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adda3004301af525933bb875fcf67eb7e">CreateInputLayout</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_layout_builder.html">LayoutBuilder</a>)</td></tr>
+<tr class="memdesc:adda3004301af525933bb875fcf67eb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the input layout object.  <br /></td></tr>
+<tr class="separator:adda3004301af525933bb875fcf67eb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b6bfd6ba477fbd032e5816230b27c82" id="r_a1b6bfd6ba477fbd032e5816230b27c82"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b6bfd6ba477fbd032e5816230b27c82">CreateShader</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="_prerequisites_8h.html#a6230e1b9ecbf2d82d10856fd7e1fde46">ShaderType</a> <a class="el" href="imgui__impl__opengl3__loader_8h.html#abf70e78c80d135a4b100e5c80e91880b">type</a>)</td></tr>
 <tr class="memdesc:a1b6bfd6ba477fbd032e5816230b27c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shader object from pre-compiled member data.  <br /></td></tr>
 <tr class="separator:a1b6bfd6ba477fbd032e5816230b27c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,8 +278,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a95297569703b7564ec02626ecaa17f23" name="a95297569703b7564ec02626ecaa17f23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95297569703b7564ec02626ecaa17f23">&#9670;&#160;</a></span>CreateInputLayout()</h2>
+<a id="adda3004301af525933bb875fcf67eb7e" name="adda3004301af525933bb875fcf67eb7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda3004301af525933bb875fcf67eb7e">&#9670;&#160;</a></span>CreateInputLayout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +292,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt;</td>          <td class="paramname"><span class="paramname"><em>layout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_layout_builder.html">LayoutBuilder</a></td>          <td class="paramname"><span class="paramname"><em>layoutBuilder</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -396,8 +396,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a67cf8c19007d54507622db69fd6ab9be" name="a67cf8c19007d54507622db69fd6ab9be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67cf8c19007d54507622db69fd6ab9be">&#9670;&#160;</a></span>init()</h2>
+<a id="a66a23c1a5cc87b1b34f349f161d9b53a" name="a66a23c1a5cc87b1b34f349f161d9b53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a23c1a5cc87b1b34f349f161d9b53a">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -415,7 +415,7 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; D3D11_INPUT_ELEMENT_DESC &gt;</td>          <td class="paramname"><span class="paramname"><em>layout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="class_layout_builder.html">LayoutBuilder</a></td>          <td class="paramname"><span class="paramname"><em>layoutBuilder</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

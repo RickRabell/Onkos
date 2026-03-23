@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_peripheral.html" title=" " alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000000" href="$class_fbx_pair.html" title=" " alt="" coords="5,13,146,56"/>
+<area shape="rect" id="Node000001" href="$class_fbx_map_1_1_key_value_pair.html" title="This class defines the key&#45;value pairs used by the map." alt="" coords="194,5,335,64"/>
+<area shape="poly" id="edge233_Node000000_Node000001" title=" " alt="" coords="161,32,194,32,194,37,161,37"/>
 </map>

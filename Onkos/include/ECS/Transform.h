@@ -22,10 +22,10 @@ public:
 	 * Sets the component type to TRANSFORM.
 	 */
 	Transform() : position(),
-		rotation(),
-		scale(),
-		matrix(),
-		Component(ComponentType::TRANSFORM) { }
+								rotation(),
+								scale(),
+								matrix(),
+								Component(ComponentType::TRANSFORM) { }
 
 	/**
 	 * @brief Initializes the transform.

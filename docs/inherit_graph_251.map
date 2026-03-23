@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_renaming_strategy_utils.html" title="This class contains a set of utilities, which are used by the FBX renaming strategy." alt="" coords="5,5,184,32"/>
+<area shape="rect" id="Node000000" href="$class_fbx_renaming_strategy_base.html" title="Base class for renaming strategy." alt="" coords="5,81,187,108"/>
+<area shape="rect" id="Node000001" href="$class_fbx_renaming_strategy_collada.html" title=" " alt="" coords="235,5,430,32"/>
+<area shape="poly" id="edge298_Node000000_Node000001" title=" " alt="" coords="145,73,234,41,273,30,275,35,235,47,147,78"/>
+<area shape="rect" id="Node000002" href="$class_fbx_renaming_strategy_fbx5.html" title="This class contains the description of the FBX renaming strategy for fbx file format 5." alt="" coords="242,56,422,83"/>
+<area shape="poly" id="edge299_Node000000_Node000002" title=" " alt="" coords="202,81,241,76,242,82,202,86"/>
+<area shape="rect" id="Node000003" href="$class_fbx_renaming_strategy_fbx6.html" title="This class contains the description of the FBX renaming strategy for fbx file format 6." alt="" coords="242,107,422,133"/>
+<area shape="poly" id="edge300_Node000000_Node000003" title=" " alt="" coords="202,103,242,108,241,113,202,109"/>
+<area shape="rect" id="Node000004" href="$class_fbx_renaming_strategy_fbx7.html" title=" " alt="" coords="242,157,422,184"/>
+<area shape="poly" id="edge301_Node000000_Node000004" title=" " alt="" coords="147,111,235,143,275,154,273,159,234,148,145,116"/>
 </map>

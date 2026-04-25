@@ -422,8 +422,18 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <FxCompile Include="bin\PBRShader.hlsl" />
-    <FxCompile Include="bin\Skybox.hlsl" />
+    <None Include="bin\PBRShader.hlsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="bin\Skybox.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</ExcludedFromBuild>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_dx11.cpp" />

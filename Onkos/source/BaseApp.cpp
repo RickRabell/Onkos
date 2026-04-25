@@ -145,39 +145,39 @@ BaseApp::init() {
     if (!m_spitFire.isNull()) {
 			// Create vertex and index buffers
       std::vector<MeshComponent> spitfireMeshes;
-      m_model = new Model3D("Spitfire/spitfire.fbx", ModelType::FBX);
+      m_model = new Model3D("Spitfire/spitfire", ModelType::FBX);
       spitfireMeshes = m_model->GetMeshes();
 
       std::vector<Texture> spitfireTextures;
-      hr = m_AlbedoSRV.init(m_device, "Spitfire/spitfire_d.png", PNG);
+      hr = m_AlbedoSRV.init(m_device, "Spitfire/spitfire_d", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
              ("Failed to initialize Diffuse Spitfire Texture. HRESULT: " 
               + std::to_string(hr)).c_str());
         return hr;
       }
-      hr = m_MetallicSRV.init(m_device, "Spitfire/spitfire_m.png", PNG);
+      hr = m_MetallicSRV.init(m_device, "Spitfire/spitfire_m", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
              ("Failed to initialize Metallic Spitfire Texture. HRESULT: " 
               + std::to_string(hr)).c_str());
         return hr;
       }
-      hr = m_RoughnessSRV.init(m_device, "Spitfire/spitfire_r.png", PNG);
+      hr = m_RoughnessSRV.init(m_device, "Spitfire/spitfire_r", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
              ("Failed to initialize Roughness Spitfire Texture. HRESULT: " 
               + std::to_string(hr)).c_str());
         return hr;
       }
-      hr = m_AOSRV.init(m_device, "Spitfire/spitfire_ao.png", PNG);
+      hr = m_AOSRV.init(m_device, "Spitfire/spitfire_ao", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
              ("Failed to initialize Ambient Occlusion Spitfire Texture. HRESULT: " 
               + std::to_string(hr)).c_str());
         return hr;
       }
-      hr = m_NormalSRV.init(m_device, "Spitfire/spitfire_n.png", PNG);
+      hr = m_NormalSRV.init(m_device, "Spitfire/spitfire_n", PNG);
       if (FAILED(hr)) {
         ERROR("Main", "InitDevice",
              ("Failed to initialize Normals Spitfire Texture. HRESULT: " 
@@ -476,8 +476,8 @@ BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
     // Evita recrear cuando está minimizada
     if (wParam == SIZE_MINIMIZED) return 0;
 
-    UINT newW = LOWORD(lParam);
-    UINT newH = HIWORD(lParam);
+    unsigned int newW = LOWORD(lParam);
+    unsigned int newH = HIWORD(lParam);
     if (newW == 0 || newH == 0) return 0;
 
     // Recupera tu instancia BaseApp (lo más común es guardarla en GWLP_USERDATA en WM_CREATE)
@@ -514,7 +514,7 @@ BaseApp::wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
   */
 }
 
-void BaseApp::onResize(UINT newW, UINT newH)
+void BaseApp::onResize(unsigned int newW, unsigned int newH)
 {
   // 1) Actualiza window size (tu init lo calcula con GetClientRect solo una vez) :contentReference[oaicite:6]{index=6}
   if (!m_d3dReady) {

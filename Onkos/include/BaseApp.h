@@ -116,7 +116,7 @@ public:
   * @param newH The new height of the window in pixels.
   */
   void
-  onResize(UINT newW, UINT newH);
+  onResize(unsigned int newW, unsigned int newH);
 
 private:
 	/**

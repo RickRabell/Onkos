@@ -57,6 +57,12 @@
     <Filter Include="include\SceneGraph">
       <UniqueIdentifier>{5935ba99-39d1-49ad-9304-c16c420f2de0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Rendering">
+      <UniqueIdentifier>{494d0381-9c49-4f3f-a9ee-32fd34063506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Rendering">
+      <UniqueIdentifier>{76b770e2-5a4b-4921-a458-8062bd40cef0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Onkos.cpp">
@@ -150,6 +156,12 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\RasterizerState.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Rendering\ForwardRenderer.cpp">
+      <Filter>source\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EditorViewportPass.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -316,6 +328,27 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\EngineUtilities\Utilities\LayoutBuilder.h">
+      <Filter>include\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\ForwardRenderer.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\RenderScene.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\RenderTypes.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\Mesh.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\Material.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Rendering\MaterialInstance.h">
+      <Filter>include\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EngineUtilities\Utilities\EditorViewportPass.h">
       <Filter>include\Utilities</Filter>
     </ClInclude>
   </ItemGroup>

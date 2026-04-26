@@ -453,10 +453,12 @@
     <ClCompile Include="source\Device.cpp" />
     <ClCompile Include="source\DeviceContext.cpp" />
     <ClCompile Include="source\ECS\Actor.cpp" />
+    <ClCompile Include="source\EditorViewportPass.cpp" />
     <ClCompile Include="source\InputLayout.cpp" />
     <ClCompile Include="source\Model3D.cpp" />
     <ClCompile Include="source\ModelLoader.cpp" />
     <ClCompile Include="source\RasterizerState.cpp" />
+    <ClCompile Include="source\Rendering\ForwardRenderer.cpp" />
     <ClCompile Include="source\RenderTargetView.cpp" />
     <ClCompile Include="source\SamplerState.cpp" />
     <ClCompile Include="source\SceneGraph\SceneGraph.cpp" />
@@ -496,6 +498,7 @@
     <ClInclude Include="include\EngineUtilities\Memory\TUniquePtr.h" />
     <ClInclude Include="include\EngineUtilities\Memory\TWeakPointer.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\Camera.h" />
+    <ClInclude Include="include\EngineUtilities\Utilities\EditorViewportPass.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\EngineMath.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\LayoutBuilder.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\Skybox.h" />
@@ -509,6 +512,12 @@
     <ClInclude Include="include\ModelLoader.h" />
     <ClInclude Include="include\Prerequisites.h" />
     <ClInclude Include="include\RasterizerState.h" />
+    <ClInclude Include="include\Rendering\ForwardRenderer.h" />
+    <ClInclude Include="include\Rendering\Material.h" />
+    <ClInclude Include="include\Rendering\MaterialInstance.h" />
+    <ClInclude Include="include\Rendering\Mesh.h" />
+    <ClInclude Include="include\Rendering\RenderScene.h" />
+    <ClInclude Include="include\Rendering\RenderTypes.h" />
     <ClInclude Include="include\RenderTargetView.h" />
     <ClInclude Include="include\ResourceManager.h" />
     <ClInclude Include="include\SamplerState.h" />

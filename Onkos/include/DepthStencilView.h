@@ -40,6 +40,20 @@ public:
 	init(Device& device, Texture& depthStencil, DXGI_FORMAT format);
 
 	/**
+	 * @brief Initializes the depth-stencil view from a texture resource with a specific view dimension.
+	 * @param device The graphics device used to create the view.
+	 * @param depthStencil The texture resource that will be used as the depth-stencil buffer.
+	 * @param format The data format for the depth-stencil view (e.g., DXGI_FORMAT_D24_UNORM_S8_UINT).
+	 * @param viewDimension The dimension of the depth-stencil view (e.g., D3D11_DSV_DIMENSION_TEXTURE2D).
+	 * @return HRESULT Returns S_OK if successful, otherwise an error code.
+	 */
+	HRESULT
+	init(Device& device,
+			 Texture& depthStencil,
+			 DXGI_FORMAT format,
+			 D3D11_DSV_DIMENSION viewDimension);
+
+	/**
 	 * @brief Per-frame update logic for the depth-stencil view.
 	 */
 	void

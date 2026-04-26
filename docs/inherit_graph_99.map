@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_axis_system.html" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="Node000000" href="$class_fbx_auto_ptr.html" title=" " alt="" coords="5,5,210,48"/>
+<area shape="rect" id="Node000001" href="$class_fbx_auto_delete_ptr.html" title="Scoped pointer for FbxNew allocations, which call FbxDelete() to deallocate." alt="" coords="258,13,434,40"/>
+<area shape="poly" id="edge33_Node000000_Node000001" title=" " alt="" coords="225,24,257,24,257,29,225,29"/>
 </map>

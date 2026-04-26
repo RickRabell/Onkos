@@ -1,0 +1,7 @@
+<map id="RenderObject" name="RenderObject">
+<area shape="rect" id="Node000001" title="A complete instruction set for drawing one piece of geometry." alt="" coords="36,96,137,123"/>
+<area shape="rect" id="Node000002" href="$class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes." alt="" coords="5,5,59,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,44,81,94,77,97,46,47"/>
+<area shape="rect" id="Node000003" href="$class_material_instance.html" title="An instanced variation of a Material, containing specific textures and parameters." alt="" coords="83,5,200,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,47,97,97,92,94,123,44"/>
+</map>

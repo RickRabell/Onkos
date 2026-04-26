@@ -976,7 +976,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af4f121920047363ddb520e5bb6d7aa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Material, Texture and UV Indices Utility Functions.</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>The methods found in this section are utility functions used to handle Material, <a class="el" href="class_texture.html" title="A wrapper for DirectX 2D texture resources (ID3D11Texture2D).">Texture</a> and UV indices quickly. Internally, they refer to <code><a class="el" href="class_fbx_layer.html">FbxLayer</a></code> and <code><a class="el" href="class_fbx_layer_element_u_v.html" title="Layer element for mapping UVs to a geometry.">FbxLayerElementUV</a></code> methods to do the job. These functions are only working on Layer 0. Use the <code><a class="el" href="class_fbx_layer.html">FbxLayer</a></code> methods directly to access other layers. </p>
+<tr><td class="ititle" colspan="2"><p>The methods found in this section are utility functions used to handle <a class="el" href="class_material.html" title="Defines the visual rendering &quot;rules&quot; and shader logic for a surface.">Material</a>, <a class="el" href="class_texture.html" title="A wrapper for DirectX 2D texture resources (ID3D11Texture2D).">Texture</a> and UV indices quickly. Internally, they refer to <code><a class="el" href="class_fbx_layer.html">FbxLayer</a></code> and <code><a class="el" href="class_fbx_layer_element_u_v.html" title="Layer element for mapping UVs to a geometry.">FbxLayerElementUV</a></code> methods to do the job. These functions are only working on Layer 0. Use the <code><a class="el" href="class_fbx_layer.html">FbxLayer</a></code> methods directly to access other layers. </p>
 </td></tr>
 <tr class="memitem:afb22daa8a980e8946abed7cbf39ce4f0" id="r_afb22daa8a980e8946abed7cbf39ce4f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb22daa8a980e8946abed7cbf39ce4f0">InitMaterialIndices</a> (<a class="el" href="class_fbx_layer_element.html#a5a40e95db30ae9f94611dc3f1568af26">FbxLayerElement::EMappingMode</a> pMappingMode)</td></tr>
 <tr class="separator:afb22daa8a980e8946abed7cbf39ce4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2401,7 +2401,7 @@ If used, the pTexture index will reference textures assigned to the DIFFUSE chan
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get preview subdivision levels from mesh. </p><dl class="section return"><dt>Returns</dt><dd>Mesh preview subdivision levels. </dd></dl>
+<p>Get preview subdivision levels from mesh. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes.">Mesh</a> preview subdivision levels. </dd></dl>
 
 </div>
 </div>
@@ -2419,7 +2419,7 @@ If used, the pTexture index will reference textures assigned to the DIFFUSE chan
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get render subdivision levels from mesh. </p><dl class="section return"><dt>Returns</dt><dd>Mesh render subdivision levels </dd></dl>
+<p>Get render subdivision levels from mesh. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes.">Mesh</a> render subdivision levels </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Sometimes, render division level can be the same as preview level. </dd></dl>
 
 </div>
@@ -2438,7 +2438,7 @@ If used, the pTexture index will reference textures assigned to the DIFFUSE chan
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Get display smoothness from mesh. </p><dl class="section return"><dt>Returns</dt><dd>Mesh smoothness. </dd></dl>
+<p>Get display smoothness from mesh. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes.">Mesh</a> smoothness. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>It represents smooth mesh preview mode. </dd></dl>
 
 </div>
@@ -3259,7 +3259,7 @@ This function return <code>true</code> if the specified polygon vertex does not 
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd><code>pCount</code> must equal the number of control points of the Mesh if the UV mapping mode is <em><a class="el" href="class_fbx_layer_element.html#a5a40e95db30ae9f94611dc3f1568af26ad64b7f5885f295d3eacb5fed40bb0cad">FbxLayerElement::eByControlPoint</a></em>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><code>pCount</code> must equal the number of control points of the <a class="el" href="class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes.">Mesh</a> if the UV mapping mode is <em><a class="el" href="class_fbx_layer_element.html#a5a40e95db30ae9f94611dc3f1568af26ad64b7f5885f295d3eacb5fed40bb0cad">FbxLayerElement::eByControlPoint</a></em>. </dd></dl>
 
 </div>
 </div>

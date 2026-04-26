@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['resourcestate_0',['ResourceState',['../_i_resource_8h.html#a33ee7da93cb9c170c97d8e60f3187705',1,'IResource.h']]],
-  ['resourcetype_1',['ResourceType',['../_i_resource_8h.html#a8571efa4409be32e28abf3ea74a0dbb1',1,'IResource.h']]]
+  ['process_5fdpi_5fawareness_0',['PROCESS_DPI_AWARENESS',['../imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0',1,'imgui_impl_win32.cpp']]]
 ];

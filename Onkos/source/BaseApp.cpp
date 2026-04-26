@@ -145,7 +145,7 @@ BaseApp::init() {
     if (!m_spitFire.isNull()) {
 			// Create vertex and index buffers
       std::vector<MeshComponent> spitfireMeshes;
-      m_model = new Model3D("Spitfire/spitfire", ModelType::FBX);
+      m_model = new Model3D("Spitfire/spitfire.fbx", ModelType::FBX);
       spitfireMeshes = m_model->GetMeshes();
 
       std::vector<Texture> spitfireTextures;

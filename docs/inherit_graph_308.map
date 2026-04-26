@@ -1,11 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_writer.html" title=" " alt="" coords="5,81,83,108"/>
-<area shape="rect" id="Node000001" href="$class_fbx_writer_collada.html" title="Class to export FBX scene into a Collada file." alt="" coords="131,5,252,32"/>
-<area shape="poly" id="edge317_Node000000_Node000001" title=" " alt="" coords="79,70,129,42,154,30,156,35,132,46,81,75"/>
-<area shape="rect" id="Node000002" href="$class_fbx_writer_fbx5.html" title=" " alt="" coords="138,56,244,83"/>
-<area shape="poly" id="edge318_Node000000_Node000002" title=" " alt="" coords="97,83,137,76,138,81,98,88"/>
-<area shape="rect" id="Node000003" href="$class_fbx_writer_fbx6.html" title=" " alt="" coords="138,107,244,133"/>
-<area shape="poly" id="edge319_Node000000_Node000003" title=" " alt="" coords="98,101,138,108,137,113,97,106"/>
-<area shape="rect" id="Node000004" href="$class_fbx_writer_fbx7.html" title=" " alt="" coords="138,157,244,184"/>
-<area shape="poly" id="edge320_Node000000_Node000004" title=" " alt="" coords="81,114,132,143,156,154,154,159,129,148,79,119"/>
+<area shape="rect" id="Node000000" href="$class_fbx_vector_template4.html" title=" " alt="" coords="5,23,146,65"/>
+<area shape="rect" id="Node000001" href="$class_fbx_a_matrix.html" title=" " alt="" coords="194,5,282,32"/>
+<area shape="poly" id="edge315_Node000000_Node000001" title=" " alt="" coords="161,28,193,23,194,28,161,33"/>
+<area shape="rect" id="Node000002" href="$class_fbx_matrix.html" title=" " alt="" coords="198,56,278,83"/>
+<area shape="poly" id="edge316_Node000000_Node000002" title=" " alt="" coords="161,55,198,61,197,66,161,60"/>
 </map>

@@ -249,7 +249,7 @@ Public Member Functions</h2></td></tr>
 <li>Visibilities </li>
 <li>Textures (diffuse, ambient, specular, etc.) (deprecated)</li>
 </ul>
-<p>A typical layer for a Mesh contains Normals, UVs and Materials. A typical layer for NURBS contains only Materials. In the case of the NURBS, the NURBS' parameterization is used for the UVs; no UVs should be specified.</p>
+<p>A typical layer for a <a class="el" href="class_mesh.html" title="A container representing a complete 3D model, composed of one or more Submeshes.">Mesh</a> contains Normals, UVs and Materials. A typical layer for NURBS contains only Materials. In the case of the NURBS, the NURBS' parameterization is used for the UVs; no UVs should be specified.</p>
 <p>In most cases, you only need a single layer to describe a geometry. Many applications only support what is defined on the first layer. Take this into account when you fill the layer. For example, it is legal to define the Layer 0 with the UVs and then define the model's Normals on layer 1. However if you construct a file this way, it may not be imported correctly in other applications. Store the Normals in Layer 0 to avoid problems.</p>
 <p>Since FBX SDK 2011, Textures are connected to the properties of <a class="el" href="class_fbx_surface_material.html">FbxSurfaceMaterial</a> derived classes. <a class="el" href="class_fbx_layer_element_texture.html" title="Layer element for mapping Textures to a geometry. This class is deprecated.">FbxLayerElementTexture</a> is no longer used. See the code example in <a class="el" href="class_fbx_layer_element_texture.html" title="Layer element for mapping Textures to a geometry. This class is deprecated.">FbxLayerElementTexture</a> for how to connect a texture.</p>
 <p>Since FBX SDK 2011, texture layering is achieved by <a class="el" href="class_fbx_layered_texture.html">FbxLayeredTexture</a>. See the code example in <a class="el" href="class_fbx_layered_texture.html">FbxLayeredTexture</a> for how to blend textures.</p>
@@ -1268,7 +1268,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets this layer's Materials description. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pMaterials</td><td>A pointer to the Materials layer element, or <code>NULL</code> to remove the Material definition. </td></tr>
+    <tr><td class="paramname">pMaterials</td><td>A pointer to the Materials layer element, or <code>NULL</code> to remove the <a class="el" href="class_material.html" title="Defines the visual rendering &quot;rules&quot; and shader logic for a surface.">Material</a> definition. </td></tr>
   </table>
   </dd>
 </dl>

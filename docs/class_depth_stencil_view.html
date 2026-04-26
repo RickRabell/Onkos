@@ -127,6 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a577271a39193da2f3e8a9df52c167670" id="r_a577271a39193da2f3e8a9df52c167670"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a577271a39193da2f3e8a9df52c167670">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_texture.html">Texture</a> &amp;depthStencil, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>)</td></tr>
 <tr class="memdesc:a577271a39193da2f3e8a9df52c167670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the depth-stencil view from a texture resource.  <br /></td></tr>
 <tr class="separator:a577271a39193da2f3e8a9df52c167670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a05c279f251c0d014c84629c8bdcca6" id="r_a0a05c279f251c0d014c84629c8bdcca6"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a05c279f251c0d014c84629c8bdcca6">init</a> (<a class="el" href="class_device.html">Device</a> &amp;device, <a class="el" href="class_texture.html">Texture</a> &amp;depthStencil, DXGI_FORMAT <a class="el" href="imgui__impl__opengl3__loader_8h.html#ab6287067d6e3e85f518d59a10f19f649">format</a>, D3D11_DSV_DIMENSION viewDimension)</td></tr>
+<tr class="memdesc:a0a05c279f251c0d014c84629c8bdcca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the depth-stencil view from a texture resource with a specific view dimension.  <br /></td></tr>
+<tr class="separator:a0a05c279f251c0d014c84629c8bdcca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab6d96a774c5e88e7736e00cdc2f0929" id="r_aab6d96a774c5e88e7736e00cdc2f0929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__impl__opengl3__loader_8h.html#ac668e7cffd9e2e9cfee428b9b2f34fa7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6d96a774c5e88e7736e00cdc2f0929">update</a> ()</td></tr>
 <tr class="memdesc:aab6d96a774c5e88e7736e00cdc2f0929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-frame update logic for the depth-stencil view.  <br /></td></tr>
 <tr class="separator:aab6d96a774c5e88e7736e00cdc2f0929"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,7 +227,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a577271a39193da2f3e8a9df52c167670" name="a577271a39193da2f3e8a9df52c167670"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a577271a39193da2f3e8a9df52c167670">&#9670;&#160;</a></span>init()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a577271a39193da2f3e8a9df52c167670">&#9670;&#160;</a></span>init() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,6 +256,49 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">device</td><td>The graphics device used to create the view. </td></tr>
     <tr><td class="paramname">depthStencil</td><td>The texture resource that will be used as the depth-stencil buffer. </td></tr>
     <tr><td class="paramname">format</td><td>The data format for the depth-stencil view (e.g., DXGI_FORMAT_D24_UNORM_S8_UINT). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>HRESULT Returns S_OK if successful, otherwise an error code. </dd></dl>
+
+</div>
+</div>
+<a id="a0a05c279f251c0d014c84629c8bdcca6" name="a0a05c279f251c0d014c84629c8bdcca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a05c279f251c0d014c84629c8bdcca6">&#9670;&#160;</a></span>init() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT DepthStencilView::init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_device.html">Device</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_texture.html">Texture</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>depthStencil</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DXGI_FORMAT</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">D3D11_DSV_DIMENSION</td>          <td class="paramname"><span class="paramname"><em>viewDimension</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the depth-stencil view from a texture resource with a specific view dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>The graphics device used to create the view. </td></tr>
+    <tr><td class="paramname">depthStencil</td><td>The texture resource that will be used as the depth-stencil buffer. </td></tr>
+    <tr><td class="paramname">format</td><td>The data format for the depth-stencil view (e.g., DXGI_FORMAT_D24_UNORM_S8_UINT). </td></tr>
+    <tr><td class="paramname">viewDimension</td><td>The dimension of the depth-stencil view (e.g., D3D11_DSV_DIMENSION_TEXTURE2D). </td></tr>
   </table>
   </dd>
 </dl>

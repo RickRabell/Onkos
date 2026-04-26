@@ -1,0 +1,5 @@
+<map id="RenderScene" name="RenderScene">
+<area shape="rect" id="Node000001" title="A data transfer object (DTO) containing a snapshot of all visible objects for a single frame." alt="" coords="5,96,106,123"/>
+<area shape="rect" id="Node000002" href="$class_skybox.html" title="Handles the rendering of the distant background environment." alt="" coords="23,5,88,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,48,58,95,53,95,53,48"/>
+</map>

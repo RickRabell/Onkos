@@ -1,5 +1,7 @@
 <map id="Onkos/include/EngineUtilities/Utilities/Skybox.h" name="Onkos/include/EngineUtilities/Utilities/Skybox.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,198,48"/>
-<area shape="rect" id="Node000002" href="$_skybox_8cpp.html" title=" " alt="" coords="14,96,189,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,64,104,95,99,95,99,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,282,48"/>
+<area shape="rect" id="Node000002" href="$_forward_renderer_8cpp.html" title=" " alt="" coords="5,96,171,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,61,113,97,109,93,150,57"/>
+<area shape="rect" id="Node000003" href="$_skybox_8cpp.html" title=" " alt="" coords="195,104,370,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,57,271,102,267,106,217,61"/>
 </map>

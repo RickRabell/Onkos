@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['rotate_0',['ROTATE',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565a09696a0870d2f10d3be6bec8b5bff50a',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotate_5fscreen_1',['ROTATE_SCREEN',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565a9cf2bf435fab3cfe5ab5f2497a21522f',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotate_5fx_2',['ROTATE_X',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565aad83ff9b9491a04c980a15b565baf3ba',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotate_5fy_3',['ROTATE_Y',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565a7e0064904dd83337ea04bceef94b7e35',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotate_5fz_4',['ROTATE_Z',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565a0272a497c7a0734f624d6581c8abf3e9',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotation_5fusing_5fborder_5',['ROTATION_USING_BORDER',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#a97d696686fd53f0d8d221986250af372a97bcaf8d5bd1cf585a66b67f9093fd00',1,'IMGUIZMO_NAMESPACE']]],
-  ['rotation_5fusing_5ffill_6',['ROTATION_USING_FILL',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#a97d696686fd53f0d8d221986250af372a9c3de5a4f9bdc320c2ae69812a2254aa',1,'IMGUIZMO_NAMESPACE']]]
+  ['pixel_5fshader_0',['PIXEL_SHADER',['../_prerequisites_8h.html#a6230e1b9ecbf2d82d10856fd7e1fde46a279b3a8fd9f35e982c7c0e8733b1e66d',1,'Prerequisites.h']]],
+  ['plane_5fx_1',['PLANE_X',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#a97d696686fd53f0d8d221986250af372a7211c411251c72178462f3712660208c',1,'IMGUIZMO_NAMESPACE']]],
+  ['plane_5fy_2',['PLANE_Y',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#a97d696686fd53f0d8d221986250af372a18837a5556d4176e647b48f470b5d8dd',1,'IMGUIZMO_NAMESPACE']]],
+  ['plane_5fz_3',['PLANE_Z',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#a97d696686fd53f0d8d221986250af372a681abdd8c6117322f27a6993214c24e1',1,'IMGUIZMO_NAMESPACE']]],
+  ['png_4',['PNG',['../_prerequisites_8h.html#ab8685fb7f8f0003664786f0e1e04f65aa842c5fc4bbe3f780e57c76d1a3cafe9f',1,'Prerequisites.h']]],
+  ['point_5',['Point',['../_render_types_8h.html#adc3ec8293e6a97ebe43f0196b9a7f638a2a3cd5946cfd317eb99c3d32e35e2d4c',1,'RenderTypes.h']]],
+  ['premultipliedalpha_6',['PremultipliedAlpha',['../_render_types_8h.html#a30323fa90e24ca484998b9fba6c40e85aa06de9cb1eb80f8a416b1c479ab947de',1,'RenderTypes.h']]],
+  ['process_5fdpi_5funaware_7',['PROCESS_DPI_UNAWARE',['../imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0ab42f9fa8bef80716253ff5732f98d019',1,'imgui_impl_win32.cpp']]],
+  ['process_5fper_5fmonitor_5fdpi_5faware_8',['PROCESS_PER_MONITOR_DPI_AWARE',['../imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097',1,'imgui_impl_win32.cpp']]],
+  ['process_5fsystem_5fdpi_5faware_9',['PROCESS_SYSTEM_DPI_AWARE',['../imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0a2690b1d0f73cd71a24c38dbccc99be8b',1,'imgui_impl_win32.cpp']]]
 ];

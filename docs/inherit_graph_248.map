@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_fbx_red_black_tree.html" title="Implements an efficient ordered data storage." alt="" coords="5,5,175,48"/>
+<area shape="rect" id="Node000000" href="$class_fbx_query.html" title=" " alt="" coords="5,107,84,133"/>
+<area shape="rect" id="Node000001" href="$class_fbx_query_class_id.html" title=" " alt="" coords="152,5,275,32"/>
+<area shape="poly" id="edge289_Node000000_Node000001" title=" " alt="" coords="67,93,95,66,130,42,156,30,158,35,133,46,99,71,70,97"/>
+<area shape="rect" id="Node000002" href="$class_fbx_query_is_a.html" title=" " alt="" coords="164,56,262,83"/>
+<area shape="poly" id="edge290_Node000000_Node000002" title=" " alt="" coords="98,101,166,81,167,86,99,107"/>
+<area shape="rect" id="Node000003" href="$class_fbx_query_is_property.html" title=" " alt="" coords="144,107,282,133"/>
+<area shape="poly" id="edge291_Node000000_Node000003" title=" " alt="" coords="99,117,144,117,144,123,99,123"/>
+<area shape="rect" id="Node000004" href="$class_fbx_query_operator.html" title=" " alt="" coords="149,157,278,184"/>
+<area shape="poly" id="edge292_Node000000_Node000004" title=" " alt="" coords="99,133,167,154,166,159,98,139"/>
+<area shape="rect" id="Node000005" href="$class_fbx_query_operator_unary.html" title=" " alt="" coords="132,208,295,235"/>
+<area shape="poly" id="edge293_Node000000_Node000005" title=" " alt="" coords="70,143,99,169,133,194,158,205,156,210,130,198,95,174,67,147"/>
 </map>

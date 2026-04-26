@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vkresult_0',['VkResult',['../imgui__impl__glfw_8cpp.html#abe3614d1bd40772bc2398a4a86ea4a45',1,'imgui_impl_glfw.cpp']]]
+  ['usynergyclipboardformat_0',['uSynergyClipboardFormat',['../u_synergy_8h.html#af0a3621df8565e1b7c038b6b37e76b37',1,'uSynergy.h']]]
 ];

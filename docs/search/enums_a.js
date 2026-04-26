@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['process_5fdpi_5fawareness_0',['PROCESS_DPI_AWARENESS',['../imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0',1,'imgui_impl_win32.cpp']]]
+  ['operation_0',['OPERATION',['../namespace_i_m_g_u_i_z_m_o___n_a_m_e_s_p_a_c_e.html#aab78029f01082975bcf8a421d6dff565',1,'IMGUIZMO_NAMESPACE']]]
 ];

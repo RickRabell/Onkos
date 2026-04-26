@@ -1,16 +1,21 @@
 <map id="Onkos/include/DepthStencilState.h" name="Onkos/include/DepthStencilState.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="204,5,388,48"/>
-<area shape="rect" id="Node000002" href="$_actor_8h.html" title=" " alt="" coords="205,104,387,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,64,299,104,294,104,294,64"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="326,5,509,48"/>
+<area shape="rect" id="Node000002" href="$_actor_8h.html" title=" " alt="" coords="228,104,410,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="385,61,335,106,331,102,381,57"/>
 <area shape="rect" id="Node000003" href="$_skybox_8h.html" title=" " alt="" coords="5,187,198,229"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="248,59,195,98,151,145,118,188,113,185,147,141,192,94,245,55"/>
-<area shape="rect" id="Node000007" href="$_depth_stencil_state_8cpp.html" title=" " alt="" coords="411,96,592,139"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="359,52,454,93,452,98,357,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,140,148,189,146,184,254,135"/>
-<area shape="rect" id="Node000005" href="$_actor_8cpp.html" title=" " alt="" coords="222,195,416,221"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="306,145,318,193,313,195,301,146"/>
-<area shape="rect" id="Node000006" href="$_g_u_i_8cpp.html" title=" " alt="" coords="440,195,595,221"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="343,134,487,192,485,197,341,139"/>
-<area shape="rect" id="Node000004" href="$_skybox_8cpp.html" title=" " alt="" coords="14,277,189,304"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="104,245,104,277,99,277,99,245"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="316,55,266,74,218,98,188,119,161,143,120,188,116,184,158,139,185,115,215,94,264,69,314,50"/>
+<area shape="rect" id="Node000008" href="$_forward_renderer_8h.html" title=" " alt="" coords="434,96,601,139"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="454,56,496,93,492,97,450,60"/>
+<area shape="rect" id="Node000009" href="$_depth_stencil_state_8cpp.html" title=" " alt="" coords="626,96,807,139"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="503,50,647,93,645,98,501,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,139,153,189,151,184,273,134"/>
+<area shape="rect" id="Node000006" href="$_actor_8cpp.html" title=" " alt="" coords="222,195,416,221"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="322,146,322,194,316,194,316,146"/>
+<area shape="rect" id="Node000007" href="$_g_u_i_8cpp.html" title=" " alt="" coords="440,195,595,221"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="362,135,490,192,488,197,360,140"/>
+<area shape="rect" id="Node000004" href="$_forward_renderer_8cpp.html" title=" " alt="" coords="382,277,547,320"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,231,382,275,380,280,201,236"/>
+<area shape="rect" id="Node000005" href="$_skybox_8cpp.html" title=" " alt="" coords="14,285,189,312"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="104,245,104,285,99,285,99,245"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="574,146,594,163,609,185,616,208,609,231,582,260,547,279,544,274,578,255,605,228,611,208,604,188,590,167,570,150"/>
 </map>

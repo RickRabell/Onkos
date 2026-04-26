@@ -1,0 +1,5 @@
+<map id="CBPerFrame" name="CBPerFrame">
+<area shape="rect" id="Node000001" title="Data updated exactly once per frame (Cameras, Environment, Lights)." alt="" coords="5,128,103,155"/>
+<area shape="rect" id="Node000002" href="$class_e_u_1_1_vector3.html" title="A 3D vector class." alt="" coords="8,5,100,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,48,57,127,51,127,51,48"/>
+</map>

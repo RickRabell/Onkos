@@ -1,0 +1,5 @@
+<map id="Submesh" name="Submesh">
+<area shape="rect" id="Node000001" title="A localized chunk of geometry that uses a single Material Instance." alt="" coords="5,112,82,139"/>
+<area shape="rect" id="Node000002" href="$class_buffer.html" title="A generic wrapper for a Direct3D 11 buffer (ID3D11Buffer)." alt="" coords="16,5,71,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,47,46,112,41,112,41,47"/>
+</map>

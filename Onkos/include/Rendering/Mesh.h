@@ -14,8 +14,11 @@ Submesh {
 class
 Mesh {
 public:
-	std::vector<Submesh>& getSubmeshes() { return m_submeshes; }
-	const std::vector<Submesh>& getSubmeshes() const { return m_submeshes; }
+	std::vector<Submesh>& 
+	getSubmeshes() { return m_submeshes; }
+	
+	const std::vector<Submesh>& 
+	getSubmeshes() const { return m_submeshes; }
 
 	void
 	destroy() {

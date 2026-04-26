@@ -18,34 +18,66 @@ class Material;
 class
 ForwardRenderer {
 public:
-	HRESULT init(Device& device);
+	HRESULT 
+	init(Device& device);
 
-	void resize(Device& device, unsigned int width, unsigned int height);
+	void 
+	resize(Device& device, unsigned int width, unsigned int height);
 
-	void updatePerFrame(const Camera& camera, const RenderScene& scene, DeviceContext& deviceContext);
+	void 
+	updatePerFrame(const Camera& camera, const RenderScene& scene, DeviceContext& deviceContext);
 
-	void render(DeviceContext& deviceContext,
-		const Camera& camera,
-		RenderScene& scene,
-		EditorViewportPass& viewportPass);
+	void 
+	render(DeviceContext& deviceContext,
+				 const Camera& camera,
+				 RenderScene& scene,
+				 EditorViewportPass& viewportPass);
 
-	void destroy();
-	ID3D11ShaderResourceView* getShadowMapSRV() const { return m_shadowDepthSRV.m_textureFromImg; }
-	ID3D11ShaderResourceView* getPreShadowSRV() const { return m_preShadowDebugPass.getSRV(); }
+	void 
+	destroy();
+	
+	ID3D11ShaderResourceView* 
+	getShadowMapSRV() const { return m_shadowDepthSRV.m_textureFromImg; }
+	
+	ID3D11ShaderResourceView* 
+	getPreShadowSRV() const { return m_preShadowDebugPass.GetSRV(); }
 
 private:
-	void buildQueues(RenderScene& scene, const Camera& camera);
-	void renderPreShadowDebugPass(DeviceContext& deviceContext, RenderScene& scene);
-	void renderShadowPass(DeviceContext& deviceContext);
-	void renderOpaquePass(DeviceContext& deviceContext);
-	void renderTransparentPass(DeviceContext& deviceContext);
-	void renderSkyboxPass(DeviceContext& deviceContext, RenderScene& scene);
-	void renderObject(DeviceContext& deviceContext, const RenderObject& object, RenderPassType passType);
-	void renderShadowObject(DeviceContext& deviceContext, const RenderObject& object);
-	HRESULT createShadowResources(Device& device);
-	void updateLightMatrices(const Camera& camera, const RenderScene& scene);
-	HRESULT createBlendStates(Device& device);
-	ID3D11BlendState* resolveBlendState(const Material* material) const;
+	void 
+	buildQueues(RenderScene& scene, const Camera& camera);
+	
+	void 
+	renderPreShadowDebugPass(DeviceContext& deviceContext, RenderScene& scene);
+	
+	void 
+	renderShadowPass(DeviceContext& deviceContext);
+	
+	void 
+	renderOpaquePass(DeviceContext& deviceContext);
+	
+	void 
+	renderTransparentPass(DeviceContext& deviceContext);
+	
+	void 
+	renderSkyboxPass(DeviceContext& deviceContext, RenderScene& scene);
+	
+	void 
+	renderObject(DeviceContext& deviceContext, const RenderObject& object, RenderPassType passType);
+	
+	void 
+	renderShadowObject(DeviceContext& deviceContext, const RenderObject& object);
+	
+	HRESULT 
+	createShadowResources(Device& device);
+	
+	void 
+	updateLightMatrices(const Camera& camera, const RenderScene& scene);
+	
+	HRESULT 
+	createBlendStates(Device& device);
+	
+	ID3D11BlendState* 
+	resolveBlendState(const Material* material) const;
 
 private:
 	Buffer m_perFrameBuffer;
@@ -73,4 +105,3 @@ private:
 	std::vector<const RenderObject*> m_opaqueQueue;
 	std::vector<const RenderObject*> m_transparentQueue;
 };
-

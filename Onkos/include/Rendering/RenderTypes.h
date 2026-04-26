@@ -63,7 +63,7 @@ struct
 CBPerFrame {
 	XMFLOAT4X4 View{};
 	XMFLOAT4X4 Projection{};
-	//XMFLOAT4X4 LightViewProjection{};
+	XMFLOAT4X4 LightViewProjection{};
 	
 	EU::Vector3 CameraPos{};
 	float pad0 = 0.0f;

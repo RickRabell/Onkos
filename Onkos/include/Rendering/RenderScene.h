@@ -10,9 +10,9 @@ public:
 	void
 	clear();
 
-private:
-	std::vector<RenderObject> m_opaqueObjects;
-	std::vector<RenderObject> m_transparentObjects;
-	std::vector<LightData> m_directionalLights;
+public:
+	std::vector<RenderObject> opaqueObjects;
+	std::vector<RenderObject> transparentObjects;
+	std::vector<LightData> directionalLights;
 	Skybox* skybox = nullptr;
 };

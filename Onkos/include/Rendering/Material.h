@@ -12,41 +12,41 @@ Material {
 public:
 	// Setters
 	void 
-	SetShader(ShaderProgram* shader) { m_shader = shader; }
+	setShader(ShaderProgram* shader) { m_shader = shader; }
 	
 	void 
-	SetRasterizerState(RasterizerState* state) { m_rasterizerState = state; }
+	setRasterizerState(RasterizerState* state) { m_rasterizerState = state; }
 	
 	void 
-	SetDepthStencilState(DepthStencilState* state) { m_depthStencilState = state; }
+	setDepthStencilState(DepthStencilState* state) { m_depthStencilState = state; }
 	
 	void 
-	SetSamplerState(SamplerState* state) { m_samplerState = state; }
+	setSamplerState(SamplerState* state) { m_samplerState = state; }
 	
 	void 
-	SetDomain(MaterialDomain domain) { m_domain = domain; }
+	setDomain(MaterialDomain domain) { m_domain = domain; }
 	
 	void 
-	SetBlendMode(BlendMode blendMode) { m_blendMode = blendMode; }
+	setBlendMode(BlendMode blendMode) { m_blendMode = blendMode; }
 
 	// Getters
 	ShaderProgram* 
-	GetShader() const { return m_shader; }
+	getShader() const { return m_shader; }
 	
 	RasterizerState* 
-	GetRasterizerState() const { return m_rasterizerState; }
+	getRasterizerState() const { return m_rasterizerState; }
 	
 	DepthStencilState* 
-	GetDepthStencilState() const { return m_depthStencilState; }
+	getDepthStencilState() const { return m_depthStencilState; }
 	
 	SamplerState* 
-	GetSamplerState() const { return m_samplerState; }
+	getSamplerState() const { return m_samplerState; }
 	
 	MaterialDomain 
-	GetDomain() const { return m_domain; }
+	getDomain() const { return m_domain; }
 	
 	BlendMode 
-	GetBlendMode() const { return m_blendMode; }
+	getBlendMode() const { return m_blendMode; }
 
 private:
 	ShaderProgram* m_shader = nullptr;                   

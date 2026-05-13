@@ -37,7 +37,7 @@ public:
 																													lSdkManager(nullptr), 
 																													lScene(nullptr) {
 		SetType(ResourceType::Model3D);
-		load(name);
+		//load(name);
 	}
 
 	Model3D(const std::string& name,
@@ -54,7 +54,7 @@ public:
 	/**
 	 * @brief Default destructor.
 	 */
-	~Model3D() = default;
+	~Model3D() override;
 
 	/**
 	 * @brief Loads the model from disk.
@@ -110,6 +110,9 @@ public:
 	std::vector<MeshComponent>
 	LoadFBXModel(const std::string& filePath);
 
+	std::vector<MeshComponent>
+	LoadOBJModel(const std::string& filePath);
+
 	/**
 	 * @brief Recursively processes a node in the FBX scene graph.
 	 * @param node The current FBX node to process.
@@ -137,6 +140,19 @@ public:
 	 */
 	std::vector<std::string>
 	GetTextureFileNames() const { return textureFileNames; }
+
+private:
+	std::string 
+	GetBinaryCachePath() const;
+	
+	bool 
+	IsBinaryCacheUpToDate(const std::string& sourcePath, const std::string& cachePath) const;
+	
+	bool 
+	LoadBinaryCache(const std::string& cachePath);
+	
+	bool 
+	SaveBinaryCache(const std::string& cachePath) const;
 
 private:
 	/** @brief Pointer to the Autodesk FBX SDK Manager. */

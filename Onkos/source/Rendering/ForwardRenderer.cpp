@@ -30,9 +30,9 @@ ForwardRenderer::init(Device& device) {
 	}
 
 	hr = m_transparentDepthStencil.init(device,
-																			true,
-																			D3D11_DEPTH_WRITE_MASK_ZERO,
-																			D3D11_COMPARISON_LESS_EQUAL);
+		true,
+		D3D11_DEPTH_WRITE_MASK_ZERO,
+		D3D11_COMPARISON_LESS_EQUAL);
 	if (FAILED(hr)) {
 		return hr;
 	}
@@ -57,13 +57,13 @@ ForwardRenderer::init(Device& device) {
 
 void
 ForwardRenderer::resize(Device& device, unsigned int width, unsigned int height) {
-	
+	m_preShadowDebugPass.resize(device, width, height);
 }
 
 void
 ForwardRenderer::updatePerFrame(const Camera& camera,
-																const RenderScene& scene,
-																DeviceContext& deviceContext) {
+	const RenderScene& scene,
+	DeviceContext& deviceContext) {
 	updateLightMatrices(camera, scene);
 	XMStoreFloat4x4(&m_cbPerFrame.View, XMMatrixTranspose(camera.getView()));
 	XMStoreFloat4x4(&m_cbPerFrame.Projection, XMMatrixTranspose(camera.getProj()));
@@ -82,9 +82,9 @@ ForwardRenderer::updatePerFrame(const Camera& camera,
 
 void
 ForwardRenderer::render(DeviceContext& deviceContext,
-												const Camera& camera,
-												RenderScene& scene,
-												EditorViewportPass& viewportPass) {
+	const Camera& camera,
+	RenderScene& scene,
+	EditorViewportPass& viewportPass) {
 	const float viewportClear[4] = { 0.10f, 0.10f, 0.10f, 1.0f };
 
 	buildQueues(scene, camera);
@@ -102,7 +102,22 @@ ForwardRenderer::render(DeviceContext& deviceContext,
 
 void
 ForwardRenderer::destroy() {
-	
+	m_opaqueQueue.clear();
+	m_transparentQueue.clear();
+	SAFE_RELEASE(m_alphaBlendState);
+	SAFE_RELEASE(m_opaqueBlendState);
+	SAFE_RELEASE(m_additiveBlendState);
+	SAFE_RELEASE(m_premultipliedBlendState);
+	m_transparentDepthStencil.destroy();
+	m_perMaterialBuffer.destroy();
+	m_perObjectBuffer.destroy();
+	m_perFrameBuffer.destroy();
+	m_shadowRasterizer.destroy();
+	m_shadowShader.destroy();
+	m_shadowDSV.destroy();
+	m_shadowDepthSRV.destroy();
+	m_shadowDepthTexture.destroy();
+	m_preShadowDebugPass.destroy();
 }
 
 void
@@ -142,10 +157,7 @@ ForwardRenderer::renderShadowPass(DeviceContext& deviceContext) {
 	ID3D11ShaderResourceView* nullShadowSRV[1] = { nullptr };
 	deviceContext.PSSetShaderResources(6, 1, nullShadowSRV);
 	deviceContext.OMSetRenderTargets(0, nullptr, m_shadowDSV.m_depthStencilView);
-	deviceContext.ClearDepthStencilView(m_shadowDSV.m_depthStencilView, 
-																			D3D11_CLEAR_DEPTH, 
-																			1.0f, 
-																			0);
+	deviceContext.ClearDepthStencilView(m_shadowDSV.m_depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
 	D3D11_VIEWPORT shadowViewport{};
 	shadowViewport.TopLeftX = 0.0f;
@@ -168,8 +180,7 @@ ForwardRenderer::renderShadowPass(DeviceContext& deviceContext) {
 }
 
 void
-ForwardRenderer::renderPreShadowDebugPass(DeviceContext& deviceContext, 
-																					RenderScene& scene) {
+ForwardRenderer::renderPreShadowDebugPass(DeviceContext& deviceContext, RenderScene& scene) {
 	if (!m_preShadowDebugPass.isValid()) {
 		return;
 	}
@@ -224,9 +235,7 @@ ForwardRenderer::renderTransparentPass(DeviceContext& deviceContext) {
 		if (!object) {
 			continue;
 		}
-		Material* material = object->materialInstance 
-												 ? object->materialInstance->getMaterial() : nullptr;
-
+		Material* material = object->materialInstance ? object->materialInstance->getMaterial() : nullptr;
 		deviceContext.OMSetBlendState(resolveBlendState(material), m_blendFactor, 0xffffffff);
 		renderObject(deviceContext, *object, RenderPassType::Transparent);
 	}
@@ -244,8 +253,8 @@ ForwardRenderer::renderSkyboxPass(DeviceContext& deviceContext, RenderScene& sce
 
 void
 ForwardRenderer::renderObject(DeviceContext& deviceContext,
-															const RenderObject& object,
-															RenderPassType passType) {
+	const RenderObject& object,
+	RenderPassType passType) {
 	if (!object.mesh || (!object.materialInstance && object.materialInstances.empty())) {
 		return;
 	}
@@ -257,13 +266,10 @@ ForwardRenderer::renderObject(DeviceContext& deviceContext,
 	deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 	std::vector<Submesh>& submeshes = object.mesh->getSubmeshes();
-
 	for (Submesh& submesh : submeshes) {
 		MaterialInstance* materialInstance = object.materialInstance;
-
 		if (submesh.materialSlot < object.materialInstances.size() &&
-				object.materialInstances[submesh.materialSlot]) {
-
+			object.materialInstances[submesh.materialSlot]) {
 			materialInstance = object.materialInstances[submesh.materialSlot];
 		}
 
@@ -295,7 +301,7 @@ ForwardRenderer::renderObject(DeviceContext& deviceContext,
 			material->getSamplerState()->render(deviceContext, 0, 1);
 		}
 
-		//materialInstance->bindTextures(deviceContext);
+		materialInstance->bindTextures(deviceContext);
 
 		const MaterialParams& params = materialInstance->getParams();
 		m_cbPerMaterial.BaseColor = params.baseColor;
@@ -308,14 +314,7 @@ ForwardRenderer::renderObject(DeviceContext& deviceContext,
 		if (material->getDomain() == MaterialDomain::Masked) {
 			m_cbPerMaterial.AlphaCutoff = params.alphaCutoff;
 		}
-		m_perMaterialBuffer.update(deviceContext, 
-															 nullptr, 
-															 0, 
-															 nullptr, 
-															 &m_cbPerMaterial, 
-															 0, 
-															 0);
-
+		m_perMaterialBuffer.update(deviceContext, nullptr, 0, nullptr, &m_cbPerMaterial, 0, 0);
 		m_perMaterialBuffer.render(deviceContext, 2, 1, true);
 
 		submesh.vertexBuffer.render(deviceContext, 0, 1);
@@ -325,34 +324,45 @@ ForwardRenderer::renderObject(DeviceContext& deviceContext,
 }
 
 void
-ForwardRenderer::renderShadowObject(DeviceContext& deviceContext, 
-																		const RenderObject& object) {
-	
+ForwardRenderer::renderShadowObject(DeviceContext& deviceContext, const RenderObject& object) {
+	if (!object.mesh) {
+		return;
+	}
+
+	XMStoreFloat4x4(&m_cbPerObject.World, XMMatrixTranspose(object.world));
+	m_perObjectBuffer.update(deviceContext, nullptr, 0, nullptr, &m_cbPerObject, 0, 0);
+	m_perObjectBuffer.render(deviceContext, 1, 1, false);
+
+	m_shadowShader.render(deviceContext);
+	deviceContext.m_deviceContext->PSSetShader(nullptr, nullptr, 0);
+	deviceContext.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	std::vector<Submesh>& submeshes = object.mesh->getSubmeshes();
+	for (Submesh& submesh : submeshes) {
+		submesh.vertexBuffer.render(deviceContext, 0, 1);
+		submesh.indexBuffer.render(deviceContext, 0, 1, false, DXGI_FORMAT_R32_UINT);
+		deviceContext.DrawIndexed(submesh.indexCount, submesh.startIndex, 0);
+	}
 }
 
 HRESULT
 ForwardRenderer::createShadowResources(Device& device) {
-	HRESULT hr = m_shadowDepthTexture.init(device,
-																				 m_shadowMapSize,
-																				 m_shadowMapSize,
-																				 DXGI_FORMAT_R24G8_TYPELESS,
-																				 D3D11_BIND_DEPTH_STENCIL 
-																				 | D3D11_BIND_SHADER_RESOURCE);
+	HRESULT hr = m_shadowDepthTexture.init(
+		device,
+		m_shadowMapSize,
+		m_shadowMapSize,
+		DXGI_FORMAT_R24G8_TYPELESS,
+		D3D11_BIND_DEPTH_STENCIL | D3D11_BIND_SHADER_RESOURCE);
 	if (FAILED(hr)) {
 		return hr;
 	}
 
-	hr = m_shadowDepthSRV.init(device, 
-														 m_shadowDepthTexture, 
-														 DXGI_FORMAT_R24_UNORM_X8_TYPELESS);
+	hr = m_shadowDepthSRV.init(device, m_shadowDepthTexture, DXGI_FORMAT_R24_UNORM_X8_TYPELESS);
 	if (FAILED(hr)) {
 		return hr;
 	}
 
-	hr = m_shadowDSV.init(device, 
-												m_shadowDepthTexture, 
-												DXGI_FORMAT_D24_UNORM_S8_UINT, 
-												D3D11_DSV_DIMENSION_TEXTURE2D);
+	hr = m_shadowDSV.init(device, m_shadowDepthTexture, DXGI_FORMAT_D24_UNORM_S8_UINT, D3D11_DSV_DIMENSION_TEXTURE2D);
 	if (FAILED(hr)) {
 		return hr;
 	}
@@ -384,14 +394,8 @@ ForwardRenderer::updateLightMatrices(const Camera& camera, const RenderScene& sc
 		lightDir = scene.directionalLights.front().direction;
 	}
 
-	XMVECTOR lightDirVec = XMVector3Normalize(XMVectorSet(lightDir.x, 
-																												lightDir.y, 
-																												lightDir.z, 
-																												0.0f));
-	XMVECTOR cameraPos = XMVectorSet(camera.getPosition().x, 
-																	 camera.getPosition().y, 
-																	 camera.getPosition().z, 
-																	 1.0f);
+	XMVECTOR lightDirVec = XMVector3Normalize(XMVectorSet(lightDir.x, lightDir.y, lightDir.z, 0.0f));
+	XMVECTOR cameraPos = XMVectorSet(camera.getPosition().x, camera.getPosition().y, camera.getPosition().z, 1.0f);
 	XMVECTOR lightTarget = cameraPos;
 	XMVECTOR lightEye = XMVectorSubtract(lightTarget, XMVectorScale(lightDirVec, 35.0f));
 	XMVECTOR worldUp = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
@@ -401,8 +405,7 @@ ForwardRenderer::updateLightMatrices(const Camera& camera, const RenderScene& sc
 
 	XMMATRIX lightView = XMMatrixLookAtLH(lightEye, lightTarget, worldUp);
 	XMMATRIX lightProjection = XMMatrixOrthographicLH(40.0f, 40.0f, 1.0f, 80.0f);
-	XMStoreFloat4x4(&m_cbPerFrame.LightViewProjection, 
-									XMMatrixTranspose(lightView * lightProjection));
+	XMStoreFloat4x4(&m_cbPerFrame.LightViewProjection, XMMatrixTranspose(lightView * lightProjection));
 }
 
 HRESULT

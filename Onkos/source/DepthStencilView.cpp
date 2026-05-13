@@ -8,7 +8,7 @@ DepthStencilView::init(Device& device, Texture& depthStencil, DXGI_FORMAT format
 	if (!device.m_device) {
 		ERROR("DepthStencilView", "init", "Device is null.");
 	}
-	if(!depthStencil.m_texture) {
+	if (!depthStencil.m_texture) {
 		ERROR("DepthStencilView", "init", "Texture is null.");
 		return E_FAIL;
 	}
@@ -22,8 +22,8 @@ DepthStencilView::init(Device& device, Texture& depthStencil, DXGI_FORMAT format
 
 	// Create depth stencil view
 	HRESULT hr = device.m_device->CreateDepthStencilView(depthStencil.m_texture,
-																											 &descDSV,
-																											 &m_depthStencilView);
+		&descDSV,
+		&m_depthStencilView);
 
 	if (FAILED(hr)) {
 		ERROR("DepthStencilView", "init",
@@ -36,9 +36,9 @@ DepthStencilView::init(Device& device, Texture& depthStencil, DXGI_FORMAT format
 
 HRESULT
 DepthStencilView::init(Device& device,
-											 Texture& depthStencil,
-											 DXGI_FORMAT format,
-											 D3D11_DSV_DIMENSION viewDimension) {
+	Texture& depthStencil,
+	DXGI_FORMAT format,
+	D3D11_DSV_DIMENSION viewDimension) {
 	if (!device.m_device) {
 		ERROR("DepthStencilView", "init", "Device is null.");
 		return E_POINTER;
@@ -74,15 +74,15 @@ DepthStencilView::init(Device& device,
 void
 DepthStencilView::render(DeviceContext& deviceContext) {
 	if (!deviceContext.m_deviceContext) {
-		ERROR("DepthStencilView", "render", "DeviceContext is null.");
+		ERROR("DepthStencilView", "render", "Device context is null.");
 		return;
 	}
 
 	// Clear depth stencil view
 	deviceContext.m_deviceContext->ClearDepthStencilView(m_depthStencilView,
-																											 D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL,
-																											 1.0F,
-																											 0);
+		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL,
+		1.0f,
+		0);
 }
 
 void

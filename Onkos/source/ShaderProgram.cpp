@@ -1,13 +1,13 @@
 #include "ShaderProgram.h"
 #include "Device.h"
 #include "DeviceContext.h"
-#include "EngineUtilities/Utilities/LayoutBuilder.h"
+#include "EngineUtilities\Utilities\LayoutBuilder.h"
 
 
 HRESULT
 ShaderProgram::init(Device& device,
-										const std::string& fileName,
-										LayoutBuilder layoutBuilder) {
+	const std::string& fileName,
+	LayoutBuilder layoutBuilder) {
 	if (!device.m_device) {
 		ERROR("ShaderProgram", "init", "Device is null.");
 		return E_POINTER;
@@ -16,13 +16,11 @@ ShaderProgram::init(Device& device,
 		ERROR("ShaderProgram", "init", "File name is empty.");
 		return E_INVALIDARG;
 	}
-	/*if (layout.empty()) {
-		ERROR("ShaderProgram", "init", "Input layout is empty.");
-		return E_INVALIDARG;
-	}*/
-
+	//if (layoutBuilder) {
+	//	ERROR("ShaderProgram", "init", "Input layout is empty.");
+	//	return E_INVALIDARG;
+	//}
 	m_shaderFileName = fileName;
-
 	// Create the Vertex Shader
 	HRESULT hr = CreateShader(device, ShaderType::VERTEX_SHADER);
 	if (FAILED(hr)) {
@@ -48,8 +46,7 @@ ShaderProgram::init(Device& device,
 }
 
 HRESULT
-ShaderProgram::CreateInputLayout(Device& device,
-																 LayoutBuilder layoutBuilder) {
+ShaderProgram::CreateInputLayout(Device& device, LayoutBuilder layoutBuilder) {
 	if (!m_vertexShaderData) {
 		ERROR("ShaderProgram", "CreateInputLayout", "Vertex shader data is null.");
 		return E_POINTER;
@@ -63,7 +60,6 @@ ShaderProgram::CreateInputLayout(Device& device,
 	//	return E_INVALIDARG;
 	//}
 
-	//HRESULT hr = m_inputLayout.init(device, Layout, m_vertexShaderData);
 	auto& layout = layoutBuilder.Get();
 
 	HRESULT hr = m_inputLayout.init(device, layout.data(), layout.size(), m_vertexShaderData);
@@ -96,33 +92,33 @@ ShaderProgram::CreateShader(Device& device, ShaderType type) {
 
 	// Compile the shader from file
 	hr = CompileShaderFromFile(m_shaderFileName.data(),
-														 shaderEntryPoint,
-														 shaderModel,
-														 &shaderData);
+		shaderEntryPoint,
+		shaderModel,
+		&shaderData);
 
 	if (FAILED(hr)) {
 		ERROR("ShaderProgram", "CreateShader",
-					"Failed to compile shader from file: %s", m_shaderFileName.c_str());
+			"Failed to compile shader from file: %s", m_shaderFileName.c_str());
 		return hr;
 	}
 
 	// Create the shader object
 	if (type == PIXEL_SHADER) {
 		hr = device.CreatePixelShader(shaderData->GetBufferPointer(),
-																	shaderData->GetBufferSize(),
-																	nullptr,
-																	&m_PixelShader);
+			shaderData->GetBufferSize(),
+			nullptr,
+			&m_PixelShader);
 	}
 	else {
 		hr = device.CreateVertexShader(shaderData->GetBufferPointer(),
-																	 shaderData->GetBufferSize(),
-																	 nullptr,
-																	 &m_VertexShader);
+			shaderData->GetBufferSize(),
+			nullptr,
+			&m_VertexShader);
 	}
 
 	if (FAILED(hr)) {
 		ERROR("ShaderProgram", "CreateShader",
-					"Failed to create shader object from compiled data.");
+			"Failed to create shader object from compiled data.");
 		shaderData->Release();
 		return hr;
 	}
@@ -142,8 +138,8 @@ ShaderProgram::CreateShader(Device& device, ShaderType type) {
 
 HRESULT
 ShaderProgram::CreateShader(Device& device,
-														ShaderType type,
-														const std::string& fileName) {
+	ShaderType type,
+	const std::string& fileName) {
 	if (!device.m_device) {
 		ERROR("ShaderProgram", "init", "Device is null.");
 		return E_POINTER;
@@ -158,7 +154,7 @@ ShaderProgram::CreateShader(Device& device,
 
 	if (FAILED(hr)) {
 		ERROR("ShaderProgram", "CreateShader",
-					"Failed to Create shader from file: %s", m_shaderFileName.c_str());
+			"Failed to Create shader from file: %s", m_shaderFileName.c_str());
 		return hr;
 	}
 
@@ -167,13 +163,12 @@ ShaderProgram::CreateShader(Device& device,
 
 HRESULT
 ShaderProgram::CompileShaderFromFile(char* szFileName,
-																		 LPCSTR szEntryPoint,
-																		 LPCSTR szShaderModel,
-																		 ID3DBlob** ppBlobOut) {
+	LPCSTR szEntryPoint,
+	LPCSTR szShaderModel,
+	ID3DBlob** ppBlobOut) {
 	HRESULT hr = S_OK;
 
 	DWORD dwShaderFlags = D3DCOMPILE_ENABLE_STRICTNESS;
-
 #if defined( DEBUG ) || defined( _DEBUG )
 	// Set the D3DCOMPILE_DEBUG flag to embed debug information in the shaders.
 	// Setting this flag improves the shader debugging experience, but still allows 
@@ -181,32 +176,31 @@ ShaderProgram::CompileShaderFromFile(char* szFileName,
 	// the release configuration of this program.
 	dwShaderFlags |= D3DCOMPILE_DEBUG;
 #endif
-
 	ID3DBlob* pErrorBlob;
 	hr = D3DX11CompileFromFile(szFileName,
-														 nullptr,
-														 nullptr,
-														 szEntryPoint,
-														 szShaderModel,
-														 dwShaderFlags,
-														 0,
-														 nullptr,
-														 ppBlobOut,
-														 &pErrorBlob,
-														 nullptr);
+		nullptr,
+		nullptr,
+		szEntryPoint,
+		szShaderModel,
+		dwShaderFlags,
+		0,
+		nullptr,
+		ppBlobOut,
+		&pErrorBlob,
+		nullptr);
 
 	if (FAILED(hr)) {
 		if (pErrorBlob) {
 			ERROR("ShaderProgram", "CompileShaderFromFile",
-						"Failed to compile shader from file: %s. Error: %s",
-						szFileName, static_cast<const char*>(pErrorBlob->GetBufferPointer()));
+				"Failed to compile shader from file: %s. Error: %s",
+				szFileName, static_cast<const char*>(pErrorBlob->GetBufferPointer()));
 
 			pErrorBlob->Release();
 		}
 		else {
 			ERROR("ShaderProgram", "CompileShaderFromFile",
-						"Failed to compile shader from file: %s. No error message available.",
-						szFileName);
+				"Failed to compile shader from file: %s. No error message available.",
+				szFileName);
 		}
 		return hr;
 	}

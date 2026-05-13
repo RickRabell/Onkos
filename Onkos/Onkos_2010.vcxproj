@@ -459,6 +459,8 @@
     <ClCompile Include="source\ModelLoader.cpp" />
     <ClCompile Include="source\RasterizerState.cpp" />
     <ClCompile Include="source\Rendering\ForwardRenderer.cpp" />
+    <ClCompile Include="source\Rendering\MaterialInstance.cpp" />
+    <ClCompile Include="source\Rendering\RenderScene.cpp" />
     <ClCompile Include="source\RenderTargetView.cpp" />
     <ClCompile Include="source\SamplerState.cpp" />
     <ClCompile Include="source\SceneGraph\SceneGraph.cpp" />
@@ -492,6 +494,8 @@
     <ClInclude Include="include\ECS\Actor.h" />
     <ClInclude Include="include\ECS\Component.h" />
     <ClInclude Include="include\ECS\Entity.h" />
+    <ClInclude Include="include\ECS\LightComponent.h" />
+    <ClInclude Include="include\ECS\MeshRendererComponent.h" />
     <ClInclude Include="include\ECS\Transform.h" />
     <ClInclude Include="include\EngineUtilities\Memory\TSharedPointer.h" />
     <ClInclude Include="include\EngineUtilities\Memory\TStaticPtr.h" />
@@ -513,6 +517,7 @@
     <ClInclude Include="include\Prerequisites.h" />
     <ClInclude Include="include\RasterizerState.h" />
     <ClInclude Include="include\Rendering\ForwardRenderer.h" />
+    <ClInclude Include="include\Rendering\ISceneRenderer.h" />
     <ClInclude Include="include\Rendering\Material.h" />
     <ClInclude Include="include\Rendering\MaterialInstance.h" />
     <ClInclude Include="include\Rendering\Mesh.h" />
@@ -534,6 +539,9 @@
     <ResourceCompile Include="Onkos.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\ShadowMap.hlsl">
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

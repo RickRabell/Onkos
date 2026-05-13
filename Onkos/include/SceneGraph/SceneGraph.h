@@ -3,6 +3,8 @@
 
 class Entity;
 class DeviceContext;
+class Camera;
+class RenderScene;
 
 /**
 * @class SceneGraph
@@ -87,6 +89,9 @@ public:
 		*/
 	void 
 	render(DeviceContext& deviceContext);
+
+	void
+	gatherRenderScene(RenderScene& outScene, const Camera& camera);
 
 	/**
 		* @brief Clears the entire graph.

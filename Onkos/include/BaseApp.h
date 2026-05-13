@@ -4,7 +4,7 @@
 #include "Device.h"
 #include "DeviceContext.h"
 #include "SwapChain.h"
-#include "Texture.h";
+#include "Texture.h"
 #include "RenderTargetView.h"
 #include "DepthStencilView.h"
 #include "Viewport.h"
@@ -15,10 +15,19 @@
 #include "Model3D.h"
 #include "ECS/Actor.h"
 #include "GUI.h"
-#include "SceneGraph/SceneGraph.h"
-#include "EngineUtilities/Utilities/Camera.h"
+#include "SceneGraph\SceneGraph.h"
+#include "EngineUtilities\Utilities\Camera.h"
 #include "EngineUtilities\Utilities\Skybox.h"
-#include "EngineUtilities/Utilities/LayoutBuilder.h"
+#include "EngineUtilities\Utilities\LayoutBuilder.h"
+#include "EngineUtilities/Utilities/EditorViewportPass.h"
+#include "ECS/LightComponent.h"
+#include "ECS/MeshRendererComponent.h"
+#include "Rendering/Material.h"
+#include "Rendering/MaterialInstance.h"
+#include "Rendering/Mesh.h"
+#include "Rendering/ForwardRenderer.h"
+#include "Rendering/RenderScene.h"
+#include <string>
 
 extern IMGUI_IMPL_API
 LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -118,6 +127,14 @@ public:
   void
   onResize(unsigned int newW, unsigned int newH);
 
+	void handleEditorViewportResize();
+
+	bool saveScene(const std::string& path);
+
+	bool loadScene(const std::string& path);
+
+	std::string getDefaultScenePath() const;
+
 private:
 	/**
 	 * @brief The static window procedure for handling Win32 messages.
@@ -184,6 +201,14 @@ private:
   /** @brief The normal map texture used for simulating surface detail in PBR. */
   Texture m_NormalSRV;
 
+	Texture m_EmissiveSRV;
+
+	Texture m_spitFireAlbedoSRV;
+	Texture m_spitFireNormalSRV;
+	Texture m_spitFireMetallicSRV;
+	Texture m_spitFireRoughnessSRV;
+	Texture m_spitFireAOSRV;
+
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
 
@@ -197,16 +222,22 @@ private:
 	std::vector<EU::TSharedPointer<Actor>> m_actors;
 
 	/**
-	* @brief Shared pointer to the main Abe Bowser actor.
+	* @brief Shared pointer to the main SpitFire actor.
 	* Used for direct access and manipulation of this specific actor.
 	*/
 	EU::TSharedPointer<Actor> m_spitFire;
+
+	EU::TSharedPointer<Actor> m_sciFiToad;
+
+	EU::TSharedPointer<Actor> m_directionalLightActor;
 
 	/**
 	* @brief Pointer to the loaded 3D model resource.
 	* Represents the current model used in the scene.
 	*/
 	Model3D* m_model;
+
+	Model3D* m_spitFireModel;
 
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
 	//CBChangeOnResize cbChangesOnResize;
@@ -219,6 +250,8 @@ private:
 	* Handles UI rendering, input, and interaction logic.
 	*/
 	GUI m_gui;
+
+	bool m_guiInitialized = false;
 
   /**
    * @brief The current position of the camera in world space.
@@ -244,4 +277,23 @@ private:
 	* @brief The default depth-stencil state used for depth testing.
   */
   DepthStencilState m_defaultDepthStencil;
+
+	SamplerState m_defaultSampler;
+	Mesh m_sciFiToadRenderMesh;
+	Mesh m_spitFireRenderMesh;
+	Material m_pbrMaterial;
+	Material m_transparentPbrMaterial;
+	MaterialInstance m_sciFiToadMaterial;
+	MaterialInstance m_spitFireMaterial;
+
+	EditorViewportPass m_editorViewportPass;
+	ForwardRenderer m_forwardRenderer;
+	RenderScene m_renderScene;
+	bool m_editorViewportResizePending = false;
+	unsigned int m_pendingViewportWidth = 1;
+	unsigned int m_pendingViewportHeight = 1;
+
+	unsigned int m_lastRequestedViewportWidth = 1;
+	unsigned int m_lastRequestedViewportHeight = 1;
+	int m_viewportResizeStableFrames = 0;
 };

@@ -25,6 +25,7 @@ public:
 								rotation(),
 								scale(),
 								matrix(),
+								worldMatrix(),
 								Component(ComponentType::TRANSFORM) { }
 
 	/**
@@ -35,6 +36,7 @@ public:
 	init() {
 		scale.one();
 		matrix = XMMatrixIdentity();
+		worldMatrix = XMMatrixIdentity();
 	}
 
 	/**
@@ -59,6 +61,7 @@ public:
 
 		// Compose the final matrix: Scale * Rotation * Translation
 		matrix = scaleMatrix * rotationMatrix * translationMatrix;
+		worldMatrix = matrix;
 	}
 
 	/**
@@ -138,4 +141,6 @@ public:
 	 * Passed to shaders to transform vertices from Model Space to World Space.
 	 */
 	XMMATRIX matrix;
+
+	XMMATRIX worldMatrix;
 };

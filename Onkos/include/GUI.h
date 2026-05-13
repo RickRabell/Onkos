@@ -94,6 +94,9 @@ public:
 	void
 	toolTipData();
 
+	void
+	appleLiquidStyle(float opacity /*0..1f*/, ImVec4 accent /*=#0A84FF*/);
+
 	/**
 	 * @brief Helper function to draw a standardized 3-component vector editor (X, Y, Z).
 	 * @param label The property name (e.g., "Position").
@@ -105,7 +108,8 @@ public:
 	vec3Control(const std::string& label,
 							float* values,
 							float resetValues = 0.0f,
-							float columnWidth = 100.0f);
+							float columnWidth = 100.0f,
+							bool displayAsDegrees = false);
 
 	/**
 	 * @brief Draws the main Inspector panel for an Actor.
@@ -161,6 +165,34 @@ public:
 		memcpy(dest, &temp, sizeof(float) * 16);
 	}
 
+	//---------------------
+	void
+	drawStudioTopRibbon();
+
+	void 
+	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV);
+
+	void 
+	drawRenderDebugPanel(ID3D11ShaderResourceView* preShadowSRV,
+											 ID3D11ShaderResourceView* finalViewportSRV,
+											 ID3D11ShaderResourceView* shadowMapSRV);
+
+	void 
+	drawEditorDockspace();
+
+	/**
+	 * @brief Consume de forma atomica la solicitud de guardado emitida desde la UI.
+	 * @return `true` una sola vez por peticion de guardado.
+	 */
+	bool
+	consumeSaveSceneRequest() {
+		const bool requested = m_requestSaveScene;
+		m_requestSaveScene = false;
+		return requested;
+	}
+
+	//---------------------
+
 private:
   /**
   * @brief Example checkbox value for UI state.
@@ -192,7 +224,18 @@ private:
   */
   bool show_exit_popup = false;
 
+	bool m_requestSaveScene = false;
+	ImDrawList* m_viewportDrawList = nullptr;
+	bool m_viewportActive = false;
+
 public:
+	bool m_isUsingGizmo = false;
+
 	/** @brief The index of the currently selected actor in the outliner. -1 means no selection. */
 	int selectedActorIndex = -1;
+
+	ImVec2 m_viewportPos = ImVec2(0.0f, 0.0f);
+	ImVec2 m_viewportSize = ImVec2(0.0f, 0.0f);
+	bool m_viewportHovered = false;
+	bool m_viewportFocused = false;
 };

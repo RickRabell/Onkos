@@ -170,6 +170,9 @@
     <ClCompile Include="source\Rendering\RenderScene.cpp">
       <Filter>source\Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="source\Rendering\DeferredRenderer.cpp">
+      <Filter>source\Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Onkos.fx">
@@ -369,5 +372,6 @@
     <ClInclude Include="include\Rendering\ISceneRenderer.h">
       <Filter>include\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="include\Rendering\DeferredRenderer.h" />
   </ItemGroup>
 </Project>

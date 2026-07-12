@@ -25,7 +25,7 @@
 #include "Rendering/Material.h"
 #include "Rendering/MaterialInstance.h"
 #include "Rendering/Mesh.h"
-#include "Rendering/ForwardRenderer.h"
+#include "Rendering/RenderPipeline.h"
 #include "Rendering/RenderScene.h"
 #include <string>
 
@@ -44,7 +44,7 @@ LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARA
  * It serves as the central hub for the entire application.
  */
 class
-BaseApp {
+	BaseApp {
 public:
 	/**
 	 * @brief Constructor.
@@ -112,30 +112,37 @@ public:
 	void
 	destroy();
 
-  /**
-  * @brief Handles window resize events and updates all dependent resources.
-  *
-  * This function is called whenever the application window is resized.
-  * It is responsible for resizing the swap chain buffers, recreating the render target
-  * and depth-stencil views, and updating the viewport to match the new window dimensions.
-  * All graphics resources that depend on the window size should be updated here to ensure
-  * correct rendering after a resize event.
-  *
-  * @param newW The new width of the window in pixels.
-  * @param newH The new height of the window in pixels.
-  */
-  void
-  onResize(unsigned int newW, unsigned int newH);
+	/**
+	* @brief Handles window resize events and updates all dependent resources.
+	*
+	* This function is called whenever the application window is resized.
+	* It is responsible for resizing the swap chain buffers, recreating the render target
+	* and depth-stencil views, and updating the viewport to match the new window dimensions.
+	* All graphics resources that depend on the window size should be updated here to ensure
+	* correct rendering after a resize event.
+	*
+	* @param newW The new width of the window in pixels.
+	* @param newH The new height of the window in pixels.
+	*/
+	void
+	onResize(unsigned int newW, unsigned int newH);
 
-	void handleEditorViewportResize();
+	void
+	handleEditorViewportResize();
 
-	bool saveScene(const std::string& path);
+	bool
+	saveScene(const std::string& path);
 
-	bool loadScene(const std::string& path);
+	bool
+	loadScene(const std::string& path);
 
-	std::string getDefaultScenePath() const;
+	std::string
+	getDefaultScenePath() const;
 
 private:
+	EU::TSharedPointer<Actor>
+	createLightActor(const std::string& name = std::string());
+
 	/**
 	 * @brief The static window procedure for handling Win32 messages.
 	 * @param hWnd The handle to the window receiving the message.
@@ -144,7 +151,7 @@ private:
 	 * @param lParam Additional message-specific information.
 	 */
 	static LRESULT CALLBACK
-	wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 private:
 	//--------------------------------------------------------------------------------------
@@ -180,34 +187,46 @@ private:
 	/** @brief The vertex and pixel shader program. */
 	ShaderProgram m_shaderProgram;
 
-  /** @brief Indicates if the Direct3D device and related resources are fully initialized and ready for use. */
-  bool m_d3dReady = false;
-	
-  /** @brief The GPU constant buffer for per-frame data (view/projection, lighting, etc.). */
-  Buffer m_constantBuffer;
+	/** @brief Indicates if the Direct3D device and related resources are fully initialized and ready for use. */
+	bool m_d3dReady = false;
 
-  /** @brief CPU-side struct holding the data to be uploaded to the main constant buffer. */
-  CBMain m_constantBufferStruct;
+	/** @brief The GPU constant buffer for per-frame data (view/projection, lighting, etc.). */
+	Buffer m_constantBuffer;
+
+	/** @brief CPU-side struct holding the data to be uploaded to the main constant buffer. */
+	CBMain m_constantBufferStruct;
 
 	// Textures
-  /** @brief The albedo (base color) texture used for PBR rendering. */
-  Texture m_AlbedoSRV;
-  /** @brief The metallic texture map used for PBR material properties. */
-  Texture m_MetallicSRV;
-  /** @brief The roughness texture map used for PBR material properties. */
-  Texture m_RoughnessSRV;
-  /** @brief The ambient occlusion (AO) texture map for PBR shading. */
-  Texture m_AOSRV;
-  /** @brief The normal map texture used for simulating surface detail in PBR. */
-  Texture m_NormalSRV;
+	/** @brief The albedo (base color) texture used for PBR rendering. */
+	Texture m_AlbedoSRV;
+	/** @brief The metallic texture map used for PBR material properties. */
+	Texture m_MetallicSRV;
+	/** @brief The roughness texture map used for PBR material properties. */
+	Texture m_RoughnessSRV;
+	/** @brief The ambient occlusion (AO) texture map for PBR shading. */
+	Texture m_AOSRV;
+	/** @brief The normal map texture used for simulating surface detail in PBR. */
+	Texture m_NormalSRV;
 
 	Texture m_EmissiveSRV;
 
-	Texture m_spitFireAlbedoSRV;
-	Texture m_spitFireNormalSRV;
-	Texture m_spitFireMetallicSRV;
-	Texture m_spitFireRoughnessSRV;
-	Texture m_spitFireAOSRV;
+	Texture m_spitfireAlbedoSRV;
+	Texture m_spitfireNormalSRV;
+	Texture m_spitfireMetallicSRV;
+	Texture m_spitfireRoughnessSRV;
+	Texture m_spitfireAOSRV;
+
+	Texture m_toadAlbedoSRV;
+	Texture m_toadNormalSRV;
+	Texture m_toadMetallicSRV;
+	Texture m_toadRoughnessSRV;
+	Texture m_toadAOSRV;
+	Texture m_toadGlassAlbedoSRV;
+	Texture m_toadGlassNormalSRV;
+	Texture m_toadGlassRoughnessSRV;
+	Texture m_toadHeadAlbedoSRV;
+	Texture m_toadHeadNormalSRV;
+	Texture m_toadHeadRoughnessSRV;
 
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
@@ -225,7 +244,7 @@ private:
 	* @brief Shared pointer to the main SpitFire actor.
 	* Used for direct access and manipulation of this specific actor.
 	*/
-	EU::TSharedPointer<Actor> m_spitFire;
+	EU::TSharedPointer<Actor> m_spitfire;
 
 	EU::TSharedPointer<Actor> m_sciFiToad;
 
@@ -235,9 +254,11 @@ private:
 	* @brief Pointer to the loaded 3D model resource.
 	* Represents the current model used in the scene.
 	*/
-	Model3D* m_model;
+	Model3D* m_model = nullptr;
 
-	Model3D* m_spitFireModel;
+	Model3D* m_spitfireModel = nullptr;
+
+	Model3D* m_toadModel = nullptr;
 
 	/** @brief CPU-side struct for the 'ChangeOnResize' constant buffer. */
 	//CBChangeOnResize cbChangesOnResize;
@@ -253,41 +274,57 @@ private:
 
 	bool m_guiInitialized = false;
 
-  /**
-   * @brief The current position of the camera in world space.
-   */
-  EU::Vector3 m_cameraPos;
+	/**
+	 * @brief The current position of the camera in world space.
+	 */
+	EU::Vector3 m_cameraPos;
 
-  /**
-  * @brief The skybox manager responsible for rendering the environment background.
-  */
-  Skybox m_skybox;
+	/**
+	* @brief The skybox manager responsible for rendering the environment background.
+	*/
+	Skybox m_skybox;
 
-  /**
-  * @brief The texture resource used for the skybox environment.
-  */
-  Texture m_skyboxTex;
+	/**
+	* @brief The texture resource used for the skybox environment.
+	*/
+	Texture m_skyboxTex;
 
-  /**
+	Texture m_lightIconTexture;
+
+	/**
 	* @brief The default rasterizer state used for rendering.
-  */
-  RasterizerState m_defaultRasterizer;
+	*/
+	RasterizerState m_defaultRasterizer;
 
-  /**
+	/**
 	* @brief The default depth-stencil state used for depth testing.
-  */
-  DepthStencilState m_defaultDepthStencil;
+	*/
+	DepthStencilState m_defaultDepthStencil;
 
 	SamplerState m_defaultSampler;
-	Mesh m_sciFiToadRenderMesh;
-	Mesh m_spitFireRenderMesh;
+
+	Mesh m_toadRenderMesh;
+	Mesh m_spitfireRenderMesh;
 	Material m_pbrMaterial;
 	Material m_transparentPbrMaterial;
-	MaterialInstance m_sciFiToadMaterial;
-	MaterialInstance m_spitFireMaterial;
+	//MaterialInstance m_sciFiToadMaterial;
+	//MaterialInstance m_spitFireMaterial;
+	//Material m_cyberGunPbrMaterial;
+	//Material m_drakefirePbrMaterial;
+	Material m_spitfirePbrMaterial;
+	Material m_toadPbrMaterial;
+	Material m_toadGlassPbrMaterial;
+	Material m_toadHeadPbrMaterial;
+	//MaterialInstance m_cyberGunMaterial;
+	//MaterialInstance m_drakefireMaterial;
+	MaterialInstance m_spitfireMaterial;
+	MaterialInstance m_toadMaterial;
+	MaterialInstance m_toadGlassMaterial;
+	MaterialInstance m_toadHeadMaterial;
 
 	EditorViewportPass m_editorViewportPass;
-	ForwardRenderer m_forwardRenderer;
+	//ForwardRenderer m_forwardRenderer;
+	RenderPipeline m_renderPipeline;
 	RenderScene m_renderScene;
 	bool m_editorViewportResizePending = false;
 	unsigned int m_pendingViewportWidth = 1;

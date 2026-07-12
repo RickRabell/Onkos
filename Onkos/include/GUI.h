@@ -1,5 +1,6 @@
 #pragma once
 #include "Prerequisites.h"
+#define	IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui.h"
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
@@ -170,12 +171,29 @@ public:
 	drawStudioTopRibbon();
 
 	void 
-	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV);
+	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
+										const std::vector<EU::TSharedPointer<Actor>>& actors,
+										Camera& camera,
+										Window& window,
+										EU::TSharedPointer<Actor> selectedActor,
+										ID3D11ShaderResourceView* lightIconSRV);
+
+	void 
+	drawLightIcons(const std::vector<EU::TSharedPointer<Actor>>& actors,
+								 Camera& camera,
+								 ID3D11ShaderResourceView* lightIconSRV);
 
 	void 
 	drawRenderDebugPanel(ID3D11ShaderResourceView* preShadowSRV,
 											 ID3D11ShaderResourceView* finalViewportSRV,
 											 ID3D11ShaderResourceView* shadowMapSRV);
+
+	void 
+	drawGBufferDebugPanel(ID3D11ShaderResourceView* albedoMetallicSRV,
+												ID3D11ShaderResourceView* normalRoughnessSRV,
+												ID3D11ShaderResourceView* worldAoSRV,
+												ID3D11ShaderResourceView* emissiveAlphaSRV,
+												EU::TSharedPointer<Actor> selectedActor);
 
 	void 
 	drawEditorDockspace();
@@ -188,6 +206,13 @@ public:
 	consumeSaveSceneRequest() {
 		const bool requested = m_requestSaveScene;
 		m_requestSaveScene = false;
+		return requested;
+	}
+
+	bool
+	consumeCreateLightActorRequest() {
+		const bool requested = m_requestCreateLightActor;
+		m_requestCreateLightActor = false;
 		return requested;
 	}
 
@@ -225,11 +250,20 @@ private:
   bool show_exit_popup = false;
 
 	bool m_requestSaveScene = false;
+	bool m_requestCreateLightActor = false;
 	ImDrawList* m_viewportDrawList = nullptr;
+	ImGuiWindow* m_viewportWindow = nullptr;
+	bool m_viewportVisibleThisFrame = false;
 	bool m_viewportActive = false;
+
+	ID3D11ShaderResourceView* m_renderDebugPreShadowSRV = nullptr;
+	ID3D11ShaderResourceView* m_renderDebugFinalSRV = nullptr;
+	ID3D11ShaderResourceView* m_renderDebugShadowMapSRV = nullptr;
 
 public:
 	bool m_isUsingGizmo = false;
+	bool m_visualizeDeferredShadowFactor = false;
+	int m_deferredDebugViewMode = 0;
 
 	/** @brief The index of the currently selected actor in the outliner. -1 means no selection. */
 	int selectedActorIndex = -1;

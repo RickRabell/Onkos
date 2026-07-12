@@ -16,7 +16,7 @@ class EditorViewportPass;
  * ISceneRenderer will use to produce the final image.
  */
 enum class
-RenderType {
+RendererType {
 	/** Forward rendering path (simple, single-pass rasterization). */
 	Forward = 0,
 	/** Deferred rendering path (uses multiple G-buffers and a lighting pass). */

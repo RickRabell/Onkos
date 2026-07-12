@@ -67,6 +67,13 @@ public:
 	/** @brief An identifier name for the mesh (e.g., "cube", "sphere_mesh"). */
 	std::string m_name;
 
+	/** @brief Local Transform of the mesh inside the imported model*/
+	XMFLOAT4X4 m_localTransform = XMFLOAT4X4(
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f);
+
 	/** @brief The list of vertices (position, texcoords) stored in system memory. */
 	std::vector<SimpleVertex> m_vertex;
 

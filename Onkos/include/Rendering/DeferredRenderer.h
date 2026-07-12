@@ -314,7 +314,7 @@ private:
 
 	// Depth Stencil States
 	DepthStencilState m_transparentDepthStencil;
-	DepthStencilState m_disableDepthStencil; // Used during the Lighting Pass (quad doesn't need depth)
+	DepthStencilState m_disabledDepthStencil; // Used during the Lighting Pass (quad doesn't need depth)
 	DepthStencilState m_shadowDepthStencil;
 
 	// Blend States
@@ -382,6 +382,6 @@ private:
 	int m_deferredDebugViewMode = 0;
 
 	// Render Queues
-	std::vector<const RenderObject> m_opaqueQueue;
-	std::vector<const RenderObject> m_transparentQueue;
+	std::vector<const RenderObject*> m_opaqueQueue;
+	std::vector<const RenderObject*> m_transparentQueue;
 };

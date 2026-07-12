@@ -18,6 +18,11 @@ Submesh {
 	unsigned int indexCount = 0;  ///< Number of indices to draw.
 	unsigned int startIndex = 0;  ///< Offset into the index buffer.
 	unsigned int materialSlot = 0;///< Maps this geometry to a specific MaterialInstance array index on the Actor.
+		XMFLOAT4X4 localTransform = XMFLOAT4X4(
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f); ///< Local Transform of the Submesh inside the model
 };
 
 /**

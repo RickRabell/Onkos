@@ -125,7 +125,7 @@ BaseApp::init() {
 		m_window.m_height,
 		DXGI_FORMAT_D24_UNORM_S8_UINT,
 		D3D11_BIND_DEPTH_STENCIL,
-		4,
+		1,  // SampleCount: cambiar de 4 a 1 (sin MSAA)
 		0);
 
 	if (FAILED(hr)) {
@@ -795,12 +795,16 @@ BaseApp::render() {
 		m_editorViewportPass
 	);
 
-	// 2) Volver al backbuffer principal
+	// Desbindear targets de la pipeline
+	ID3D11RenderTargetView* nullRTV = nullptr;
+	m_deviceContext.m_deviceContext->OMSetRenderTargets(1, &nullRTV, nullptr);
+
+	// AHORA bindear al backbuffer principal
 	m_renderTargetView.render(m_deviceContext, m_depthStencilView, 1, ClearColor);
 	m_viewport.render(m_deviceContext);
 	m_depthStencilView.render(m_deviceContext);
 
-	// 4) GUI
+	// GUI
 	m_gui.render();
 
 	m_swapChain.present();
@@ -946,8 +950,8 @@ void BaseApp::onResize(unsigned int newW, unsigned int newH)
 	hr = m_renderTargetView.init(m_device, m_backBuffer, DXGI_FORMAT_R8G8B8A8_UNORM);
 	if (FAILED(hr)) return;
 
-	// 7) Re-crea Depth/DSV (tu init actual lo hace con m_window.m_width/m_height)
-	hr = m_depthStencil.init(m_device, newW, newH, DXGI_FORMAT_D24_UNORM_S8_UINT, D3D11_BIND_DEPTH_STENCIL, 4, 0);
+	// 7) Re-crea Depth/DSV
+	hr = m_depthStencil.init(m_device, newW, newH, DXGI_FORMAT_D24_UNORM_S8_UINT, D3D11_BIND_DEPTH_STENCIL, 1, 0);
 	if (FAILED(hr)) return;
 
 	hr = m_depthStencilView.init(m_device, m_depthStencil, DXGI_FORMAT_D24_UNORM_S8_UINT);

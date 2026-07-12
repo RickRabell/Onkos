@@ -63,8 +63,8 @@ SwapChain::init(Device& device,
     return hr;
   }
 
-  // Config the MSAA settings
-  m_sampleCount = 4;
+  // Config the MSAA settings - CAMBIAR A NO USAR MSAA
+  m_sampleCount = 1;  // Sin MSAA
   hr = device.m_device->CheckMultisampleQualityLevels(DXGI_FORMAT_R8G8B8A8_UNORM,
     m_sampleCount,
     &m_qualityLevels);

@@ -88,7 +88,13 @@ EditorViewportPass::begin(DeviceContext& deviceContext, const float clearColor[4
 
 void 
 EditorViewportPass::swap(EditorViewportPass& other) {
-
+	std::swap(m_colorTexture, other.m_colorTexture);
+	std::swap(m_colorSRV, other.m_colorSRV);
+	std::swap(m_rtv, other.m_rtv);
+	std::swap(m_depthTexture, other.m_depthTexture);
+	std::swap(m_dsv, other.m_dsv);
+	std::swap(m_width, other.m_width);
+	std::swap(m_height, other.m_height);
 }
 
 void 
@@ -111,5 +117,11 @@ EditorViewportPass::setViewport(DeviceContext& deviceContext) {
 
 void 
 EditorViewportPass::destroy() {
-
+	m_rtv.destroy();
+	m_dsv.destroy();
+	m_colorSRV.destroy();
+	m_colorTexture.destroy();
+	m_depthTexture.destroy();
+	m_width = 1;
+	m_height = 1;
 }

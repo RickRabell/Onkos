@@ -19,16 +19,23 @@ RenderTargetView::init(Device& device, Texture& backBuffer, DXGI_FORMAT format) 
 		return E_INVALIDARG;
 	}
 
-	// Config the description of the render target view.
+	// Obtener información de la textura para determinar si tiene MSAA
+	D3D11_TEXTURE2D_DESC textureDesc;
+	backBuffer.m_texture->GetDesc(&textureDesc);
+
+	// Config la descripción del render target view
 	D3D11_RENDER_TARGET_VIEW_DESC desc;
 	memset(&desc, 0, sizeof(desc));
 	desc.Format = format;
-	desc.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2DMS;
+	// Usar TEXTURE2DMS solo si la textura tiene MSAA (SampleDesc.Count > 1)
+	desc.ViewDimension = (textureDesc.SampleDesc.Count > 1) 
+		? D3D11_RTV_DIMENSION_TEXTURE2DMS 
+		: D3D11_RTV_DIMENSION_TEXTURE2D;
 
-	// Create the render target view.
-	HRESULT hr = device.m_device->CreateRenderTargetView( backBuffer.m_texture, 
-																												&desc, 
-																												&m_renderTargetView);
+	// Crear el render target view
+	HRESULT hr = device.m_device->CreateRenderTargetView(backBuffer.m_texture, 
+														&desc, 
+														&m_renderTargetView);
 	
 	if(FAILED(hr)) {
 		ERROR("RenderTargetView", "init", 

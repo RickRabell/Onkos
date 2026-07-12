@@ -330,9 +330,9 @@ Texture::destroy() {
 
 HRESULT
 Texture::CreateCubemap(Device& device,
-  DeviceContext& deviceContext,
-  const std::array<std::string, 6>& facePaths,
-  bool generateMips) {
+                       DeviceContext& deviceContext,
+                       const std::array<std::string, 6>& facePaths,
+                       bool generateMips) {
   destroy();
 
   stbi_set_flip_vertically_on_load(false);

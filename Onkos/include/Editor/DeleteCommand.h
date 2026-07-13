@@ -18,7 +18,8 @@ class SceneGraph;
  *
  * Stores actor data and can restore the actor if undo is called.
  */
-class DeleteCommand : public Command {
+class 
+DeleteCommand : public Command {
 public:
   /**
    * @brief Constructor that captures the actor to delete.
@@ -35,26 +36,33 @@ public:
   /**
    * @brief Executes the command by removing the actor from the scene.
    */
-  void execute() override;
+  void 
+  execute() override;
 
   /**
    * @brief Undoes the command by restoring the actor to the scene.
    */
-  void undo() override;
+  void 
+  undo() override;
 
   /**
    * @brief Redoes the command by removing the actor again.
    */
-  void redo() override;
+  void 
+  redo() override;
 
   /**
    * @brief Gets the command description.
    * @return "Delete Actor".
    */
-  const char* getDescription() const override { return "Delete Actor"; }
+  const char* 
+  getDescription() const override { return "Delete Actor"; }
 
 private:
+  /** @brief Shared pointer to the actor to be deleted. */
   EU::TSharedPointer<Actor> m_actor;
+  /** @brief Scene graph for adding/removing the actor. */
   SceneGraph* m_sceneGraph;
+  /** @brief Flag indicating whether the actor has been deleted. */
   bool m_isDeleted;
 };

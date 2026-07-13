@@ -10,7 +10,8 @@
  * Represents a command that can be executed, undone, and redone.
  * All editor operations (transform, create, delete, etc.) should inherit from this class.
  */
-class Command {
+class 
+Command {
 public:
   /**
    * @brief Virtual destructor.
@@ -21,23 +22,27 @@ public:
    * @brief Executes the command.
    * This is called when the command is first invoked.
    */
-  virtual void execute() = 0;
+  virtual void 
+  execute() = 0;
 
   /**
    * @brief Undoes the command.
    * Reverts the state changed by execute() or redo().
    */
-  virtual void undo() = 0;
+  virtual void 
+  undo() = 0;
 
   /**
    * @brief Redoes the command.
    * Re-applies the state changed by execute() after an undo().
    */
-  virtual void redo() = 0;
+  virtual void 
+  redo() = 0;
 
   /**
    * @brief Gets a description of the command for UI/logging purposes.
    * @return A human-readable description of what this command does.
    */
-  virtual const char* getDescription() const = 0;
+  virtual const char* 
+  getDescription() const = 0;
 };

@@ -63,6 +63,15 @@
     <Filter Include="source\Rendering">
       <UniqueIdentifier>{76b770e2-5a4b-4921-a458-8062bd40cef0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Editor">
+      <UniqueIdentifier>{95e18d67-a8ff-4cd2-9c5e-6399d74bb52d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Editor">
+      <UniqueIdentifier>{21003052-7b63-469b-8111-1eff1fb573aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{1f85dca7-d5ee-4410-a291-9342faa37bf0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Onkos.cpp">
@@ -176,11 +185,21 @@
     <ClCompile Include="source\Rendering\RenderPipeline.cpp">
       <Filter>source\Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="source\EngineUtilities\Utilities\DCCCameraController.cpp" />
-    <ClCompile Include="source\Editor\TransformCommand.cpp" />
-    <ClCompile Include="source\Editor\DeleteCommand.cpp" />
-    <ClCompile Include="source\Editor\CreateCommand.cpp" />
-    <ClCompile Include="source\Editor\CommandInvoker.cpp" />
+    <ClCompile Include="source\Editor\DeleteCommand.cpp">
+      <Filter>source\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Editor\TransformCommand.cpp">
+      <Filter>source\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Editor\CreateCommand.cpp">
+      <Filter>source\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Editor\CommandInvoker.cpp">
+      <Filter>source\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EngineUtilities\Utilities\DCCCameraController.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Onkos.fx">
@@ -201,23 +220,57 @@
     <None Include="bin\DeferredLighting.hlsl">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="DCC_CAMERA_CONTROLLER_GUIDE.md" />
-    <None Include="FUTURE_IMPROVEMENTS.md" />
-    <None Include="IMPLEMENTATION_SUMMARY.md" />
-    <None Include="QUICK_REFERENCE.md" />
-    <None Include="COMPLETION_STATUS.md" />
-    <None Include="README_DOCUMENTATION.md" />
-    <None Include="UNDO_REDO_GUIDE.md" />
-    <None Include="CUSTOM_COMMANDS_GUIDE.md" />
-    <None Include="IMPLEMENTATION_SUMMARY_UNDO_REDO.md" />
-    <None Include="UNDO_REDO_SEQUENCE_DIAGRAMS.md" />
-    <None Include="UNDO_REDO_QUICK_START.md" />
-    <None Include="MANIFEST.md" />
-    <None Include="UNDO_REDO_README.md" />
-    <None Include="FINAL_SUMMARY.md" />
-    <None Include="KEYBOARD_SHORTCUTS.md" />
-    <None Include="DOCUMENTATION_INDEX.md" />
-    <None Include="README_UNDO_REDO.md" />
+    <None Include="COMPLETION_STATUS.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="CUSTOM_COMMANDS_GUIDE.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="DCC_CAMERA_CONTROLLER_GUIDE.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="DOCUMENTATION_INDEX.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="FINAL_SUMMARY.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="FUTURE_IMPROVEMENTS.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="IMPLEMENTATION_SUMMARY.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="IMPLEMENTATION_SUMMARY_UNDO_REDO.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="KEYBOARD_SHORTCUTS.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="MANIFEST.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="QUICK_REFERENCE.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="README_DOCUMENTATION.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="README_UNDO_REDO.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="UNDO_REDO_GUIDE.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="UNDO_REDO_QUICK_START.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="UNDO_REDO_README.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="UNDO_REDO_SEQUENCE_DIAGRAMS.md">
+      <Filter>Docs</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -409,11 +462,23 @@
     <ClInclude Include="include\Rendering\RenderPipeline.h">
       <Filter>include\Rendering</Filter>
     </ClInclude>
-    <ClInclude Include="include\EngineUtilities\Utilities\DCCCameraController.h" />
-    <ClInclude Include="include\Editor\Command.h" />
-    <ClInclude Include="include\Editor\TransformCommand.h" />
-    <ClInclude Include="include\Editor\DeleteCommand.h" />
-    <ClInclude Include="include\Editor\CreateCommand.h" />
-    <ClInclude Include="include\Editor\CommandInvoker.h" />
+    <ClInclude Include="include\Editor\Command.h">
+      <Filter>include\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Editor\CommandInvoker.h">
+      <Filter>include\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Editor\CreateCommand.h">
+      <Filter>include\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Editor\DeleteCommand.h">
+      <Filter>include\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Editor\TransformCommand.h">
+      <Filter>include\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\EngineUtilities\Utilities\DCCCameraController.h">
+      <Filter>include\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -348,7 +348,7 @@ GUI::update(Viewport& viewport, Window& window) {
 	m_viewportFocused = false;
 	ImGuizmo::BeginFrame();
 	ImGuiIO& io = ImGui::GetIO();
-	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+	
 	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_S)) {
 		m_requestSaveScene = true;
 	}
@@ -592,6 +592,97 @@ GUI::appleLiquidStyle(float opacity, ImVec4 accent) {
 	colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0, 0, 0, 0.35f);
 }
 
+void GUI::unrealEngine5Style() {
+	ImGuiStyle& style = ImGui::GetStyle();
+	ImVec4* colors = style.Colors;
+
+	// Geometría estructurada tipo UE5
+	style.WindowRounding = 2.0f;
+	style.ChildRounding = 2.0f;
+	style.PopupRounding = 2.0f;
+	style.FrameRounding = 2.0f;
+	style.GrabRounding = 2.0f;
+	style.ScrollbarRounding = 2.0f;
+	style.TabRounding = 2.0f;
+
+	style.WindowBorderSize = 1.0f;
+	style.FrameBorderSize = 1.0f;
+	style.PopupBorderSize = 1.0f;
+	style.TabBorderSize = 0.0f;
+
+	// Espaciado más compacto y técnico
+	style.WindowPadding = ImVec2(8, 8);
+	style.FramePadding = ImVec2(4, 4);
+	style.ItemSpacing = ImVec2(8, 4);
+	style.ItemInnerSpacing = ImVec2(4, 4);
+
+	// Paleta de colores Dark "Starship" (UE5)
+	const ImVec4 bg_very_dark = ImVec4(0.06f, 0.06f, 0.06f, 1.00f);
+	const ImVec4 bg_dark = ImVec4(0.09f, 0.09f, 0.09f, 1.00f);
+	const ImVec4 bg_panel = ImVec4(0.12f, 0.12f, 0.12f, 1.00f);
+	const ImVec4 bg_hover = ImVec4(0.18f, 0.18f, 0.18f, 1.00f);
+	const ImVec4 border = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
+	const ImVec4 accent_blue = ImVec4(0.00f, 0.45f, 0.85f, 1.00f); // Azul Unreal
+	const ImVec4 text_main = ImVec4(0.85f, 0.85f, 0.85f, 1.00f);
+	const ImVec4 text_muted = ImVec4(0.45f, 0.45f, 0.45f, 1.00f);
+
+	colors[ImGuiCol_Text] = text_main;
+	colors[ImGuiCol_TextDisabled] = text_muted;
+	colors[ImGuiCol_WindowBg] = bg_dark;
+	colors[ImGuiCol_ChildBg] = bg_panel;
+	colors[ImGuiCol_PopupBg] = bg_dark;
+	colors[ImGuiCol_Border] = border;
+	colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
+
+	colors[ImGuiCol_FrameBg] = bg_very_dark;
+	colors[ImGuiCol_FrameBgHovered] = bg_hover;
+	colors[ImGuiCol_FrameBgActive] = accent_blue;
+
+	colors[ImGuiCol_TitleBg] = bg_very_dark;
+	colors[ImGuiCol_TitleBgActive] = bg_dark;
+	colors[ImGuiCol_TitleBgCollapsed] = bg_very_dark;
+
+	colors[ImGuiCol_MenuBarBg] = bg_very_dark;
+
+	colors[ImGuiCol_ScrollbarBg] = bg_dark;
+	colors[ImGuiCol_ScrollbarGrab] = bg_hover;
+	colors[ImGuiCol_ScrollbarGrabHovered] = border;
+	colors[ImGuiCol_ScrollbarGrabActive] = text_muted;
+
+	colors[ImGuiCol_CheckMark] = accent_blue;
+	colors[ImGuiCol_SliderGrab] = accent_blue;
+	colors[ImGuiCol_SliderGrabActive] = ImVec4(0.20f, 0.60f, 1.00f, 1.00f);
+
+	colors[ImGuiCol_Button] = bg_panel;
+	colors[ImGuiCol_ButtonHovered] = bg_hover;
+	colors[ImGuiCol_ButtonActive] = accent_blue;
+
+	colors[ImGuiCol_Header] = bg_panel;
+	colors[ImGuiCol_HeaderHovered] = bg_hover;
+	colors[ImGuiCol_HeaderActive] = accent_blue;
+
+	colors[ImGuiCol_Separator] = bg_very_dark;
+	colors[ImGuiCol_SeparatorHovered] = border;
+	colors[ImGuiCol_SeparatorActive] = accent_blue;
+
+	colors[ImGuiCol_Tab] = bg_very_dark;
+	colors[ImGuiCol_TabHovered] = bg_hover;
+	colors[ImGuiCol_TabActive] = bg_panel;
+	colors[ImGuiCol_TabUnfocused] = bg_very_dark;
+	colors[ImGuiCol_TabUnfocusedActive] = bg_panel;
+
+	colors[ImGuiCol_DockingPreview] = ImVec4(accent_blue.x, accent_blue.y, accent_blue.z, 0.40f);
+	colors[ImGuiCol_DockingEmptyBg] = bg_dark;
+
+	colors[ImGuiCol_TableHeaderBg] = bg_very_dark;
+	colors[ImGuiCol_TableBorderStrong] = border;
+	colors[ImGuiCol_TableBorderLight] = bg_hover;
+	colors[ImGuiCol_TableRowBg] = bg_dark;
+	colors[ImGuiCol_TableRowBgAlt] = ImVec4(0.10f, 0.10f, 0.10f, 1.00f);
+
+	colors[ImGuiCol_TextSelectedBg] = ImVec4(accent_blue.x, accent_blue.y, accent_blue.z, 0.45f);
+	colors[ImGuiCol_NavHighlight] = accent_blue;
+}
 
 void
 GUI::toolBar() {

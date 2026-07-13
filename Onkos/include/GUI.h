@@ -7,6 +7,7 @@
 #include <imgui_internal.h>
 #include "ImGuizmo.h"
 
+// Forward Declarations
 class Viewport;
 class Device;
 class DeviceContext;
@@ -95,8 +96,19 @@ public:
 	void
 	toolTipData();
 
+	/**
+	 * @brief Applies a custom Apple-like liquid style to the UI elements.
+	 * @param opacity The opacity of the UI elements (0.0 to 1.0).
+	 * @param accent The accent color to use for highlights.
+	 */
 	void
 	appleLiquidStyle(float opacity /*0..1f*/, ImVec4 accent /*=#0A84FF*/);
+
+	/**
+	 * @brief Applies a custom Unreal Engine 5 style to the UI elements.
+	 */
+	void
+	unrealEngine5Style();
 
 	/**
 	 * @brief Helper function to draw a standardized 3-component vector editor (X, Y, Z).
@@ -167,9 +179,19 @@ public:
 	}
 
 	//---------------------
+	/**
+	 * @brief Draws the top ribbon of the studio interface.
+	 */
 	void
 	drawStudioTopRibbon();
 
+	/**
+	 * @brief Draws the main viewport panel where the 3D scene is rendered.
+	 * @param viewportSRV The shader resource view of the viewport texture.
+	 * @param actors The list of all active actors in the scene.
+	 * @param camera The active camera used for rendering.
+	 * @param window The window context for the viewport.
+	 */
 	void 
 	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 										const std::vector<EU::TSharedPointer<Actor>>& actors,
@@ -178,16 +200,36 @@ public:
 										EU::TSharedPointer<Actor> selectedActor,
 										ID3D11ShaderResourceView* lightIconSRV);
 
+	/**
+	 * @brief Draws the light icons in the viewport.
+	 * @param actors The list of all active actors in the scene.
+	 * @param camera The active camera used for rendering.
+	 * @param lightIconSRV The shader resource view of the light icon texture.
+	 */
 	void 
 	drawLightIcons(const std::vector<EU::TSharedPointer<Actor>>& actors,
 								 Camera& camera,
 								 ID3D11ShaderResourceView* lightIconSRV);
 
+	/**
+	 * @brief Draws the render debug panel.
+	 * @param preShadowSRV The shader resource view of the pre-shadow texture.
+	 * @param finalViewportSRV The shader resource view of the final viewport texture.
+	 * @param shadowMapSRV The shader resource view of the shadow map texture.
+	 */
 	void 
 	drawRenderDebugPanel(ID3D11ShaderResourceView* preShadowSRV,
 											 ID3D11ShaderResourceView* finalViewportSRV,
 											 ID3D11ShaderResourceView* shadowMapSRV);
-
+	
+	/**
+	 * @brief Draws the GBuffer debug panel.
+	 * @param albedoMetallicSRV The shader resource view of the albedo and metallic texture.
+	 * @param normalRoughnessSRV The shader resource view of the normal and roughness texture.
+	 * @param worldAoSRV The shader resource view of the world ambient occlusion texture.
+	 * @param emissiveAlphaSRV The shader resource view of the emissive and alpha texture.
+	 * @param selectedActor The currently selected actor.
+	 */
 	void 
 	drawGBufferDebugPanel(ID3D11ShaderResourceView* albedoMetallicSRV,
 												ID3D11ShaderResourceView* normalRoughnessSRV,
@@ -195,6 +237,9 @@ public:
 												ID3D11ShaderResourceView* emissiveAlphaSRV,
 												EU::TSharedPointer<Actor> selectedActor);
 
+	/**
+	 * @brief Draws the editor dockspace.
+	 */
 	void 
 	drawEditorDockspace();
 
@@ -209,6 +254,10 @@ public:
 		return requested;
 	}
 
+	/**
+	 * @brief Consume de forma atomica la solicitud de creación de un actor de luz emitida desde la UI.
+	 * @return `true` una sola vez por peticion de creación de actor de luz.
+	 */
 	bool
 	consumeCreateLightActorRequest() {
 		const bool requested = m_requestCreateLightActor;
@@ -257,28 +306,74 @@ private:
   */
   bool show_exit_popup = false;
 
+	/**
+	 * @brief Flag to indicate if a save scene request has been made.
+	 */
 	bool m_requestSaveScene = false;
+	
+	/**
+	 * @brief Flag to indicate if a create light actor request has been made.
+	 */
 	bool m_requestCreateLightActor = false;
+	
+	/**
+	 * @brief Pointer to the draw list of the viewport.
+	 */
 	ImDrawList* m_viewportDrawList = nullptr;
+
+	/**
+	 * @brief Pointer to the viewport window.
+	 */
 	ImGuiWindow* m_viewportWindow = nullptr;
+	
+	/**
+	 * @brief Flag to indicate if the viewport is visible this frame.
+	 */
 	bool m_viewportVisibleThisFrame = false;
+	
+	/**
+	 * @brief Flag to indicate if the viewport is active this frame.
+	 */
 	bool m_viewportActive = false;
 
+	/**
+	 * @brief Shader resource view for pre-shadow rendering debug.
+	 */
 	ID3D11ShaderResourceView* m_renderDebugPreShadowSRV = nullptr;
+	
+	/**
+	 * @brief Shader resource view for final rendering debug.
+	 */
 	ID3D11ShaderResourceView* m_renderDebugFinalSRV = nullptr;
+	
+	/**
+	 * @brief Shader resource view for shadow map rendering debug.
+	 */
 	ID3D11ShaderResourceView* m_renderDebugShadowMapSRV = nullptr;
 
 public:
+	/** @brief Flag to indicate if the gizmo is currently being used. */
 	bool m_isUsingGizmo = false;
+	
+	/** @brief Flag to indicate if the deferred shadow factor should be visualized. */
 	bool m_visualizeDeferredShadowFactor = false;
+	
+	/** @brief The current debug view mode for deferred rendering. */
 	int m_deferredDebugViewMode = 0;
 
 	/** @brief The index of the currently selected actor in the outliner. -1 means no selection. */
 	int selectedActorIndex = -1;
-
+	
+	/** @brief The position of the viewport in the GUI. */
 	ImVec2 m_viewportPos = ImVec2(0.0f, 0.0f);
+	
+	/** @brief The size of the viewport in the GUI. */
 	ImVec2 m_viewportSize = ImVec2(0.0f, 0.0f);
+	
+	/** @brief Flag to indicate if the viewport is hovered. */
 	bool m_viewportHovered = false;
+
+	/** @brief Flag to indicate if the viewport is focused. */
 	bool m_viewportFocused = false;
 
 	/** @brief Pointer to the CommandInvoker for undo/redo operations. */
@@ -290,7 +385,11 @@ private:
 
 	/** @brief Stores the initial transform before gizmo manipulation starts. */
 	EU::Vector3 m_gizmoStartPosition;
+	/** @brief Stores the initial rotation before gizmo manipulation starts. */
 	EU::Vector3 m_gizmoStartRotation;
+	/** @brief Stores the initial scale before gizmo manipulation starts. */
 	EU::Vector3 m_gizmoStartScale;
+
+	/** @brief Pointer to the actor currently being edited by the gizmo. */
 	EU::TSharedPointer<Actor> m_gizmoEditingActor;
 };

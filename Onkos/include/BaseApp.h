@@ -46,7 +46,7 @@ LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARA
  * It serves as the central hub for the entire application.
  */
 class
-	BaseApp {
+BaseApp {
 public:
 	/**
 	 * @brief Constructor.
@@ -129,15 +129,32 @@ public:
 	void
 	onResize(unsigned int newW, unsigned int newH);
 
+	/*
+	* @brief Handles the editor viewport resize event.
+	*/
 	void
 	handleEditorViewportResize();
 
+	/*
+	* @brief Handles the editor viewport focus event.
+	* @param path The file path of the scene to save.
+	* @return true if the scene was successfully saved, false otherwise.
+	*/
 	bool
 	saveScene(const std::string& path);
 
+	/*
+	* @brief Handles the editor viewport focus event.
+	* @param path The file path of the scene to load.
+	* @return true if the scene was successfully loaded, false otherwise.
+	*/
 	bool
 	loadScene(const std::string& path);
 
+	/**
+	* @brief Gets the default scene path.
+	* @return The default scene path as a string.
+	*/
 	std::string
 	getDefaultScenePath() const;
 
@@ -149,16 +166,21 @@ public:
 	getCommandInvoker() { return m_commandInvoker; }
 
 private:
+	/*
+	* @brief Creates a new light actor and adds it to the scene.
+	* @param name Optional name for the new light actor. If not provided, a default name will be assigned.
+	* @return A shared pointer to the newly created light actor.
+	*/
 	EU::TSharedPointer<Actor>
 	createLightActor(const std::string& name = std::string());
 
 	/**
-	 * @brief The static window procedure for handling Win32 messages.
-	 * @param hWnd The handle to the window receiving the message.
-	 * @param message The message identifier.
-	 * @param wParam Additional message-specific information.
-	 * @param lParam Additional message-specific information.
-	 */
+	* @brief The static window procedure for handling Win32 messages.
+	* @param hWnd The handle to the window receiving the message.
+	* @param message The message identifier.
+	* @param wParam Additional message-specific information.
+	* @param lParam Additional message-specific information.
+	*/
 	static LRESULT CALLBACK
 	WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
@@ -216,25 +238,41 @@ private:
 	Texture m_AOSRV;
 	/** @brief The normal map texture used for simulating surface detail in PBR. */
 	Texture m_NormalSRV;
-
+	/** @brief The emissive texture used for PBR rendering. */
 	Texture m_EmissiveSRV;
 
+	/** @brief The albedo (base color) texture used for the SpitFire character. */
 	Texture m_spitfireAlbedoSRV;
+	/** @brief The normal map texture used for the SpitFire character. */
 	Texture m_spitfireNormalSRV;
+	/** @brief The metallic texture map used for the SpitFire character. */
 	Texture m_spitfireMetallicSRV;
+	/** @brief The roughness texture map used for the SpitFire character. */
 	Texture m_spitfireRoughnessSRV;
+	/** @brief The ambient occlusion (AO) texture map used for the SpitFire character. */
 	Texture m_spitfireAOSRV;
 
+	/** @brief The Albedo (base color) texture used for the Toad character. */
 	Texture m_toadAlbedoSRV;
+	/** @brief The Normal map texture used for the Toad character. */
 	Texture m_toadNormalSRV;
+	/** @brief The Metallic map texture used for the Toad character. */
 	Texture m_toadMetallicSRV;
+	/** @brief The Roughness texture used for the Toad character. */
 	Texture m_toadRoughnessSRV;
+	/** @brief The Ambient Occlusion map texture used for the Toad character. */
 	Texture m_toadAOSRV;
+	/** @brief The Albedo (base color) texture used for the Toad character's glass material. */
 	Texture m_toadGlassAlbedoSRV;
+	/** @brief The Normal map texture used for the Toad character's glass material. */
 	Texture m_toadGlassNormalSRV;
+	/** @brief The Roughness texture used for the Toad character's glass material. */
 	Texture m_toadGlassRoughnessSRV;
+	/** @brief The Albedo (base color) texture used for the Toad character's head. */
 	Texture m_toadHeadAlbedoSRV;
+	/** @brief The Normal map texture used for the Toad character's head. */
 	Texture m_toadHeadNormalSRV;
+	/** @brief The Roughness texture used for the Toad character's head. */
 	Texture m_toadHeadRoughnessSRV;
 
 	/** @brief The main camera used for rendering the scene. */
@@ -284,6 +322,9 @@ private:
 	*/
 	GUI m_gui;
 
+	/*
+	* @brief Flag indicating if the GUI has been initialized. 
+	*/
 	bool m_guiInitialized = false;
 
 	/**
@@ -301,6 +342,9 @@ private:
 	*/
 	Texture m_skyboxTex;
 
+	/**
+	* @brief The texture resource used for the light icon.
+	*/
 	Texture m_lightIconTexture;
 
 	/**
@@ -313,37 +357,60 @@ private:
 	*/
 	DepthStencilState m_defaultDepthStencil;
 
+	/**
+	* @brief The default sampler state used for texture sampling.
+	*/
 	SamplerState m_defaultSampler;
 
+	/*
+	* @brief Mesh instances for the SpitFire and Toad models, used for rendering.
+	*/
 	Mesh m_toadRenderMesh;
 	Mesh m_spitfireRenderMesh;
+
+	/*
+	* @brief Material instances for the PBR materials used in the scene.
+	*/
 	Material m_pbrMaterial;
 	Material m_transparentPbrMaterial;
-	//MaterialInstance m_sciFiToadMaterial;
-	//MaterialInstance m_spitFireMaterial;
-	//Material m_cyberGunPbrMaterial;
-	//Material m_drakefirePbrMaterial;
 	Material m_spitfirePbrMaterial;
 	Material m_toadPbrMaterial;
 	Material m_toadGlassPbrMaterial;
 	Material m_toadHeadPbrMaterial;
-	//MaterialInstance m_cyberGunMaterial;
-	//MaterialInstance m_drakefireMaterial;
+
+	/* 
+	* @brief Material instances for the SpitFire and Toad models, allowing for unique parameter overrides without duplicating the base material.
+	*/
 	MaterialInstance m_spitfireMaterial;
 	MaterialInstance m_toadMaterial;
 	MaterialInstance m_toadGlassMaterial;
 	MaterialInstance m_toadHeadMaterial;
 
+	/** @brief The editor viewport pass responsible for rendering the editor's viewport. */
 	EditorViewportPass m_editorViewportPass;
-	//ForwardRenderer m_forwardRenderer;
+	
+	/** @brief The render pipeline used for managing rendering passes and resources. */
 	RenderPipeline m_renderPipeline;
+	
+	/** @brief The render scene responsible for managing scene rendering. */
 	RenderScene m_renderScene;
+	
+	/** @brief Flag indicating if the editor viewport resize is pending. */
 	bool m_editorViewportResizePending = false;
+	
+	/** @brief The pending width of the editor viewport. */
 	unsigned int m_pendingViewportWidth = 1;
+	
+	/** @brief The pending height of the editor viewport. */
 	unsigned int m_pendingViewportHeight = 1;
-
+	
+	/** @brief The last requested width of the editor viewport. */
 	unsigned int m_lastRequestedViewportWidth = 1;
+	
+	/** @brief The last requested height of the editor viewport. */
 	unsigned int m_lastRequestedViewportHeight = 1;
+
+	/** @brief The number of stable frames since the last viewport resize request. */
 	int m_viewportResizeStableFrames = 0;
 
 	/** @brief The command invoker for managing undo/redo operations. */

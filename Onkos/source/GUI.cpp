@@ -152,8 +152,8 @@ namespace {
 		ImGui::PushStyleColor(ImGuiCol_Button, color);
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color);
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, color);
-		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 12.0f);
-		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(10.0f, 4.0f));
+		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3.0f); // Cambiado de 12.0f
+		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(8.0f, 2.0f)); // Más compacto
 		ImGui::Button(text);
 		ImGui::PopStyleVar(2);
 		ImGui::PopStyleColor(3);
@@ -165,9 +165,9 @@ namespace {
 			flags |= ImGuiTreeNodeFlags_DefaultOpen;
 		}
 
-		ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.16f, 0.18f, 0.22f, 0.95f));
-		ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.20f, 0.23f, 0.28f, 1.0f));
-		ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.22f, 0.26f, 0.32f, 1.0f));
+		ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.12f, 0.12f, 0.12f, 1.0f));
+		ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.18f, 0.18f, 0.18f, 1.0f));
+		ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.22f, 0.22f, 0.22f, 1.0f));
 		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(10.0f, 8.0f));
 		const bool open = ImGui::CollapsingHeader(label, flags);
 		ImGui::PopStyleVar();
@@ -321,7 +321,8 @@ GUI::init(Window& window, Device& device, DeviceContext& deviceContext) {
 		style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 	}
 
-	appleLiquidStyle(0.72f, ImVec4(0.0f, 0.515f, 1.0f, 1.0f));
+	//appleLiquidStyle(0.72f, ImVec4(0.0f, 0.515f, 1.0f, 1.0f));
+	unrealEngine5Style();
 
 	// Setup Platform/Renderer backends
 	ImGui_ImplWin32_Init(window.m_hWnd);
@@ -435,9 +436,9 @@ GUI::vec3Control(const std::string& label, float* values, float resetValue, floa
 	const float dragSpeed = displayAsDegrees ? 1.0f : 0.1f;
 	const char* dragFormat = displayAsDegrees ? "%.1f deg" : "%.2f";
 
-	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.55f, 0.15f, 0.15f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.65f, 0.20f, 0.20f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.75f, 0.25f, 0.25f, 1.0f });
 	ImGui::PushFont(boldFont);
 	if (ImGui::Button("X", buttonSize)) {
 		values[0] = resetValue;
@@ -453,9 +454,9 @@ GUI::vec3Control(const std::string& label, float* values, float resetValue, floa
 	}
 	ImGui::SameLine();
 
-	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.2f, 0.7f, 0.2f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.3f, 0.8f, 0.3f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.2f, 0.7f, 0.2f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.25f, 0.55f, 0.20f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.35f, 0.65f, 0.30f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.45f, 0.75f, 0.40f, 1.0f });
 	ImGui::PushFont(boldFont);
 	if (ImGui::Button("Y", buttonSize)) {
 		values[1] = resetValue;
@@ -471,9 +472,9 @@ GUI::vec3Control(const std::string& label, float* values, float resetValue, floa
 	}
 	ImGui::SameLine();
 
-	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.1f, 0.25f, 0.8f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.2f, 0.35f, 0.9f, 1.0f });
-	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.1f, 0.25f, 0.8f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.15f, 0.35f, 0.65f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.25f, 0.45f, 0.75f, 1.0f });
+	ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.35f, 0.55f, 0.85f, 1.0f });
 	ImGui::PushFont(boldFont);
 	if (ImGui::Button("Z", buttonSize)) {
 		values[2] = resetValue;
@@ -997,10 +998,16 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 
 		ImGui::PushID(i);
 		const bool isSelected = (selectedActorIndex == i);
-		if (isSelected) {
+		/*if (isSelected) {
 			ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.18f, 0.32f, 0.58f, 0.70f));
 			ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.22f, 0.38f, 0.66f, 0.85f));
 			ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.24f, 0.42f, 0.72f, 0.95f));
+		}*/
+
+		if (isSelected) {
+			ImGui::PushStyleColor(ImGuiCol_Header, ImVec4(0.00f, 0.35f, 0.75f, 1.00f));
+			ImGui::PushStyleColor(ImGuiCol_HeaderHovered, ImVec4(0.00f, 0.45f, 0.85f, 1.00f));
+			ImGui::PushStyleColor(ImGuiCol_HeaderActive, ImVec4(0.10f, 0.55f, 0.95f, 1.00f));
 		}
 
 		ImVec2 rowSize(ImGui::GetContentRegionAvail().x, 42.0f);
@@ -1016,18 +1023,19 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 
 		float badgeX = max.x - 84.0f;
 		if (hasMeshRenderer) {
-			drawList->AddRectFilled(ImVec2(badgeX, min.y + 12.0f), ImVec2(badgeX + 28.0f, min.y + 30.0f), IM_COL32(68, 118, 180, 180), 6.0f);
+			drawList->AddRectFilled(ImVec2(badgeX, min.y + 12.0f), ImVec2(badgeX + 28.0f, min.y + 30.0f), IM_COL32(68, 118, 180, 180), 2.0f);
 			drawList->AddText(ImVec2(badgeX + 9.0f, min.y + 14.0f), IM_COL32(240, 244, 255, 255), "M");
 			badgeX += 40.0f;
 		}
 		if (hasLightComponent) {
-			drawList->AddRectFilled(ImVec2(badgeX, min.y + 12.0f), ImVec2(badgeX + 28.0f, min.y + 30.0f), IM_COL32(180, 142, 52, 180), 6.0f);
+			drawList->AddRectFilled(ImVec2(badgeX, min.y + 12.0f), ImVec2(badgeX + 28.0f, min.y + 30.0f), IM_COL32(180, 142, 52, 180), 2.0f);
 			drawList->AddText(ImVec2(badgeX + 9.0f, min.y + 14.0f), IM_COL32(255, 248, 232, 255), "L");
 		}
 
 		if (isSelected) {
 			ImGui::PopStyleColor(3);
 		}
+
 		ImGui::PopID();
 	}
 

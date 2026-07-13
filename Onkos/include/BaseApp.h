@@ -17,6 +17,7 @@
 #include "GUI.h"
 #include "SceneGraph\SceneGraph.h"
 #include "EngineUtilities\Utilities\Camera.h"
+#include "EngineUtilities\Utilities\DCCCameraController.h"
 #include "EngineUtilities\Utilities\Skybox.h"
 #include "EngineUtilities\Utilities\LayoutBuilder.h"
 #include "EngineUtilities/Utilities/EditorViewportPass.h"
@@ -27,6 +28,7 @@
 #include "Rendering/Mesh.h"
 #include "Rendering/RenderPipeline.h"
 #include "Rendering/RenderScene.h"
+#include "Editor/CommandInvoker.h"
 #include <string>
 
 extern IMGUI_IMPL_API
@@ -139,6 +141,13 @@ public:
 	std::string
 	getDefaultScenePath() const;
 
+	/**
+	 * @brief Gets the command invoker for undo/redo operations.
+	 * @return Reference to the CommandInvoker.
+	 */
+	CommandInvoker&
+	getCommandInvoker() { return m_commandInvoker; }
+
 private:
 	EU::TSharedPointer<Actor>
 	createLightActor(const std::string& name = std::string());
@@ -230,6 +239,9 @@ private:
 
 	/** @brief The main camera used for rendering the scene. */
 	Camera m_camera;
+
+	/** @brief DCC-style camera controller for Orbit, Pan, and Zoom-to-fit navigation. */
+	DCCCameraController m_cameraController;
 
 	/** @brief The scene graph responsible for hierarchical transformations and rendering. */
 	SceneGraph m_sceneGraph;
@@ -333,4 +345,7 @@ private:
 	unsigned int m_lastRequestedViewportWidth = 1;
 	unsigned int m_lastRequestedViewportHeight = 1;
 	int m_viewportResizeStableFrames = 0;
+
+	/** @brief The command invoker for managing undo/redo operations. */
+	CommandInvoker m_commandInvoker;
 };

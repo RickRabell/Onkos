@@ -17,6 +17,8 @@
 #include "Rendering\MaterialInstance.h"
 #include "Texture.h"
 #include "EngineUtilities\Utilities\Camera.h"
+#include "Editor/CommandInvoker.h"
+#include "Editor/TransformCommand.h"
  //#include "imgui_internal.h"
 static ImGuizmo::OPERATION mCurrentGizmoOperation(ImGuizmo::TRANSLATE);
 static ImGuizmo::MODE mCurrentGizmoMode(ImGuizmo::LOCAL);
@@ -341,14 +343,30 @@ GUI::update(Viewport& viewport, Window& window) {
 	m_viewportVisibleThisFrame = false;
 	m_viewportDrawList = nullptr;
 	m_viewportWindow = nullptr;
-	m_viewportHovered = false;
+	//m_viewportHovered = false;
 	m_viewportActive = false;
 	m_viewportFocused = false;
 	ImGuizmo::BeginFrame();
 	ImGuiIO& io = ImGui::GetIO();
+	//io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_S)) {
 		m_requestSaveScene = true;
 	}
+	//if(!io.WantCaptureKeyboard)
+	// Handle Undo (Ctrl+Z)
+	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_Z)) {
+		if (m_commandInvoker && m_commandInvoker->canUndo()) {
+			m_commandInvoker->undo();
+		}
+	}
+
+	// Handle Redo (Ctrl+Y)
+	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_Y)) {
+		if (m_commandInvoker && m_commandInvoker->canRedo()) {
+			m_commandInvoker->redo();
+		}
+	}
+
 	ImGuizmo::SetOrthographic(false);
 	//ImGuizmo::SetRect(0, 0, (float)window.m_width, (float)window.m_height);
 
@@ -981,6 +999,9 @@ void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> a
 		activeGizmoMode = ImGuizmo::LOCAL;
 	}
 
+	// Detect if we're starting gizmo interaction
+	const bool wasNotUsingGizmo = !m_wasUsingGizmo;
+
 	ImGuizmo::Manipulate(
 		vArr,
 		pArr,
@@ -994,6 +1015,14 @@ void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> a
 
 	m_isUsingGizmo = ImGuizmo::IsUsing();
 
+	// If we just started using the gizmo, save the initial state
+	if (m_isUsingGizmo && wasNotUsingGizmo) {
+		m_gizmoStartPosition = transform->getPosition();
+		m_gizmoStartRotation = transform->getRotation();
+		m_gizmoStartScale = transform->getScale();
+		m_gizmoEditingActor = actor;
+	}
+
 	if (m_isUsingGizmo)
 	{
 		float newPos[3], newRot[3], newSca[3];
@@ -1003,6 +1032,49 @@ void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> a
 		transform->setRotation(EU::Vector3(DegToRad(newRot[0]), DegToRad(newRot[1]), DegToRad(newRot[2])));
 		transform->setScale(EU::Vector3(newSca[0], newSca[1], newSca[2]));
 	}
+
+	// If we were using gizmo but not anymore, create a transform command
+	if (!m_isUsingGizmo && m_wasUsingGizmo) {
+		if (!m_gizmoEditingActor.isNull() && m_commandInvoker) {
+			float newPos[3], newRot[3], newSca[3];
+			ImGuizmo::DecomposeMatrixToComponents(mArr, newPos, newRot, newSca);
+
+			EU::Vector3 finalPosition(newPos[0], newPos[1], newPos[2]);
+			EU::Vector3 finalRotation(DegToRad(newRot[0]), DegToRad(newRot[1]), DegToRad(newRot[2]));
+			EU::Vector3 finalScale(newSca[0], newSca[1], newSca[2]);
+
+			// Only create a command if something actually changed
+			const float epsilon = 0.0001f;
+			bool posChanged = (fabsf(m_gizmoStartPosition.x - finalPosition.x) > epsilon ||
+								 fabsf(m_gizmoStartPosition.y - finalPosition.y) > epsilon ||
+								 fabsf(m_gizmoStartPosition.z - finalPosition.z) > epsilon);
+			bool rotChanged = (fabsf(m_gizmoStartRotation.x - finalRotation.x) > epsilon ||
+								 fabsf(m_gizmoStartRotation.y - finalRotation.y) > epsilon ||
+								 fabsf(m_gizmoStartRotation.z - finalRotation.z) > epsilon);
+			bool scaleChanged = (fabsf(m_gizmoStartScale.x - finalScale.x) > epsilon ||
+								 fabsf(m_gizmoStartScale.y - finalScale.y) > epsilon ||
+								 fabsf(m_gizmoStartScale.z - finalScale.z) > epsilon);
+
+			if (posChanged || rotChanged || scaleChanged) {
+
+				const char* operationType = "Transform";
+				if (mCurrentGizmoOperation == ImGuizmo::TRANSLATE) operationType = "Move";
+				else if (mCurrentGizmoOperation == ImGuizmo::ROTATE) operationType = "Rotate";
+				else if (mCurrentGizmoOperation == ImGuizmo::SCALE) operationType = "Scale";
+
+				auto command = EU::MakeShared<TransformCommand>(
+					m_gizmoEditingActor,
+					finalPosition,
+					finalRotation,
+					finalScale,
+					operationType
+				);
+				m_commandInvoker->executeCommand(command.template dynamic_pointer_cast<Command>());
+			}
+		}
+	}
+
+	m_wasUsingGizmo = m_isUsingGizmo;
 }
 
 void GUI::drawGizmoToolbar()
@@ -1363,10 +1435,22 @@ void GUI::drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 		else
 		{
 			ImGui::InvisibleButton("##ViewportSurface", panelSize);
-			ImVec2 itemMin = ImGui::GetItemRectMin();
-			ImVec2 itemMax = ImGui::GetItemRectMax();
-			ImDrawList* drawList = viewportWindowDrawList;
+		}
 
+		// IMPORTANTE: Capture hover/active IMMEDIATELY after the Image/Button, before GetItemRect calls
+		m_viewportHovered = ImGui::IsItemHovered();
+		m_viewportActive = ImGui::IsItemActive();
+
+		ImVec2 itemMin = ImGui::GetItemRectMin();
+		ImVec2 itemMax = ImGui::GetItemRectMax();
+		m_viewportPos = itemMin;
+		m_viewportSize = ImVec2(itemMax.x - itemMin.x, itemMax.y - itemMin.y);
+		m_viewportDrawList = viewportWindowDrawList;
+
+		// Draw fallback UI if no SRV
+		if (!viewportSRV)
+		{
+			ImDrawList* drawList = viewportWindowDrawList;
 			drawList->AddRectFilled(itemMin, itemMax, IM_COL32(20, 20, 25, 255));
 			drawList->AddText(
 				ImVec2(itemMin.x + 12.0f, itemMin.y + 12.0f),
@@ -1375,15 +1459,6 @@ void GUI::drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 			);
 		}
 
-		ImVec2 itemMin = ImGui::GetItemRectMin();
-		ImVec2 itemMax = ImGui::GetItemRectMax();
-		m_viewportPos = itemMin;
-		m_viewportSize = ImVec2(itemMax.x - itemMin.x, itemMax.y - itemMin.y);
-		m_viewportDrawList = viewportWindowDrawList;
-
-		// IMPORTANTE: el hover/active del item imagen
-		m_viewportHovered = ImGui::IsItemHovered();
-		m_viewportActive = ImGui::IsItemActive();
 		m_viewportFocused = ImGui::IsWindowFocused(ImGuiFocusedFlags_RootAndChildWindows);
 
 		ImDrawList* gizmoDrawList = m_viewportDrawList;

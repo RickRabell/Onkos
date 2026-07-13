@@ -216,6 +216,14 @@ public:
 		return requested;
 	}
 
+	/**
+	 * @brief Sets a reference to the CommandInvoker for undo/redo operations.
+	 * @param commandInvoker Reference to the CommandInvoker.
+	 */
+	void setCommandInvoker(class CommandInvoker* commandInvoker) {
+		m_commandInvoker = commandInvoker;
+	}
+
 	//---------------------
 
 private:
@@ -272,4 +280,17 @@ public:
 	ImVec2 m_viewportSize = ImVec2(0.0f, 0.0f);
 	bool m_viewportHovered = false;
 	bool m_viewportFocused = false;
+
+	/** @brief Pointer to the CommandInvoker for undo/redo operations. */
+	class CommandInvoker* m_commandInvoker = nullptr;
+
+private:
+	/** @brief Tracks if gizmo was being used last frame (for detecting release). */
+	bool m_wasUsingGizmo = false;
+
+	/** @brief Stores the initial transform before gizmo manipulation starts. */
+	EU::Vector3 m_gizmoStartPosition;
+	EU::Vector3 m_gizmoStartRotation;
+	EU::Vector3 m_gizmoStartScale;
+	EU::TSharedPointer<Actor> m_gizmoEditingActor;
 };

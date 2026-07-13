@@ -70,6 +70,7 @@ BaseApp::run(HINSTANCE hInst, int nCmdShow) {
 	}
 	// 4) Initialize GUI
 	m_gui.init(m_window, m_device, m_deviceContext);
+	m_gui.setCommandInvoker(&m_commandInvoker);
 	m_guiInitialized = true;
 
 	// Main message loop
@@ -359,9 +360,9 @@ BaseApp::init() {
 
 		m_sciFiToad->setName("Sci-Fi Toad");
 		m_actors.push_back(m_sciFiToad);
-		m_sciFiToad->getComponent<Transform>()->setTransform(EU::Vector3(0.0f, -1.90f, 10.5f),
-			EU::Vector3(0.0f, 3.14f, 0.0f),
-			EU::Vector3(1.0f, 1.0f, 1.0f));
+		m_sciFiToad->getComponent<Transform>()->setTransform(EU::Vector3(0.92f, 7.72f, 1.94f),
+																												 EU::Vector3(-90.0f, 0.0f, 160.0f),
+																											   EU::Vector3(1.0f, 1.0f, 1.0f));
 	}
 	else {
 		ERROR("Main", "InitDevice", "Failed to create Sci-Fi Toad Actor.");
@@ -397,8 +398,21 @@ BaseApp::init() {
 		return hr;
 	}
 
-	m_camera.setLens(XM_PIDIV4, m_window.m_width / (float)m_window.m_height, 0.01f, 100.0f);
-	m_camera.setPosition(0.0f, 3.0f, -6.0f);
+	m_camera.setLens(XM_PIDIV4, m_window.m_width / (float)m_window.m_height, 0.01f, 1000.0f);
+
+	// Initialize DCC-style camera controller
+	// Focus point at the center of the scene (where objects are)
+	EU::Vector3 initialFocusPoint(0.5f, 0.5f, 10.5f);  // Center between Spitfire and Toad
+	m_cameraController.init(&m_camera, initialFocusPoint);
+	m_cameraController.setSensitivity(1.0f);
+	m_cameraController.setZoomSensitivity(0.15f);
+	m_cameraController.setConstrainPitch(true);
+	m_cameraController.setOrbitDistance(15.0f);  // Start at good viewing distance
+
+	// Set initial camera position via lookAt
+	m_camera.lookAt(initialFocusPoint + EU::Vector3(10.0f, 8.0f, -10.0f), 
+									initialFocusPoint, 
+									EU::Vector3(0.0f, 1.0f, 0.0f));
 
 	m_constantBufferStruct.LightColor = EU::Vector3(1.0f, 1.0f, 1.0f);
 	m_constantBufferStruct.LightDir = EU::Vector3(-0.20f, -1.0f, 1.0f);
@@ -699,7 +713,48 @@ BaseApp::update(float deltaTime) {
 	}
 	// Update User Interface
 	m_gui.update(m_viewport, m_window);
+
+	// Handle DCC-style camera navigation
+	ImGuiIO& io = ImGui::GetIO();
+	MESSAGE("BaseApp", "update", ("MousePos: (" + std::to_string(io.MousePos.x) + ", " + std::to_string(io.MousePos.y) + ")").c_str());
+	MESSAGE("BaseApp", "update", m_gui.m_viewportHovered)
+	if (m_gui.m_viewportHovered && !m_gui.m_isUsingGizmo) {
+		int currentMouseX = static_cast<int>(io.MousePos.x);
+		int currentMouseY = static_cast<int>(io.MousePos.y);
+		bool rightMouseDown = ImGui::IsMouseDown(ImGuiMouseButton_Right);
+		bool middleMouseDown = ImGui::IsMouseDown(ImGuiMouseButton_Middle);
+		int scrollDelta = static_cast<int>(io.MouseWheel);
+		bool leftShiftHeld = io.KeyShift;
+
+		// Handle "Focus on Selection" with F key
+		if (ImGui::IsKeyPressed(ImGuiKey_F) && m_gui.selectedActorIndex >= 0 &&
+			m_gui.selectedActorIndex < static_cast<int>(m_actors.size())) {
+			EU::TSharedPointer<Actor> selectedActor = m_actors[m_gui.selectedActorIndex];
+			m_cameraController.focusOnActor(selectedActor.get(), m_editorViewportPass.getWidth(), m_editorViewportPass.getHeight());
+		}
+
+		m_cameraController.update(currentMouseX, currentMouseY, rightMouseDown, middleMouseDown, scrollDelta, leftShiftHeld);
+	}
+
 	m_camera.updateViewMatrix();
+
+	// Debug: Log camera and object positions once per second
+	static int frameCounter = 0;
+	if (frameCounter++ % 60 == 0) {
+		EU::Vector3 camPos = m_camera.getPosition();
+		//MESSAGE("Camera", "Position", 
+		//	("Pos: (" + std::to_string(camPos.x) + ", " + std::to_string(camPos.y) + ", " + std::to_string(camPos.z) + ")").c_str());
+
+		if (!m_sciFiToad.isNull()) {
+			auto transform = m_sciFiToad->getComponent<Transform>();
+			if (transform) {
+				EU::Vector3 toadPos = transform->getPosition();
+				//MESSAGE("Toad", "Position", 
+				//	("Pos: (" + std::to_string(toadPos.x) + ", " + std::to_string(toadPos.y) + ", " + std::to_string(toadPos.z) + ")").c_str());
+			}
+		}
+	}
+
 	if (m_gui.consumeCreateLightActorRequest()) {
 		EU::TSharedPointer<Actor> lightActor = createLightActor();
 		if (!lightActor.isNull()) {
@@ -788,6 +843,16 @@ BaseApp::render() {
 	m_renderScene.clear();
 	m_sceneGraph.gatherRenderScene(m_renderScene, m_camera);
 	m_renderScene.skybox = &m_skybox;
+
+	// Debug: Check if objects are being gathered
+	static int frameCount = 0;
+	if (frameCount++ % 60 == 0) {
+		//MESSAGE("BaseApp", "render", 
+		//	("Render Scene - Opaque: " + std::to_string(m_renderScene.opaqueObjects.size()) +
+		//	 ", Transparent: " + std::to_string(m_renderScene.transparentObjects.size()) +
+		//	 ", Lights: " + std::to_string(m_renderScene.directionalLights.size())).c_str());
+	}
+
 	m_renderPipeline.render(
 		m_deviceContext,
 		m_camera,

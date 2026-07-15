@@ -25,12 +25,14 @@ class DeviceContext;
  * - Snap scaling to discrete values
  * - Toggle on/off via ImGui UI
  */
-class GridSystem {
+class 
+GridSystem {
 public:
   /**
    * @brief Settings for grid behavior and appearance
    */
-  struct GridSettings {
+  struct 
+  GridSettings {
     float cellSize = 1.0f;              ///< Distance between grid cells
     float opacity = 0.3f;               ///< Grid line opacity (0.0 - 1.0)
     bool renderGrid = true;             ///< Show/hide grid in viewport
@@ -59,7 +61,8 @@ public:
    * @param viewportSize Dimensions of viewport
    * @param camera Active camera for world-to-screen projection
    */
-  void renderGrid(ImDrawList* drawList, 
+  void 
+  renderGrid(ImDrawList* drawList, 
                   ImVec2 viewportPos, 
                   ImVec2 viewportSize,
                   const Camera& camera);
@@ -69,52 +72,72 @@ public:
    * @param position Position to snap
    * @return EU::Vector3 Snapped position
    */
-  EU::Vector3 snapPosition(const EU::Vector3& position) const;
+  EU::Vector3 
+  snapPosition(const EU::Vector3& position) const;
 
   /**
    * @brief Snaps a rotation angle to the nearest grid angle
    * @param angleRadians Angle in radians
    * @return float Snapped angle in radians
    */
-  float snapRotation(float angleRadians) const;
+  float 
+  snapRotation(float angleRadians) const;
 
   /**
    * @brief Snaps a scale value to the nearest grid increment
    * @param scaleValue Scale value to snap
    * @return float Snapped scale value
    */
-  float snapScale(float scaleValue) const;
+  float 
+  snapScale(float scaleValue) const;
 
   /**
    * @brief Draws ImGui controls for grid settings
    * @return bool True if any settings changed
    */
-  bool drawImGuiControls();
+  bool 
+  drawImGuiControls();
 
   // Getters/Setters
-  void setGridSize(float size) { m_settings.cellSize = size; }
-  float getGridSize() const { return m_settings.cellSize; }
+  void 
+  setGridSize(float size) { m_settings.cellSize = size; }
+  float 
+  getGridSize() const { return m_settings.cellSize; }
 
-  void setSnapEnabled(bool enabled) { m_settings.snapEnabled = enabled; }
-  bool isSnapEnabled() const { return m_settings.snapEnabled; }
+  void 
+  setSnapEnabled(bool enabled) { m_settings.snapEnabled = enabled; }
+  bool 
+  isSnapEnabled() const { return m_settings.snapEnabled; }
 
-  void setRenderGrid(bool render) { m_settings.renderGrid = render; }
-  bool isGridVisible() const { return m_settings.renderGrid; }
+  void 
+  setRenderGrid(bool render) { m_settings.renderGrid = render; }
+  bool 
+  isGridVisible() const { return m_settings.renderGrid; }
 
-  void setOpacity(float opacity) { m_settings.opacity = std::clamp(opacity, 0.0f, 1.0f); }
-  float getOpacity() const { return m_settings.opacity; }
+  void 
+  setOpacity(float opacity) { m_settings.opacity = std::clamp(opacity, 0.0f, 1.0f); }
+  float 
+  getOpacity() const { return m_settings.opacity; }
 
-  void setSnapPositionSize(float size) { m_settings.snapPositionSize = size; }
-  float getSnapPositionSize() const { return m_settings.snapPositionSize; }
+  void 
+  setSnapPositionSize(float size) { m_settings.snapPositionSize = size; }
+  float 
+  getSnapPositionSize() const { return m_settings.snapPositionSize; }
 
-  void setSnapRotationAngle(float angle) { m_settings.snapRotationAngle = angle; }
-  float getSnapRotationAngle() const { return m_settings.snapRotationAngle; }
+  void 
+  setSnapRotationAngle(float angle) { m_settings.snapRotationAngle = angle; }
+  float 
+  getSnapRotationAngle() const { return m_settings.snapRotationAngle; }
 
-  void setSnapScaleValue(float scale) { m_settings.snapScaleValue = scale; }
-  float getSnapScaleValue() const { return m_settings.snapScaleValue; }
+  void 
+  setSnapScaleValue(float scale) { m_settings.snapScaleValue = scale; }
+  float 
+  getSnapScaleValue() const { return m_settings.snapScaleValue; }
 
-  GridSettings& getSettings() { return m_settings; }
-  const GridSettings& getSettings() const { return m_settings; }
+  GridSettings& 
+  getSettings() { return m_settings; }
+  const GridSettings& 
+  getSettings() const { return m_settings; }
 
 private:
   /**
@@ -126,7 +149,8 @@ private:
    * @param outValid Set to true if the point is in front of the camera (valid projection)
    * @return ImVec2 Screen space position, or {-1, -1} if outside frustum
    */
-  ImVec2 projectWorldToScreen(const EU::Vector3& worldPos,
+  ImVec2 
+  projectWorldToScreen(const EU::Vector3& worldPos,
                               const Camera& camera,
                               ImVec2 viewportPos,
                               ImVec2 viewportSize,
@@ -139,7 +163,8 @@ private:
    * @param viewportSize Viewport dimensions
    * @return bool True if point is inside viewport
    */
-  bool isInViewport(ImVec2 screenPos, ImVec2 viewportPos, ImVec2 viewportSize) const;
+  bool 
+  isInViewport(ImVec2 screenPos, ImVec2 viewportPos, ImVec2 viewportSize) const;
 
 private:
   GridSettings m_settings;

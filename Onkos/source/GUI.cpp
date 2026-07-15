@@ -1328,7 +1328,10 @@ void GUI::drawStudioTopRibbon()
 
 			if (ImGui::BeginMenu("Window"))
 			{
-				ImGui::MenuItem("Reset Layout");
+				if (ImGui::MenuItem("Reset Layout"))
+				{
+					m_requestResetLayout = true;
+				}
 				ImGui::EndMenu();
 			}
 
@@ -1864,6 +1867,45 @@ void GUI::drawEditorDockspace()
 		ImGuiDockNodeFlags_PassthruCentralNode;
 
 	ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+
+	// -----------------------------------------------------------------
+	// UE5-style default layout (built once, unless the user resets it)
+	// -----------------------------------------------------------------
+	// Layout (approximation of Unreal Engine 5's default editor layout):
+	//  ------------------------------------------------------------
+	// |            |                          |  Hierarchy         |
+	// |  Toolbox / |                          |  (Outliner)        |
+	// |  Editor    |        Viewport          |---------------------
+	// |  Tools     |                          |  Inspector          |
+	// |            |                          |  (Details)          |
+	// |------------------------------------------------------------|
+	// |            GBuffer / Render Debug (bottom, Content Browser) |
+	//  ------------------------------------------------------------
+	static bool dockLayoutInitialized = false;
+	if (!dockLayoutInitialized || m_requestResetLayout) {
+		dockLayoutInitialized = true;
+		m_requestResetLayout = false;
+
+		ImGui::DockBuilderRemoveNode(dockspace_id);
+		ImGui::DockBuilderAddNode(dockspace_id, dockspace_flags | ImGuiDockNodeFlags_DockSpace);
+		ImGui::DockBuilderSetNodeSize(dockspace_id, dockSize);
+
+		ImGuiID dockMain = dockspace_id;
+		ImGuiID dockRight = ImGui::DockBuilderSplitNode(dockMain, ImGuiDir_Right, 0.22f, nullptr, &dockMain);
+		ImGuiID dockLeft = ImGui::DockBuilderSplitNode(dockMain, ImGuiDir_Left, 0.18f, nullptr, &dockMain);
+		ImGuiID dockBottom = ImGui::DockBuilderSplitNode(dockMain, ImGuiDir_Down, 0.28f, nullptr, &dockMain);
+
+		ImGuiID dockRightTop = dockRight;
+		ImGuiID dockRightBottom = ImGui::DockBuilderSplitNode(dockRight, ImGuiDir_Down, 0.55f, nullptr, &dockRightTop);
+
+		ImGui::DockBuilderDockWindow("Viewport", dockMain);
+		ImGui::DockBuilderDockWindow("Hierarchy", dockRightTop);
+		ImGui::DockBuilderDockWindow("Inspector", dockRightBottom);
+		ImGui::DockBuilderDockWindow("Editor Tools##Tools", dockLeft);
+		ImGui::DockBuilderDockWindow("GBuffer Debug", dockBottom);
+
+		ImGui::DockBuilderFinish(dockspace_id);
+	}
 
 	ImGui::End();
 

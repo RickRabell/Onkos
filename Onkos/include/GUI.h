@@ -391,6 +391,9 @@ public:
 	/** @brief Pointer to the CommandInvoker for undo/redo operations. */
 	class CommandInvoker* m_commandInvoker = nullptr;
 
+	/** @brief Flag to indicate if the editor dockspace layout should be reset to its default (UE5-style) arrangement. */
+	bool m_requestResetLayout = false;
+
 private:
 	/** @brief Tracks if gizmo was being used last frame (for detecting release). */
 	bool m_wasUsingGizmo = false;

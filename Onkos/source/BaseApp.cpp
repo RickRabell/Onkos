@@ -151,7 +151,7 @@ BaseApp::init() {
 
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize Viewport. HRESULT: " + std::to_string(hr)).c_str());
+				 ("Failed to initialize Viewport. HRESULT: " + std::to_string(hr)).c_str());
 		return hr;
 	}
 	m_d3dReady = true;
@@ -220,7 +220,7 @@ BaseApp::init() {
 			MESSAGE("Main", "InitDevice", 
 							"Spitfire emissive texture not found. Continuing without emissive map.");
 		}
-		m_spitfire->setName("CyberGun");
+		m_spitfire->setName("Spitfire");
 		m_actors.push_back(m_spitfire);
 
 		m_spitfire->getComponent<Transform>()->setTransform(EU::Vector3(2.0f, -1.90f, 11.60f),
@@ -1046,14 +1046,14 @@ void BaseApp::handleEditorViewportResize()
 	m_editorViewportResizePending = false;
 }
 
-std::string BaseApp::getDefaultScenePath() const
-{
+std::string 
+BaseApp::getDefaultScenePath() const {
 	CreateDirectoryA("Saved", nullptr);
 	return "Saved/DefaultScene.wvscene";
 }
 
-EU::TSharedPointer<Actor> BaseApp::createLightActor(const std::string& name)
-{
+EU::TSharedPointer<Actor> 
+BaseApp::createLightActor(const std::string& name) {
 	EU::TSharedPointer<Actor> lightActor = EU::MakeShared<Actor>(m_device);
 	if (lightActor.isNull()) {
 		ERROR("Main", "createLightActor", "Failed to create Light Actor.");
@@ -1192,8 +1192,8 @@ bool BaseApp::saveScene(const std::string& path)
 		return true;
 }
 
-bool BaseApp::loadScene(const std::string& path)
-{
+bool 
+BaseApp::loadScene(const std::string& path) {
 	std::ifstream stream(path);
 	if (!stream.is_open()) {
 		return false;

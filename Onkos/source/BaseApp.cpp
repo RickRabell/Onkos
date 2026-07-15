@@ -716,14 +716,16 @@ BaseApp::update(float deltaTime) {
 
 	// Handle DCC-style camera navigation
 	ImGuiIO& io = ImGui::GetIO();
-	MESSAGE("BaseApp", "update", ("MousePos: (" + std::to_string(io.MousePos.x) + ", " + std::to_string(io.MousePos.y) + ")").c_str());
-	MESSAGE("BaseApp", "update", m_gui.m_viewportHovered)
+
 	if (m_gui.m_viewportHovered && !m_gui.m_isUsingGizmo) {
-		int currentMouseX = static_cast<int>(io.MousePos.x);
-		int currentMouseY = static_cast<int>(io.MousePos.y);
+		// Convert global mouse position to viewport-relative position
+		int viewportMouseX = static_cast<int>(io.MousePos.x - m_gui.m_viewportPos.x);
+		int viewportMouseY = static_cast<int>(io.MousePos.y - m_gui.m_viewportPos.y);
+
 		bool rightMouseDown = ImGui::IsMouseDown(ImGuiMouseButton_Right);
 		bool middleMouseDown = ImGui::IsMouseDown(ImGuiMouseButton_Middle);
-		int scrollDelta = static_cast<int>(io.MouseWheel);
+		// ImGui stores mouse wheel delta in io.MouseWheel (positive for scroll up)
+		int scrollDelta = (io.MouseWheel != 0.0f) ? (io.MouseWheel > 0.0f ? 1 : -1) : 0;
 		bool leftShiftHeld = io.KeyShift;
 
 		// Handle "Focus on Selection" with F key
@@ -733,26 +735,7 @@ BaseApp::update(float deltaTime) {
 			m_cameraController.focusOnActor(selectedActor.get(), m_editorViewportPass.getWidth(), m_editorViewportPass.getHeight());
 		}
 
-		m_cameraController.update(currentMouseX, currentMouseY, rightMouseDown, middleMouseDown, scrollDelta, leftShiftHeld);
-	}
-
-	m_camera.updateViewMatrix();
-
-	// Debug: Log camera and object positions once per second
-	static int frameCounter = 0;
-	if (frameCounter++ % 60 == 0) {
-		EU::Vector3 camPos = m_camera.getPosition();
-		//MESSAGE("Camera", "Position", 
-		//	("Pos: (" + std::to_string(camPos.x) + ", " + std::to_string(camPos.y) + ", " + std::to_string(camPos.z) + ")").c_str());
-
-		if (!m_sciFiToad.isNull()) {
-			auto transform = m_sciFiToad->getComponent<Transform>();
-			if (transform) {
-				EU::Vector3 toadPos = transform->getPosition();
-				//MESSAGE("Toad", "Position", 
-				//	("Pos: (" + std::to_string(toadPos.x) + ", " + std::to_string(toadPos.y) + ", " + std::to_string(toadPos.z) + ")").c_str());
-			}
-		}
+		m_cameraController.update(viewportMouseX, viewportMouseY, rightMouseDown, middleMouseDown, scrollDelta, leftShiftHeld);
 	}
 
 	if (m_gui.consumeCreateLightActorRequest()) {
@@ -768,7 +751,7 @@ BaseApp::update(float deltaTime) {
 	}
 	bool show_demo_window = true;
 	//ImGui::ShowDemoWindow(&show_demo_window);
-	m_gui.drawViewportPanel(m_editorViewportPass.getSRV(), m_actors, m_camera, m_window, selectedActor, m_lightIconTexture.m_textureFromImg);
+	m_gui.drawViewportPanel(m_editorViewportPass.getSRV(), m_actors, m_camera, m_window, selectedActor, m_lightIconTexture.m_textureFromImg, &m_gridSystem);
 	m_gui.drawRenderDebugPanel(m_renderPipeline.getPreShadowSRV(), m_editorViewportPass.getSRV(), m_renderPipeline.getShadowMapSRV());
 	m_gui.drawGBufferDebugPanel(m_renderPipeline.getGBufferAlbedoMetallicSRV(),
 		m_renderPipeline.getGBufferNormalRoughnessSRV(),
@@ -783,6 +766,8 @@ BaseApp::update(float deltaTime) {
 		selectedActor = m_actors[m_gui.selectedActorIndex];
 	}
 	m_gui.inspectorGeneral(selectedActor);
+	m_gui.drawEditorToolsPanel(&m_gridSystem);
+
 	if (m_gui.consumeSaveSceneRequest()) {
 		saveScene(getDefaultScenePath());
 	}

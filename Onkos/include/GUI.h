@@ -154,9 +154,10 @@ public:
 	 * @param view The active camera's view matrix.
 	 * @param projection The active camera's projection matrix.
 	 * @param actor The actor currently being manipulated.
+	 * @param gridSystem The grid system used to determine snap values and toggle state.
 	 */
 	void
-	editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor);
+	editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor, class GridSystem* gridSystem = nullptr);
 
 	/**
 	 * @brief Draws the UI toolbar to switch between Translate, Rotate, and Scale gizmo modes.
@@ -191,6 +192,9 @@ public:
 	 * @param actors The list of all active actors in the scene.
 	 * @param camera The active camera used for rendering.
 	 * @param window The window context for the viewport.
+	 * @param selectedActor The currently selected actor.
+	 * @param lightIconSRV The shader resource view of the light icon texture.
+	 * @param gridSystem The grid system for rendering and snapping.
 	 */
 	void 
 	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
@@ -198,7 +202,8 @@ public:
 										Camera& camera,
 										Window& window,
 										EU::TSharedPointer<Actor> selectedActor,
-										ID3D11ShaderResourceView* lightIconSRV);
+										ID3D11ShaderResourceView* lightIconSRV,
+										class GridSystem* gridSystem);
 
 	/**
 	 * @brief Draws the light icons in the viewport.
@@ -236,6 +241,13 @@ public:
 												ID3D11ShaderResourceView* worldAoSRV,
 												ID3D11ShaderResourceView* emissiveAlphaSRV,
 												EU::TSharedPointer<Actor> selectedActor);
+
+	/**
+	 * @brief Draws the editor tools panel with grid and snap settings.
+	 * @param gridSystem The grid system for visualization and snapping.
+	 */
+	void 
+	drawEditorToolsPanel(class GridSystem* gridSystem);
 
 	/**
 	 * @brief Draws the editor dockspace.

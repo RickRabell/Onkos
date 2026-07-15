@@ -18,6 +18,7 @@
 #include "SceneGraph\SceneGraph.h"
 #include "EngineUtilities\Utilities\Camera.h"
 #include "EngineUtilities\Utilities\DCCCameraController.h"
+#include "EngineUtilities\Utilities\GridSystem.h"
 #include "EngineUtilities\Utilities\Skybox.h"
 #include "EngineUtilities\Utilities\LayoutBuilder.h"
 #include "EngineUtilities/Utilities/EditorViewportPass.h"
@@ -280,6 +281,9 @@ private:
 
 	/** @brief DCC-style camera controller for Orbit, Pan, and Zoom-to-fit navigation. */
 	DCCCameraController m_cameraController;
+
+	/** @brief Grid system for visualization and object snapping. */
+	GridSystem m_gridSystem;
 
 	/** @brief The scene graph responsible for hierarchical transformations and rendering. */
 	SceneGraph m_sceneGraph;

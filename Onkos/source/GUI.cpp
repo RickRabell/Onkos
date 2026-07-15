@@ -17,6 +17,7 @@
 #include "Rendering\MaterialInstance.h"
 #include "Texture.h"
 #include "EngineUtilities\Utilities\Camera.h"
+#include "EngineUtilities\Utilities\GridSystem.h"
 #include "Editor/CommandInvoker.h"
 #include "Editor/TransformCommand.h"
  //#include "imgui_internal.h"
@@ -1042,7 +1043,7 @@ GUI::outliner(const std::vector<EU::TSharedPointer<Actor>>& actors) {
 	ImGui::End();
 }
 
-void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor)
+void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor, class GridSystem* gridSystem)
 {
 	(void)window;
 	if (!m_viewportVisibleThisFrame) return;
@@ -1091,8 +1092,17 @@ void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> a
 	if (mCurrentGizmoOperation == ImGuizmo::ROTATE)    snapValue = 1.0f;
 	if (mCurrentGizmoOperation == ImGuizmo::TRANSLATE) snapValue = 0.5f;
 
-	float snap[3] = { snapValue, snapValue, snapValue };
 	bool useSnap = ImGui::GetIO().KeyCtrl;
+	if (gridSystem) {
+		if (gridSystem->isSnapEnabled()) {
+			useSnap = true;
+		}
+		if (mCurrentGizmoOperation == ImGuizmo::ROTATE)    snapValue = gridSystem->getSnapRotationAngle();
+		if (mCurrentGizmoOperation == ImGuizmo::TRANSLATE) snapValue = gridSystem->getSnapPositionSize();
+		if (mCurrentGizmoOperation == ImGuizmo::SCALE)     snapValue = gridSystem->getSnapScaleValue();
+	}
+
+	float snap[3] = { snapValue, snapValue, snapValue };
 	ImGuizmo::MODE activeGizmoMode = mCurrentGizmoMode;
 	if (mCurrentGizmoOperation == ImGuizmo::SCALE) {
 		activeGizmoMode = ImGuizmo::LOCAL;
@@ -1504,7 +1514,8 @@ void GUI::drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 	Camera& camera,
 	Window& window,
 	EU::TSharedPointer<Actor> selectedActor,
-	ID3D11ShaderResourceView* lightIconSRV)
+	ID3D11ShaderResourceView* lightIconSRV,
+	class GridSystem* gridSystem)
 {
 	(void)window;
 	ImGuiWindowFlags flags =
@@ -1563,8 +1574,14 @@ void GUI::drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 		ImDrawList* gizmoDrawList = m_viewportDrawList;
 		m_viewportDrawList = ImGui::GetForegroundDrawList();
 		drawLightIcons(actors, camera, lightIconSRV);
+
+		// Render grid if provided
+		if (gridSystem) {
+			gridSystem->renderGrid(m_viewportDrawList, m_viewportPos, m_viewportSize, camera);
+		}
+
 		m_viewportDrawList = gizmoDrawList;
-		editTransform(camera, window, selectedActor);
+		editTransform(camera, window, selectedActor, gridSystem);
 	}
 	ImGui::End();
 
@@ -1851,4 +1868,21 @@ void GUI::drawEditorDockspace()
 	ImGui::End();
 
 	ImGui::PopStyleVar(3);
+}
+
+void GUI::drawEditorToolsPanel(class GridSystem* gridSystem) {
+	ImGuiWindowFlags toolsFlags =
+		ImGuiWindowFlags_NoCollapse;
+
+	ImGui::SetNextWindowSize(ImVec2(400.0f, 300.0f), ImGuiCond_FirstUseEver);
+
+	if (ImGui::Begin("Editor Tools##Tools", nullptr, toolsFlags)) {
+		ImGui::Text("Viewport Tools");
+		ImGui::Separator();
+
+		if (gridSystem) {
+			gridSystem->drawImGuiControls();
+		}
+	}
+	ImGui::End();
 }

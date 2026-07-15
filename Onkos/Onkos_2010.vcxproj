@@ -422,6 +422,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ARCHITECTURE_OVERVIEW.md" />
     <None Include="bin\PBRShader.hlsl">
       <FileType>Document</FileType>
     </None>
@@ -436,7 +437,9 @@
     </None>
     <None Include="COMPLETION_STATUS.md" />
     <None Include="CUSTOM_COMMANDS_GUIDE.md" />
+    <None Include="DETAILED_CHANGELOG.md" />
     <None Include="DOCUMENTATION_INDEX.md" />
+    <None Include="EXECUTIVE_SUMMARY.md" />
     <None Include="FINAL_SUMMARY.md" />
     <None Include="IMPLEMENTATION_SUMMARY_UNDO_REDO.md" />
     <None Include="KEYBOARD_SHORTCUTS.md" />
@@ -444,10 +447,12 @@
     <None Include="QUICK_REFERENCE.md" />
     <None Include="README_DOCUMENTATION.md" />
     <None Include="README_UNDO_REDO.md" />
+    <None Include="TECHNICAL_DOCUMENTATION_DCC_GRID.md" />
     <None Include="UNDO_REDO_GUIDE.md" />
     <None Include="UNDO_REDO_QUICK_START.md" />
     <None Include="UNDO_REDO_README.md" />
     <None Include="UNDO_REDO_SEQUENCE_DIAGRAMS.md" />
+    <None Include="USER_GUIDE_DCC_GRID.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Imgui\imgui-docking\backends\imgui_impl_dx11.cpp" />
@@ -473,6 +478,7 @@
     <ClCompile Include="source\Editor\DeleteCommand.cpp" />
     <ClCompile Include="source\Editor\TransformCommand.cpp" />
     <ClCompile Include="source\EngineUtilities\Utilities\DCCCameraController.cpp" />
+    <ClCompile Include="source\EngineUtilities\Utilities\GridSystem.cpp" />
     <ClCompile Include="source\InputLayout.cpp" />
     <ClCompile Include="source\Model3D.cpp" />
     <ClCompile Include="source\ModelLoader.cpp" />
@@ -534,6 +540,7 @@
     <ClInclude Include="include\EngineUtilities\Utilities\DCCCameraController.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\EditorViewportPass.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\EngineMath.h" />
+    <ClInclude Include="include\EngineUtilities\Utilities\GridSystem.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\LayoutBuilder.h" />
     <ClInclude Include="include\EngineUtilities\Utilities\Skybox.h" />
     <ClInclude Include="include\EngineUtilities\Vectors\Vector2.h" />
@@ -582,6 +589,9 @@
     <None Include="bin\DeferredLighting.hlsl">
       <FileType>Document</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="IMPLEMENTATION_COMPLETE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

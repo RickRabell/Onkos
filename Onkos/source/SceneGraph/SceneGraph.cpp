@@ -224,6 +224,34 @@ SceneGraph::gatherRenderScene(RenderScene& outScene, const Camera& camera) {
 
 		auto lightComponent = entity->getComponent<LightComponent>();
 		if (lightComponent) {
+			auto lightTransform = entity->getComponent<Transform>();
+			if (lightTransform) {
+				XMFLOAT4X4 lightWorldMatrix{};
+				XMStoreFloat4x4(&lightWorldMatrix, lightTransform->worldMatrix);
+				LightData& lightData = lightComponent->getLightData();
+				lightData.position = EU::Vector3(lightWorldMatrix._41, lightWorldMatrix._42, lightWorldMatrix._43);
+
+				// Para spots/direccionales: derivar la direccion desde la rotacion del actor.
+				if(lightData.type == LightType::Spot || lightData.type == LightType::Directional) {
+					XMVECTOR forward = XMVector3TransformNormal(
+														 XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f),
+														 lightTransform->worldMatrix);
+					forward = XMVector3Normalize(forward);
+					XMFLOAT3 forwardStored{};
+					XMStoreFloat3(&forwardStored, forward);
+					lightData.direction = EU::Vector3(forwardStored.x, forwardStored.y, forwardStored.z);
+				}
+
+				if (lightData.type != LightType::Point) {
+					XMVECTOR forward = XMVector3TransformNormal(
+														 XMVectorSet(0.0f, -1.0f, 0.0f, 0.0f),
+														 lightTransform->worldMatrix);
+					forward = XMVector3Normalize(forward);
+					XMFLOAT3 forwardStored{};
+					XMStoreFloat3(&forwardStored, forward);
+					lightData.direction = EU::Vector3(forwardStored.x, forwardStored.y, forwardStored.z);
+				}
+			}
 			outScene.directionalLights.push_back(lightComponent->getLightData());
 		}
 

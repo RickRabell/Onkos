@@ -699,8 +699,7 @@ void
 BaseApp::update(float deltaTime) {
 	// Update our time
 	static float t = 0.0f;
-	if (m_swapChain.m_driverType == D3D_DRIVER_TYPE_REFERENCE)
-	{
+	if (m_swapChain.m_driverType == D3D_DRIVER_TYPE_REFERENCE) {
 		t += (float)XM_PI * 0.0125f;
 	}
 	else
@@ -963,8 +962,8 @@ BaseApp::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
 	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
-void BaseApp::onResize(unsigned int newW, unsigned int newH)
-{
+void 
+BaseApp::onResize(unsigned int newW, unsigned int newH) {
 	// 1) Actualiza window size (tu init lo calcula con GetClientRect solo una vez) :contentReference[oaicite:6]{index=6}
 	if (!m_d3dReady) {
 		// Aun asi puedes actualizar el tamano logico de la ventana
@@ -1095,8 +1094,8 @@ BaseApp::createLightActor(const std::string& name) {
 	return lightActor;
 }
 
-bool BaseApp::saveScene(const std::string& path)
-{
+bool 
+BaseApp::saveScene(const std::string& path) {
 	std::ofstream stream(path, std::ios::trunc);
 	if (!stream.is_open()) {
 		ERROR("Main", "saveScene", ("Failed to open scene file for writing: " + path).c_str());

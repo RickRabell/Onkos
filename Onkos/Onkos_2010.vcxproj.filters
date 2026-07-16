@@ -200,7 +200,9 @@
     <ClCompile Include="source\EngineUtilities\Utilities\DCCCameraController.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\EngineUtilities\Utilities\GridSystem.cpp" />
+    <ClCompile Include="source\EngineUtilities\Utilities\GridSystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Onkos.fx">
@@ -272,11 +274,21 @@
     <None Include="UNDO_REDO_SEQUENCE_DIAGRAMS.md">
       <Filter>Docs</Filter>
     </None>
-    <None Include="TECHNICAL_DOCUMENTATION_DCC_GRID.md" />
-    <None Include="USER_GUIDE_DCC_GRID.md" />
-    <None Include="ARCHITECTURE_OVERVIEW.md" />
-    <None Include="EXECUTIVE_SUMMARY.md" />
-    <None Include="DETAILED_CHANGELOG.md" />
+    <None Include="ARCHITECTURE_OVERVIEW.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="DETAILED_CHANGELOG.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="EXECUTIVE_SUMMARY.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="TECHNICAL_DOCUMENTATION_DCC_GRID.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="USER_GUIDE_DCC_GRID.md">
+      <Filter>Docs</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -486,9 +498,13 @@
     <ClInclude Include="include\EngineUtilities\Utilities\DCCCameraController.h">
       <Filter>include\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="include\EngineUtilities\Utilities\GridSystem.h" />
+    <ClInclude Include="include\EngineUtilities\Utilities\GridSystem.h">
+      <Filter>include\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="IMPLEMENTATION_COMPLETE.txt" />
+    <Text Include="IMPLEMENTATION_COMPLETE.txt">
+      <Filter>Docs</Filter>
+    </Text>
   </ItemGroup>
 </Project>

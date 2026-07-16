@@ -924,15 +924,18 @@ GUI::inspectorGeneral(EU::TSharedPointer<Actor> actor) {
 	if (hasLightComponent && BeginInspectorSection("Light")) {
 		LightData& light = lightComponent->getLightData();
 		if (BeginInspectorPropertyTable("##LightProperties")) {
-			static const char* kLightTypes[] = { "Directional", "Point" };
+			static const char* kLightTypes[] = { "Directional", "Point", "Spot"};
 			int currentLightType = static_cast<int>(light.type);
-			if (currentLightType > static_cast<int>(LightType::Point)) {
-				currentLightType = static_cast<int>(LightType::Point);
+			if (currentLightType > static_cast<int>(LightType::Spot)) {
+				currentLightType = static_cast<int>(LightType::Spot);
 			}
 			DrawPropertyLabel("Type");
 			if (ImGui::Combo("##LightType", &currentLightType, kLightTypes, IM_ARRAYSIZE(kLightTypes))) {
 				light.type = static_cast<LightType>(currentLightType);
 				if (light.type == LightType::Point && light.range <= 0.0f) {
+					light.range = 12.0f;
+				}
+				if (light.type == LightType::Spot && light.range <= 0.0f) {
 					light.range = 12.0f;
 				}
 			}

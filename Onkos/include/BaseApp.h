@@ -29,6 +29,7 @@
 #include "Rendering/Mesh.h"
 #include "Rendering/RenderPipeline.h"
 #include "Rendering/RenderScene.h"
+#include "Rendering/PostProcessSystem.h"
 #include "Editor/CommandInvoker.h"
 #include <string>
 
@@ -392,7 +393,13 @@ private:
 
 	/** @brief The editor viewport pass responsible for rendering the editor's viewport. */
 	EditorViewportPass m_editorViewportPass;
-	
+
+	/** @brief The secondary viewport pass used as the destination for post-processing effects. */
+	EditorViewportPass m_postProcessViewportPass;
+
+	/** @brief The post-process system used to apply full-screen effects (e.g. grayscale) to the rendered scene. */
+	PostProcessSystem m_postProcessSystem;
+
 	/** @brief The render pipeline used for managing rendering passes and resources. */
 	RenderPipeline m_renderPipeline;
 	

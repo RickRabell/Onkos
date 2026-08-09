@@ -444,6 +444,16 @@
     <None Include="IMPLEMENTATION_SUMMARY_UNDO_REDO.md" />
     <None Include="KEYBOARD_SHORTCUTS.md" />
     <None Include="MANIFEST.md" />
+    <None Include="Onkos\Onkos\_add.ps1" />
+    <None Include="Onkos\Onkos\_cleanup.ps1" />
+    <None Include="Onkos\Onkos\_fix1.ps1" />
+    <None Include="Onkos\Onkos\_fix2.ps1" />
+    <None Include="Onkos\Onkos\_fix3.ps1" />
+    <None Include="Onkos\Onkos\_fix4.ps1" />
+    <None Include="Onkos\Onkos\_fix5.ps1" />
+    <None Include="Onkos\Onkos\_fixA.ps1" />
+    <None Include="Onkos\Onkos\_fixFinal.ps1" />
+    <None Include="Onkos\Onkos\_z.ps1" />
     <None Include="QUICK_REFERENCE.md" />
     <None Include="README_DOCUMENTATION.md" />
     <None Include="README_UNDO_REDO.md" />
@@ -486,6 +496,7 @@
     <ClCompile Include="source\Rendering\DeferredRenderer.cpp" />
     <ClCompile Include="source\Rendering\ForwardRenderer.cpp" />
     <ClCompile Include="source\Rendering\MaterialInstance.cpp" />
+    <ClCompile Include="source\Rendering\PostProcessSystem.cpp" />
     <ClCompile Include="source\Rendering\RenderPipeline.cpp" />
     <ClCompile Include="source\Rendering\RenderScene.cpp" />
     <ClCompile Include="source\RenderTargetView.cpp" />
@@ -559,6 +570,7 @@
     <ClInclude Include="include\Rendering\Material.h" />
     <ClInclude Include="include\Rendering\MaterialInstance.h" />
     <ClInclude Include="include\Rendering\Mesh.h" />
+    <ClInclude Include="include\Rendering\PostProcessSystem.h" />
     <ClInclude Include="include\Rendering\RenderPipeline.h" />
     <ClInclude Include="include\Rendering\RenderScene.h" />
     <ClInclude Include="include\Rendering\RenderTypes.h" />
@@ -592,6 +604,11 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="IMPLEMENTATION_COMPLETE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\GrayScalePostProcess.hlsl">
+      <FileType>Document</FileType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

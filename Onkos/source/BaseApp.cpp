@@ -687,6 +687,20 @@ BaseApp::init() {
 		return hr;
 	}
 
+	hr = m_postProcessViewportPass.init(m_device, 1280, 720);
+	if (FAILED(hr)) {
+		ERROR("Main", "InitDevice",
+			("Failed to initialize post-process EditorViewportPass. HRESULT: " + std::to_string(hr)).c_str());
+		return hr;
+	}
+
+	hr = m_postProcessSystem.init(m_device);
+	if (FAILED(hr)) {
+		ERROR("Main", "InitDevice",
+			("Failed to initialize PostProcessSystem. HRESULT: " + std::to_string(hr)).c_str());
+		return hr;
+	}
+
 	hr = m_renderPipeline.init(m_device, RendererType::Deferred);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
@@ -752,7 +766,17 @@ BaseApp::update(float deltaTime) {
 	}
 	bool show_demo_window = true;
 	//ImGui::ShowDemoWindow(&show_demo_window);
-	m_gui.drawViewportPanel(m_editorViewportPass.getSRV(), m_actors, m_camera, m_window, selectedActor, m_lightIconTexture.m_textureFromImg, &m_gridSystem);
+
+	// Post-Processing Effects floating panel
+	ImGui::SetNextWindowSize(ImVec2(240.0f, 0.0f), ImGuiCond_FirstUseEver);
+	if (ImGui::Begin("Post-Processing Effects")) {
+		ImGui::Checkbox("Grayscale", &m_postProcessSystem.m_settings.enableGrayscale);
+	}
+	ImGui::End();
+
+	ID3D11ShaderResourceView* viewportSRVForGui = m_postProcessSystem.m_settings.enableGrayscale ?
+		m_postProcessViewportPass.getSRV() : m_editorViewportPass.getSRV();
+	m_gui.drawViewportPanel(viewportSRVForGui, m_actors, m_camera, m_window, selectedActor, m_lightIconTexture.m_textureFromImg, &m_gridSystem);
 	m_gui.drawRenderDebugPanel(m_renderPipeline.getPreShadowSRV(), m_editorViewportPass.getSRV(), m_renderPipeline.getShadowMapSRV());
 	m_gui.drawGBufferDebugPanel(m_renderPipeline.getGBufferAlbedoMetallicSRV(),
 		m_renderPipeline.getGBufferNormalRoughnessSRV(),
@@ -846,6 +870,10 @@ BaseApp::render() {
 		m_editorViewportPass
 	);
 
+	if (m_postProcessSystem.m_settings.enableGrayscale) {
+		m_postProcessSystem.render(m_deviceContext, m_editorViewportPass, m_postProcessViewportPass);
+	}
+
 	// Desbindear targets de la pipeline
 	ID3D11RenderTargetView* nullRTV = nullptr;
 	m_deviceContext.m_deviceContext->OMSetRenderTargets(1, &nullRTV, nullptr);
@@ -866,6 +894,8 @@ BaseApp::destroy() {
 	if (m_deviceContext.m_deviceContext) m_deviceContext.m_deviceContext->ClearState();
 	m_sceneGraph.destroy();
 	m_editorViewportPass.destroy();
+	m_postProcessViewportPass.destroy();
+	m_postProcessSystem.destroy();
 	m_renderPipeline.destroy();
 	m_spitfireRenderMesh.destroy();
 	//m_drakefireRenderMesh.destroy();
@@ -1042,6 +1072,7 @@ void BaseApp::handleEditorViewportResize()
 
 	// Intercambio seguro: el pass viejo queda en newPass y se destruye al salir
 	m_editorViewportPass.swap(newPass);
+	m_postProcessViewportPass.resize(m_device, m_pendingViewportWidth, m_pendingViewportHeight);
 	m_renderPipeline.resize(m_device, m_pendingViewportWidth, m_pendingViewportHeight);
 
 	m_editorViewportResizePending = false;

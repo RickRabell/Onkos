@@ -4,6 +4,7 @@
 #include "DepthStencilState.h"
 #include "DepthStencilView.h"
 #include "RasterizerState.h"
+#include "Rendering\ISceneRenderer.h"
 #include "Rendering/RenderScene.h"
 #include "Rendering/RenderTypes.h"
 #include "ShaderProgram.h"
@@ -35,7 +36,7 @@ class Material;
  * water (Transparent Pass) from back-to-front so the colors blend correctly.
  */
 class 
-ForwardRenderer {
+ForwardRenderer : public ISceneRenderer {
 public:
 	/**
 	 * @brief Initializes the renderer, allocating constant buffers and default states.
@@ -43,7 +44,7 @@ public:
 	 * @return HRESULT S_OK on success.
 	 */
 	HRESULT
-	init(Device& device);
+	init(Device& device) override;
 
 	/**
 	 * @brief Resizes render targets when the viewport/window changes.
@@ -79,19 +80,23 @@ public:
 	render(DeviceContext& deviceContext,
 				 const Camera& camera,
 				 RenderScene& scene,
-				 EditorViewportPass& viewportPass);
+				 EditorViewportPass& viewportPass) override;
 
 	/** @brief Cleans up all renderer resources. */
 	void
-	destroy();
+	destroy() override;
 
 	/** @brief Gets the generated shadow map texture to bind it to materials. */
 	ID3D11ShaderResourceView* 
-	getShadowMapSRV() const { return m_shadowDepthSRV.m_textureFromImg; }
+	getShadowMapSRV() const override { return m_shadowDepthSRV.m_textureFromImg; }
 
 	/** @brief Gets a debug view of the shadow pass for the editor. */
 	ID3D11ShaderResourceView* 
-	getPreShadowSRV() const { return m_preShadowDebugPass.getSRV(); }
+	getPreShadowSRV() const override { return m_preShadowDebugPass.getSRV(); }
+
+	/** @brief Descriptive Name of Renderer (Debug / Editor)	*/
+	const char* 
+	getDebugName() const override { return "ForwardRenderer"; }
 
 private:
 	/**
@@ -165,6 +170,10 @@ private:
 
 	/** @brief Depth stencil state used for transparent rendering. */
 	DepthStencilState m_transparentDepthStencil;
+
+	/** @brief Depth State dedicated to the shadow pass*/
+	DepthStencilState m_shadowDepthStencil;
+
 	/** @brief Blend state for alpha blending. */
 	ID3D11BlendState* m_alphaBlendState = nullptr;
 	/** @brief Blend state for opaque rendering. */

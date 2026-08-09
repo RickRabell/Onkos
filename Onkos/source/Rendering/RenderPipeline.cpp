@@ -145,8 +145,8 @@ RenderPipeline::ensureRendererInitialized(RendererType rendererType, Device& dev
 ISceneRenderer*
 RenderPipeline::resolveRenderer(RendererType rendererType) {
 	switch (rendererType) {
-	//case RendererType::Forward:
-	//	return &m_forwardRenderer;
+	case RendererType::Forward:
+		return &m_forwardRenderer;
 	case RendererType::Deferred:
 		return &m_deferredRenderer;
 	default:
@@ -157,8 +157,8 @@ RenderPipeline::resolveRenderer(RendererType rendererType) {
 const ISceneRenderer*
 RenderPipeline::resolveRenderer(RendererType rendererType) const {
 	switch (rendererType) {
-	//case RendererType::Forward:
-	//	return &m_forwardRenderer;
+	case RendererType::Forward:
+		return &m_forwardRenderer;
 	case RendererType::Deferred:
 		return &m_deferredRenderer;
 	default:

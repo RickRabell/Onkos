@@ -74,6 +74,44 @@ void GridSystem::renderGrid(ImDrawList* drawList,
   }
 }
 
+void 
+GridSystem::generateGridVertices(std::vector<GridVertex>& outVertices) const {
+  outVertices.clear();
+
+  if (!m_settings.renderGrid || !m_settings.showGridPlane) {
+    return;
+  }
+
+  const float range = static_cast<float>(m_settings.gridRange);
+  const float step = m_settings.cellSize;
+
+  // Definimos colores planos (RGBA)
+  float normalColor[4] = { 0.5f, 0.5f, 0.5f, m_settings.opacity };
+  // Eje X en rojo (indicando dirección lateral)
+  float xAxisColor[4] = { 0.8f, 0.2f, 0.2f, m_settings.opacity + 0.3f };
+  // Eje Z en azul (indicando profundidad)
+  float zAxisColor[4] = { 0.2f, 0.2f, 0.8f, m_settings.opacity + 0.3f };
+
+  // 1. Generar líneas paralelas al eje Z (variando en X)
+  for (float x = -range; x <= range; x += step) {
+    // Si X es 0, es la línea central Z, la pintamos de azul
+    float* col = (std::abs(x) < 0.001f) ? zAxisColor : normalColor;
+
+    // Empujamos vértices en PARES (Inicio y Fin) para formar una línea
+    outVertices.push_back({ EU::Vector3(x, 0.0f, -range), {col[0], col[1], col[2], col[3]} });
+    outVertices.push_back({ EU::Vector3(x, 0.0f, range), {col[0], col[1], col[2], col[3]} });
+  }
+
+  // 2. Generar líneas paralelas al eje X (variando en Z)
+  for (float z = -range; z <= range; z += step) {
+    // Si Z es 0, es la línea central X, la pintamos de rojo
+    float* col = (std::abs(z) < 0.001f) ? xAxisColor : normalColor;
+
+    outVertices.push_back({ EU::Vector3(-range, 0.0f, z), {col[0], col[1], col[2], col[3]} });
+    outVertices.push_back({ EU::Vector3(range, 0.0f, z), {col[0], col[1], col[2], col[3]} });
+  }
+}
+
 EU::Vector3 GridSystem::snapPosition(const EU::Vector3& position) const {
   if (!m_settings.snapEnabled || m_settings.snapPositionSize <= 0.0f) {
     return position;
@@ -147,7 +185,7 @@ bool GridSystem::drawImGuiControls() {
   if (ImGui::CollapsingHeader("Grid Settings", ImGuiTreeNodeFlags_DefaultOpen)) {
     changed |= ImGui::Checkbox("Render Grid", &m_settings.renderGrid);
     changed |= ImGui::Checkbox("Enable Snap", &m_settings.snapEnabled);
-    changed |= ImGui::Checkbox("Show Grid Lines", &m_settings.showGridLines);
+    //changed |= ImGui::Checkbox("Show Grid Lines", &m_settings.showGridLines);
     changed |= ImGui::Checkbox("Show Grid Plane", &m_settings.showGridPlane);
 
     ImGui::Separator();

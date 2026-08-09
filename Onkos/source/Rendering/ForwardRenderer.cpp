@@ -30,9 +30,17 @@ ForwardRenderer::init(Device& device) {
 	}
 
 	hr = m_transparentDepthStencil.init(device,
-		true,
-		D3D11_DEPTH_WRITE_MASK_ZERO,
-		D3D11_COMPARISON_LESS_EQUAL);
+																			true,
+																			D3D11_DEPTH_WRITE_MASK_ZERO,
+																			D3D11_COMPARISON_LESS_EQUAL);
+	if (FAILED(hr)) {
+		return hr;
+	}
+
+	hr = m_shadowDepthStencil.init(device,
+																 true,
+																 D3D11_DEPTH_WRITE_MASK_ALL,
+																 D3D11_COMPARISON_LESS);
 	if (FAILED(hr)) {
 		return hr;
 	}
@@ -62,8 +70,8 @@ ForwardRenderer::resize(Device& device, unsigned int width, unsigned int height)
 
 void
 ForwardRenderer::updatePerFrame(const Camera& camera,
-	const RenderScene& scene,
-	DeviceContext& deviceContext) {
+																const RenderScene& scene,
+																DeviceContext& deviceContext) {
 	updateLightMatrices(camera, scene);
 	XMStoreFloat4x4(&m_cbPerFrame.View, XMMatrixTranspose(camera.getView()));
 	XMStoreFloat4x4(&m_cbPerFrame.Projection, XMMatrixTranspose(camera.getProj()));
@@ -82,9 +90,9 @@ ForwardRenderer::updatePerFrame(const Camera& camera,
 
 void
 ForwardRenderer::render(DeviceContext& deviceContext,
-	const Camera& camera,
-	RenderScene& scene,
-	EditorViewportPass& viewportPass) {
+												const Camera& camera,
+												RenderScene& scene,
+												EditorViewportPass& viewportPass) {
 	const float viewportClear[4] = { 0.10f, 0.10f, 0.10f, 1.0f };
 
 	buildQueues(scene, camera);
@@ -109,6 +117,7 @@ ForwardRenderer::destroy() {
 	SAFE_RELEASE(m_additiveBlendState);
 	SAFE_RELEASE(m_premultipliedBlendState);
 	m_transparentDepthStencil.destroy();
+	m_shadowDepthStencil.destroy();
 	m_perMaterialBuffer.destroy();
 	m_perObjectBuffer.destroy();
 	m_perFrameBuffer.destroy();

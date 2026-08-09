@@ -161,9 +161,9 @@ DeferredRenderer::resize(Device& device, unsigned int width, unsigned int height
 
 void
 DeferredRenderer::render(DeviceContext& deviceContext,
-	const Camera& camera,
-	RenderScene& scene,
-	EditorViewportPass& viewportPass) {
+												 const Camera& camera,
+												 RenderScene& scene,
+												 EditorViewportPass& viewportPass) {
 	buildQueues(scene, camera);
 	updatePerFrame(camera, scene, deviceContext);
 

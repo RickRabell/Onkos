@@ -198,7 +198,7 @@ SceneGraph::updateWorldRecursive(Entity* node, const XMMATRIX& parentWorld) {
 	// Tu Transform::matrix es LOCAL (S*R*T)
 	// World = Local * ParentWorld
 	auto worldMatrix = t->matrix * parentWorld;
-	t->worldMatrix = worldMatrix;
+	//t->worldMatrix = worldMatrix;
 
 	for (Entity* c : h->m_children) {
 		updateWorldRecursive(c, worldMatrix);

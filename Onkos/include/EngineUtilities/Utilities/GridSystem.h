@@ -7,6 +7,24 @@
 class Camera;
 class DeviceContext;
 
+// Estructura pura para enviar a la GPU
+struct  GridVertex {
+  EU::Vector3 position;
+  float color[4];       // R, G, B, A
+};
+
+struct GridSettings {
+  float cellSize = 1.0f;
+  float opacity = 0.3f;
+  bool renderGrid = true;
+  bool showGridPlane = true;
+  bool snapEnabled = false;
+  float snapPositionSize = 0.5f;
+  float snapRotationAngle = 15.0f;
+  float snapScaleValue = 0.1f;
+  int gridRange = 50; // Nuevo: Controla la extensión de la grilla sin hardcodear
+};
+
 /**
  * @class GridSystem
  * @brief Manages viewport grid visualization and object snapping to grid.
@@ -31,18 +49,18 @@ public:
   /**
    * @brief Settings for grid behavior and appearance
    */
-  struct 
-  GridSettings {
-    float cellSize = 1.0f;              ///< Distance between grid cells
-    float opacity = 0.3f;               ///< Grid line opacity (0.0 - 1.0)
-    bool renderGrid = true;             ///< Show/hide grid in viewport
-    bool snapEnabled = false;            ///< Enable/disable snapping
-    float snapPositionSize = 0.5f;      ///< Grid cell size for position snapping
-    float snapRotationAngle = 15.0f;    ///< Rotation snap angle in degrees
-    float snapScaleValue = 0.1f;        ///< Scale snap increment
-    bool showGridLines = true;          ///< Show grid lines
-    bool showGridPlane = true;          ///< Show grid plane (Y = 0)
-  };
+  //struct 
+  //GridSettings {
+  //  float cellSize = 1.0f;              ///< Distance between grid cells
+  //  float opacity = 0.3f;               ///< Grid line opacity (0.0 - 1.0)
+  //  bool renderGrid = true;             ///< Show/hide grid in viewport
+  //  bool snapEnabled = false;            ///< Enable/disable snapping
+  //  float snapPositionSize = 0.5f;      ///< Grid cell size for position snapping
+  //  float snapRotationAngle = 15.0f;    ///< Rotation snap angle in degrees
+  //  float snapScaleValue = 0.1f;        ///< Scale snap increment
+  //  bool showGridLines = true;          ///< Show grid lines
+  //  bool showGridPlane = true;          ///< Show grid plane (Y = 0)
+  //};
 
   /**
    * @brief Default constructor
@@ -66,6 +84,9 @@ public:
                   ImVec2 viewportPos, 
                   ImVec2 viewportSize,
                   const Camera& camera);
+
+  void 
+  generateGridVertices(std::vector<GridVertex>& outVertices) const;
 
   /**
    * @brief Snaps a world position to the grid

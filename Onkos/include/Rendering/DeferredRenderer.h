@@ -70,9 +70,9 @@ public:
 	 */
 	void 
 	render(DeviceContext& deviceContext,
-		const Camera& camera,
-		RenderScene& scene,
-		EditorViewportPass& viewportPass) override;
+				 const Camera& camera,
+				 RenderScene& scene,
+				 EditorViewportPass& viewportPass) override;
 
 	/** @brief Cleans up all renderer resources and G-Buffer targets. */
 	void 

@@ -137,8 +137,8 @@ BaseApp::init() {
 
 	// Crear el depth stencil view
 	hr = m_depthStencilView.init(m_device,
-		m_depthStencil,
-		DXGI_FORMAT_D24_UNORM_S8_UINT);
+															 m_depthStencil,
+															 DXGI_FORMAT_D24_UNORM_S8_UINT);
 
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
@@ -166,6 +166,8 @@ BaseApp::init() {
 		"Skybox/cubemap_5.png"
 	};
 	m_skyboxTex.CreateCubemap(m_device, m_deviceContext, faces, false);
+
+	// 2D Icon to represent light actors in the viewport
 	HRESULT lightIconHr = m_lightIconTexture.init(m_device, "Icons/LightBulbIcon", PNG);
 	if (FAILED(lightIconHr)) {
 		MESSAGE("Main", "InitDevice", 

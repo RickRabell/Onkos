@@ -293,56 +293,56 @@ BaseApp::init() {
 		hr = m_toadAlbedoSRV.init(m_device, "Frog/Sci-FIToad_Body_BC", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad albedo texture. HRESULT: " 
-				  + std::to_string(hr)).c_str());
+				("Failed to initialize Sci-Fi Toad albedo texture. HRESULT: "
+					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadNormalSRV.init(m_device, "Frog/Sci-FIToad_Body_N", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad normal texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad normal texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadMetallicSRV.init(m_device, "Frog/Sci-FIToad_Body_M", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad metallic texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad metallic texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadRoughnessSRV.init(m_device, "Frog/Sci-FIToad_Body_R", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad roughness texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad roughness texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadAOSRV.init(m_device, "Frog/Sci-FIToad_Body_AO", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad AO texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad AO texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadGlassAlbedoSRV.init(m_device, "Frog/Sci-FIToad_Glass_BC", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad glass albedo texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad glass albedo texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadGlassNormalSRV.init(m_device, "Frog/Sci-FIToad_Glass_N", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad glass normal texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad glass normal texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
 		hr = m_toadGlassRoughnessSRV.init(m_device, "Frog/Sci-FIToad_Glass_R", PNG);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad glass roughness texture. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad glass roughness texture. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
@@ -404,7 +404,7 @@ BaseApp::init() {
 	hr = m_constantBuffer.init(m_device, sizeof(CBMain));
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize m_constantBuffer Buffer. HRESULT: " 
+			("Failed to initialize m_constantBuffer Buffer. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
@@ -435,23 +435,23 @@ BaseApp::init() {
 	hr = m_defaultRasterizer.init(m_device, D3D11_FILL_SOLID, D3D11_CULL_BACK, false, true);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize default Rasterizer. HRESULT: " 
+			("Failed to initialize default Rasterizer. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
-	hr = m_defaultDepthStencil.init(m_device, 
-																	true, 
-																	D3D11_DEPTH_WRITE_MASK_ALL, D3D11_COMPARISON_LESS);
+	hr = m_defaultDepthStencil.init(m_device,
+		true,
+		D3D11_DEPTH_WRITE_MASK_ALL, D3D11_COMPARISON_LESS);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize default DepthStencilState. HRESULT: " 
+			("Failed to initialize default DepthStencilState. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
 	hr = m_defaultSampler.init(m_device);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize default SamplerState. HRESULT: " 
+			("Failed to initialize default SamplerState. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
@@ -558,7 +558,7 @@ BaseApp::init() {
 		hr = submesh.vertexBuffer.init(m_device, meshComponent, D3D11_BIND_VERTEX_BUFFER);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Spitfire vertex buffer. HRESULT: " 
+				("Failed to initialize Spitfire vertex buffer. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
@@ -566,7 +566,7 @@ BaseApp::init() {
 		hr = submesh.indexBuffer.init(m_device, meshComponent, D3D11_BIND_INDEX_BUFFER);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Spitfire index buffer. HRESULT: " 
+				("Failed to initialize Spitfire index buffer. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
@@ -606,7 +606,7 @@ BaseApp::init() {
 		hr = submesh.vertexBuffer.init(m_device, meshComponent, D3D11_BIND_VERTEX_BUFFER);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad vertex buffer. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad vertex buffer. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
@@ -614,7 +614,7 @@ BaseApp::init() {
 		hr = submesh.indexBuffer.init(m_device, meshComponent, D3D11_BIND_INDEX_BUFFER);
 		if (FAILED(hr)) {
 			ERROR("Main", "InitDevice",
-				("Failed to initialize Sci-Fi Toad index buffer. HRESULT: " 
+				("Failed to initialize Sci-Fi Toad index buffer. HRESULT: "
 					+ std::to_string(hr)).c_str());
 			return hr;
 		}
@@ -666,7 +666,7 @@ BaseApp::init() {
 	}
 	toadMeshRenderer->setMesh(&m_toadRenderMesh);
 	toadMeshRenderer->setMaterialInstances({ &m_toadMaterial,
-																					 &m_toadGlassMaterial, 
+																					 &m_toadGlassMaterial,
 																					 &m_toadHeadMaterial });
 	toadMeshRenderer->setVisible(true);
 	toadMeshRenderer->setCastShadow(true);
@@ -703,7 +703,7 @@ BaseApp::init() {
 	hr = m_editorViewportPass.init(m_device, 1280, 720);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize EditorViewportPass. HRESULT: " 
+			("Failed to initialize EditorViewportPass. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
@@ -711,15 +711,15 @@ BaseApp::init() {
 	hr = m_postProcessViewportPass.init(m_device, 1280, 720);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize post-process EditorViewportPass. HRESULT: " 
+			("Failed to initialize post-process EditorViewportPass. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
 
-	hr = m_postProcessSystem.init(m_device);
+	hr = m_postProcessSystem.init(m_device, 1280, 720);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize PostProcessSystem. HRESULT: " 
+			("Failed to initialize PostProcessSystem. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
@@ -727,7 +727,7 @@ BaseApp::init() {
 	hr = m_renderPipeline.init(m_device, RendererType::Deferred);
 	if (FAILED(hr)) {
 		ERROR("Main", "InitDevice",
-			("Failed to initialize RenderPipeline. HRESULT: " 
+			("Failed to initialize RenderPipeline. HRESULT: "
 				+ std::to_string(hr)).c_str());
 		return hr;
 	}
@@ -771,17 +771,17 @@ BaseApp::update(float deltaTime) {
 		if (ImGui::IsKeyPressed(ImGuiKey_F) && m_gui.selectedActorIndex >= 0 &&
 			m_gui.selectedActorIndex < static_cast<int>(m_actors.size())) {
 			EU::TSharedPointer<Actor> selectedActor = m_actors[m_gui.selectedActorIndex];
-			m_cameraController.focusOnActor(selectedActor.get(), 
-																			m_editorViewportPass.getWidth(), 
-																			m_editorViewportPass.getHeight());
+			m_cameraController.focusOnActor(selectedActor.get(),
+				m_editorViewportPass.getWidth(),
+				m_editorViewportPass.getHeight());
 		}
 
-		m_cameraController.update(viewportMouseX, 
-															viewportMouseY, 
-															rightMouseDown, 
-															middleMouseDown, 
-															scrollDelta, 
-															leftShiftHeld);
+		m_cameraController.update(viewportMouseX,
+			viewportMouseY,
+			rightMouseDown,
+			middleMouseDown,
+			scrollDelta,
+			leftShiftHeld);
 	}
 
 	if (m_gui.consumeCreateLightActorRequest()) {
@@ -802,18 +802,18 @@ BaseApp::update(float deltaTime) {
 	m_gui.drawPostProcessPanel(m_postProcessSystem.m_settings);
 
 	ID3D11ShaderResourceView* viewportSRVForGui = m_postProcessSystem.m_settings.hasActiveEffects() ?
-																								m_postProcessViewportPass.getSRV() : 
-																								m_editorViewportPass.getSRV();
-	m_gui.drawViewportPanel(viewportSRVForGui, 
-													m_actors, 
-													m_camera, 
-													m_window, 
-													selectedActor,
-													m_lightIconTexture.m_textureFromImg, 
-													&m_gridSystem);
-	m_gui.drawRenderDebugPanel(m_renderPipeline.getPreShadowSRV(), 
-														 m_editorViewportPass.getSRV(), 
-														 m_renderPipeline.getShadowMapSRV());
+		m_postProcessViewportPass.getSRV() :
+		m_editorViewportPass.getSRV();
+	m_gui.drawViewportPanel(viewportSRVForGui,
+		m_actors,
+		m_camera,
+		m_window,
+		selectedActor,
+		m_lightIconTexture.m_textureFromImg,
+		&m_gridSystem);
+	m_gui.drawRenderDebugPanel(m_renderPipeline.getPreShadowSRV(),
+		m_editorViewportPass.getSRV(),
+		m_renderPipeline.getShadowMapSRV());
 	m_gui.drawGBufferDebugPanel(m_renderPipeline.getGBufferAlbedoMetallicSRV(),
 		m_renderPipeline.getGBufferNormalRoughnessSRV(),
 		m_renderPipeline.getGBufferWorldAoSRV(),
@@ -869,8 +869,8 @@ BaseApp::update(float deltaTime) {
 	}
 
 	XMStoreFloat4x4(&m_constantBufferStruct.View, XMMatrixTranspose(m_camera.getView()));
-	XMStoreFloat4x4(&m_constantBufferStruct.Projection, 
-									XMMatrixTranspose(m_camera.getProj()));
+	XMStoreFloat4x4(&m_constantBufferStruct.Projection,
+		XMMatrixTranspose(m_camera.getProj()));
 	m_constantBufferStruct.CameraPos = m_camera.getPosition();
 
 	// Update Skybox Pass -> Solo necesita la vista sin traslacion + proyeccion para funcionar correctamente (ver metodo update de Skybox)
@@ -912,7 +912,8 @@ BaseApp::render() {
 			m_editorViewportPass,
 			m_postProcessViewportPass,
 			m_camera,
-			m_renderPipeline.getGBufferWorldAoSRV());
+			m_renderPipeline.getGBufferWorldAoSRV(),
+			m_renderPipeline.getGBufferNormalRoughnessSRV());
 	}
 
 	// Desbindear targets de la pipeline
@@ -1073,13 +1074,13 @@ BaseApp::onResize(unsigned int newW, unsigned int newH) {
 	if (FAILED(hr)) return;
 
 	// 7) Re-crea Depth/DSV
-	hr = m_depthStencil.init(m_device, 
-													 newW, 
-													 newH, 
-													 DXGI_FORMAT_D24_UNORM_S8_UINT, 
-													 D3D11_BIND_DEPTH_STENCIL, 
-													 1, 
-													 0);
+	hr = m_depthStencil.init(m_device,
+		newW,
+		newH,
+		DXGI_FORMAT_D24_UNORM_S8_UINT,
+		D3D11_BIND_DEPTH_STENCIL,
+		1,
+		0);
 	if (FAILED(hr)) return;
 
 	hr = m_depthStencilView.init(m_device, m_depthStencil, DXGI_FORMAT_D24_UNORM_S8_UINT);
@@ -1119,9 +1120,12 @@ void BaseApp::handleEditorViewportResize()
 
 	// Intercambio seguro: el pass viejo queda en newPass y se destruye al salir
 	m_editorViewportPass.swap(newPass);
-	m_postProcessViewportPass.resize(m_device, 
-																	 m_pendingViewportWidth, 
-																	 m_pendingViewportHeight);
+	m_postProcessViewportPass.resize(m_device,
+		m_pendingViewportWidth,
+		m_pendingViewportHeight);
+	m_postProcessSystem.resize(m_device,
+		m_pendingViewportWidth,
+		m_pendingViewportHeight);
 	m_renderPipeline.resize(m_device, m_pendingViewportWidth, m_pendingViewportHeight);
 
 	m_editorViewportResizePending = false;
@@ -1148,8 +1152,8 @@ BaseApp::createLightActor(const std::string& name) {
 		}
 	}
 
-	lightActor->setName(name.empty() ? "Light Actor " 
-											+ std::to_string(lightActorCount + 1) : name);
+	lightActor->setName(name.empty() ? "Light Actor "
+		+ std::to_string(lightActorCount + 1) : name);
 
 	EU::TSharedPointer<LightComponent> lightComponent = lightActor->getComponent<LightComponent>();
 	if (!lightComponent) {
@@ -1181,8 +1185,8 @@ bool
 BaseApp::saveScene(const std::string& path) {
 	std::ofstream stream(path, std::ios::trunc);
 	if (!stream.is_open()) {
-		ERROR("Main", "saveScene", ("Failed to open scene file for writing: " 
-					 + path).c_str());
+		ERROR("Main", "saveScene", ("Failed to open scene file for writing: "
+			+ path).c_str());
 		return false;
 	}
 

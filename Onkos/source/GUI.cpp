@@ -1940,6 +1940,42 @@ void GUI::drawPostProcessPanel(PostProcessSettings& settings) {
 			ImGui::SliderFloat("Smoothness", &settings.vignetteSmoothness, 0.01f, 1.0f, "%.2f");
 			ImGui::Unindent();
 		}
+
+		ImGui::Separator();
+		ImGui::Checkbox("Bloom", &settings.enableBloom);
+		if (settings.enableBloom) {
+			ImGui::Indent();
+			ImGui::SliderFloat("Threshold", &settings.bloomThreshold, 0.0f, 5.0f, "%.2f");
+			ImGui::SliderFloat("Knee", &settings.bloomKnee, 0.0f, 2.0f, "%.2f");
+			ImGui::SliderFloat("Bloom Intensity", &settings.bloomIntensity, 0.0f, 3.0f, "%.2f");
+			ImGui::Unindent();
+		}
+
+		ImGui::Separator();
+		ImGui::Checkbox("Tone Mapping", &settings.enableToneMapping);
+		if (settings.enableToneMapping) {
+			ImGui::Indent();
+			ImGui::SliderFloat("Exposure", &settings.exposure, 0.1f, 4.0f, "%.2f");
+			ImGui::Unindent();
+		}
+
+		ImGui::Separator();
+		ImGui::Checkbox("FXAA", &settings.enableFXAA);
+		if (settings.enableFXAA) {
+			ImGui::Indent();
+			ImGui::SliderFloat("Subpixel Quality", &settings.fxaaSubpixelQuality, 0.0f, 1.0f, "%.2f");
+			ImGui::Unindent();
+		}
+
+		ImGui::Separator();
+		ImGui::Checkbox("SSAO", &settings.enableSSAO);
+		if (settings.enableSSAO) {
+			ImGui::Indent();
+			ImGui::SliderFloat("Radius", &settings.ssaoRadius, 0.05f, 5.0f, "%.2f");
+			ImGui::SliderFloat("Power", &settings.ssaoPower, 0.1f, 4.0f, "%.2f");
+			ImGui::SliderFloat("SSAO Intensity", &settings.ssaoIntensity, 0.0f, 3.0f, "%.2f");
+			ImGui::Unindent();
+		}
 	}
 	ImGui::End();
 }

@@ -308,6 +308,15 @@
     <None Include="bin\PostProcess.hlsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="bin\Bloom.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="bin\FXAA_SSAO.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="bin\ToneMapping.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">

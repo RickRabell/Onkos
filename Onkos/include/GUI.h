@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Prerequisites.h"
 #define	IMGUI_DEFINE_MATH_OPERATORS
 #include "imgui.h"
@@ -28,7 +28,7 @@ class Camera;
  * an object. This class reads the ECS data (like an Actor's Transform) and
  * presents it visually, allowing real-time edits that are fed back into the engine.
  */
-class 
+class
 GUI {
 public:
 	/**
@@ -157,7 +157,10 @@ public:
 	 * @param gridSystem The grid system used to determine snap values and toggle state.
 	 */
 	void
-	editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> actor, class GridSystem* gridSystem = nullptr);
+	editTransform(Camera& cam, 
+								Window& window, 
+								EU::TSharedPointer<Actor> actor, 
+								class GridSystem* gridSystem = nullptr);
 
 	/**
 	 * @brief Draws the UI toolbar to switch between Translate, Rotate, and Scale gizmo modes.
@@ -196,7 +199,7 @@ public:
 	 * @param lightIconSRV The shader resource view of the light icon texture.
 	 * @param gridSystem The grid system for rendering and snapping.
 	 */
-	void 
+	void
 	drawViewportPanel(ID3D11ShaderResourceView* viewportSRV,
 										const std::vector<EU::TSharedPointer<Actor>>& actors,
 										Camera& camera,
@@ -211,7 +214,7 @@ public:
 	 * @param camera The active camera used for rendering.
 	 * @param lightIconSRV The shader resource view of the light icon texture.
 	 */
-	void 
+	void
 	drawLightIcons(const std::vector<EU::TSharedPointer<Actor>>& actors,
 								 Camera& camera,
 								 ID3D11ShaderResourceView* lightIconSRV);
@@ -222,11 +225,11 @@ public:
 	 * @param finalViewportSRV The shader resource view of the final viewport texture.
 	 * @param shadowMapSRV The shader resource view of the shadow map texture.
 	 */
-	void 
+	void
 	drawRenderDebugPanel(ID3D11ShaderResourceView* preShadowSRV,
 											 ID3D11ShaderResourceView* finalViewportSRV,
 											 ID3D11ShaderResourceView* shadowMapSRV);
-	
+
 	/**
 	 * @brief Draws the GBuffer debug panel.
 	 * @param albedoMetallicSRV The shader resource view of the albedo and metallic texture.
@@ -235,7 +238,7 @@ public:
 	 * @param emissiveAlphaSRV The shader resource view of the emissive and alpha texture.
 	 * @param selectedActor The currently selected actor.
 	 */
-	void 
+	void
 	drawGBufferDebugPanel(ID3D11ShaderResourceView* albedoMetallicSRV,
 												ID3D11ShaderResourceView* normalRoughnessSRV,
 												ID3D11ShaderResourceView* worldAoSRV,
@@ -246,13 +249,23 @@ public:
 	 * @brief Draws the editor tools panel with grid and snap settings.
 	 * @param gridSystem The grid system for visualization and snapping.
 	 */
-	void 
+	void
 	drawEditorToolsPanel(class GridSystem* gridSystem);
+
+	/**
+	 * @brief Draws the floating "Post-Processing Effects" panel (Grayscale, Depth Fog, Vignette).
+	 * Context: This method owns no state itself -- it edits the PostProcessSystem's settings
+	 * struct in place, so BaseApp only has to pass the struct in once per frame and hand the
+	 * (possibly updated) same struct to PostProcessSystem::render() afterwards.
+	 * @param settings Reference to the active PostProcessSystem::m_settings instance.
+	 */
+	void
+	drawPostProcessPanel(struct PostProcessSettings& settings);
 
 	/**
 	 * @brief Draws the editor dockspace.
 	 */
-	void 
+	void
 	drawEditorDockspace();
 
 	/**
@@ -267,8 +280,8 @@ public:
 	}
 
 	/**
-	 * @brief Consume de forma atomica la solicitud de creación de un actor de luz emitida desde la UI.
-	 * @return `true` una sola vez por peticion de creación de actor de luz.
+	 * @brief Consume de forma atomica la solicitud de creaciï¿½n de un actor de luz emitida desde la UI.
+	 * @return `true` una sola vez por peticion de creaciï¿½n de actor de luz.
 	 */
 	bool
 	consumeCreateLightActorRequest() {
@@ -281,53 +294,54 @@ public:
 	 * @brief Sets a reference to the CommandInvoker for undo/redo operations.
 	 * @param commandInvoker Reference to the CommandInvoker.
 	 */
-	void setCommandInvoker(class CommandInvoker* commandInvoker) {
+	void 
+	setCommandInvoker(class CommandInvoker* commandInvoker) {
 		m_commandInvoker = commandInvoker;
 	}
 
 	//---------------------
 
 private:
-  /**
-  * @brief Example checkbox value for UI state.
-  * Used to store the state of a sample checkbox in the GUI.
-  */
-  bool checkboxValue = true;
+	/**
+	* @brief Example checkbox value for UI state.
+	* Used to store the state of a sample checkbox in the GUI.
+	*/
+	bool checkboxValue = true;
 
-  /**
-  * @brief Example secondary checkbox value for UI state.
-  * Used to store the state of a second checkbox in the GUI.
-  */
-  bool checkboxValue2 = false;
+	/**
+	* @brief Example secondary checkbox value for UI state.
+	* Used to store the state of a second checkbox in the GUI.
+	*/
+	bool checkboxValue2 = false;
 
-  /**
-  * @brief List of object names displayed in the UI.
-  * Holds C-style string pointers to the names of objects shown in panels such as the outliner.
-  */
-  std::vector<const char*> m_objectsNames;
+	/**
+	* @brief List of object names displayed in the UI.
+	* Holds C-style string pointers to the names of objects shown in panels such as the outliner.
+	*/
+	std::vector<const char*> m_objectsNames;
 
-  /**
-  * @brief List of tooltips for UI elements.
-  * Holds C-style string pointers to tooltip texts that provide contextual help in the GUI.
-  */
-  std::vector<const char*> m_tooltips;
+	/**
+	* @brief List of tooltips for UI elements.
+	* Holds C-style string pointers to tooltip texts that provide contextual help in the GUI.
+	*/
+	std::vector<const char*> m_tooltips;
 
-  /**
-  * @brief Flag to control the display of the exit confirmation popup.
-  * True if the exit popup should be shown, false otherwise.
-  */
-  bool show_exit_popup = false;
+	/**
+	* @brief Flag to control the display of the exit confirmation popup.
+	* True if the exit popup should be shown, false otherwise.
+	*/
+	bool show_exit_popup = false;
 
 	/**
 	 * @brief Flag to indicate if a save scene request has been made.
 	 */
 	bool m_requestSaveScene = false;
-	
+
 	/**
 	 * @brief Flag to indicate if a create light actor request has been made.
 	 */
 	bool m_requestCreateLightActor = false;
-	
+
 	/**
 	 * @brief Pointer to the draw list of the viewport.
 	 */
@@ -337,12 +351,12 @@ private:
 	 * @brief Pointer to the viewport window.
 	 */
 	ImGuiWindow* m_viewportWindow = nullptr;
-	
+
 	/**
 	 * @brief Flag to indicate if the viewport is visible this frame.
 	 */
 	bool m_viewportVisibleThisFrame = false;
-	
+
 	/**
 	 * @brief Flag to indicate if the viewport is active this frame.
 	 */
@@ -352,12 +366,12 @@ private:
 	 * @brief Shader resource view for pre-shadow rendering debug.
 	 */
 	ID3D11ShaderResourceView* m_renderDebugPreShadowSRV = nullptr;
-	
+
 	/**
 	 * @brief Shader resource view for final rendering debug.
 	 */
 	ID3D11ShaderResourceView* m_renderDebugFinalSRV = nullptr;
-	
+
 	/**
 	 * @brief Shader resource view for shadow map rendering debug.
 	 */
@@ -366,22 +380,22 @@ private:
 public:
 	/** @brief Flag to indicate if the gizmo is currently being used. */
 	bool m_isUsingGizmo = false;
-	
+
 	/** @brief Flag to indicate if the deferred shadow factor should be visualized. */
 	bool m_visualizeDeferredShadowFactor = false;
-	
+
 	/** @brief The current debug view mode for deferred rendering. */
 	int m_deferredDebugViewMode = 0;
 
 	/** @brief The index of the currently selected actor in the outliner. -1 means no selection. */
 	int selectedActorIndex = -1;
-	
+
 	/** @brief The position of the viewport in the GUI. */
 	ImVec2 m_viewportPos = ImVec2(0.0f, 0.0f);
-	
+
 	/** @brief The size of the viewport in the GUI. */
 	ImVec2 m_viewportSize = ImVec2(0.0f, 0.0f);
-	
+
 	/** @brief Flag to indicate if the viewport is hovered. */
 	bool m_viewportHovered = false;
 

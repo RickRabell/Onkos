@@ -292,6 +292,22 @@
     <None Include="USER_GUIDE_DCC_GRID.md">
       <Filter>Docs</Filter>
     </None>
+    <None Include="Onkos\Onkos\_add.ps1" />
+    <None Include="Onkos\Onkos\_cleanup.ps1" />
+    <None Include="Onkos\Onkos\_fix1.ps1" />
+    <None Include="Onkos\Onkos\_fix2.ps1" />
+    <None Include="Onkos\Onkos\_fix3.ps1" />
+    <None Include="Onkos\Onkos\_fix4.ps1" />
+    <None Include="Onkos\Onkos\_fix5.ps1" />
+    <None Include="Onkos\Onkos\_fixA.ps1" />
+    <None Include="Onkos\Onkos\_fixFinal.ps1" />
+    <None Include="Onkos\Onkos\_z.ps1" />
+    <None Include="bin\GrayScalePostProcess.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="bin\PostProcess.hlsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">

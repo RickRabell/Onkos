@@ -15,6 +15,7 @@
 #include "Rendering\Mesh.h"
 #include "Rendering\Material.h"
 #include "Rendering\MaterialInstance.h"
+#include "Rendering\PostProcessSystem.h"
 #include "Texture.h"
 #include "EngineUtilities\Utilities\Camera.h"
 #include "EngineUtilities\Utilities\GridSystem.h"
@@ -154,7 +155,7 @@ namespace {
 		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, color);
 		ImGui::PushStyleColor(ImGuiCol_ButtonActive, color);
 		ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 3.0f); // Cambiado de 12.0f
-		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(8.0f, 2.0f)); // Más compacto
+		ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(8.0f, 2.0f)); // M?s compacto
 		ImGui::Button(text);
 		ImGui::PopStyleVar(2);
 		ImGui::PopStyleColor(3);
@@ -350,7 +351,7 @@ GUI::update(Viewport& viewport, Window& window) {
 	m_viewportFocused = false;
 	ImGuizmo::BeginFrame();
 	ImGuiIO& io = ImGui::GetIO();
-	
+
 	if (io.KeyCtrl && ImGui::IsKeyPressed(ImGuiKey_S)) {
 		m_requestSaveScene = true;
 	}
@@ -506,7 +507,7 @@ GUI::appleLiquidStyle(float opacity, ImVec4 accent) {
 	ImGuiStyle& style = ImGui::GetStyle();
 	ImVec4* colors = style.Colors;
 
-	// Geometría suave tipo macOS
+	// Geometr?a suave tipo macOS
 	style.WindowRounding = 14.0f;
 	style.ChildRounding = 14.0f;
 	style.PopupRounding = 14.0f;
@@ -525,13 +526,13 @@ GUI::appleLiquidStyle(float opacity, ImVec4 accent) {
 	style.ItemSpacing = ImVec2(8, 8);
 	style.ItemInnerSpacing = ImVec2(8, 6);
 
-	const float o = opacity;                 // opacidad del “cristal”
+	const float o = opacity;                 // opacidad del ?cristal?
 	const ImVec4 txt = ImVec4(1, 1, 1, 0.95f);     // texto claro
-	const ImVec4 pane = ImVec4(0.16f, 0.16f, 0.18f, o); // panel “vidrioso” oscuro
+	const ImVec4 pane = ImVec4(0.16f, 0.16f, 0.18f, o); // panel ?vidrioso? oscuro
 	const ImVec4 paneHi = ImVec4(0.20f, 0.20f, 0.22f, o);
 	const ImVec4 paneLo = ImVec4(0.13f, 0.13f, 0.15f, o * 0.85f);
 
-	// Colores base “glass”
+	// Colores base ?glass?
 	colors[ImGuiCol_Text] = txt;
 	colors[ImGuiCol_TextDisabled] = ImVec4(1, 1, 1, 0.45f);
 	colors[ImGuiCol_WindowBg] = pane;     // importante: con alpha
@@ -598,7 +599,7 @@ void GUI::unrealEngine5Style() {
 	ImGuiStyle& style = ImGui::GetStyle();
 	ImVec4* colors = style.Colors;
 
-	// Geometría estructurada tipo UE5
+	// Geometr?a estructurada tipo UE5
 	style.WindowRounding = 2.0f;
 	style.ChildRounding = 2.0f;
 	style.PopupRounding = 2.0f;
@@ -612,7 +613,7 @@ void GUI::unrealEngine5Style() {
 	style.PopupBorderSize = 1.0f;
 	style.TabBorderSize = 0.0f;
 
-	// Espaciado más compacto y técnico
+	// Espaciado m?s compacto y t?cnico
 	style.WindowPadding = ImVec2(8, 8);
 	style.FramePadding = ImVec2(4, 4);
 	style.ItemSpacing = ImVec2(8, 4);
@@ -691,16 +692,16 @@ GUI::toolBar() {
 	if (ImGui::BeginMainMenuBar()) {
 		if (ImGui::BeginMenu("File")) {
 			if (ImGui::MenuItem("New")) {
-				// Acción para "New"
+				// Acci?n para "New"
 			}
 			if (ImGui::MenuItem("Open")) {
-				// Acción para "Open"
+				// Acci?n para "Open"
 			}
 			if (ImGui::MenuItem("Save")) {
-				// Acción para "Save"
+				// Acci?n para "Save"
 			}
 			if (ImGui::MenuItem("Exit")) {
-				// Acción para "Exit"
+				// Acci?n para "Exit"
 				show_exit_popup = true;
 				ImGui::OpenPopup("Exit?");
 				//closeApp();
@@ -709,28 +710,28 @@ GUI::toolBar() {
 		}
 		if (ImGui::BeginMenu("Edit")) {
 			if (ImGui::MenuItem("Undo")) {
-				// Acción para "Undo"
+				// Acci?n para "Undo"
 			}
 			if (ImGui::MenuItem("Redo")) {
-				// Acción para "Redo"
+				// Acci?n para "Redo"
 			}
 			if (ImGui::MenuItem("Cut")) {
-				// Acción para "Cut"
+				// Acci?n para "Cut"
 			}
 			if (ImGui::MenuItem("Copy")) {
-				// Acción para "Copy"
+				// Acci?n para "Copy"
 			}
 			if (ImGui::MenuItem("Paste")) {
-				// Acción para "Paste"
+				// Acci?n para "Paste"
 			}
 			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("Tools")) {
 			if (ImGui::MenuItem("Options")) {
-				// Acción para "Options"
+				// Acci?n para "Options"
 			}
 			if (ImGui::MenuItem("Settings")) {
-				// Acción para "Settings"
+				// Acci?n para "Settings"
 			}
 			ImGui::EndMenu();
 		}
@@ -753,7 +754,7 @@ GUI::closeApp() {
 		ImGui::Separator();
 
 		if (ImGui::Button("OK", ImVec2(120, 0))) {
-			exit(0); // Salir de la aplicación
+			exit(0); // Salir de la aplicaci?n
 			ImGui::CloseCurrentPopup();
 		}
 		ImGui::SetItemDefaultFocus();
@@ -924,7 +925,7 @@ GUI::inspectorGeneral(EU::TSharedPointer<Actor> actor) {
 	if (hasLightComponent && BeginInspectorSection("Light")) {
 		LightData& light = lightComponent->getLightData();
 		if (BeginInspectorPropertyTable("##LightProperties")) {
-			static const char* kLightTypes[] = { "Directional", "Point", "Spot"};
+			static const char* kLightTypes[] = { "Directional", "Point", "Spot" };
 			int currentLightType = static_cast<int>(light.type);
 			if (currentLightType > static_cast<int>(LightType::Spot)) {
 				currentLightType = static_cast<int>(LightType::Spot);
@@ -1158,14 +1159,14 @@ void GUI::editTransform(Camera& cam, Window& window, EU::TSharedPointer<Actor> a
 			// Only create a command if something actually changed
 			const float epsilon = 0.0001f;
 			bool posChanged = (fabsf(m_gizmoStartPosition.x - finalPosition.x) > epsilon ||
-								 fabsf(m_gizmoStartPosition.y - finalPosition.y) > epsilon ||
-								 fabsf(m_gizmoStartPosition.z - finalPosition.z) > epsilon);
+				fabsf(m_gizmoStartPosition.y - finalPosition.y) > epsilon ||
+				fabsf(m_gizmoStartPosition.z - finalPosition.z) > epsilon);
 			bool rotChanged = (fabsf(m_gizmoStartRotation.x - finalRotation.x) > epsilon ||
-								 fabsf(m_gizmoStartRotation.y - finalRotation.y) > epsilon ||
-								 fabsf(m_gizmoStartRotation.z - finalRotation.z) > epsilon);
+				fabsf(m_gizmoStartRotation.y - finalRotation.y) > epsilon ||
+				fabsf(m_gizmoStartRotation.z - finalRotation.z) > epsilon);
 			bool scaleChanged = (fabsf(m_gizmoStartScale.x - finalScale.x) > epsilon ||
-								 fabsf(m_gizmoStartScale.y - finalScale.y) > epsilon ||
-								 fabsf(m_gizmoStartScale.z - finalScale.z) > epsilon);
+				fabsf(m_gizmoStartScale.y - finalScale.y) > epsilon ||
+				fabsf(m_gizmoStartScale.z - finalScale.z) > epsilon);
 
 			if (posChanged || rotChanged || scaleChanged) {
 
@@ -1913,6 +1914,34 @@ void GUI::drawEditorDockspace()
 	ImGui::End();
 
 	ImGui::PopStyleVar(3);
+}
+
+void GUI::drawPostProcessPanel(PostProcessSettings& settings) {
+	ImGui::SetNextWindowSize(ImVec2(260.0f, 0.0f), ImGuiCond_FirstUseEver);
+
+	if (ImGui::Begin("Post-Processing Effects")) {
+		ImGui::Checkbox("Grayscale", &settings.enableGrayscale);
+
+		ImGui::Separator();
+		ImGui::Checkbox("Depth Fog", &settings.enableFog);
+		if (settings.enableFog) {
+			ImGui::Indent();
+			ImGui::ColorEdit3("Fog Color", &settings.fogColor.x);
+			ImGui::SliderFloat("Fog Start", &settings.fogStart, 0.0f, 200.0f, "%.1f");
+			ImGui::SliderFloat("Fog Range", &settings.fogRange, 1.0f, 400.0f, "%.1f");
+			ImGui::Unindent();
+		}
+
+		ImGui::Separator();
+		ImGui::Checkbox("Vignette", &settings.enableVignette);
+		if (settings.enableVignette) {
+			ImGui::Indent();
+			ImGui::SliderFloat("Intensity", &settings.vignetteIntensity, 0.0f, 1.0f, "%.2f");
+			ImGui::SliderFloat("Smoothness", &settings.vignetteSmoothness, 0.01f, 1.0f, "%.2f");
+			ImGui::Unindent();
+		}
+	}
+	ImGui::End();
 }
 
 void GUI::drawEditorToolsPanel(class GridSystem* gridSystem) {
